@@ -382,6 +382,433 @@ body {
     line-height: 1.8;
 }
 
+/* 포맷 호환성 섹션 */
+.format-compatibility {
+    padding: 80px 20px;
+    background: white;
+}
+
+.format-compatibility h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.compatibility-section {
+    margin-bottom: 60px;
+}
+
+.compatibility-section h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.format-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.format-cards.multi {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.format-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.format-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.format-card.gold {
+    border-color: #FFD700;
+    background: linear-gradient(to bottom, #fff9e6 0%, #ffffff 100%);
+}
+
+.format-card.gold:hover {
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.format-card.silver {
+    border-color: #C0C0C0;
+    background: linear-gradient(to bottom, #f5f5f5 0%, #ffffff 100%);
+}
+
+.format-card.silver:hover {
+    box-shadow: 0 10px 30px rgba(192, 192, 192, 0.3);
+}
+
+.format-card.bronze {
+    border-color: #CD7F32;
+    background: linear-gradient(to bottom, #fff4e6 0%, #ffffff 100%);
+}
+
+.format-card.bronze:hover {
+    box-shadow: 0 10px 30px rgba(205, 127, 50, 0.3);
+}
+
+.format-card.regular {
+    border-color: #e0e0e0;
+}
+
+.format-header {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.format-rank {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.format-header h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 8px;
+}
+
+.format-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.app-category {
+    padding: 12px 0;
+}
+
+.app-category h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #667eea;
+}
+
+.app-category p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.compatibility-grades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.grade-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 3px solid;
+}
+
+.grade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.grade-excellent {
+    border-color: #4CAF50;
+    background: linear-gradient(to bottom, #e8f5e9 0%, #ffffff 100%);
+}
+
+.grade-high {
+    border-color: #FFC107;
+    background: linear-gradient(to bottom, #fff8e1 0%, #ffffff 100%);
+}
+
+.grade-medium {
+    border-color: #FF9800;
+    background: linear-gradient(to bottom, #fff3e0 0%, #ffffff 100%);
+}
+
+.grade-limited {
+    border-color: #F44336;
+    background: linear-gradient(to bottom, #ffebee 0%, #ffffff 100%);
+}
+
+.grade-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.grade-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.grade-desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.grade-apps {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* 다중 드롭 지원 섹션 */
+.multi-drop-support {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.support-category {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    border: 3px solid;
+}
+
+.perfect-support {
+    border-color: #4CAF50;
+    background: linear-gradient(to bottom, #e8f5e9 0%, #ffffff 100%);
+}
+
+.partial-support {
+    border-color: #FFC107;
+    background: linear-gradient(to bottom, #fff8e1 0%, #ffffff 100%);
+}
+
+.limited-support {
+    border-color: #F44336;
+    background: linear-gradient(to bottom, #ffebee 0%, #ffffff 100%);
+}
+
+.support-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+}
+
+.support-icon {
+    font-size: 2rem;
+}
+
+.support-header h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+.support-apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.support-app-group h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #667eea;
+}
+
+.app-list {
+    list-style: none;
+    padding: 0;
+}
+
+.app-list li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+}
+
+.app-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* 다중 드롭 지원률 */
+.support-statistics {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 35px;
+    margin-top: 40px;
+    color: white;
+}
+
+.support-statistics h4 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+/* 실제 사용 시나리오 */
+.use-scenarios {
+    margin-top: 40px;
+}
+
+.use-scenarios h4 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+}
+
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.scenario-card {
+    border-radius: 15px;
+    padding: 25px;
+    border: 3px solid;
+}
+
+.scenario-success {
+    border-color: #4CAF50;
+    background: linear-gradient(to bottom, #e8f5e9 0%, #ffffff 100%);
+}
+
+.scenario-partial {
+    border-color: #FFC107;
+    background: linear-gradient(to bottom, #fff8e1 0%, #ffffff 100%);
+}
+
+.scenario-fail {
+    border-color: #F44336;
+    background: linear-gradient(to bottom, #ffebee 0%, #ffffff 100%);
+}
+
+.scenario-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.scenario-icon {
+    font-size: 1.5rem;
+}
+
+.scenario-header h5 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+}
+
+.scenario-list {
+    list-style: none;
+    padding: 0;
+}
+
+.scenario-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+}
+
+.scenario-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.scenario-list strong {
+    color: #4CAF50;
+    font-weight: 700;
+}
+
+/* 결론 박스 */
+.conclusion-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 35px;
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+}
+
+.conclusion-box h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.conclusion-box p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    opacity: 0.95;
+}
+
+.conclusion-box strong {
+    color: #4CAF50;
+    font-weight: 700;
+}
+
 /* 타겟 사용자 섹션 */
 .target-users {
     padding: 80px 20px;
@@ -526,9 +953,27 @@ footer {
         grid-template-columns: 1fr;
     }
     
+    .format-cards,
+    .format-cards.multi,
+    .compatibility-grades,
+    .support-apps-grid,
+    .stats-grid,
+    .scenarios-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+    
+    .use-scenarios h4,
+    .support-statistics h4 {
+        font-size: 1.5rem;
     }
     
     .btn {
