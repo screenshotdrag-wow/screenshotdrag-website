@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScreenshotDrag - Skip Ctrl+C+V. Just Drag It.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,10 +15,11 @@
     <header class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="icon">📸</div>
-                <h1>ScreenshotDrag</h1>
-                <p class="tagline">Skip Ctrl C + V.</p>
-                <p class="tagline">Just drag it.</p>
+                <img src="screenshotdrag logo.svg" alt="ScreenshotDrag" class="hero-logo-small">
+                <h1 class="hero-title">
+                    <span class="title-screenshot">Screenshot</span><span class="title-drag">Drag</span>
+                </h1>
+                <p class="tagline">Skip Ctrl+C+V. Just Drag it.</p>
                 
                 <div class="demo-video">
                     <p>데모 영상 준비 중</p>
@@ -23,14 +28,13 @@
                 <p class="subtitle">스크린샷 캡처 → 드래그 → 완료!</p>
                 
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">📦 Microsoft Store에서 받기</a>
-                    <a href="https://github.com/screenshotdrag-wow/ScreenshotDrag" class="btn btn-secondary">👁️ View on GitHub</a>
+                    <a href="#" class="btn btn-primary microsoft-store-btn">📦 Microsoft Store에서 받기</a>
                 </div>
                 
-                <p class="pricing-note">무료 버전은 광고가 포함됩니다 · 광고 제거 ₩2,900 (영구 사용)</p>
+                <p class="pricing-note">무료 버전은 광고가 포함됩니다 · 광고 제거 ₩2,900</p>
                 
                 <div class="features-badges">
-                    <span class="badge">⌨️ Ctrl+Shift+S</span>
+                    <span class="badge">⌨️ Alt+S (단일) / Alt+D (연속)</span>
                     <span class="badge">🖱️ Drag & Drop</span>
                     <span class="badge">🪟 Windows 10/11</span>
                 </div>
@@ -38,73 +42,313 @@
         </div>
     </header>
 
-    <!-- 사용 방법 -->
-    <section class="how-to-use">
+    <!-- 주요 기능 (새로운 섹션) -->
+    <section class="key-features">
         <div class="container">
-            <h2>어떻게 사용하나요?</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon">📸</div>
-                    <div class="step-number">STEP 1</div>
-                    <h3>캡처</h3>
-                    <p>Ctrl + Shift + S 단축키로 캡처 모드 진입.<br>마우스로 영역을 선택하세요.</p>
+            <h2>📸 가장 빠른 스크린샷 워크플로우</h2>
+            <p class="section-subtitle">캡처 → 드래그 → 공유<br>복잡한 단계 없이, 한 번의 드래그로 끝나는 초고속 워크플로우.</p>
+            
+            <div class="features-grid-new">
+                <div class="feature-card-new">
+                    <div class="feature-icon">⚡</div>
+                    <h3>1️⃣ 스마트 캡처</h3>
+                    <ul class="feature-list">
+                        <li><strong>Single / Continuous 모드</strong></li>
+                        <li>Free: 최대 2장</li>
+                        <li>Pro: 무제한 연속 캡처</li>
+                        <li><strong>단축키</strong>: Alt + S (단일) / Alt + D (연속)</li>
+                        <li>영역 선택 / 전체화면 / 실시간 썸네일 미리보기</li>
+                    </ul>
                 </div>
-                <div class="step">
-                    <div class="step-icon">🖼️</div>
-                    <div class="step-number">STEP 2</div>
-                    <h3>확인</h3>
-                    <p>Enter 키로 확정하면<br>하단에 썸네일이 표시됩니다.<br>(ESC로 취소 가능)</p>
+                
+                <div class="feature-card-new highlight">
+                    <div class="feature-icon">🖱️</div>
+                    <h3>2️⃣ 빠르고 직관적인 드래그 앤 드롭</h3>
+                    <ul class="feature-list">
+                        <li>썸네일 바로 드래그 → 원하는 앱에 즉시 드롭</li>
+                        <li><strong>다중 드래그 앤 드롭 지원</strong> (Free: 최대 2개 / Pro: 무제한)</li>
+                        <li><strong>자동 창 숨김</strong>: 드래그 순간, 방해 없는 화면</li>
+                        <li><strong>강력한 호환성</strong>: Slack, Notion, Discord, Figma 등 주요 앱과 매끄럽게 작동</li>
+                        <li><strong>자동 클립보드 복사</strong>: 드롭 후 바로 붙여넣기 가능</li>
+                    </ul>
                 </div>
-                <div class="step">
-                    <div class="step-icon">🚀</div>
-                    <div class="step-number">STEP 3</div>
-                    <h3>드래그</h3>
-                    <p>썸네일을 드래그해서<br>원하는 앱에 드롭!<br>Ctrl+C/V는 필요 없습니다. ✨</p>
+                
+                <div class="feature-card-new">
+                    <div class="feature-icon">💾</div>
+                    <h3>3️⃣ 스마트 저장 & 관리</h3>
+                    <ul class="feature-list">
+                        <li><strong>자동 저장</strong>: Documents/Screenshots 폴더</li>
+                        <li><strong>파일명 규칙</strong>: Screenshot_YYYYMMDD_HHMMSS_GUID.png</li>
+                        <li><strong>용량 자동 관리</strong>: 500MB 초과 시 오래된 캡처 자동 삭제</li>
+                        <li><strong>썸네일 갤러리</strong>: 최근 캡처 자동 정렬</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-new">
+                    <div class="feature-icon">🧩</div>
+                    <h3>4️⃣ 사용자 친화적 UX</h3>
+                    <ul class="feature-list">
+                        <li><strong>트레이 실행</strong> / 자동 시작 (윈도우 부팅 시)</li>
+                        <li><strong>캡처 후 자동 최소화</strong> — 백그라운드에서 깔끔하게 작동</li>
+                        <li><strong>가벼운 애니메이션</strong> — 부드러운 전환, 끊김 없는 경험</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 주요 기능 (새로운 섹션) -->
-    <section class="key-features">
+    <!-- 사용 방법 -->
+    <section class="how-to-use">
         <div class="container">
-            <h2>🚀 핵심 혁신 기능</h2>
-            <p class="section-subtitle">기존 스크린샷 도구와는 완전히 다른 워크플로우</p>
+            <h2>어떻게 사용하나요?</h2>
             
-            <div class="features-grid-new">
-                <div class="feature-card-new">
+            <div class="usage-modes">
+                <!-- Single 캡처 모드 -->
+                <div class="usage-mode">
+                    <h3>📸 Single 캡처</h3>
+                    
+                    <!-- GIF 데모 영상 공간 -->
+                    <div class="demo-gif-container">
+                        <img src="demo-single.gif" alt="Single 캡처 데모" class="demo-gif">
+                        <p class="demo-placeholder">📹 Single 캡처 데모 영상 준비 중</p>
+                </div>
+                    
+                    <div class="usage-steps">
+                        <div class="usage-step">
+                            <span class="step-num">1</span>
+                            <p><strong>Alt+S</strong> 누름 (또는 Single 버튼 클릭)</p>
+                </div>
+                        <div class="usage-step">
+                            <span class="step-num">2</span>
+                            <p>마우스로 캡쳐 영역 드래그</p>
+                </div>
+                        <div class="usage-step">
+                            <span class="step-num">3</span>
+                            <p>캡처 완료 → 메인창에 썸네일 표시 (클립보드 자동 복사)</p>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">4</span>
+                            <p>썸네일 드래그 앤 드롭 ✅<br><span class="sub-option">※ Ctrl+V로 붙여넣기도 가능</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continuous 캡처 모드 -->
+                <div class="usage-mode">
+                    <h3>🔄 Continuous 캡처</h3>
+                    
+                    <!-- GIF 데모 영상 공간 -->
+                    <div class="demo-gif-container">
+                        <img src="demo-continuous.gif" alt="Continuous 캡처 데모" class="demo-gif">
+                        <p class="demo-placeholder">📹 Continuous 캡처 데모 영상 준비 중</p>
+                    </div>
+                    
+                    <div class="usage-steps">
+                        <div class="usage-step">
+                            <span class="step-num">1</span>
+                            <p><strong>Alt+D</strong> 누름 (또는 Continuous 버튼 클릭)</p>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">2</span>
+                            <p>영역 드래그 → 캡처 1, 캡처 2, 캡처 3...</p>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">3</span>
+                            <p><strong>ESC</strong>, <strong>✕</strong> → 캡쳐 모드 종료</p>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">4</span>
+                            <p><strong>Ctrl+클릭</strong>으로 드롭 순서 선택 or 마우스로 드래그 → 한꺼번에 드롭 ✅<br><span class="sub-option">※ Ctrl+V로 붙여넣기도 가능</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 편집 포함 워크플로우 섹션 -->
+            <div class="edit-section">
+                <h3 class="edit-title">🎨 편집 포함 워크플로우</h3>
+                <p class="edit-note">※ 에디터 모드를 항상 활성화 해둘 수도 있습니다. (기본은 해제 상태)</p>
+                
+                <div class="edit-workflows">
+                    <!-- Single 캡처 편집 워크플로우 -->
+                    <div class="edit-workflow">
+                        <h4>📸 Single 캡처 + 편집</h4>
+                        
+                        <!-- GIF 데모 영상 공간 -->
+                        <div class="demo-gif-container">
+                            <img src="demo-single-edit.gif" alt="Single 캡처 + 편집 데모" class="demo-gif">
+                            <p class="demo-placeholder">📹 Single 편집 데모 영상 준비 중</p>
+                        </div>
+                        
+                        <div class="workflow-steps">
+                            <div class="workflow-step">
+                                <span class="step-num">1</span>
+                                <p><strong>Alt+S</strong> 누름 (또는 Single 버튼 클릭)</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">2</span>
+                                <p>마우스로 캡쳐 영역 드래그</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">3</span>
+                                <p>캡처 완료 → 메인창에 썸네일 표시</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">4</span>
+                                <p>에디터 체크 ✓ → 썸네일 클릭</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">5</span>
+                                <p>편집창에서 펜/도형/텍스트 편집 → 썸네일에 실시간 반영 ⚡</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">6</span>
+                                <p>썸네일 잡고 → 드롭 ✅<br><span class="sub-option">※ Ctrl+V로 붙여넣기도 가능</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continuous 캡처 편집 워크플로우 -->
+                    <div class="edit-workflow">
+                        <h4>🔄 Continuous 캡처 + 편집</h4>
+                        
+                        <!-- GIF 데모 영상 공간 -->
+                        <div class="demo-gif-container">
+                            <img src="demo-continuous-edit.gif" alt="Continuous 캡처 + 편집 데모" class="demo-gif">
+                            <p class="demo-placeholder">📹 Continuous 편집 데모 영상 준비 중</p>
+                        </div>
+                        
+                        <div class="workflow-steps">
+                            <div class="workflow-step">
+                                <span class="step-num">1</span>
+                                <p>Continuous 버튼 클릭 (또는 <strong>Alt+D</strong>)</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">2</span>
+                                <p>영역 드래그 → 캡처 1, 캡처 2, 캡처 3...</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">3</span>
+                                <p><strong>ESC</strong>, <strong>✕</strong> → 캡쳐 모드 종료</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">4</span>
+                                <p>에디터 체크 ✓ → 원하는 썸네일 클릭</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">5</span>
+                                <p>썸네일 별 개별 편집 → 썸네일 실시간 반영 ⚡</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-num">6</span>
+                                <p><strong>Ctrl+클릭</strong>으로 드롭 순서 선택 or 마우스로 드래그 → 한꺼번에 드롭 ✅<br><span class="sub-option">※ Ctrl+V로 붙여넣기도 가능</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 편집 도구 기능 -->
+                <div class="edit-tools-info">
+                    <h4>🎨 편집 도구</h4>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <span class="tool-icon">🖊️</span>
+                            <p><strong>펜 도구</strong><br>자유 그리기, 강조 표시</p>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">🔷</span>
+                            <p><strong>도형 도구</strong><br>사각형, 원, 화살표</p>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">📝</span>
+                            <p><strong>텍스트 추가</strong><br>설명, 주석 입력</p>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">🎨</span>
+                            <p><strong>색상 선택</strong><br>다양한 컬러 팔레트</p>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">↩️</span>
+                            <p><strong>실행 취소</strong><br>Ctrl+Z / Ctrl+Y</p>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">⚡</span>
+                            <p><strong>실시간 반영</strong><br>편집 즉시 적용</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 유용한 기능 섹션 -->
+    <section class="useful-features">
+        <div class="container">
+            <h2>🔧 유용한 기능</h2>
+            <p class="section-subtitle">캡처 후 바로 편집하고 변환하는 스마트한 기능들</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✏️</div>
+                    <h3>썸네일에서 바로 편집</h3>
+                    <p>캡처된 썸네일을 클릭하면 즉시 편집 모드로 전환됩니다.</p>
+                    <div class="demo-gif-container">
+                        <img src="demo-edit-thumbnail.gif" alt="썸네일 편집 데모" class="demo-gif">
+                        <p class="demo-placeholder">📹 썸네일 편집 데모 영상 준비 중</p>
+                    </div>
+                    <ul class="feature-list">
+                        <li>펜 도구로 자유롭게 그리기</li>
+                        <li>도형 삽입 (사각형, 원, 화살표)</li>
+                        <li>텍스트 추가 및 편집</li>
+                        <li>실시간 미리보기</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>GIF 변환 기능</h3>
+                    <p>연속 캡처한 이미지들을 자동으로 GIF로 변환합니다.</p>
+                    <div class="demo-gif-container">
+                        <img src="demo-gif-conversion.gif" alt="GIF 변환 데모" class="demo-gif">
+                        <p class="demo-placeholder">📹 GIF 변환 데모 영상 준비 중</p>
+                    </div>
+                    <ul class="feature-list">
+                        <li>연속 캡처 → 자동 GIF 생성</li>
+                        <li>프레임 속도 조절 (0.5s ~ 2s)</li>
+                        <li>GIF 품질 설정 (낮음/보통/높음)</li>
+                        <li>파일 크기 최적화</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>스마트 파일 관리</h3>
+                    <p>캡처한 이미지들을 자동으로 정리하고 관리합니다.</p>
+                    <div class="demo-gif-container">
+                        <img src="demo-file-management.gif" alt="파일 관리 데모" class="demo-gif">
+                        <p class="demo-placeholder">📹 파일 관리 데모 영상 준비 중</p>
+                    </div>
+                    <ul class="feature-list">
+                        <li>자동 폴더 생성 (날짜별)</li>
+                        <li>파일명 규칙 적용</li>
+                        <li>용량 관리 (500MB 초과 시 자동 삭제)</li>
+                        <li>최근 캡처 갤러리</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>즉시 드래그 앤 드롭</h3>
+                    <h3>원클릭 공유</h3>
+                    <p>편집 완료 후 바로 원하는 앱으로 공유합니다.</p>
+                    <div class="demo-gif-container">
+                        <img src="demo-quick-share.gif" alt="원클릭 공유 데모" class="demo-gif">
+                        <p class="demo-placeholder">📹 원클릭 공유 데모 영상 준비 중</p>
+                    </div>
                     <ul class="feature-list">
-                        <li><strong>단일 캡처</strong> (Alt+S): 빠른 한 번 캡처</li>
-                        <li><strong>연속 캡처</strong> (Alt+D): 여러 개 연속 캡처</li>
-                        <li><strong>영역 선택</strong>: 마우스로 자유 영역 선택</li>
-                        <li><strong>캡처 즉시 드래그</strong>: Ctrl+C/V 우회</li>
-                        <li><strong>고해상도</strong>: 원본 품질 유지</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card-new highlight">
-                    <div class="feature-icon">🔥</div>
-                    <h3>연속 캡처 + 다중 드래그</h3>
-                    <ul class="feature-list">
-                        <li><strong>연속 캡처 모드</strong>: Alt+D로 활성화</li>
-                        <li><strong>무제한 캡처</strong>: 원하는 만큼 계속 캡처</li>
-                        <li><strong>실시간 갤러리</strong>: 모든 캡처 즉시 표시</li>
-                        <li><strong>다중 드래그</strong>: 여러 이미지 한 번에 처리</li>
-                        <li><strong>생산성 혁신</strong>: N단계 → 1단계</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card-new">
-                    <div class="feature-icon">🎨</div>
-                    <h3>통합 편집 도구</h3>
-                    <ul class="feature-list">
-                        <li><strong>펜 도구</strong>: 자유 그리기 및 주석</li>
-                        <li><strong>도형 도구</strong>: 사각형, 원, 화살표</li>
-                        <li><strong>텍스트 추가</strong>: 설명 텍스트 삽입</li>
-                        <li><strong>색상 선택</strong>: 다양한 색상 팔레트</li>
-                        <li><strong>스마트 관리</strong>: 썸네일 갤러리</li>
+                        <li>드래그 앤 드롭으로 즉시 공유</li>
+                        <li>클립보드 자동 복사</li>
+                        <li>다중 파일 동시 공유</li>
+                        <li>앱별 최적화된 포맷</li>
                     </ul>
                 </div>
             </div>
@@ -115,7 +359,7 @@
     <section class="comparison">
         <div class="container">
             <h2>🏆 차별화 포인트</h2>
-            <p class="section-subtitle">기존 방식과 ScreenshotDrag의 혁신적 차이</p>
+            <p class="section-subtitle">기존 방식과의 혁신적 차이</p>
             
             <div class="comparison-table-wrapper">
                 <table class="comparison-table">
@@ -123,7 +367,7 @@
                         <tr>
                             <th>기능</th>
                             <th>기존 방식</th>
-                            <th>ScreenshotDrag</th>
+                            <th>우리 솔루션</th>
                             <th>개선 효과</th>
                         </tr>
                     </thead>
@@ -158,422 +402,6 @@
         </div>
     </section>
 
-    <!-- 기존 주요 기능 -->
-    <section class="features">
-        <div class="container">
-            <h2>주요 기능</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <h3>글로벌 핫키</h3>
-                    <p>어느 앱에서든 Ctrl+Shift+S로 즉시 캡처 시작</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎯</div>
-                    <h3>정확한 영역 선택</h3>
-                    <p>마우스 드래그로 자유롭게 캡처 영역 지정. 코너 핸들로 조정 가능</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📋</div>
-                    <h3>다양한 포맷 지원</h3>
-                    <p>Bitmap, PNG, FileDrop 형식으로 거의 모든 앱과 호환</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔄</div>
-                    <h3>트레이 상주</h3>
-                    <p>시스템 트레이에 최소화되어 필요할 때 바로 사용 가능</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📌</div>
-                    <h3>Always on Top</h3>
-                    <p>창을 항상 최상위에 고정하여 다른 작업 중에도 쉽게 접근</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <h3>모던한 UI</h3>
-                    <p>깔끔하고 직관적인 인터페이스. DPI 인식으로 고해상도 화면 지원</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 포맷 호환성 -->
-    <section class="format-compatibility">
-        <div class="container">
-            <h2>🎯 포맷별 호환성 상세</h2>
-            <p class="section-subtitle">6개 포맷으로 거의 모든 Windows 앱과 호환됩니다! 🚀</p>
-            
-            <!-- 단일 이미지 드래그 -->
-            <div class="compatibility-section">
-                <h3>📷 단일 이미지 드래그 - 6개 포맷별 대상 앱</h3>
-                
-                <div class="format-cards">
-                    <div class="format-card gold">
-                        <div class="format-header">
-                            <span class="format-rank">🥇 1순위</span>
-                            <h4>Bitmap</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>📱 메신저 앱</h5>
-                                <p>카카오톡, 카카오워크, 디스코드, 슬랙, 팀즈, 라인, 텔레그램 (데스크톱), 스카이프, 줌</p>
-                            </div>
-                            <div class="app-category">
-                                <h5>🎨 이미지 편집기</h5>
-                                <p>포토샵, 일러스트레이터, 그림판, GIMP, Paint.NET, 캔바, 피그마 (데스크톱 앱)</p>
-                            </div>
-                            <div class="app-category">
-                                <h5>📝 문서/프레젠테이션</h5>
-                                <p>MS Word, PowerPoint, 구글 Docs, 슬라이드, 노션, 오버레프</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="format-card silver">
-                        <div class="format-header">
-                            <span class="format-rank">🥈 2순위</span>
-                            <h4>FileDrop</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>📁 파일 관리</h5>
-                                <p>Windows 파일 탐색기, Total Commander, Directory Opus, WinRAR, 7-Zip</p>
-                            </div>
-                            <div class="app-category">
-                                <h5>💻 개발 도구</h5>
-                                <p>VS Code, Visual Studio, IntelliJ IDEA, Eclipse, Sublime Text, Atom</p>
-                            </div>
-                            <div class="app-category">
-                                <h5>🌐 웹 브라우저</h5>
-                                <p>Chrome, Firefox, Edge, 웹사이트 드롭존 (드래그 앤 드롭 지원)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="format-card bronze">
-                        <div class="format-header">
-                            <span class="format-rank">🥉 3순위</span>
-                            <h4>PNG Stream</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>🎨 전문 이미지 도구</h5>
-                                <p>Adobe Creative Suite, CorelDRAW, Affinity Photo, Blender (이미지 텍스처)</p>
-                            </div>
-                            <div class="app-category">
-                                <h5>📊 데이터 분석</h5>
-                                <p>Excel (이미지 삽입), Tableau, Power BI, MATLAB, R Studio</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="format-card regular">
-                        <div class="format-header">
-                            <span class="format-rank">4순위</span>
-                            <h4>DIB</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>🖥️ 구형/레거시 앱</h5>
-                                <p>Windows 95/98/XP 호환 앱, 구형 이미지 뷰어, 일부 산업용 소프트웨어</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="format-card regular">
-                        <div class="format-header">
-                            <span class="format-rank">5순위</span>
-                            <h4>JPEG/JFIF</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>📸 사진 관리</h5>
-                                <p>Windows 사진 앱, Google Photos (데스크톱), Adobe Lightroom, 사진 뷰어들</p>
-                            </div>
-                            <div class="app-category">
-                                <h5>🌍 웹 기반 앱</h5>
-                                <p>웹 에디터들, 블로그/홈페이지 에디터</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="format-card regular">
-                        <div class="format-header">
-                            <span class="format-rank">6순위</span>
-                            <h4>Text</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>📝 텍스트 에디터</h5>
-                                <p>메모장, 노트패드++, Vim, Emacs, 텍스트 기반 앱들</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 다중 이미지 드래그 -->
-            <div class="compatibility-section">
-                <h3>📁 다중 이미지 드래그 - 3개 포맷별 대상 앱</h3>
-                
-                <div class="format-cards multi">
-                    <div class="format-card gold">
-                        <div class="format-header">
-                            <span class="format-rank">🥇 1순위</span>
-                            <h4>FileDrop (배열)</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>📁 파일 관리</h5>
-                                <p>Windows 파일 탐색기, 파일 매니저들, 백업 도구들</p>
-                            </div>
-                            <div class="app-category">
-                                <h5>💻 개발 환경</h5>
-                                <p>VS Code (여러 파일 동시 처리), Git GUI 도구들, 프로젝트 관리 도구</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="format-card silver">
-                        <div class="format-header">
-                            <span class="format-rank">🥈 2순위</span>
-                            <h4>Text (파일 경로들)</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>📝 문서 도구</h5>
-                                <p>일부 문서 에디터, 배치 파일 생성기, 로그 기록 도구</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="format-card bronze">
-                        <div class="format-header">
-                            <span class="format-rank">🥉 3순위</span>
-                            <h4>UnicodeText</h4>
-                        </div>
-                        <div class="format-content">
-                            <div class="app-category">
-                                <h5>🌍 다국어 지원 앱</h5>
-                                <p>국제화된 소프트웨어, 유니코드 지원 에디터</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 앱별 호환성 등급 -->
-            <div class="compatibility-section">
-                <h3>🎯 앱별 예상 호환성 등급</h3>
-                
-                <div class="compatibility-grades">
-                    <div class="grade-card grade-excellent">
-                        <div class="grade-icon">🟢</div>
-                        <h4>최고 호환성</h4>
-                        <p class="grade-desc">6개 포맷 모두 지원</p>
-                        <p class="grade-apps">카카오톡, 디스코드, 슬랙, 포토샵, 그림판, MS Office 시리즈</p>
-                    </div>
-
-                    <div class="grade-card grade-high">
-                        <div class="grade-icon">🟡</div>
-                        <h4>높은 호환성</h4>
-                        <p class="grade-desc">4-5개 포맷 지원</p>
-                        <p class="grade-apps">텔레그램, VS Code, Chrome, Firefox, 구글 Workspace</p>
-                    </div>
-
-                    <div class="grade-card grade-medium">
-                        <div class="grade-icon">🟠</div>
-                        <h4>중간 호환성</h4>
-                        <p class="grade-desc">2-3개 포맷 지원</p>
-                        <p class="grade-apps">일부 전문 소프트웨어, 구형 앱들</p>
-                    </div>
-
-                    <div class="grade-card grade-limited">
-                        <div class="grade-icon">🔴</div>
-                        <h4>제한적 호환성</h4>
-                        <p class="grade-desc">1개 포맷만 지원</p>
-                        <p class="grade-apps">특수 목적 소프트웨어, 매우 구형 앱</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 다중 드롭 지원 앱 -->
-            <div class="compatibility-section">
-                <h3>🎯 다중 드롭 지원 앱들</h3>
-                
-                <div class="multi-drop-support">
-                    <!-- 완벽 지원 -->
-                    <div class="support-category perfect-support">
-                        <div class="support-header">
-                            <span class="support-icon">🟢</span>
-                            <h4>완벽 지원 (FileDrop 배열)</h4>
-                        </div>
-                        
-                        <div class="support-apps-grid">
-                            <div class="support-app-group">
-                                <h5>📁 파일 관리</h5>
-                                <ul class="app-list">
-                                    <li>Windows 파일 탐색기 ✅</li>
-                                    <li>Total Commander, Directory Opus ✅</li>
-                                    <li>WinRAR, 7-Zip ✅</li>
-                                    <li>Dropbox, Google Drive 데스크톱 앱 ✅</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="support-app-group">
-                                <h5>💻 개발 도구</h5>
-                                <ul class="app-list">
-                                    <li>VS Code (여러 파일 동시 열기) ✅</li>
-                                    <li>Visual Studio ✅</li>
-                                    <li>IntelliJ IDEA, Eclipse ✅</li>
-                                    <li>Git GUI 도구들 ✅</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="support-app-group">
-                                <h5>🎨 디자인 도구</h5>
-                                <ul class="app-list">
-                                    <li>포토샵 (여러 이미지 동시 열기) ✅</li>
-                                    <li>GIMP ✅</li>
-                                    <li>일러스트레이터 ✅</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="support-app-group">
-                                <h5>📝 문서 도구</h5>
-                                <ul class="app-list">
-                                    <li>MS Word (여러 이미지 삽입) ✅</li>
-                                    <li>PowerPoint (여러 이미지 동시 삽입) ✅</li>
-                                    <li>구글 Docs, 슬라이드 ✅</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 부분 지원 -->
-                    <div class="support-category partial-support">
-                        <div class="support-header">
-                            <span class="support-icon">🟡</span>
-                            <h4>부분 지원</h4>
-                        </div>
-                        
-                        <div class="support-apps-grid">
-                            <div class="support-app-group">
-                                <h5>🌐 웹 브라우저</h5>
-                                <ul class="app-list">
-                                    <li>Chrome, Firefox, Edge (일부 웹사이트) ⚠️</li>
-                                    <li>드롭존이 있는 웹사이트들만 지원</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="support-app-group">
-                                <h5>📱 메신저 앱</h5>
-                                <ul class="app-list">
-                                    <li>디스코드 (여러 파일 동시 업로드) ✅</li>
-                                    <li>슬랙 ✅</li>
-                                    <li>카카오톡 (일부 버전) ⚠️</li>
-                                    <li>텔레그램 ✅</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 제한적 지원 -->
-                    <div class="support-category limited-support">
-                        <div class="support-header">
-                            <span class="support-icon">🔴</span>
-                            <h4>제한적 지원</h4>
-                        </div>
-                        
-                        <div class="support-apps-grid">
-                            <div class="support-app-group">
-                                <h5>📝 텍스트 에디터</h5>
-                                <ul class="app-list">
-                                    <li>메모장 (파일 경로만 받음) ⚠️</li>
-                                    <li>노트패드++ (개별 파일 처리) ⚠️</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="support-app-group">
-                                <h5>🎵 미디어 앱</h5>
-                                <ul class="app-list">
-                                    <li>일부 이미지 뷰어 (첫 번째 파일만) ⚠️</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 다중 드롭 지원률 -->
-                <div class="support-statistics">
-                    <h4>📊 다중 드롭 지원률</h4>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-value">85-90%</div>
-                            <div class="stat-label">데스크톱 앱 지원 🎯</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">30-40%</div>
-                            <div class="stat-label">웹 앱 지원 (드롭존 있는 경우)</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">20-30%</div>
-                            <div class="stat-label">모바일 앱 지원</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 실제 사용 시나리오 -->
-                <div class="use-scenarios">
-                    <h4>🚀 실제 사용 시나리오</h4>
-                    
-                    <div class="scenarios-grid">
-                        <div class="scenario-card scenario-success">
-                            <div class="scenario-header">
-                                <span class="scenario-icon">✅</span>
-                                <h5>잘 작동하는 경우</h5>
-                            </div>
-                            <ul class="scenario-list">
-                                <li>파일 탐색기로 여러 이미지 드래그 → <strong>완벽</strong></li>
-                                <li>VS Code에 여러 이미지 드래그 → <strong>완벽</strong></li>
-                                <li>디스코드에 여러 이미지 드래그 → <strong>완벽</strong></li>
-                                <li>포토샵에 여러 이미지 드래그 → <strong>완벽</strong></li>
-                            </ul>
-                        </div>
-
-                        <div class="scenario-card scenario-partial">
-                            <div class="scenario-header">
-                                <span class="scenario-icon">⚠️</span>
-                                <h5>부분 작동하는 경우</h5>
-                            </div>
-                            <ul class="scenario-list">
-                                <li>카카오톡에 여러 이미지 드래그 → 개별 처리</li>
-                                <li>웹사이트에 여러 이미지 드래그 → 사이트별 다름</li>
-                            </ul>
-                        </div>
-
-                        <div class="scenario-card scenario-fail">
-                            <div class="scenario-header">
-                                <span class="scenario-icon">❌</span>
-                                <h5>안 되는 경우</h5>
-                            </div>
-                            <ul class="scenario-list">
-                                <li>메모장에 여러 이미지 드래그 → 파일 경로만</li>
-                                <li>구형 앱들 → 단일 파일만 지원</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 결론 -->
-                <div class="conclusion-box">
-                    <h4>🎯 결론</h4>
-                    <p>다중 드롭은 대부분의 현대적인 데스크톱 앱에서 완벽하게 지원됩니다!</p>
-                    <p>특히 <strong>파일 관리, 개발 도구, 디자인 도구, 메신저 앱</strong>에서는 거의 100% 작동해요! 🚀</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- 앱별 호환성 표 -->
     <section class="compatibility-table-section">
@@ -581,337 +409,1344 @@
             <h2>📊 앱별 호환성 상세 표</h2>
             <p class="section-subtitle">자주 사용하는 앱들의 드래그 앤 드롭 지원 현황을 확인하세요</p>
             
-            <!-- 데스크톱 앱 -->
-            <div class="table-category">
-                <h3>💻 데스크톱 앱</h3>
-                <div class="table-wrapper">
-                    <table class="compat-table">
-                        <thead>
-                            <tr>
-                                <th class="app-name-col">대상 앱</th>
-                                <th class="support-col">단일 드래그</th>
-                                <th class="support-col">다중 드래그</th>
-                                <th class="limit-col">최대 제한</th>
-                                <th class="notes-col">비고</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="excellent">
-                                <td><span class="app-icon">📝</span> <strong>MS Word</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>30개</td>
-                                <td>최고 호환성. 편집 내용 완전 보존</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">📊</span> <strong>MS PowerPoint</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>30개</td>
-                                <td>슬라이드에 자동 배치</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">📈</span> <strong>MS Excel</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>30개</td>
-                                <td>셀에 이미지 삽입</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">💬</span> <strong>카카오톡</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-partial">⚠️ 부분</span></td>
-                                <td>개별 처리</td>
-                                <td>다중 시 개별 메시지로 전송</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">💼</span> <strong>카카오워크</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>20개</td>
-                                <td>비즈니스 메신저 최적화</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">🎮</span> <strong>디스코드</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>10개</td>
-                                <td>동시 업로드 지원</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">💼</span> <strong>슬랙</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>10개</td>
-                                <td>워크스페이스 협업용</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">👥</span> <strong>MS Teams</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>10개</td>
-                                <td>채팅 및 회의에 최적화</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">✈️</span> <strong>텔레그램</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>10개</td>
-                                <td>빠른 전송 속도</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">💻</span> <strong>VS Code</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>에디터에 파일 자동 열림</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">🔧</span> <strong>Visual Studio</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>프로젝트에 추가 가능</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">🎨</span> <strong>Photoshop</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>레이어로 자동 열림</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">✏️</span> <strong>Illustrator</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>벡터 작업 최적화</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">🖌️</span> <strong>GIMP</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>무료 이미지 편집기</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">🎨</span> <strong>그림판</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-limited">❌ 제한</span></td>
-                                <td>1개</td>
-                                <td>단일 이미지만 지원</td>
-                            </tr>
-                            <tr class="excellent">
-                                <td><span class="app-icon">📁</span> <strong>Windows 탐색기</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>파일 저장 최고 호환성</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">📝</span> <strong>Notion Desktop</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>20개</td>
-                                <td>페이지에 바로 삽입</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">🎨</span> <strong>Figma Desktop</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>캔버스에 자동 배치</td>
-                            </tr>
-                            <tr class="fair">
-                                <td><span class="app-icon">📝</span> <strong>메모장</strong></td>
-                                <td><span class="status-limited">❌ 제한</span></td>
-                                <td><span class="status-limited">❌ 제한</span></td>
-                                <td>-</td>
-                                <td>파일 경로만 삽입됨</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">📝</span> <strong>Notepad++</strong></td>
-                                <td><span class="status-partial">⚠️ 부분</span></td>
-                                <td><span class="status-partial">⚠️ 부분</span></td>
-                                <td>개별 처리</td>
-                                <td>파일 경로 또는 개별 열기</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- 검색 기능 -->
+            <div class="search-container">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input 
+                        type="text" 
+                        id="appSearch" 
+                        class="search-input" 
+                        placeholder="앱 이름으로 검색... (예: Word, 카카오톡, Photoshop)"
+                        autocomplete="off"
+                    >
+                    <button id="clearSearch" class="clear-btn" style="display: none;">✕</button>
                 </div>
-            </div>
+                <div id="searchResults" class="search-results"></div>
+                <div id="autocomplete" class="autocomplete-list"></div>
+                </div>
 
-            <!-- 웹 앱 -->
-            <div class="table-category">
-                <h3>🌐 웹 앱</h3>
-                <div class="table-wrapper">
-                    <table class="compat-table">
-                        <thead>
-                            <tr>
-                                <th class="app-name-col">대상 앱</th>
-                                <th class="support-col">단일 드래그</th>
-                                <th class="support-col">다중 드래그</th>
-                                <th class="limit-col">최대 제한</th>
-                                <th class="notes-col">비고</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="good">
-                                <td><span class="app-icon">📧</span> <strong>Gmail</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>25MB 총량</td>
-                                <td>첨부파일로 추가</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">📝</span> <strong>Google Docs</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>50MB/파일</td>
-                                <td>문서에 인라인 삽입</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">📊</span> <strong>Google Slides</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>50MB/파일</td>
-                                <td>슬라이드에 자동 배치</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">📈</span> <strong>Google Sheets</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-partial">⚠️ 부분</span></td>
-                                <td>개별 처리</td>
-                                <td>셀에 이미지 삽입</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">📝</span> <strong>Notion Web</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>5MB/파일</td>
-                                <td>페이지에 바로 삽입</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">💼</span> <strong>Slack Web</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>1GB/파일</td>
-                                <td>채널에 업로드</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">🎮</span> <strong>Discord Web</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>10개</td>
-                                <td>동시 업로드 지원</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">🎨</span> <strong>Figma Web</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>캔버스에 자동 배치</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">🎨</span> <strong>Canva</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>제한없음</td>
-                                <td>디자인에 추가</td>
-                            </tr>
-                            <tr class="fair">
-                                <td><span class="app-icon">📋</span> <strong>Trello</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-partial">⚠️ 부분</span></td>
-                                <td>10MB/파일</td>
-                                <td>카드에 첨부</td>
-                            </tr>
-                            <tr class="fair">
-                                <td><span class="app-icon">✅</span> <strong>Asana</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-partial">⚠️ 부분</span></td>
-                                <td>100MB/파일</td>
-                                <td>태스크에 첨부</td>
-                            </tr>
-                            <tr class="fair">
-                                <td><span class="app-icon">📝</span> <strong>Evernote Web</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-partial">⚠️ 부분</span></td>
-                                <td>개별 처리</td>
-                                <td>노트에 삽입</td>
-                            </tr>
-                            <tr class="good">
-                                <td><span class="app-icon">💬</span> <strong>ChatGPT</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td>10개</td>
-                                <td>이미지 분석 가능</td>
-                            </tr>
-                            <tr class="fair">
-                                <td><span class="app-icon">📱</span> <strong>WhatsApp Web</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-partial">⚠️ 부분</span></td>
-                                <td>개별 처리</td>
-                                <td>다중 시 개별 메시지</td>
-                            </tr>
-                            <tr class="fair">
-                                <td><span class="app-icon">🔷</span> <strong>LinkedIn</strong></td>
-                                <td><span class="status-excellent">✅ 완벽</span></td>
-                                <td><span class="status-limited">❌ 제한</span></td>
-                                <td>1개</td>
-                                <td>포스트 1개 이미지만</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Hot 10 태그 -->
+            <div class="hot-tags-container">
+                <h4>🔥 Hot 10 - 카테고리별 인기 앱</h4>
+                <div class="hot-tags">
+                    <span class="hot-tag" id="developerBtn">개발자 Top 10</span>
+                    <span class="hot-tag" id="creatorBtn">크리에이터 Top 10</span>
+                    <span class="hot-tag" id="designerBtn">디자이너 Top 10</span>
+                    <span class="hot-tag" id="officeBtn">오피스 Top 10</span>
+                    <span class="hot-tag" id="resetBtn">전체 보기</span>
                 </div>
-            </div>
+                </div>
+
+            <div class="table-wrapper">
+                <table class="compat-table">
+                    <thead>
+                        <tr>
+                            <th class="app-name-col">대상 앱</th>
+                            <th class="platform-col">플랫폼</th>
+                            <th class="support-col">단일 드래그</th>
+                            <th class="support-col">다중 드래그<br>(최대 한도)</th>
+                            <th class="notes-col">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 상위 20개 앱 (인기도 순) -->
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/microsoftword" class="app-icon-img" alt="Word"> <strong>Microsoft Word</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(30개)</span></td>
+                            <td>최고 호환성. 편집 내용 완전 보존</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/kakaotalk" class="app-icon-img" alt="카카오톡"> <strong>KakaoTalk</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️<br>(개별)</span></td>
+                            <td>대상 앱 정책상 다중 드롭 시 개별 메시지 처리. Ctrl+V는 가능</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/discord" class="app-icon-img" alt="디스코드"> <strong>Discord</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>동시 업로드 완벽 지원</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/visualstudiocode" class="app-icon-img" alt="VS Code"> <strong>Visual Studio Code</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>에디터에 파일 자동 열림</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/slack" class="app-icon-img" alt="슬랙"> <strong>Slack</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>워크스페이스 협업에 최적화</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/adobephotoshop" class="app-icon-img" alt="Photoshop"> <strong>Adobe Photoshop</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>레이어로 자동 열림. 고급 편집 가능</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/microsoftpowerpoint" class="app-icon-img" alt="PowerPoint"> <strong>Microsoft PowerPoint</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(30개)</span></td>
+                            <td>슬라이드에 자동 배치</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/notion" class="app-icon-img" alt="Notion"> <strong>Notion</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(20개)</span></td>
+                            <td>페이지에 바로 삽입</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/figma" class="app-icon-img" alt="Figma"> <strong>Figma</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>캔버스에 자동 배치</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/microsoftexcel" class="app-icon-img" alt="Excel"> <strong>Microsoft Excel</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(30개)</span></td>
+                            <td>셀에 이미지 삽입</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/microsoftteams" class="app-icon-img" alt="Teams"> <strong>Microsoft Teams</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>채팅 및 회의에 최적화</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/telegram" class="app-icon-img" alt="텔레그램"> <strong>Telegram</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>빠른 전송 속도</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/visualstudio" class="app-icon-img" alt="Visual Studio"> <strong>Visual Studio</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>프로젝트에 리소스 추가</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/adobeillustrator" class="app-icon-img" alt="Illustrator"> <strong>Adobe Illustrator</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>벡터 작업 최적화</td>
+                        </tr>
+                        <tr class="excellent">
+                            <td><img src="https://cdn.simpleicons.org/windows" class="app-icon-img" alt="Windows"> <strong>Windows Explorer</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>파일 저장 최고 호환성</td>
+                        </tr>
+                        <tr class="good">
+                            <td><img src="https://cdn.simpleicons.org/gmail" class="app-icon-img" alt="Gmail"> <strong>Gmail</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(25MB)</span></td>
+                            <td>첨부파일로 추가</td>
+                        </tr>
+                        <tr class="good">
+                            <td><img src="https://cdn.simpleicons.org/googledocs" class="app-icon-img" alt="Google Docs"> <strong>Google Docs</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(50MB)</span></td>
+                            <td>문서에 인라인 삽입</td>
+                        </tr>
+                        <tr class="good">
+                            <td><img src="https://cdn.simpleicons.org/googleslides" class="app-icon-img" alt="Google Slides"> <strong>Google Slides</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(50MB)</span></td>
+                            <td>슬라이드에 자동 배치</td>
+                        </tr>
+                        <tr class="good">
+                            <td><img src="https://cdn.simpleicons.org/kakao" class="app-icon-img" alt="카카오워크"> <strong>KakaoWork</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(20개)</span></td>
+                            <td>비즈니스 메신저로 다중 드롭 완벽 지원</td>
+                        </tr>
+                        <tr class="good">
+                            <td><img src="https://cdn.simpleicons.org/discord" class="app-icon-img" alt="Discord"> <strong>Discord Web</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>웹 버전도 동시 업로드 지원</td>
+                        </tr>
+                        
+                        <!-- 나머지 앱들 (숨김 처리) -->
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/gimp" class="app-icon-img" alt="GIMP"> <strong>GIMP</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>무료 이미지 편집기. 레이어 지원</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/windows" class="app-icon-img" alt="그림판"> <strong>그림판</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-limited">❌<br>(1개)</span></td>
+                            <td>대상 앱 정책상 단일 이미지만 지원. Ctrl+V로 붙여넣기는 가능</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/googlesheets" class="app-icon-img" alt="Google Sheets"> <strong>Google Sheets</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️<br>(개별)</span></td>
+                            <td>대상 앱 정책상 다중 드롭 시 개별 처리. Ctrl+V는 가능</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/notion" class="app-icon-img" alt="Notion Web"> <strong>Notion Web</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(5MB)</span></td>
+                            <td>페이지에 바로 삽입</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/slack" class="app-icon-img" alt="Slack Web"> <strong>Slack Web</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(1GB)</span></td>
+                            <td>채널에 업로드</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/figma" class="app-icon-img" alt="Figma Web"> <strong>Figma Web</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>웹 버전도 캔버스 자동 배치</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/canva" class="app-icon-img" alt="Canva"> <strong>Canva</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>디자인에 자동 추가</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openai" class="app-icon-img" alt="ChatGPT"> <strong>ChatGPT</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>이미지 분석 및 대화 가능</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/trello" class="app-icon-img" alt="Trello"> <strong>Trello</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️<br>(10MB)</span></td>
+                            <td>카드에 첨부. 파일 크기 제한 있음</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/asana" class="app-icon-img" alt="Asana"> <strong>Asana</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️<br>(100MB)</span></td>
+                            <td>태스크에 첨부. 대용량 지원</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/evernote" class="app-icon-img" alt="Evernote"> <strong>Evernote Web</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️<br>(개별)</span></td>
+                            <td>대상 앱 정책상 다중 드롭 시 개별 처리</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/whatsapp" class="app-icon-img" alt="WhatsApp"> <strong>WhatsApp Web</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️<br>(개별)</span></td>
+                            <td>대상 앱 정책상 다중 드롭 시 개별 메시지 처리</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/linkedin" class="app-icon-img" alt="LinkedIn"> <strong>LinkedIn</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-limited">❌<br>(1개)</span></td>
+                            <td>대상 앱 정책상 포스트 1개 이미지만 허용</td>
+                        </tr>
+                        <tr class="poor hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/windows" class="app-icon-img" alt="메모장"> <strong>메모장</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-unsupported">🚫<br>미지원</span></td>
+                            <td><span class="status-unsupported">🚫<br>미지원</span></td>
+                            <td>대상 앱이 텍스트만 처리. 파일 경로만 삽입됨. Ctrl+V로 붙여넣기는 가능</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/notepadplusplus" class="app-icon-img" alt="Notepad++"> <strong>Notepad++</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-partial">⚠️</span></td>
+                            <td><span class="status-partial">⚠️<br>(개별)</span></td>
+                            <td>대상 앱 정책상 파일 경로 삽입 또는 개별 열기. Ctrl+V는 가능</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/microsoftoutlook" class="app-icon-img" alt="Outlook"> <strong>Microsoft Outlook</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(20개)</span></td>
+                            <td>메일에 이미지 첨부 및 인라인 삽입</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/googlechrome" class="app-icon-img" alt="Chrome"> <strong>Chrome</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️</span></td>
+                            <td>웹사이트 드롭존 지원 여부에 따라 다름</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/mozillafirefox" class="app-icon-img" alt="Firefox"> <strong>Firefox</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️</span></td>
+                            <td>웹사이트 드롭존 지원 여부에 따라 다름</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/microsoftedge" class="app-icon-img" alt="Edge"> <strong>Microsoft Edge</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️</span></td>
+                            <td>웹사이트 드롭존 지원 여부에 따라 다름</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/zoom" class="app-icon-img" alt="Zoom"> <strong>Zoom</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>채팅에 이미지 전송</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/skype" class="app-icon-img" alt="Skype"> <strong>Skype</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>채팅에 이미지 전송</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/line" class="app-icon-img" alt="Line"> <strong>Line</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️<br>(개별)</span></td>
+                            <td>대상 앱 정책상 다중 드롭 시 개별 메시지 처리</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/onedrive" class="app-icon-img" alt="OneDrive"> <strong>OneDrive</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>클라우드 스토리지. 자동 동기화</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/dropbox" class="app-icon-img" alt="Dropbox"> <strong>Dropbox</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>클라우드 스토리지. 자동 동기화</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/googledrive" class="app-icon-img" alt="Google Drive"> <strong>Google Drive</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>클라우드 스토리지. 자동 동기화</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/intellijidea" class="app-icon-img" alt="IntelliJ"> <strong>IntelliJ IDEA</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>프로젝트에 리소스 추가</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/pycharm" class="app-icon-img" alt="PyCharm"> <strong>PyCharm</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>프로젝트에 리소스 추가</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/eclipseide" class="app-icon-img" alt="Eclipse"> <strong>Eclipse</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>프로젝트에 리소스 추가</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/microsoftonenote" class="app-icon-img" alt="OneNote"> <strong>Microsoft OneNote</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(20개)</span></td>
+                            <td>노트에 이미지 삽입</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/adobexd" class="app-icon-img" alt="Adobe XD"> <strong>Adobe XD</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>UX/UI 프로토타입 작업</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/sketch" class="app-icon-img" alt="Sketch"> <strong>Sketch</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>UI 디자인 도구</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/blender" class="app-icon-img" alt="Blender"> <strong>Blender</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>3D 텍스처 및 이미지로 사용</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/obsidian" class="app-icon-img" alt="Obsidian"> <strong>Obsidian</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>마크다운 노트 앱</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/jira" class="app-icon-img" alt="Jira"> <strong>Jira</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️<br>(10MB)</span></td>
+                            <td>이슈에 첨부. 파일 크기 제한</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/confluence" class="app-icon-img" alt="Confluence"> <strong>Confluence</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>위키 페이지에 삽입</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/miro" class="app-icon-img" alt="Miro"> <strong>Miro</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>화이트보드에 자동 추가</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/airtable" class="app-icon-img" alt="Airtable"> <strong>Airtable</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>테이블에 자동 첨부</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/monday" class="app-icon-img" alt="Monday.com"> <strong>Monday.com</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>보드에 파일 추가</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/github" class="app-icon-img" alt="GitHub"> <strong>GitHub</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>이슈/PR 코멘트에 이미지 첨부</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/gitlab" class="app-icon-img" alt="GitLab"> <strong>GitLab</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>이슈/MR 코멘트에 이미지 첨부</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/wordpress" class="app-icon-img" alt="WordPress"> <strong>WordPress</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>포스트 에디터에 이미지 삽입</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/reddit" class="app-icon-img" alt="Reddit"> <strong>Reddit</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(20개)</span></td>
+                            <td>포스트/댓글에 이미지 추가</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/x" class="app-icon-img" alt="X/Twitter"> <strong>X (Twitter)</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(4개)</span></td>
+                            <td>트윗에 최대 4개 이미지 첨부</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/facebook" class="app-icon-img" alt="Facebook"> <strong>Facebook</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>포스트에 이미지 추가</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/instagram" class="app-icon-img" alt="Instagram"> <strong>Instagram</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>포스트/스토리/릴스</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/youtube" class="app-icon-img" alt="YouTube"> <strong>YouTube Studio</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>썸네일 업로드 및 관리</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/tiktok" class="app-icon-img" alt="TikTok"> <strong>TikTok</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-limited">❌<br>(1개)</span></td>
+                            <td>대상 앱 정책상 커버 이미지 1개만 허용</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/sublime" class="app-icon-img" alt="Sublime Text"> <strong>Sublime Text</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>에디터에 파일 자동 열림</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/atom" class="app-icon-img" alt="Atom"> <strong>Atom</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>에디터에 파일 자동 열림</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/androidstudio" class="app-icon-img" alt="Android Studio"> <strong>Android Studio</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>프로젝트 리소스 자동 추가</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/libreoffice" class="app-icon-img" alt="LibreOffice"> <strong>LibreOffice</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(20개)</span></td>
+                            <td>무료 오픈소스 오피스 제품군</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/adobe" class="app-icon-img" alt="Adobe Lightroom"> <strong>Adobe Lightroom</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>사진 편집 및 관리</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/affinity" class="app-icon-img" alt="Affinity"> <strong>Affinity Photo</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>전문 사진 편집 도구</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/obsproject" class="app-icon-img" alt="OBS"> <strong>OBS Studio</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>방송 오버레이 이미지 추가</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/medium" class="app-icon-img" alt="Medium"> <strong>Medium</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>블로그 포스트 작성</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/wix" class="app-icon-img" alt="Wix"> <strong>Wix</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>웹사이트 빌더</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/mailchimp" class="app-icon-img" alt="Mailchimp"> <strong>Mailchimp</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>이메일 마케팅 캠페인</td>
+                        </tr>
+                        <tr class="good hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/thunderbird" class="app-icon-img" alt="Thunderbird"> <strong>Thunderbird</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(20개)</span></td>
+                            <td>무료 메일 클라이언트</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/googlemeet" class="app-icon-img" alt="Google Meet"> <strong>Google Meet</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-partial">⚠️</span></td>
+                            <td>대상 앱 정책상 채팅에 이미지 전송 제한적</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/webex" class="app-icon-img" alt="Webex"> <strong>Webex</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(10개)</span></td>
+                            <td>화상 회의 채팅</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/basecamp" class="app-icon-img" alt="Basecamp"> <strong>Basecamp</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>프로젝트 관리 및 협업</td>
+                        </tr>
+                        <tr class="fair hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/clickup" class="app-icon-img" alt="ClickUp"> <strong>ClickUp</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>올인원 생산성 플랫폼</td>
+                        </tr>
+                        
+                        <!-- AI 자동화 툴들 -->
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Cursor"> <strong>Cursor AI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 코드 에디터. 스크린샷으로 코드 생성</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/github" class="app-icon-img" alt="GitHub Copilot"> <strong>GitHub Copilot</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 코드 어시스턴트. 이미지로 컨텍스트 제공</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Claude"> <strong>Claude Desktop</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 어시스턴트. 이미지 분석 및 대화</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="ChatGPT"> <strong>ChatGPT Desktop</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 챗봇. 이미지 업로드 및 분석</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/notion" class="app-icon-img" alt="Notion AI"> <strong>Notion AI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 노트 앱. 이미지로 문서 생성</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/obsidian" class="app-icon-img" alt="Obsidian"> <strong>Obsidian AI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 마크다운 에디터. 이미지 노트 작성</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/figma" class="app-icon-img" alt="Figma AI"> <strong>Figma AI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 디자인 툴. 이미지로 UI 생성</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/adobe" class="app-icon-img" alt="Adobe Firefly"> <strong>Adobe Firefly</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 생성. 스크린샷으로 참조 이미지</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/midjourney" class="app-icon-img" alt="Midjourney"> <strong>Midjourney</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 생성. 참조 이미지로 프롬프트</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="DALL-E"> <strong>DALL-E</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 생성. 스크린샷으로 변형</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="GPT-4 Vision"> <strong>GPT-4 Vision</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 비전 모델. 이미지 분석 및 설명</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Claude Vision"> <strong>Claude Vision</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 비전 모델. 고급 이미지 이해</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/googlebard" class="app-icon-img" alt="Gemini"> <strong>Google Gemini</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>Google AI. 이미지 분석 및 대화</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/perplexity" class="app-icon-img" alt="Perplexity"> <strong>Perplexity AI</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 검색 엔진. 이미지로 질문</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="AutoGPT"> <strong>AutoGPT</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 자동화 에이전트. 스크린샷 분석</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="AgentGPT"> <strong>AgentGPT</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 에이전트 빌더. 이미지 기반 작업</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="LangChain"> <strong>LangChain</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 프레임워크. 이미지 처리 파이프라인</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="LlamaIndex"> <strong>LlamaIndex</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 데이터 프레임워크. 이미지 인덱싱</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Hugging Face"> <strong>Hugging Face</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 모델 허브. 이미지 모델 테스트</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Replicate"> <strong>Replicate</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 모델 API. 이미지 생성 서비스</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="RunPod"> <strong>RunPod</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 클라우드 GPU. 이미지 모델 실행</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Vast.ai"> <strong>Vast.ai</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI GPU 렌탈. 이미지 처리 서버</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="ComfyUI"> <strong>ComfyUI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 워크플로우. 노드 기반 편집</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Automatic1111"> <strong>Automatic1111</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>Stable Diffusion WebUI. 이미지 생성</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="InvokeAI"> <strong>InvokeAI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 생성. 전문가용 인터페이스</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Fooocus"> <strong>Fooocus</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 생성. 간단한 인터페이스</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Krita"> <strong>Krita AI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 디지털 페인팅. 이미지 편집</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="GIMP AI"> <strong>GIMP AI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 편집. 플러그인 지원</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Paint.NET AI"> <strong>Paint.NET AI</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 편집. 플러그인 확장</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Luma AI"> <strong>Luma AI</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 3D 생성. 이미지로 3D 모델</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="RunwayML"> <strong>RunwayML</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 크리에이티브 툴. 이미지/비디오 생성</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Pika Labs"> <strong>Pika Labs</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 비디오 생성. 이미지로 비디오</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Stable Video"> <strong>Stable Video</strong></td>
+                            <td><span class="platform-badge web">🌐 웹</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 비디오 생성. 이미지 시퀀스</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="AnimateDiff"> <strong>AnimateDiff</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 애니메이션. 이미지로 동영상</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="ControlNet"> <strong>ControlNet</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 제어. 구조 기반 생성</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="IP-Adapter"> <strong>IP-Adapter</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 이미지 어댑터. 스타일 전송</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="LoRA"> <strong>LoRA</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 모델 파인튜닝. 이미지 학습</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="DreamBooth"> <strong>DreamBooth</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 개인화 모델. 이미지로 학습</td>
+                        </tr>
+                        <tr class="excellent hidden-row">
+                            <td><img src="https://cdn.simpleicons.org/openaigpt" class="app-icon-img" alt="Textual Inversion"> <strong>Textual Inversion</strong></td>
+                            <td><span class="platform-badge desktop">💻 데스크톱</span></td>
+                            <td><span class="status-excellent">✅</span></td>
+                            <td><span class="status-excellent">✅<br>(무제한)</span></td>
+                            <td>AI 텍스트 임베딩. 이미지 기반 학습</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+            <!-- 더보기 버튼 -->
+            <div class="show-more-container">
+                <button id="showMoreBtn" class="show-more-btn">
+                    <span id="btnText">더 많은 앱 보기 (100개)</span>
+                    <span id="btnIcon">▼</span>
+                </button>
+                </div>
 
             <!-- 범례 -->
             <div class="table-legend">
                 <h4>📖 호환성 등급 설명</h4>
                 <div class="legend-items">
                     <div class="legend-item">
-                        <span class="status-excellent">✅ 완벽</span>
-                        <p>드래그 앤 드롭이 완벽하게 작동하며 최적화됨</p>
+                        <span class="status-excellent">✅</span>
+                        <p><strong>완벽 지원:</strong> 드래그 앤 드롭이 완벽하게 작동하며 최적화됨</p>
                     </div>
                     <div class="legend-item">
-                        <span class="status-partial">⚠️ 부분</span>
-                        <p>작동하지만 일부 제약이 있거나 개별 처리됨</p>
+                        <span class="status-partial">⚠️</span>
+                        <p><strong>부분 지원:</strong> 작동하지만 대상 앱 정책상 일부 제약 있음 (Ctrl+V는 가능)</p>
                     </div>
                     <div class="legend-item">
-                        <span class="status-limited">❌ 제한</span>
-                        <p>제한적으로만 작동하거나 지원하지 않음</p>
+                        <span class="status-limited">❌</span>
+                        <p><strong>제한적 지원:</strong> 대상 앱 정책상 제한적으로만 작동 (Ctrl+V는 가능)</p>
+                    </div>
+                    <div class="legend-item">
+                        <span class="status-unsupported">🚫</span>
+                        <p><strong>미지원:</strong> 대상 앱이 이미지 드롭을 처리하지 않음 (Ctrl+V로 붙여넣기는 가능)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 타겟 사용자 -->
-    <section class="target-users">
+    <script>
+        // 더보기 버튼 기능
+        document.getElementById('showMoreBtn').addEventListener('click', function() {
+            const hiddenRows = document.querySelectorAll('.hidden-row');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const isHidden = hiddenRows[0].classList.contains('hidden-row');
+            
+            hiddenRows.forEach(row => {
+                if (isHidden) {
+                    row.classList.remove('hidden-row');
+                    row.classList.add('visible-row');
+                } else {
+                    row.classList.remove('visible-row');
+                    row.classList.add('hidden-row');
+                }
+            });
+            
+            if (isHidden) {
+                btnText.textContent = '접기';
+                btnIcon.textContent = '▲';
+            } else {
+                btnText.textContent = '더 많은 앱 보기 (55개)';
+                btnIcon.textContent = '▼';
+            }
+        });
+
+        // 앱 검색 및 자동완성 기능
+        const searchInput = document.getElementById('appSearch');
+        const clearBtn = document.getElementById('clearSearch');
+        const autocompleteList = document.getElementById('autocomplete');
+        const searchResults = document.getElementById('searchResults');
+        const tableRows = document.querySelectorAll('.compat-table tbody tr');
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        
+        // 모든 앱 이름 추출
+        const appNames = Array.from(tableRows).map(row => {
+            const appCell = row.querySelector('td:first-child strong');
+            return appCell ? appCell.textContent.trim() : '';
+        }).filter(name => name);
+
+        // 검색 입력 이벤트
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            
+            // X 버튼 표시/숨김
+            clearBtn.style.display = searchTerm ? 'block' : 'none';
+            
+            if (searchTerm) {
+                // 자동완성 표시
+                showAutocomplete(searchTerm);
+                
+                // 테이블 필터링
+                filterTable(searchTerm);
+            } else {
+                // 검색어 없으면 초기화
+                autocompleteList.innerHTML = '';
+                resetTable();
+            }
+        });
+
+        // X 버튼 클릭
+        clearBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            autocompleteList.innerHTML = '';
+            searchResults.innerHTML = '';
+            resetTable();
+        });
+
+        // 자동완성 표시
+        function showAutocomplete(searchTerm) {
+            const matches = appNames.filter(name => 
+                name.toLowerCase().includes(searchTerm)
+            ).slice(0, 5); // 최대 5개까지
+
+            if (matches.length > 0) {
+                autocompleteList.innerHTML = matches.map(name => 
+                    `<div class="autocomplete-item" data-name="${name}">${highlightMatch(name, searchTerm)}</div>`
+                ).join('');
+                autocompleteList.style.display = 'block';
+            } else {
+                autocompleteList.style.display = 'none';
+            }
+        }
+
+        // 검색어 하이라이트
+        function highlightMatch(text, searchTerm) {
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<strong>$1</strong>');
+        }
+
+        // 자동완성 항목 클릭
+        autocompleteList.addEventListener('click', function(e) {
+            if (e.target.classList.contains('autocomplete-item')) {
+                const selectedName = e.target.dataset.name;
+                searchInput.value = selectedName;
+                autocompleteList.style.display = 'none';
+                filterTable(selectedName.toLowerCase());
+            }
+        });
+
+        // 카테고리별 Top 10 앱 목록
+        const categoryApps = {
+            developer: [
+                'Visual Studio Code',
+                'GitHub Copilot',
+                'IntelliJ IDEA',
+                'PyCharm',
+                'Eclipse',
+                'Sublime Text',
+                'Atom',
+                'Android Studio',
+                'Visual Studio',
+                'Cursor AI'
+            ],
+            creator: [
+                'Adobe Photoshop',
+                'Adobe Illustrator',
+                'Adobe Firefly',
+                'Midjourney',
+                'DALL-E',
+                'Canva',
+                'Figma',
+                'Notion',
+                'Obsidian',
+                'ChatGPT'
+            ],
+            designer: [
+                'Figma',
+                'Adobe Photoshop',
+                'Adobe Illustrator',
+                'Adobe XD',
+                'Sketch',
+                'Canva',
+                'Blender',
+                'Affinity Photo',
+                'GIMP',
+                'Paint.NET'
+            ],
+            office: [
+                'Microsoft Word',
+                'Microsoft PowerPoint',
+                'Microsoft Excel',
+                'Microsoft Outlook',
+                'Microsoft Teams',
+                'Microsoft OneNote',
+                'Google Docs',
+                'Google Slides',
+                'Google Sheets',
+                'LibreOffice'
+            ]
+        };
+
+        // 카테고리별 필터링 함수
+        function filterByCategory(category) {
+            const apps = categoryApps[category];
+            let visibleCount = 0;
+            
+            tableRows.forEach(row => {
+                const appCell = row.querySelector('td:first-child');
+                const appName = appCell ? appCell.textContent.trim() : '';
+                
+                // 해당 카테고리 앱에 포함되는지 확인
+                const isInCategory = apps.some(app => appName.includes(app));
+                
+                if (isInCategory) {
+                    row.style.display = '';
+                    row.classList.remove('hidden-row');
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                    row.classList.add('hidden-row');
+                }
+            });
+            
+            // 더보기 버튼 표시 (카테고리 내에서도 더 볼 수 있도록)
+            showMoreBtn.style.display = 'block';
+            
+            // 검색 결과 표시
+            const searchResults = document.getElementById('searchResults');
+            const categoryNames = {
+                developer: '개발자',
+                creator: '크리에이터', 
+                designer: '디자이너',
+                office: '오피스'
+            };
+            searchResults.innerHTML = `<div class="search-info">🔥 ${categoryNames[category]} Top 10 앱 ${visibleCount}개 표시</div>`;
+        }
+
+        // 개발자 Top 10 버튼
+        document.getElementById('developerBtn').addEventListener('click', function() {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            autocompleteList.style.display = 'none';
+            filterByCategory('developer');
+            document.querySelector('.compat-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // 크리에이터 Top 10 버튼
+        document.getElementById('creatorBtn').addEventListener('click', function() {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            autocompleteList.style.display = 'none';
+            filterByCategory('creator');
+            document.querySelector('.compat-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // 디자이너 Top 10 버튼
+        document.getElementById('designerBtn').addEventListener('click', function() {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            autocompleteList.style.display = 'none';
+            filterByCategory('designer');
+            document.querySelector('.compat-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // 오피스 Top 10 버튼
+        document.getElementById('officeBtn').addEventListener('click', function() {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            autocompleteList.style.display = 'none';
+            filterByCategory('office');
+            document.querySelector('.compat-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // 전체 보기 버튼
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            autocompleteList.style.display = 'none';
+            resetTable();
+        });
+
+        // 테이블 필터링
+        function filterTable(searchTerm) {
+            let visibleCount = 0;
+            
+            tableRows.forEach(row => {
+                const appCell = row.querySelector('td:first-child');
+                const appName = appCell ? appCell.textContent.toLowerCase() : '';
+                const platformCell = row.querySelector('td:nth-child(2)');
+                const platform = platformCell ? platformCell.textContent.toLowerCase() : '';
+                
+                if (appName.includes(searchTerm) || platform.includes(searchTerm)) {
+                    row.style.display = '';
+                    row.classList.remove('hidden-row');
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            // 검색 결과 표시
+            if (visibleCount === 0) {
+                searchResults.innerHTML = '<p class="no-results">❌ 검색 결과가 없습니다. 다른 앱 이름을 검색해보세요.</p>';
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.innerHTML = `<p class="search-info">✅ ${visibleCount}개의 앱을 찾았습니다.</p>`;
+                searchResults.style.display = 'block';
+            }
+
+            // 더보기 버튼 숨김
+            showMoreBtn.parentElement.style.display = 'none';
+        }
+
+        // 테이블 초기화
+        function resetTable() {
+            tableRows.forEach((row, index) => {
+                row.style.display = '';
+                if (index >= 20) {
+                    row.classList.add('hidden-row');
+                    row.classList.remove('visible-row');
+                }
+            });
+            
+            searchResults.style.display = 'none';
+            showMoreBtn.parentElement.style.display = 'block';
+            
+            // 더보기 버튼 상태 초기화
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            btnText.textContent = '더 많은 앱 보기 (55개)';
+            btnIcon.textContent = '▼';
+        }
+
+        // 외부 클릭 시 자동완성 닫기
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !autocompleteList.contains(e.target)) {
+                autocompleteList.style.display = 'none';
+            }
+        });
+    </script>
+
+
+    <!-- 가격 및 플랜 비교 섹션 -->
+    <section class="pricing-section">
         <div class="container">
-            <h2>🎯 누구를 위한 도구인가요?</h2>
-            <div class="users-grid">
-                <div class="user-card">
-                    <div class="user-emoji">👨‍💻</div>
-                    <h3>개발자</h3>
-                    <p>코드 리뷰, 문서화, 버그 리포트를 위한 효율적인 스크린샷 워크플로우</p>
-                </div>
-                <div class="user-card">
-                    <div class="user-emoji">🎨</div>
-                    <h3>디자이너</h3>
-                    <p>UI 비교, 프로토타입, 피드백을 위한 빠른 이미지 공유</p>
-                </div>
-                <div class="user-card">
-                    <div class="user-emoji">👨‍🏫</div>
-                    <h3>교육자</h3>
-                    <p>강의 자료, 문제 해결, 학습 자료를 위한 단계별 캡처</p>
-                </div>
-                <div class="user-card">
-                    <div class="user-emoji">👤</div>
-                    <h3>일반 사용자</h3>
-                    <p>소셜미디어, 문서 작업, 일상 업무를 위한 생산성 향상</p>
-                </div>
+            <h2>💰 플랜 비교 (2025)</h2>
+            <p class="section-subtitle">당신에게 맞는 플랜을 선택하세요</p>
+            
+            <div class="pricing-table-container">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-column">기능</th>
+                            <th class="plan-column free">
+                                <div class="plan-header">
+                                    <div class="plan-icon">🆓</div>
+                                    <div class="plan-name">Free</div>
+                                </div>
+                            </th>
+                            <th class="plan-column pro">
+                                <div class="plan-header">
+                                    <div class="plan-icon">⚡</div>
+                                    <div class="plan-name">Pro</div>
+                                </div>
+                            </th>
+                            <th class="plan-column team">
+                                <div class="plan-header">
+                                    <div class="plan-icon">👥</div>
+                                    <div class="plan-name">Team</div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="pricing-row">
+                            <td class="feature-name">가격</td>
+                            <td class="plan-cell free">무료</td>
+                            <td class="plan-cell pro">
+                                <div class="price-info">
+                                    <div class="price-main">월 $2.9</div>
+                                    <div class="price-annual">연 $20 (43% 할인)</div>
+                                    <div class="price-lifetime">평생 $50 (한정)</div>
+                                </div>
+                            </td>
+                            <td class="plan-cell team">
+                                <div class="coming-soon">🚧 2025년 4분기 오픈 예정</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">단일 캡처</td>
+                            <td class="plan-cell">✅</td>
+                            <td class="plan-cell">✅</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">연속 캡처</td>
+                            <td class="plan-cell">🟡 2장까지</td>
+                            <td class="plan-cell">✅ 무제한</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">단일 편집</td>
+                            <td class="plan-cell">✅</td>
+                            <td class="plan-cell">✅ 강화 편집</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">다중 편집</td>
+                            <td class="plan-cell">🟡 2장까지</td>
+                            <td class="plan-cell">✅ 무제한</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">고급 편집창</td>
+                            <td class="plan-cell">❌</td>
+                            <td class="plan-cell">🚧 업데이트 예정</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">단일 드롭</td>
+                            <td class="plan-cell">✅</td>
+                            <td class="plan-cell">✅ 고품질 출력</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">다중 드롭</td>
+                            <td class="plan-cell">🟡 2장까지</td>
+                            <td class="plan-cell">✅ 무제한</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">광고 제거</td>
+                            <td class="plan-cell">❌</td>
+                            <td class="plan-cell">✅</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">클라우드 저장</td>
+                            <td class="plan-cell">❌</td>
+                            <td class="plan-cell">🚧 업데이트 예정</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">협업 기능</td>
+                            <td class="plan-cell">❌</td>
+                            <td class="plan-cell">❌</td>
+                            <td class="plan-cell">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pricing-cta">
+                <a href="#" class="btn btn-primary btn-large">🚀 Pro 플랜 시작하기</a>
+                <p class="pricing-note">14일 무료 체험 · 언제든 취소 가능</p>
             </div>
         </div>
     </section>
@@ -921,7 +1756,7 @@
         <div class="container">
             <h2>지금 바로 시작하세요</h2>
             <p>복사-붙여넣기에서 벗어나, 더 빠르고 직관적인 워크플로우를 경험하세요.</p>
-            <a href="#" class="btn btn-primary btn-large">📦 Microsoft Store에서 받기</a>
+            <a href="#" class="btn btn-primary btn-large microsoft-store-btn">📦 Microsoft Store에서 받기</a>
             <p class="cta-note">Windows 10/11 | 무료 (광고 포함) · 광고 제거 ₩2,900</p>
         </div>
     </section>
