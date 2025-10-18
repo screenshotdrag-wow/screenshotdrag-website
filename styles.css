@@ -809,10 +809,202 @@ body {
     font-weight: 700;
 }
 
+/* 앱별 호환성 표 섹션 */
+.compatibility-table-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.compatibility-table-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.table-category {
+    margin-bottom: 60px;
+}
+
+.table-category h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #667eea;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 10px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.compat-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 0.95rem;
+}
+
+.compat-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.compat-table th {
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.compat-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+.app-name-col {
+    min-width: 200px;
+}
+
+.support-col {
+    min-width: 120px;
+    text-align: center;
+}
+
+.limit-col {
+    min-width: 100px;
+    text-align: center;
+}
+
+.notes-col {
+    min-width: 250px;
+}
+
+.app-icon {
+    font-size: 1.3rem;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.compat-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.compat-table tbody tr:hover {
+    background: #f8f9fa;
+    transform: scale(1.01);
+}
+
+.compat-table tbody tr.excellent {
+    border-left: 4px solid #4CAF50;
+}
+
+.compat-table tbody tr.good {
+    border-left: 4px solid #8BC34A;
+}
+
+.compat-table tbody tr.fair {
+    border-left: 4px solid #FFC107;
+}
+
+.compat-table tbody tr.poor {
+    border-left: 4px solid #FF9800;
+}
+
+.status-excellent {
+    display: inline-block;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.status-partial {
+    display: inline-block;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.status-limited {
+    display: inline-block;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #F44336 0%, #E53935 100%);
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* 범례 */
+.table-legend {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-top: 40px;
+}
+
+.table-legend h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.legend-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.legend-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.legend-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.legend-item span {
+    margin-bottom: 10px;
+}
+
+.legend-item p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* 타겟 사용자 섹션 */
 .target-users {
     padding: 80px 20px;
-    background: #f8f9fa;
+    background: white;
 }
 
 .target-users h2 {
@@ -989,6 +1181,30 @@ footer {
     .comparison-table td {
         padding: 15px 10px;
     }
+    
+    .compat-table {
+        font-size: 0.85rem;
+    }
+    
+    .compat-table th,
+    .compat-table td {
+        padding: 12px 8px;
+    }
+    
+    .app-icon {
+        font-size: 1.1rem;
+    }
+    
+    .status-excellent,
+    .status-partial,
+    .status-limited {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    
+    .legend-items {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1006,5 +1222,30 @@ footer {
     
     .comparison-table {
         font-size: 0.8rem;
+    }
+    
+    .compat-table {
+        font-size: 0.75rem;
+    }
+    
+    .compat-table th,
+    .compat-table td {
+        padding: 10px 6px;
+    }
+    
+    .app-icon {
+        font-size: 1rem;
+        margin-right: 4px;
+    }
+    
+    .status-excellent,
+    .status-partial,
+    .status-limited {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+    
+    .table-category h3 {
+        font-size: 1.5rem;
     }
 }
