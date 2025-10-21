@@ -2439,6 +2439,36 @@
         </div>
     </section>
 
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-overlay" id="successModalOverlay"></div>
+        <div class="success-modal-content">
+            <div class="success-animation">
+                <div class="success-checkmark">
+                    <div class="check-icon">
+                        <span class="icon-line line-tip"></span>
+                        <span class="icon-line line-long"></span>
+                        <div class="icon-circle"></div>
+                        <div class="icon-fix"></div>
+                    </div>
+                </div>
+            </div>
+            <h2>🎉 Thank You for Joining!</h2>
+            <p class="success-message">Your beta test application has been successfully submitted.</p>
+            <div class="success-info">
+                <p><strong>📧 Check your email!</strong></p>
+                <p>We've sent you detailed instructions including:</p>
+                <ul>
+                    <li>✅ Download link for the beta version</li>
+                    <li>✅ Discord community invite</li>
+                    <li>✅ Temporary license key</li>
+                    <li>✅ Getting started guide</li>
+                </ul>
+            </div>
+            <button class="success-close-btn" id="successCloseBtn">Got it! →</button>
+        </div>
+    </div>
+
     <!-- Beta Test Modal -->
     <div class="beta-modal" id="betaModal">
         <div class="beta-modal-overlay" id="betaModalOverlay"></div>
@@ -2629,14 +2659,19 @@
             const betaModalClose = document.getElementById('betaModalClose');
             const betaModalOverlay = document.getElementById('betaModalOverlay');
             const betaForm = document.getElementById('betaForm');
+            
+            // Success Modal
+            const successModal = document.getElementById('successModal');
+            const successModalOverlay = document.getElementById('successModalOverlay');
+            const successCloseBtn = document.getElementById('successCloseBtn');
 
-            // Open modal
+            // Open beta modal
             betaTestBtn.addEventListener('click', function() {
                 betaModal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling
             });
 
-            // Close modal
+            // Close beta modal
             function closeModal() {
                 betaModal.classList.remove('active');
                 document.body.style.overflow = ''; // Restore scrolling
@@ -2645,10 +2680,31 @@
             betaModalClose.addEventListener('click', closeModal);
             betaModalOverlay.addEventListener('click', closeModal);
 
+            // Open success modal
+            function showSuccessModal() {
+                closeModal();
+                successModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close success modal
+            function closeSuccessModal() {
+                successModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            successCloseBtn.addEventListener('click', closeSuccessModal);
+            successModalOverlay.addEventListener('click', closeSuccessModal);
+
             // Close on ESC key
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && betaModal.classList.contains('active')) {
-                    closeModal();
+                if (e.key === 'Escape') {
+                    if (betaModal.classList.contains('active')) {
+                        closeModal();
+                    }
+                    if (successModal.classList.contains('active')) {
+                        closeSuccessModal();
+                    }
                 }
             });
 
@@ -2705,11 +2761,33 @@
                     } else {
                         console.log('Successfully submitted:', result);
                         
-                        // Show success message
-                        alert('🎉 Beta test registration complete!\n\nWe will send you detailed instructions to your email.\nThank you!');
+                        // Call Edge Function to send welcome email
+                        try {
+                            const emailResponse = await fetch(`${SUPABASE_URL}/functions/v1/send-beta-welcome-email`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                                },
+                                body: JSON.stringify({
+                                    email: data.email,
+                                    occupation: data.occupation,
+                                    purpose: data.purpose
+                                })
+                            });
+
+                            if (emailResponse.ok) {
+                                console.log('Welcome email sent successfully');
+                            } else {
+                                console.error('Failed to send welcome email:', await emailResponse.text());
+                            }
+                        } catch (emailError) {
+                            console.error('Error sending welcome email:', emailError);
+                            // Don't block the user flow even if email fails
+                        }
                         
-                        // Close modal and reset form
-                        closeModal();
+                        // Show success modal
+                        showSuccessModal();
                         betaForm.reset();
                     }
                 } catch (error) {
