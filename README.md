@@ -1,6 +1,6 @@
-# ScreenshotDrag Website
+# Capture Drag Website
 
-Official website for ScreenshotDrag - Skip Ctrl+C+V. Just Drag It.
+Official website for Capture Drag - Skip Ctrl+C+V. Just Drag It.
 
 ## 🌐 Live Site
 
@@ -9,7 +9,7 @@ Visit: [https://screenshot-drag.vercel.app/](https://screenshot-drag.vercel.app/
 ## 📁 Project Structure
 
 ```
-screenshotdrag-website/
+capturedrag-website/
 ├── index.html          # Main landing page
 ├── styles.css          # Stylesheet
 └── README.md           # This file
@@ -50,7 +50,7 @@ xdg-open index.html
 1. **Hero Section** - Main tagline and CTA
 2. **How to Use** - 3-step guide
 3. **Key Features** - Core innovations (Drag & Drop, Continuous Capture, Editor)
-4. **Comparison Table** - Old way vs ScreenshotDrag
+4. **Comparison Table** - Old way vs Capture Drag
 5. **Features Grid** - 6 main features
 6. **Target Users** - Developer, Designer, Educator, General User
 7. **CTA Section** - Final call-to-action
@@ -64,13 +64,13 @@ xdg-open index.html
 
 ## 📦 Related Projects
 
-- [ScreenshotDrag Desktop App](https://github.com/screenshotdrag-wow/ScreenshotDrag) - WPF Desktop Application
+- [Capture Drag Desktop App](https://github.com/screenshotdrag-wow/ScreenshotDrag) - WPF Desktop Application
 
 ## 📄 License
 
-© 2025 ScreenshotDrag. All rights reserved.
+© 2025 Capture Drag. All rights reserved.
 
 ## 📧 Contact
 
-support@screenshotdrag.com
+contact@capturedrag.com
 
