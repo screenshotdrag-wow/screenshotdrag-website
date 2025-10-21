@@ -2660,15 +2660,28 @@
             const betaModalOverlay = document.getElementById('betaModalOverlay');
             const betaForm = document.getElementById('betaForm');
             
+            // Debug: Check if elements exist
+            console.log('Beta Test Button:', betaTestBtn);
+            console.log('Beta Modal:', betaModal);
+            
+            if (!betaTestBtn) {
+                console.error('Beta Test Button not found!');
+                return;
+            }
+            
             // Success Modal
             const successModal = document.getElementById('successModal');
             const successModalOverlay = document.getElementById('successModalOverlay');
             const successCloseBtn = document.getElementById('successCloseBtn');
 
             // Open beta modal
-            betaTestBtn.addEventListener('click', function() {
+            betaTestBtn.addEventListener('click', function(e) {
+                console.log('Beta Test Button clicked!', e);
+                e.preventDefault();
+                e.stopPropagation();
                 betaModal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling
+                console.log('Modal should be open now');
             });
 
             // Close beta modal

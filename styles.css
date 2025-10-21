@@ -3420,13 +3420,19 @@ footer {
     font-size: 1.1rem;
     font-weight: 700;
     border-radius: 50px;
-    cursor: pointer;
+    cursor: pointer !important;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
     animation: pulse 2s infinite;
     position: relative;
-    z-index: 1001;
-    pointer-events: auto;
+    z-index: 1001 !important;
+    pointer-events: auto !important;
+    display: inline-block;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 @keyframes pulse {
