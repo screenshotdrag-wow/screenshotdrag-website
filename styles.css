@@ -365,17 +365,24 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* GIF가 로드되면 placeholder 숨김 */
-.demo-gif-container:has(img[src*=".gif"]:not([src=""])) .demo-placeholder {
-    display: none;
+.demo-placeholder-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* GIF 파일이 없을 때 img 숨김 */
-.demo-gif[src="demo-single.gif"],
-.demo-gif[src="demo-multi.gif"],
-.demo-gif[src="demo-single-edit.gif"],
-.demo-gif[src="demo-multi-edit.gif"] {
-    display: none;
+.demo-placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+/* Demo GIF styles - now using placeholders */
+.demo-gif {
+    display: none; /* Hide any remaining GIF references */
 }
 
 .usage-steps {
