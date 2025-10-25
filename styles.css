@@ -696,19 +696,24 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     margin-top: 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .feature-card-new {
     background: #ffffff;
     border-radius: 20px;
-    padding: 50px 40px;
+    padding: 40px 30px;
     transition: all 0.3s ease;
     border: 2px solid #e0e0e0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     position: relative;
-    min-height: 400px;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: left;
 }
 
 .feature-card-new:hover {
@@ -735,23 +740,24 @@ body {
 }
 
 .feature-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     text-align: center;
 }
 
 .feature-card-new h3 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: inherit;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #1a1a1a;
     font-weight: 700;
     letter-spacing: -0.2px;
     text-align: center;
-    line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.3;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .feature-list {
@@ -759,14 +765,15 @@ body {
     flex-grow: 1;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .feature-list li {
-    padding: 12px 0;
-    padding-left: 25px;
+    padding: 10px 0;
+    padding-left: 28px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.6;
     position: relative;
 }
 
@@ -777,11 +784,11 @@ body {
 .feature-list li:before {
     content: "✓";
     position: absolute;
-    left: 0;
+    left: 5px;
     color: #4CAF50;
     font-weight: bold;
-    font-size: 1.1rem;
-    top: 12px;
+    font-size: 1.2rem;
+    top: 10px;
 }
 
 /* 유용한 기능 섹션 */
@@ -817,11 +824,15 @@ body {
 .useful-features .feature-card {
     background: #ffffff;
     border-radius: 20px;
-    padding: 40px;
+    padding: 35px 30px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     border: 2px solid #e0e0e0;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 420px;
 }
 
 .useful-features .feature-card:hover {
@@ -831,17 +842,21 @@ body {
 }
 
 .useful-features .feature-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .useful-features .feature-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
     color: #1a1a1a;
     font-weight: 700;
     text-align: center;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .useful-features .feature-card p {
@@ -849,20 +864,22 @@ body {
     line-height: 1.6;
     margin-bottom: 25px;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .useful-features .demo-gif-container {
-    margin: 25px 0;
-    border-radius: 15px;
+    margin: 20px 0;
+    border-radius: 12px;
     overflow: hidden;
     background: #f8f9fa;
     position: relative;
-    min-height: 200px;
+    min-height: 180px;
+    max-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid #e0e0e0;
+    width: 100%;
 }
 
 .useful-features .demo-gif {
@@ -873,35 +890,54 @@ body {
 
 .useful-features .demo-placeholder {
     color: #999;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
     margin: 0;
-    padding: 40px 20px;
+    padding: 30px 20px;
+    position: absolute;
+}
+
+.useful-features .demo-placeholder-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.useful-features .demo-placeholder-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    opacity: 0.7;
 }
 
 .useful-features .feature-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
+    flex-grow: 1;
 }
 
 .useful-features .feature-list li {
-    padding: 12px 0;
-    padding-left: 30px;
+    padding: 10px 0;
+    padding-left: 28px;
     position: relative;
     color: #555;
-    line-height: 1.5;
+    line-height: 1.6;
     border-bottom: 1px solid #f0f0f0;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
 }
 
 .useful-features .feature-list li:before {
     content: "✓";
     position: absolute;
-    left: 0;
+    left: 5px;
     color: #667eea;
     font-weight: bold;
     font-size: 1.2rem;
+    top: 10px;
 }
 
 .useful-features .feature-list li:last-child {
