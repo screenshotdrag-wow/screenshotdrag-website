@@ -579,6 +579,87 @@ body {
     font-weight: 500;
 }
 
+/* Single/Multi Support Table */
+.support-table-section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.support-table-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+    font-weight: 700;
+}
+
+.support-table-section .table-wrapper {
+    overflow-x: auto;
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.support-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.support-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.support-table th {
+    padding: 18px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.support-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.support-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.support-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.support-table td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.support-table .app-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.status-check {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.status-limited {
+    color: #ff9800;
+    font-weight: 600;
+}
+
+.status-partial {
+    color: #2196F3;
+    font-weight: 600;
+}
+
 .app-note {
     font-size: 0.85rem;
     color: #999;
@@ -2439,6 +2520,16 @@ footer {
     
     .compat-header h4 {
         font-size: 1.3rem;
+    }
+
+    .support-table-section h3 {
+        font-size: 1.8rem;
+    }
+
+    .support-table th,
+    .support-table td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
     }
 }
 
