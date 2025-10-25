@@ -603,7 +603,7 @@ body {
     flex-grow: 1;
 }
 
-.compat-apps.collapsed {
+.app-more.collapsed {
     display: none;
 }
 
