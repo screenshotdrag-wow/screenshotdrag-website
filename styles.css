@@ -292,6 +292,10 @@ body {
     margin: 0 auto;
 }
 
+.usage-section.single-column {
+    grid-column: 1 / -1;
+}
+
 .usage-section h3 {
     font-size: 2.2rem;
     margin-bottom: 30px;
@@ -302,7 +306,7 @@ body {
 
 .usage-modes {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
     margin: 0 auto;
 }
@@ -449,6 +453,139 @@ body {
     font-style: italic;
     display: block;
     margin-top: 5px;
+}
+
+/* App Compatibility Section */
+.app-compatibility-section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.app-compatibility-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+    font-weight: 700;
+}
+
+.compatibility-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.compat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 3px solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.compat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.compat-card.excellent {
+    border-color: #4CAF50;
+    background: linear-gradient(to bottom, #e8f5e9 0%, #ffffff 100%);
+}
+
+.compat-card.limited {
+    border-color: #FF9800;
+    background: linear-gradient(to bottom, #fff3e0 0%, #ffffff 100%);
+}
+
+.compat-card.incompatible {
+    border-color: #F44336;
+    background: linear-gradient(to bottom, #ffebee 0%, #ffffff 100%);
+}
+
+.compat-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.compat-icon {
+    font-size: 2.5rem;
+}
+
+.compat-header h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+    font-weight: 700;
+}
+
+.compat-apps {
+    flex-grow: 1;
+}
+
+.compat-apps .app-category {
+    margin-bottom: 25px;
+}
+
+.compat-apps .app-category:last-child {
+    margin-bottom: 0;
+}
+
+.compat-apps .app-category h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #667eea;
+}
+
+.compat-apps .app-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.compat-apps .app-list li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.compat-apps .app-list li img.app-icon-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.compat-apps .app-list li .app-limit {
+    font-size: 0.8rem;
+    color: #ff9800;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+.app-note {
+    font-size: 0.85rem;
+    color: #999;
+    font-style: italic;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* 편집 포함 워크플로우 섹션 */
@@ -2283,6 +2420,26 @@ footer {
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     opacity: 0.7;
+}
+
+/* App Compatibility - Mobile Responsive */
+@media (max-width: 768px) {
+    .compatibility-cards {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .compat-card {
+        padding: 25px 20px;
+    }
+    
+    .compat-icon {
+        font-size: 2rem;
+    }
+    
+    .compat-header h4 {
+        font-size: 1.3rem;
+    }
 }
 
 /* 반응형 디자인 */
