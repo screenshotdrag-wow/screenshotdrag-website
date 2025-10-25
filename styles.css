@@ -510,11 +510,11 @@ body {
 }
 
 .compatibility-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     margin-top: 40px;
-    max-width: 1600px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -528,7 +528,7 @@ body {
     border: 3px solid;
     display: flex;
     flex-direction: column;
-    min-height: 600px;
+    width: 100%;
 }
 
 .compat-card:hover {
