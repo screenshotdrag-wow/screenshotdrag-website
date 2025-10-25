@@ -138,8 +138,12 @@
                         <div class="compat-header">
                             <div class="compat-icon">✅</div>
                             <h4>Excellent Compatibility</h4>
+                            <button class="toggle-apps-btn" onclick="toggleApps(this)">
+                                <span class="btn-text">더보기</span>
+                                <span class="btn-icon">▼</span>
+                            </button>
                         </div>
-                        <div class="compat-apps">
+                        <div class="compat-apps collapsed">
                             <div class="app-category">
                                 <h5>💬 Messengers</h5>
                                 <ul class="app-list">
@@ -181,8 +185,12 @@
                         <div class="compat-header">
                             <div class="compat-icon">⚠️</div>
                             <h4>Limited Compatibility</h4>
+                            <button class="toggle-apps-btn" onclick="toggleApps(this)">
+                                <span class="btn-text">더보기</span>
+                                <span class="btn-icon">▼</span>
+                            </button>
                         </div>
-                        <div class="compat-apps">
+                        <div class="compat-apps collapsed">
                             <div class="app-category">
                                 <h5>💬 Team Communication</h5>
                                 <ul class="app-list">
@@ -213,8 +221,12 @@
                         <div class="compat-header">
                             <div class="compat-icon">❌</div>
                             <h4>Incompatible</h4>
+                            <button class="toggle-apps-btn" onclick="toggleApps(this)">
+                                <span class="btn-text">더보기</span>
+                                <span class="btn-icon">▼</span>
+                            </button>
                         </div>
-                        <div class="compat-apps">
+                        <div class="compat-apps collapsed">
                             <div class="app-category">
                                 <h5>📝 Text Editors</h5>
                                 <ul class="app-list">
@@ -2866,6 +2878,24 @@
                 }
             });
         });
+
+        // Toggle apps visibility
+        function toggleApps(btn) {
+            const card = btn.closest('.compat-card');
+            const apps = card.querySelector('.compat-apps');
+            const btnText = btn.querySelector('.btn-text');
+            const btnIcon = btn.querySelector('.btn-icon');
+            
+            apps.classList.toggle('collapsed');
+            
+            if (apps.classList.contains('collapsed')) {
+                btnText.textContent = '더보기';
+                btnIcon.textContent = '▼';
+            } else {
+                btnText.textContent = '접기';
+                btnIcon.textContent = '▲';
+            }
+        }
     </script>
 </body>
 </html>

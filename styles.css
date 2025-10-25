@@ -558,6 +558,7 @@ body {
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .compat-icon {
@@ -569,10 +570,41 @@ body {
     color: #333;
     margin: 0;
     font-weight: 700;
+    flex: 1;
+}
+
+.toggle-apps-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.toggle-apps-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.toggle-apps-btn .btn-icon {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
 }
 
 .compat-apps {
     flex-grow: 1;
+}
+
+.compat-apps.collapsed {
+    display: none;
 }
 
 .compat-apps .app-category {
