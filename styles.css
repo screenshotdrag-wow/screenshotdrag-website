@@ -576,7 +576,7 @@ body {
 }
 
 .compat-apps .app-category {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .compat-apps .app-category:last-child {
@@ -594,15 +594,19 @@ body {
     list-style: none;
     padding: 0;
     margin: 0 0 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 15px;
 }
 
 .compat-apps .app-list li {
-    padding: 4px 0;
+    padding: 0;
     color: #555;
     font-size: 0.85rem;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    white-space: nowrap;
 }
 
 .compat-apps .app-list li img.app-icon-img {
