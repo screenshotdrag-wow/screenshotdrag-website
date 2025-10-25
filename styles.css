@@ -329,6 +329,45 @@ body {
     border-color: #667eea;
 }
 
+/* Multi Capture Mode 특별 스타일 */
+.multi-capture-mode {
+    position: relative;
+    border: 3px solid #764ba2 !important;
+    background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+}
+
+.multi-capture-mode:hover {
+    border-color: #5a32a6 !important;
+    box-shadow: 0 15px 40px rgba(118, 75, 162, 0.25);
+}
+
+.multi-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+    text-transform: uppercase;
+    animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(118, 75, 162, 0.6);
+    }
+}
+
 .usage-mode h3 {
     font-size: 2rem;
     margin-bottom: 25px;
@@ -574,9 +613,16 @@ body {
 
 .compat-apps .app-list li .app-limit {
     font-size: 0.8rem;
-    color: #ff9800;
+    color: #666;
     margin-left: 8px;
-    font-weight: 500;
+    font-weight: 400;
+}
+
+.compat-apps .app-list li .app-support {
+    font-size: 0.8rem;
+    color: #666;
+    margin-left: 8px;
+    font-weight: 400;
 }
 
 /* Single/Multi Support Table */
@@ -1539,7 +1585,7 @@ body {
 }
 
 .app-list li:before {
-    content: "•";
+    content: "";
     position: absolute;
     left: 0;
     color: #667eea;
