@@ -512,7 +512,7 @@ body {
 .compatibility-cards {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     margin-top: 40px;
     max-width: 900px;
     margin-left: auto;
@@ -522,7 +522,7 @@ body {
 .compat-card {
     background: white;
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px 30px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     border: 3px solid;
@@ -555,17 +555,17 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .compat-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .compat-header h4 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #333;
     margin: 0;
     font-weight: 700;
@@ -576,7 +576,7 @@ body {
 }
 
 .compat-apps .app-category {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .compat-apps .app-category:last-child {
@@ -584,30 +584,30 @@ body {
 }
 
 .compat-apps .app-category h5 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     color: #667eea;
 }
 
 .compat-apps .app-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 15px 0;
+    margin: 0 0 8px 0;
 }
 
 .compat-apps .app-list li {
-    padding: 8px 0;
+    padding: 4px 0;
     color: #555;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .compat-apps .app-list li img.app-icon-img {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     object-fit: contain;
     flex-shrink: 0;
 }
