@@ -138,10 +138,6 @@
                         <div class="compat-header">
                             <div class="compat-icon">✅</div>
                             <h4>Excellent Compatibility</h4>
-                            <button class="toggle-apps-btn" onclick="toggleApps(this)">
-                                <span class="btn-text">더보기</span>
-                                <span class="btn-icon">▼</span>
-                            </button>
                         </div>
                         <div class="compat-apps">
                             <!-- 인기 항목 (항상 표시) -->
@@ -188,6 +184,10 @@
                                 </div>
                             </div>
                         </div>
+                        <button class="toggle-apps-btn" onclick="toggleApps(this)">
+                            <span class="btn-text">Show More</span>
+                            <span class="btn-icon">▼</span>
+                        </button>
                     </div>
 
                     <!-- Limited Compatibility -->
@@ -195,10 +195,6 @@
                         <div class="compat-header">
                             <div class="compat-icon">⚠️</div>
                             <h4>Limited Compatibility</h4>
-                            <button class="toggle-apps-btn" onclick="toggleApps(this)">
-                                <span class="btn-text">더보기</span>
-                                <span class="btn-icon">▼</span>
-                            </button>
                         </div>
                         <div class="compat-apps">
                             <!-- 인기 항목 (항상 표시) -->
@@ -234,6 +230,10 @@
                                 </div>
                             </div>
                         </div>
+                        <button class="toggle-apps-btn" onclick="toggleApps(this)">
+                            <span class="btn-text">Show More</span>
+                            <span class="btn-icon">▼</span>
+                        </button>
                     </div>
 
                     <!-- Incompatible -->
@@ -241,10 +241,6 @@
                         <div class="compat-header">
                             <div class="compat-icon">❌</div>
                             <h4>Incompatible</h4>
-                            <button class="toggle-apps-btn" onclick="toggleApps(this)">
-                                <span class="btn-text">더보기</span>
-                                <span class="btn-icon">▼</span>
-                            </button>
                         </div>
                         <div class="compat-apps collapsed">
                             <div class="app-category">
@@ -264,6 +260,10 @@
                                 <p class="app-note">※ Blocked by security policies</p>
                             </div>
                         </div>
+                        <button class="toggle-apps-btn" onclick="toggleApps(this)">
+                            <span class="btn-text">Show More</span>
+                            <span class="btn-icon">▼</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -2909,10 +2909,10 @@
             appMore.classList.toggle('collapsed');
             
             if (appMore.classList.contains('collapsed')) {
-                btnText.textContent = '더보기';
+                btnText.textContent = 'Show More';
                 btnIcon.textContent = '▼';
             } else {
-                btnText.textContent = '접기';
+                btnText.textContent = 'Show Less';
                 btnIcon.textContent = '▲';
             }
         }

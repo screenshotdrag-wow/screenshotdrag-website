@@ -532,6 +532,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
 }
 
 .compat-card:hover {
@@ -590,6 +591,8 @@ body {
     align-items: center;
     gap: 6px;
     box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    margin-top: auto;
+    align-self: center;
 }
 
 .toggle-apps-btn:hover {
