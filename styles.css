@@ -510,13 +510,16 @@ body {
 }
 
 .compatibility-cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 40px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+    .compatibility-cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 .compat-card {
