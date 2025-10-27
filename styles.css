@@ -613,6 +613,16 @@ body {
     display: none;
 }
 
+.app-list-inline {
+    margin-bottom: 15px;
+}
+
+.app-list-inline .app-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+}
+
 .compat-apps .app-category {
     margin-bottom: 10px;
 }
