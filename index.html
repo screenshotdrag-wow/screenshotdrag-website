@@ -184,10 +184,6 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="toggle-apps-btn" onclick="toggleApps(this)">
-                            <span class="btn-text">Show More</span>
-                            <span class="btn-icon">▼</span>
-                        </button>
                     </div>
 
                     <!-- Limited Compatibility -->
@@ -230,10 +226,6 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="toggle-apps-btn" onclick="toggleApps(this)">
-                            <span class="btn-text">Show More</span>
-                            <span class="btn-icon">▼</span>
-                        </button>
                     </div>
 
                     <!-- Incompatible -->
@@ -260,12 +252,12 @@
                                 <p class="app-note">※ Blocked by security policies</p>
                             </div>
                         </div>
-                        <button class="toggle-apps-btn" onclick="toggleApps(this)">
-                            <span class="btn-text">Show More</span>
-                            <span class="btn-icon">▼</span>
-                        </button>
                     </div>
                 </div>
+                <button class="toggle-apps-btn" onclick="toggleAllApps(this)">
+                    <span class="btn-text">Show More</span>
+                    <span class="btn-icon">▼</span>
+                </button>
             </div>
         </div>
     </section>
@@ -2899,21 +2891,25 @@
             });
         });
 
-        // Toggle apps visibility
-        function toggleApps(btn) {
-            const card = btn.closest('.compat-card');
-            const appMore = card.querySelector('.app-more');
+        // Toggle all apps visibility
+        function toggleAllApps(btn) {
             const btnText = btn.querySelector('.btn-text');
             const btnIcon = btn.querySelector('.btn-icon');
+            const allAppMore = document.querySelectorAll('.app-more');
             
-            appMore.classList.toggle('collapsed');
+            // Check if any app-more is collapsed to determine state
+            const isCollapsed = Array.from(allAppMore).some(el => el.classList.contains('collapsed'));
             
-            if (appMore.classList.contains('collapsed')) {
-                btnText.textContent = 'Show More';
-                btnIcon.textContent = '▼';
-            } else {
+            if (isCollapsed) {
+                // Expand all
+                allAppMore.forEach(el => el.classList.remove('collapsed'));
                 btnText.textContent = 'Show Less';
                 btnIcon.textContent = '▲';
+            } else {
+                // Collapse all
+                allAppMore.forEach(el => el.classList.add('collapsed'));
+                btnText.textContent = 'Show More';
+                btnIcon.textContent = '▼';
             }
         }
     </script>
