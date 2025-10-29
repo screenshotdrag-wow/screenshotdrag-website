@@ -10,6 +10,7 @@ body {
     color: #333;
     background: #ffffff;
     font-size: 18px;
+    overflow-x: hidden;
 }
 
 .container {
@@ -57,7 +58,7 @@ body {
     font-weight: 900;
     margin-bottom: 35px;
     letter-spacing: -2px;
-    line-height: 1.1;
+    line-height: 1.5;
     white-space: nowrap;
     overflow: visible;
 }
@@ -502,11 +503,12 @@ body {
 }
 
 .app-compatibility-section h3 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #1a1a1a;
     text-align: center;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .compatibility-cards {
@@ -1012,9 +1014,11 @@ body {
 
 .section-subtitle {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #666;
     margin-bottom: 50px;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 .features-grid-new {
@@ -2235,30 +2239,38 @@ body {
     border-top: 1px solid #f0f0f0;
 }
 
-.pricing-section h2 {
+.pricing-header {
     text-align: center;
+    margin-bottom: 60px;
+    padding: 60px 0;
+}
+
+.pricing-header h2 {
     font-size: 2.8rem;
     margin-bottom: 20px;
     color: #1a1a1a;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
-.pricing-section .section-subtitle {
-    text-align: center;
+.pricing-header .section-subtitle {
     font-size: 1.4rem;
     color: #666;
-    margin-bottom: 60px;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.6;
 }
 
 .pricing-table-container {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto 50px auto;
-    overflow-x: auto;
     border-radius: 25px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     border: 1px solid rgba(255, 255, 255, 0.8);
     position: relative;
+    overflow: hidden;
 }
 
 .pricing-table-container::before {
@@ -2276,19 +2288,21 @@ body {
 
 .pricing-table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     background: white;
     border-radius: 25px;
     overflow: hidden;
     position: relative;
+    table-layout: fixed;
 }
 
 .pricing-table th,
 .pricing-table td {
-    padding: 30px 25px;
+    padding: 20px 15px;
     text-align: center;
     border-bottom: 1px solid rgba(240, 240, 240, 0.8);
-    font-size: 1.1rem;
+    font-size: 1rem;
     position: relative;
 }
 
@@ -2301,17 +2315,17 @@ body {
 }
 
 .pricing-table .feature-column {
-    text-align: left;
+    text-align: center;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     font-weight: 600;
     color: #333;
-    width: 280px;
-    font-size: 1.1rem;
+    width: 40%;
+    font-size: 1.2rem;
     border-right: 2px solid rgba(102, 126, 234, 0.1);
 }
 
 .pricing-table .plan-column {
-    width: 280px;
+    width: 30%;
     position: relative;
 }
 
@@ -2320,7 +2334,7 @@ body {
 }
 
 .pricing-table .plan-column.pro {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -2394,6 +2408,14 @@ body {
 .pricing-table .plan-cell {
     font-size: 1.1rem;
     line-height: 1.5;
+    text-align: center;
+}
+
+.pricing-table .feature-name {
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.2rem;
 }
 
 .pricing-table .plan-cell.free {
@@ -2457,11 +2479,11 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
     padding: 8px 16px;
     border-radius: 20px;
-    border: 2px solid rgba(255, 107, 107, 0.4);
-    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.4);
+    border: 2px solid rgba(76, 175, 80, 0.4);
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.4);
     font-style: italic;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     animation: pulse-lifetime 2s ease-in-out infinite;
@@ -2549,6 +2571,174 @@ body {
     font-size: 1.1rem;
     margin-top: 20px;
     color: #999;
+}
+
+/* Beta Test Modal */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    border: 1px solid #333;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.modal h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.modal p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.privacy-agreement {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px solid #444;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    color: #fff;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+}
+
+.agreement-text {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.agreement-text small {
+    color: #ccc;
+    display: block;
+    margin-top: 5px;
+}
+
+.agreement-text a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.agreement-text a:hover {
+    color: #0056b3;
+}
+
+/* Privacy Policy Section */
+.privacy-policy {
+    background-color: #1a1a1a;
+    padding: 60px 0;
+    border-top: 1px solid #333;
+}
+
+.privacy-policy h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.privacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.privacy-content h3 {
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.privacy-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.privacy-content li {
+    margin-bottom: 5px;
+}
+
+.privacy-content strong {
+    color: #fff;
 }
 
 /* 푸터 */
@@ -4429,5 +4619,107 @@ footer {
     .check-icon {
         width: 60px;
         height: 60px;
+    }
+}
+
+ 
+ / *   F A Q   S t y l e s   * / 
+ 
+ /* FAQ Styles */
+.faq {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.faq-question {
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f8f9fa;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+    transition: transform 0.3s ease;
+    min-width: 30px;
+    text-align: center;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 30px 25px 30px;
+    background: white;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.faq-answer strong {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 20px;
+    }
+    
+    .faq-answer {
+        padding: 0 20px 20px 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
     }
 }
