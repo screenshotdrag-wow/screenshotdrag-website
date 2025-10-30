@@ -132,7 +132,7 @@
             <!-- App Compatibility Table -->
             <div class="app-compatibility-section">
                 <h3>📱 Compatibility</h3>
-                <p class="section-subtitle">Drag & drop support status for major applications</p>
+                <p class="section-subtitle">Optimized for AI chat workflows (ChatGPT, Claude, Grok, Gemini, Cursor)</p>
                 
                 <div class="compatibility-table-container">
                     <table class="compatibility-table">
@@ -145,6 +145,46 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/openai/00A67D" class="app-icon-img" alt="ChatGPT" onerror="this.style.display='none'"> ChatGPT (web)
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Great for iterative prompts. Multi-drag boosts context (drop multiple refs). If drop blocked, use Ctrl+V.</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/anthropic/0A7AFF" class="app-icon-img" alt="Claude" onerror="this.style.display='none'"> Claude (web)
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Handles multiple screenshots well for long context. If site UI blocks drop, paste with Ctrl+V.</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/x/000000" class="app-icon-img" alt="Grok" onerror="this.style.display='none'"> Grok (xAI)
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Fast image understanding. Multi-drag recommended for dataset-style prompts.</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/google/4285F4" class="app-icon-img" alt="Gemini" onerror="this.style.display='none'"> Gemini (web)
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Works well with multiple images for reasoning. If drop fails, Ctrl+V paste always works.</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" class="app-icon-img" alt="Cursor" onerror="this.style.display='none'"> Cursor (IDE)
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Developer workflow: drag multiple screenshots into chats/notes to maximize multi-drag productivity.</td>
+                            </tr>
                             <tr>
                                 <td class="app-name">
                                     <img src="https://cdn.simpleicons.org/microsoftword/0078D4" class="app-icon-img" alt="Microsoft Word" onerror="this.style.display='none'"> Microsoft Word
@@ -315,7 +355,11 @@
                             </tr>
                         </tbody>
                     </table>
-                        </div>
+                    <button class="toggle-apps-btn" id="toggleCompatBtn">
+                        <span class="btn-text">Show More</span>
+                        <span class="btn-icon">▼</span>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -353,7 +397,7 @@
                             <td class="plan-cell free">Free</td>
                             <td class="plan-cell pro">
                                 <div class="price-info">
-                                    <div class="price-lifetime">Lifetime $29</div>
+                                    <div class="price-lifetime">Lifetime $49</div>
                                 </div>
                             </td>
                         </tr>
@@ -431,7 +475,7 @@
                     <div class="benefit-item">
                         <div class="benefit-icon">💎</div>
                         <div class="benefit-text">
-                            <p><strong>All participants who provide feedback</strong> during the beta test will receive the Pro Plan (worth $29) <strong>for FREE</strong>.</p>
+                            <p><strong>All participants who provide feedback</strong> during the beta test will receive the Pro Plan (worth $49) <strong>for FREE</strong>.</p>
                         </div>
                     </div>
                     <div class="benefit-item special">
@@ -687,7 +731,7 @@
                     </div>
                     <div class="faq-answer">
                         <p>You can purchase from Microsoft Store:<br>
-                        • Lifetime License: $29 (one-time purchase for lifetime use)</p>
+                        • Lifetime License: $49 (one-time purchase for lifetime use)</p>
                     </div>
                 </div>
                 
@@ -769,6 +813,34 @@
             // Handle broken images
             handleBrokenImages();
             
+            // Compatibility table: collapse after top 10
+            const compatTable = document.querySelector('.compatibility-table tbody');
+            const compatRows = compatTable ? Array.from(compatTable.querySelectorAll('tr')) : [];
+            const toggleCompatBtn = document.getElementById('toggleCompatBtn');
+            const MAX_VISIBLE = 10;
+            if (compatRows.length > MAX_VISIBLE) {
+                compatRows.slice(MAX_VISIBLE).forEach(r => r.classList.add('hidden-row'));
+                if (toggleCompatBtn) {
+                    toggleCompatBtn.style.display = 'flex';
+                    toggleCompatBtn.addEventListener('click', function() {
+                        const isCollapsed = compatRows.slice(MAX_VISIBLE).some(r => r.classList.contains('hidden-row'));
+                        const btnText = toggleCompatBtn.querySelector('.btn-text');
+                        const btnIcon = toggleCompatBtn.querySelector('.btn-icon');
+                        if (isCollapsed) {
+                            compatRows.slice(MAX_VISIBLE).forEach(r => r.classList.remove('hidden-row'));
+                            btnText.textContent = 'Show Less';
+                            btnIcon.textContent = '▲';
+                        } else {
+                            compatRows.slice(MAX_VISIBLE).forEach(r => r.classList.add('hidden-row'));
+                            btnText.textContent = 'Show More';
+                            btnIcon.textContent = '▼';
+                        }
+                    });
+                }
+            } else if (toggleCompatBtn) {
+                toggleCompatBtn.style.display = 'none';
+            }
+
             // Custom Select Dropdown for Nationality
             const nationalitySelect = document.getElementById('nationalitySelect');
             const nationalityTrigger = nationalitySelect.querySelector('.custom-select-trigger');
