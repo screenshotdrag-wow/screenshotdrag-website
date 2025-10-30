@@ -17,57 +17,15 @@
     <!-- Header -->
     <header class="hero">
         <div class="container">
-            <!-- Beta Test Banner -->
-            <div class="beta-banner">
-                <button class="beta-test-btn" id="betaTestBtn">
-                    🚀 Beta Testers Wanted! Get Pro Plan for FREE
+            <!-- Beta Test Banner - Moved to top and made larger -->
+            <div class="beta-banner-top">
+                <button class="beta-test-btn-large" id="betaTestBtn">
+                    <span class="beta-icon">🚀</span>
+                    <span class="beta-text">
+                        <span class="beta-title">Beta Testers Wanted!</span>
+                        <span class="beta-subtitle">Get Pro Plan for FREE</span>
+                    </span>
                 </button>
-            </div>
-
-            <!-- Beta Test Email Collection Modal -->
-            <div id="betaTestModal" class="modal" style="display: none;">
-                <div class="modal-content">
-                    <span class="close" id="closeModal">&times;</span>
-                    <h3>🚀 Beta Test 신청</h3>
-                    <p>Capture Drag Beta Test에 참여하시면 Pro Plan을 무료로 제공해드립니다!</p>
-                    
-                    <form id="betaTestForm">
-                        <div class="form-group">
-                            <label for="email">이메일 주소 *</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="name">이름 (선택사항)</label>
-                            <input type="text" id="name" name="name" placeholder="홍길동">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="feedback">피드백 의향 (선택사항)</label>
-                            <textarea id="feedback" name="feedback" placeholder="앱 사용 후 피드백을 제공하실 의향이 있으신가요?"></textarea>
-                        </div>
-                        
-                        <!-- 개인정보 수집 및 이용 동의 -->
-                        <div class="privacy-agreement">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="privacyAgree" required>
-                                <span class="checkmark"></span>
-                                <span class="agreement-text">
-                                    <strong>개인정보 수집 및 이용에 동의합니다</strong><br>
-                                    <small>
-                                    • 수집목적: Beta Test 참여자 관리 및 Pro Plan 제공<br>
-                                    • 수집항목: 이메일, 이름(선택), 피드백(선택)<br>
-                                    • 보유기간: Beta Test 종료 후 1년<br>
-                                    • 동의거부권: 동의를 거부할 수 있으나, Beta Test 참여가 제한됩니다<br>
-                                    • <a href="#privacy-policy" onclick="showPrivacyPolicy()">개인정보처리방침</a>을 확인했습니다
-                                    </small>
-                                </span>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Beta Test 신청하기</button>
-                    </form>
-                </div>
             </div>
 
             <div class="hero-content">
@@ -85,7 +43,7 @@
                     <a href="#" class="btn btn-primary microsoft-store-btn">🏪 Get it from Microsoft Store</a>
                 </div>
                 
-                <p class="pricing-note">무료 다운로드 (워터마크 포함)</p>
+                <p class="pricing-note">Free download (with watermark)</p>
                 
                 <div class="features-badges">
                     <span class="badge">⌨️ Alt+S (Single) / Alt+D (Multi)</span>
@@ -138,7 +96,7 @@
 
                         <!-- Multi Capture Mode -->
                         <div class="usage-mode multi-capture-mode">
-                            <div class="multi-badge">✨ 파워풀</div>
+                            <div class="multi-badge">✨ Powerful</div>
                             <h4>📸 Multi Capture</h4>
                             
                             <!-- GIF Demo Video Space -->
@@ -171,127 +129,193 @@
                 </div>
                         </div>
                         
-            <!-- App Compatibility Cards -->
+            <!-- App Compatibility Table -->
             <div class="app-compatibility-section">
-                <h3>📱 Drag&Drop Supported Apps</h3>
-                <p class="section-subtitle">Most major applications support drag & drop functionality!</p>
+                <h3>📱 Compatibility</h3>
+                <p class="section-subtitle">Drag & drop support status for major applications</p>
                 
-                <div class="compatibility-cards">
-                    <!-- Excellent Compatibility -->
-                    <div class="compat-card excellent">
-                        <div class="compat-header">
-                            <div class="compat-icon">✅</div>
-                            <h4>Excellent</h4>
+                <div class="compatibility-table-container">
+                    <table class="compatibility-table">
+                        <thead>
+                            <tr>
+                                <th class="app-name-col">Name</th>
+                                <th class="single-drag-col">Single Drag</th>
+                                <th class="multi-drag-col">Multi Drag</th>
+                                <th class="notes-col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/microsoftword/0078D4" class="app-icon-img" alt="Microsoft Word" onerror="this.style.display='none'"> Microsoft Word
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 30 images)</span></td>
+                                <td class="notes">Images inserted into document</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/googledrive/4285F4" class="app-icon-img" alt="Google Drive" onerror="this.style.display='none'"> Google Drive
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
+                                <td class="notes">Upload to cloud storage</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/discord/5865F2" class="app-icon-img" alt="Discord" onerror="this.style.display='none'"> Discord
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
+                                <td class="notes">Upload to chat channel</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/slack/4A154B" class="app-icon-img" alt="Slack" onerror="this.style.display='none'"> Slack
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
+                                <td class="notes">Upload to workspace</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/microsoftteams/6264A7" class="app-icon-img" alt="Microsoft Teams" onerror="this.style.display='none'"> Microsoft Teams
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
+                                <td class="notes">Upload to team chat</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/notion/000000" class="app-icon-img" alt="Notion" onerror="this.style.display='none'"> Notion
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 20 images)</span></td>
+                                <td class="notes">Embed into pages</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/telegram/26A5E4" class="app-icon-img" alt="Telegram" onerror="this.style.display='none'"> Telegram
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
+                                <td class="notes">Fast upload</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/kakaotalk/FFCD00" class="app-icon-img" alt="KakaoTalk" onerror="this.style.display='none'"> KakaoTalk
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
+                                <td class="notes">In chat</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/whatsapp/25D366" class="app-icon-img" alt="WhatsApp" onerror="this.style.display='none'"> WhatsApp
+                                </td>
+                                <td class="single-drag">🚫</td>
+                                <td class="multi-drag">🚫</td>
+                                <td class="notes">⚠️ Drop denied due to app policy. (It is automatically copied immediately upon capture, so paste with Ctrl+V!)</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/microsoftpowerpoint/D83B01" class="app-icon-img" alt="Microsoft PowerPoint" onerror="this.style.display='none'"> Microsoft PowerPoint
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 30 images)</span></td>
+                                <td class="notes">Auto-arranged</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/microsoftexcel/217346" class="app-icon-img" alt="Microsoft Excel" onerror="this.style.display='none'"> Microsoft Excel
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 30 images)</span></td>
+                                <td class="notes">Inserted into cells</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/googledocs/4285F4" class="app-icon-img" alt="Google Docs" onerror="this.style.display='none'"> Google Docs
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 20 images)</span></td>
+                                <td class="notes">Inserted into documents</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/windows/0078D6" class="app-icon-img" alt="File Explorer" onerror="this.style.display='none'"> File Explorer
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
+                                <td class="notes">Copy files to folders</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/onedrive/0078D4" class="app-icon-img" alt="OneDrive" onerror="this.style.display='none'"> OneDrive
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
+                                <td class="notes">Upload to cloud</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/photoshop/31A8FF" class="app-icon-img" alt="Adobe Photoshop" onerror="this.src='https://cdn.simpleicons.org/adobe/FF0000';this.onerror=null"> Adobe Photoshop
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
+                                <td class="notes">Opens as layers in new document</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/figma/F24E1E" class="app-icon-img" alt="Figma" onerror="this.style.display='none'"> Figma
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
+                                <td class="notes">Import as frames</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/googlechrome/4285F4" class="app-icon-img" alt="Chrome" onerror="this.style.display='none'"> Chrome
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Depends on website drag & drop support</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/firefoxbrowser/FF7139" class="app-icon-img" alt="Firefox" onerror="this.style.display='none'"> Firefox
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Depends on website drag & drop support</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/gmail/EA4335" class="app-icon-img" alt="Gmail" onerror="this.style.display='none'"> Gmail
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Max 25MB per email attachment</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" class="app-icon-img" alt="Microsoft Outlook" onerror="this.style.display='none'"> Microsoft Outlook
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 20 images)</span></td>
+                                <td class="notes">Attach to email</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">
+                                    <img src="https://cdn.simpleicons.org/microsoftedge/0078D4" class="app-icon-img" alt="Microsoft Edge" onerror="this.style.display='none'"> Microsoft Edge
+                                </td>
+                                <td class="single-drag">✅</td>
+                                <td class="multi-drag">✅</td>
+                                <td class="notes">Depends on website drag & drop support</td>
+                            </tr>
+                        </tbody>
+                    </table>
                         </div>
-                        <div class="compat-apps">
-                            <!-- 기본 앱들 (인기 앱들) -->
-                            <div class="app-list-inline">
-                                <ul class="app-list">
-                                    <li><img src="https://cdn.simpleicons.org/microsoftword" class="app-icon-img" alt="Microsoft Word"> Microsoft Word<span class="app-support">(Multi drag: up to 30 images)</span></li>
-                                    <li><img src="https://cdn.simpleicons.org/googledrive" class="app-icon-img" alt="Google Drive"> Google Drive<span class="app-support">(Multi drag, no limit)</span></li>
-                                    <li><img src="https://cdn.simpleicons.org/discord" class="app-icon-img" alt="Discord"> Discord<span class="app-support">(Multi drag supported)</span></li>
-                                    <li><img src="https://cdn.simpleicons.org/microsoftteams" class="app-icon-img" alt="Microsoft Teams"> Microsoft Teams<span class="app-support">(Multi drag: up to 10 images)</span></li>
-                                    <li><img src="https://cdn.simpleicons.org/notion" class="app-icon-img" alt="Notion"> Notion<span class="app-support">(Multi drag: up to 20 images)</span></li>
-                                </ul>
-                            </div>
-
-                            <!-- 추가 앱들 (카테고리별 분류) -->
-                            <div class="app-more collapsed">
-                                <div class="app-category">
-                                    <h5>💬 Messengers</h5>
-                                    <ul class="app-list">
-                                        <li><img src="https://cdn.simpleicons.org/telegram" class="app-icon-img" alt="Telegram"> Telegram<span class="app-support">(Multi drag: up to 10 images, fast upload)</span></li>
-                                        <li><img src="https://cdn.simpleicons.org/kakaotalk" class="app-icon-img" alt="KakaoTalk"> KakaoTalk<span class="app-support">(Multi drag: up to 10 images in chat)</span></li>
-                                        <li><img src="https://cdn.simpleicons.org/whatsapp" class="app-icon-img" alt="WhatsApp"> WhatsApp<span class="app-support">(Multi drag supported)</span></li>
-                                    </ul>
-                    </div>
-                                <div class="app-category">
-                                    <h5>📄 Office</h5>
-                                    <ul class="app-list">
-                                        <li><img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft PowerPoint"> Microsoft PowerPoint<span class="app-support">(Multi drag: up to 30 images, auto-arranged)</span></li>
-                                        <li><img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Excel"> Microsoft Excel<span class="app-support">(Multi drag: up to 30 images, inserted into cells)</span></li>
-                                        <li><img src="https://cdn.simpleicons.org/googledocs" class="app-icon-img" alt="Google Docs"> Google Docs<span class="app-support">(Multi drag: up to 20 images)</span></li>
-                    </ul>
-                </div>
-                                <div class="app-category">
-                                    <h5>📁 File System</h5>
-                                    <ul class="app-list">
-                                        <li><img src="https://cdn.simpleicons.org/windows" class="app-icon-img" alt="File Explorer"> File Explorer<span class="app-support">(Multi drag supported, no limit)</span></li>
-                                        <li><img src="https://cdn.simpleicons.org/onedrive" class="app-icon-img" alt="OneDrive"> OneDrive<span class="app-support">(Multi drag supported, no limit)</span></li>
-                                    </ul>
-                    </div>
-                                <div class="app-category">
-                                    <h5>🎨 Design Tools</h5>
-                                    <ul class="app-list">
-                                        <li><img src="https://cdn.simpleicons.org/adobephotoshop" class="app-icon-img" alt="Adobe Photoshop"> Adobe Photoshop<span class="app-support">(Multi drag supported, opens as layers)</span></li>
-                                        <li><img src="https://cdn.simpleicons.org/figma" class="app-icon-img" alt="Figma"> Figma<span class="app-support">(Multi drag supported, no limit)</span></li>
-                    </ul>
-                </div>
-                                <div class="app-category">
-                                    <h5>🌐 Web Browsers</h5>
-                                    <ul class="app-list">
-                                        <li><img src="https://cdn.simpleicons.org/googlechrome" class="app-icon-img" alt="Chrome"> Chrome<span class="app-support">(Depends on website drag & drop support)</span></li>
-                                        <li><img src="https://cdn.simpleicons.org/mozillafirefox" class="app-icon-img" alt="Firefox"> Firefox<span class="app-support">(Depends on website drag & drop support)</span></li>
-                    </ul>
-                </div>
-                                <div class="app-category">
-                                    <h5>📧 Email</h5>
-                                    <ul class="app-list">
-                                        <li><img src="https://cdn.simpleicons.org/gmail" class="app-icon-img" alt="Gmail"> Gmail<span class="app-support">(Max 25MB per email attachment)</span></li>
-                                        <li><img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Outlook"> Microsoft Outlook<span class="app-support">(Multi drag: up to 20 images)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-            </div>
-
-                    <!-- Limited Compatibility -->
-                    <div class="compat-card limited">
-                        <div class="compat-header">
-                            <div class="compat-icon">⚠️</div>
-                            <h4>Limited</h4>
-                </div>
-                        <div class="compat-apps">
-                            <!-- �⺻ ǥ�� (�׻� ǥ��) -->
-                            <div class="app-list-inline">
-                                <ul class="app-list">
-                                    <li><img src="https://cdn.simpleicons.org/slack" class="app-icon-img" alt="Slack"> Slack<span class="app-limit">(Single drop only)</span></li>
-                    </ul>
-                </div>
-
-                            <!-- �߰� �۵� (ī�װ����� �з�) -->
-                            <div class="app-more collapsed">
-                                <!-- Limited Compatibility���� �߰� ���� ���� -->
-                </div>
-                </div>
-                </div>
-
-                    <!-- Incompatible -->
-                    <div class="compat-card incompatible">
-                        <div class="compat-header">
-                            <div class="compat-icon">❌</div>
-                            <h4>Incompatible</h4>
-                    </div>
-                        <div class="compat-apps">
-                            <!-- �⺻ ǥ�� (�׻� ǥ��) -->
-                            <div class="app-list-inline">
-                                <ul class="app-list">
-                                    <li><img src="https://cdn.simpleicons.org/whatsapp" class="app-icon-img" alt="WhatsApp"> WhatsApp<span class="app-limit">(Single Ctrl+V only, no multi drag)</span></li>
-                                    <li><img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Edge"> Microsoft Edge<span class="app-limit">(Drag & drop not supported)</span></li>
-                    </ul>
-                </div>
-
-                            <!-- �߰� �۵� (ī�װ����� �з�) -->
-                            <div class="app-more collapsed">
-                                <!-- Incompatible���� �߰� ���� ���� -->
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                <button class="toggle-apps-btn" onclick="toggleAllApps(this)">
-                    <span class="btn-text">Show More</span>
-                    <span class="btn-icon">▼</span>
-                </button>
             </div>
         </div>
     </section>
@@ -334,29 +358,29 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="feature-name">📸 캡처 한도</td>
-                            <td class="plan-cell">3개</td>
-                            <td class="plan-cell">100개 (33배!)</td>
+                            <td class="feature-name">📸 Capture Limit</td>
+                            <td class="plan-cell">3</td>
+                            <td class="plan-cell">100 (33x more!)</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">🏷️ 워터마크</td>
-                            <td class="plan-cell">❌ 있음</td>
-                            <td class="plan-cell">✅ 없음</td>
+                            <td class="feature-name">🏷️ Watermark</td>
+                            <td class="plan-cell">❌ Yes</td>
+                            <td class="plan-cell">✅ No</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">🎨 편집 기능</td>
-                            <td class="plan-cell">✅ 모든 도구</td>
-                            <td class="plan-cell">✅ 모든 도구</td>
+                            <td class="feature-name">🎨 Editing Tools</td>
+                            <td class="plan-cell">✅ All tools</td>
+                            <td class="plan-cell">✅ All tools</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">🖱️ 드래그 앤 드롭</td>
-                            <td class="plan-cell">✅ 지원</td>
-                            <td class="plan-cell">✅ 지원</td>
+                            <td class="feature-name">🖱️ Drag & Drop</td>
+                            <td class="plan-cell">✅ Supported</td>
+                            <td class="plan-cell">✅ Supported</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">⚙️ 시스템 기능</td>
-                            <td class="plan-cell">✅ 모든 기능</td>
-                            <td class="plan-cell">✅ 모든 기능</td>
+                            <td class="feature-name">⚙️ System Features</td>
+                            <td class="plan-cell">✅ All features</td>
+                            <td class="plan-cell">✅ All features</td>
                         </tr>
                     </tbody>
                 </table>
@@ -364,151 +388,334 @@
             
             <div class="pricing-cta">
                 <a href="#" class="btn btn-primary btn-large microsoft-store-btn">🏪 Get it from Microsoft Store</a>
-                <p class="pricing-note">무료 다운로드 (3개 캡처, 워터마크 포함)</p>
+                <p class="pricing-note">Free download (3 captures, with watermark)</p>
             </div>
         </div>
     </section>
 
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-overlay" id="successModalOverlay"></div>
+        <div class="success-modal-content">
+            <div class="success-icon">🎉</div>
+            <h2>Welcome to Beta Test!</h2>
+            <p class="success-message">Your beta test application has been successfully submitted.</p>
+            <div class="success-details">
+                <h3>What's Next?</h3>
+                <ul>
+                    <li>📧 Check your email for beta test instructions</li>
+                    <li>📱 Download the beta version when available</li>
+                    <li>💬 Join our community for updates</li>
+                    <li>📖 Getting started guide</li>
+                </ul>
+            </div>
+            <button class="success-close-btn" id="successCloseBtn">Got it! 🚀</button>
+        </div>
+    </div>
+
+    <!-- Beta Test Modal -->
+    <div class="beta-modal" id="betaModal">
+        <div class="beta-modal-overlay" id="betaModalOverlay"></div>
+        <div class="beta-modal-content">
+            <button class="beta-modal-close" id="betaModalClose">&times;</button>
+            
+            <div class="beta-modal-header">
+                <h2>🚀 Capture Drag Beta Testers Wanted</h2>
+                <p class="beta-subtitle">Join now and be the first to experience exclusive benefits.</p>
+                <p class="beta-period">Test Period: November 1 ~ November 15, 2025</p>
+            </div>
+
+            <div class="beta-modal-body">
+                <div class="beta-benefits">
+                    <h3>🎁 Participation Benefits</h3>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💎</div>
+                        <div class="benefit-text">
+                            <p><strong>All participants who provide feedback</strong> during the beta test will receive the Pro Plan (worth $29) <strong>for FREE</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item special">
+                        <div class="benefit-icon">⭐</div>
+                        <div class="benefit-text">
+                            <p><strong>Top Contributors:</strong> Promoted to 'Partner' status (Lifetime FREE access to all services + more)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="beta-form" id="betaForm">
+                    <div class="form-group">
+                        <label for="email">1. Email Address <span class="required">(Required)</span></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nationality">2. Nationality <span class="required">(Required)</span></label>
+                        <div class="custom-select-wrapper">
+                            <input type="hidden" id="nationality" name="nationality" required>
+                            <div class="custom-select" id="nationalitySelect">
+                                <div class="custom-select-trigger">
+                                    <span class="custom-select-placeholder">Select your nationality</span>
+                                    <span class="custom-select-arrow">▼</span>
+                                </div>
+                                <div class="custom-select-options">
+                                    <div class="custom-select-search">
+                                        <input type="text" id="nationalitySearch" placeholder="Search nationality..." autocomplete="off">
+                                    </div>
+                                    <div class="custom-select-options-list" id="nationalityOptionsList">
+                                        <div class="custom-select-option" data-value="South Korea">South Korea</div>
+                                        <div class="custom-select-option" data-value="United States">United States</div>
+                                        <div class="custom-select-option" data-value="Japan">Japan</div>
+                                        <div class="custom-select-option" data-value="China">China</div>
+                                        <div class="custom-select-option" data-value="United Kingdom">United Kingdom</div>
+                                        <div class="custom-select-option" data-value="Germany">Germany</div>
+                                        <div class="custom-select-option" data-value="France">France</div>
+                                        <div class="custom-select-option" data-value="Canada">Canada</div>
+                                        <div class="custom-select-option" data-value="Australia">Australia</div>
+                                        <div class="custom-select-option" data-value="India">India</div>
+                                        <div class="custom-select-option" data-value="Brazil">Brazil</div>
+                                        <div class="custom-select-option" data-value="Mexico">Mexico</div>
+                                        <div class="custom-select-option" data-value="Italy">Italy</div>
+                                        <div class="custom-select-option" data-value="Spain">Spain</div>
+                                        <div class="custom-select-option" data-value="Russia">Russia</div>
+                                        <div class="custom-select-option" data-value="Other">Other</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3. Occupation <span class="subtitle">(Select the closest option)</span></label>
+                        <div class="option-grid">
+                            <label class="option-card">
+                                <input type="radio" name="occupation" value="developer" required>
+                                <span class="option-content">
+                                    <span class="option-icon">💻</span>
+                                    <span class="option-text">Developer</span>
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="occupation" value="designer">
+                                <span class="option-content">
+                                    <span class="option-icon">🎨</span>
+                                    <span class="option-text">Designer</span>
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="occupation" value="planner">
+                                <span class="option-content">
+                                    <span class="option-icon">📊</span>
+                                    <span class="option-text">Planner/Marketer</span>
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="occupation" value="student">
+                                <span class="option-content">
+                                    <span class="option-icon">🎓</span>
+                                    <span class="option-text">Student</span>
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="occupation" value="office">
+                                <span class="option-content">
+                                    <span class="option-icon">💼</span>
+                                    <span class="option-text">Office Worker</span>
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="occupation" value="other">
+                                <span class="option-content">
+                                    <span class="option-icon">👤</span>
+                                    <span class="option-text">Other</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>4. Primary Use Case <span class="subtitle">(Select the closest option)</span></label>
+                        <div class="option-grid">
+                            <label class="option-card">
+                                <input type="radio" name="purpose" value="work" required>
+                                <span class="option-content">
+                                    <span class="option-icon">💼</span>
+                                    <span class="option-text">Work/Collaboration</span>
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="purpose" value="study">
+                                <span class="option-content">
+                                    <span class="option-icon">📚</span>
+                                    <span class="option-text">Learning/Research</span>
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="purpose" value="hobby">
+                                <span class="option-content">
+                                    <span class="option-icon">🎯</span>
+                                    <span class="option-text">Hobby</span>
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="purpose" value="other">
+                                <span class="option-content">
+                                    <span class="option-icon">🔧</span>
+                                    <span class="option-text">Other</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Agreement -->
+                    <div class="privacy-agreement">
+                        <label class="privacy-checkbox-label">
+                            <input type="checkbox" id="privacyAgree" required>
+                            <span class="privacy-checkmark"></span>
+                            <span class="privacy-text">
+                                <strong>I agree to the collection and use of email information</strong><br>
+                                <small>Email information will be used solely for beta test purposes and will be disposed of after the beta test ends.</small>
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="beta-submit-btn">
+                        Join Beta & Get Benefits 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Privacy Policy Section -->
     <section id="privacy-policy" class="privacy-policy" style="display: none;">
         <div class="container">
-            <h2>🔒 개인정보처리방침</h2>
+            <h2>🔒 Privacy Policy</h2>
             
             <div class="privacy-content">
-                <h3>1. 개인정보의 처리목적</h3>
-                <p>Capture Drag는 다음의 목적을 위하여 개인정보를 처리합니다:</p>
+                <h3>1. Data Collection Purpose</h3>
+                <p>We collect personal information for the following purposes:</p>
                 <ul>
-                    <li>Beta Test 참여자 관리 및 Pro Plan 제공</li>
-                    <li>서비스 개선을 위한 피드백 수집</li>
-                    <li>고객 문의 및 불만 처리</li>
+                    <li>Beta test participant management and Pro plan provision</li>
+                    <li>Service improvement through feedback collection</li>
+                    <li>Customer support and inquiry handling</li>
                 </ul>
 
-                <h3>2. 개인정보의 처리 및 보유기간</h3>
-                <p>개인정보는 원칙적으로 개인정보의 처리목적이 달성되면 지체없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다:</p>
+                <h3>2. Data Retention Period</h3>
+                <p>Personal information is deleted immediately after the purpose is achieved. However, the following information is retained for the specified period:</p>
                 <ul>
-                    <li><strong>Beta Test 참여자 정보:</strong> Beta Test 종료 후 1년</li>
-                    <li><strong>고객 문의 기록:</strong> 3년 (전자상거래법)</li>
+                    <li><strong>Beta test participant data:</strong> 1 year after beta test ends (deleted on Nov 15, 2026)</li>
+                    <li><strong>Customer inquiries:</strong> 3 years (as required by law)</li>
                 </ul>
 
-                <h3>3. 처리하는 개인정보의 항목</h3>
+                <h3>3. Data We Collect</h3>
                 <ul>
-                    <li><strong>필수항목:</strong> 이메일 주소</li>
-                    <li><strong>선택항목:</strong> 이름, 피드백 내용</li>
+                    <li><strong>Required:</strong> Email address, occupation, use case</li>
+                    <li><strong>Automatically collected:</strong> IP address, User Agent, Referrer URL</li>
                 </ul>
 
-                <h3>4. 개인정보의 제3자 제공</h3>
-                <p>Capture Drag는 원칙적으로 이용자의 개인정보를 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다:</p>
+                <h3>4. Third-Party Data Sharing</h3>
+                <p>We do not share your personal information with third parties, except:</p>
                 <ul>
-                    <li>이용자가 사전에 동의한 경우</li>
-                    <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+                    <li>When you have given prior consent</li>
+                    <li>When required by law or legal process</li>
                 </ul>
 
-                <h3>5. 개인정보의 안전성 확보조치</h3>
-                <p>개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다:</p>
-                <ul>
-                    <li>개인정보 암호화</li>
-                    <li>해킹 등에 대비한 기술적 대책</li>
-                    <li>개인정보에 대한 접근 제한</li>
-                </ul>
-
-                <h3>6. 개인정보 보호책임자</h3>
+                <h3>5. Contact Information</h3>
                 <p>
-                    <strong>성명:</strong> Capture Drag 개발팀<br>
-                    <strong>연락처:</strong> contact@capturedrag.com
+                    <strong>Data Protection Officer:</strong> Capture Drag Development Team<br>
+                    <strong>Contact:</strong> contact@capturedrag.com
                 </p>
 
-                <h3>7. 개인정보 처리방침의 변경</h3>
-                <p>이 개인정보처리방침은 시행일로부터 변경사항이 있을 시 개정될 수 있습니다.</p>
-                <p><strong>시행일자:</strong> 2025년 1월 1일</p>
+                <p><strong>Effective Date:</strong> January 1, 2025</p>
             </div>
             
-            <button class="btn btn-secondary" onclick="hidePrivacyPolicy()">닫기</button>
+            <button class="btn btn-secondary" onclick="hidePrivacyPolicy()">Close</button>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2>❓ 자주 묻는 질문 (FAQ)</h2>
+            <h2>❓ Frequently Asked Questions (FAQ)</h2>
             
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>무료 버전과 프로 버전의 주요 차이점은 무엇인가요?</h3>
+                        <h3>What are the main differences between the Free and Pro versions?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>핵심 차이점:</strong><br>
-                        • 📸 캡처 한도: 무료 3개 → 프로 100개 (33배 증가!)<br>
-                        • 🏷️ 워터마크: 무료 버전에는 하단에 워터마크가 있습니다<br>
-                        • 🎨 편집 기능: 두 버전 모두 모든 편집 도구를 사용할 수 있습니다</p>
+                        <p><strong>Key Differences:</strong><br>
+                        • 📸 Capture Limit: Free 3 → Pro 100 (33x more!)<br>
+                        • 🏷️ Watermark: Free version has a watermark at the bottom<br>
+                        • 🎨 Editing Tools: Both versions include all editing tools</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>무료 버전으로도 충분한가요?</h3>
+                        <h3>Is the Free version sufficient?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>무료 버전이 충분한 경우:</strong><br>
-                        • 일상적인 스크린샷 캡처<br>
-                        • 가끔씩 편집이 필요한 경우<br>
-                        • 개인 사용 목적<br>
-                        • 앱 기능을 먼저 체험해보고 싶은 경우</p>
+                        <p><strong>The Free version is sufficient when:</strong><br>
+                        • Taking occasional screenshots<br>
+                        • Need editing occasionally<br>
+                        • Personal use<br>
+                        • Want to try the app features first</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>언제 프로 버전을 고려해야 하나요?</h3>
+                        <h3>When should I consider the Pro version?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>프로 버전이 필요한 경우:</strong><br>
-                        • 업무용 프레젠테이션, 보고서 작성<br>
-                        • 연속적인 캡처가 필요한 대량 작업<br>
-                        • 워터마크 없는 깨끗한 이미지가 필요한 경우<br>
-                        • 3개 캡처로 부족함을 느낄 때</p>
+                        <p><strong>Pro version is needed when:</strong><br>
+                        • Creating business presentations and reports<br>
+                        • Need continuous captures for bulk work<br>
+                        • Need clean images without watermark<br>
+                        • 3 captures are not enough</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>프로 버전은 어떻게 구매하나요?</h3>
+                        <h3>How do I purchase the Pro version?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Microsoft Store에서 구매할 수 있습니다:<br>
-                        • 영구 라이선스: $29 (한 번 구매로 평생 사용)</p>
+                        <p>You can purchase from Microsoft Store:<br>
+                        • Lifetime License: $29 (one-time purchase for lifetime use)</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>시스템 요구사항은 어떻게 되나요?</h3>
+                        <h3>What are the system requirements?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>요구사항:</strong><br>
+                        <p><strong>Requirements:</strong><br>
                         • OS: Windows 10/11<br>
                         • .NET 8.0 Runtime<br>
-                        • 메모리: 낮은 사용량 (~200MB)<br>
-                        • CPU: 낮은 사용량 (~3%)</p>
+                        • Memory: Low usage (~200MB)<br>
+                        • CPU: Low usage (~3%)</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>무료 버전에서도 모든 편집 도구를 사용할 수 있나요?</h3>
+                        <h3>Can I use all editing tools in the Free version?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>네! 무료 버전에서도 모든 편집 기능을 사용할 수 있습니다:<br>
-                        • 펜, 브러시, 지우개 도구<br>
-                        • 화살표, 텍스트, 도형 그리기<br>
-                        • 줌 인/아웃, 팬(이동)<br>
-                        • 실행 취소/다시 실행, 저장 기능</p>
+                        <p>Yes! The Free version includes all editing features:<br>
+                        • Pen, brush, eraser tools<br>
+                        • Arrow, text, shape drawing<br>
+                        • Zoom in/out, pan (move)<br>
+                        • Undo/redo, save functionality</p>
                     </div>
                 </div>
             </div>
@@ -542,51 +749,313 @@
 
     <!-- JavaScript -->
     <script>
-        // Beta Test Modal Functions
+        // Initialize Supabase Client
+        const SUPABASE_URL = 'https://gxavjkdewqfxacxabyoj.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4YXZqa2Rld3FmeGFjeGFieW9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAxNDMyNDgsImV4cCI6MjA3NTcxOTI0OH0.BWnSwP-602UZkHUarqlGeUKldCSlq1TWEx5I9mvGmF4';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Handle broken app icons
+        function handleBrokenImages() {
+            const images = document.querySelectorAll('.app-icon-img[src*="simpleicons.org"]');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                });
+            });
+        }
+
+        // FAQ Accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const betaTestBtn = document.getElementById('betaTestBtn');
-            const betaTestModal = document.getElementById('betaTestModal');
-            const closeModal = document.getElementById('closeModal');
-            const betaTestForm = document.getElementById('betaTestForm');
+            // Handle broken images
+            handleBrokenImages();
+            
+            // Custom Select Dropdown for Nationality
+            const nationalitySelect = document.getElementById('nationalitySelect');
+            const nationalityTrigger = nationalitySelect.querySelector('.custom-select-trigger');
+            const nationalityPlaceholder = nationalitySelect.querySelector('.custom-select-placeholder');
+            const nationalityOptions = nationalitySelect.querySelectorAll('.custom-select-option');
+            const nationalitySearch = document.getElementById('nationalitySearch');
+            const nationalityHidden = document.getElementById('nationality');
+            const nationalityOptionsList = document.getElementById('nationalityOptionsList');
 
-            // Open modal
-            betaTestBtn.addEventListener('click', function() {
-                betaTestModal.style.display = 'block';
-            });
-
-            // Close modal
-            closeModal.addEventListener('click', function() {
-                betaTestModal.style.display = 'none';
-            });
-
-            // Close modal when clicking outside
-            window.addEventListener('click', function(event) {
-                if (event.target === betaTestModal) {
-                    betaTestModal.style.display = 'none';
+            // Toggle dropdown
+            nationalityTrigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                nationalitySelect.classList.toggle('active');
+                if (nationalitySelect.classList.contains('active')) {
+                    nationalitySearch.focus();
                 }
             });
 
-            // Handle form submission
-            betaTestForm.addEventListener('submit', function(e) {
+            // Select option
+            nationalityOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const value = this.getAttribute('data-value');
+                    nationalityHidden.value = value;
+                    nationalityPlaceholder.textContent = value;
+                    nationalityTrigger.classList.add('has-value');
+                    
+                    // Update selected state
+                    nationalityOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    // Close dropdown
+                    nationalitySelect.classList.remove('active');
+                    nationalitySearch.value = '';
+                    filterOptions('');
+                });
+            });
+
+            // Search functionality
+            nationalitySearch.addEventListener('input', function(e) {
+                filterOptions(e.target.value.toLowerCase());
+            });
+
+            function filterOptions(searchTerm) {
+                let hasVisible = false;
+                nationalityOptions.forEach(option => {
+                    const text = option.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        option.classList.remove('hidden');
+                        hasVisible = true;
+                    } else {
+                        option.classList.add('hidden');
+                    }
+                });
+                
+                // Show "No results" message if needed
+                if (!hasVisible && searchTerm !== '') {
+                    if (!document.querySelector('.no-results')) {
+                        const noResults = document.createElement('div');
+                        noResults.className = 'custom-select-option no-results';
+                        noResults.textContent = 'No results found';
+                        noResults.style.color = '#999';
+                        noResults.style.fontStyle = 'italic';
+                        noResults.style.cursor = 'default';
+                        nationalityOptionsList.appendChild(noResults);
+                    }
+                } else {
+                    const noResults = document.querySelector('.no-results');
+                    if (noResults) {
+                        noResults.remove();
+                    }
+                }
+            }
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!nationalitySelect.contains(e.target)) {
+                    nationalitySelect.classList.remove('active');
+                }
+            });
+
+            // Prevent dropdown from closing when clicking inside
+            nationalitySelect.querySelector('.custom-select-options').addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Toggle active state
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+
+            // Beta Test Modal functionality
+            const betaTestBtn = document.getElementById('betaTestBtn');
+            const betaModal = document.getElementById('betaModal');
+            const betaModalClose = document.getElementById('betaModalClose');
+            const betaModalOverlay = document.getElementById('betaModalOverlay');
+            const betaForm = document.getElementById('betaForm');
+            
+            // Debug: Check if elements exist
+            console.log('Beta Test Button:', betaTestBtn);
+            console.log('Beta Modal:', betaModal);
+            
+            if (!betaTestBtn) {
+                console.error('Beta Test Button not found!');
+                return;
+            }
+            
+            // Success Modal
+            const successModal = document.getElementById('successModal');
+            const successModalOverlay = document.getElementById('successModalOverlay');
+            const successCloseBtn = document.getElementById('successCloseBtn');
+
+            // Open beta modal
+            betaTestBtn.addEventListener('click', function(e) {
+                console.log('Beta Test Button clicked!', e);
+                e.preventDefault();
+                e.stopPropagation();
+                betaModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                console.log('Modal should be open now');
+            });
+
+            // Close beta modal
+            function closeModal() {
+                betaModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            betaModalClose.addEventListener('click', closeModal);
+            betaModalOverlay.addEventListener('click', closeModal);
+
+            // Open success modal
+            function showSuccessModal() {
+                closeModal();
+                successModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close success modal
+            function closeSuccessModal() {
+                successModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            successCloseBtn.addEventListener('click', closeSuccessModal);
+            successModalOverlay.addEventListener('click', closeSuccessModal);
+
+            // Close on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    if (betaModal.classList.contains('active')) {
+                        closeModal();
+                    }
+                    if (successModal.classList.contains('active')) {
+                        closeSuccessModal();
+                    }
+                }
+            });
+
+            // Form submission
+            betaForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
-                const email = document.getElementById('email').value;
-                const name = document.getElementById('name').value;
-                const feedback = document.getElementById('feedback').value;
-                const privacyAgree = document.getElementById('privacyAgree').checked;
-
-                if (!privacyAgree) {
-                    alert('개인정보 수집 및 이용에 동의해주세요.');
+                // Check privacy agreement
+                const privacyAgree = document.getElementById('privacyAgree');
+                if (!privacyAgree.checked) {
+                    alert('Please agree to the collection and use of personal information.');
+                    privacyAgree.focus();
                     return;
                 }
-
-                // Here you would typically send the data to your server
-                // For now, we'll just show a success message
-                alert('Beta Test 신청이 완료되었습니다!\n이메일로 Pro Plan 정보를 안내해드리겠습니다.');
                 
-                // Reset form and close modal
-                betaTestForm.reset();
-                betaTestModal.style.display = 'none';
+                // Check nationality
+                const nationalityHidden = document.getElementById('nationality');
+                const submitBtn = betaForm.querySelector('.beta-submit-btn');
+                const originalText = submitBtn.textContent;
+                
+                if (!nationalityHidden.value) {
+                    alert('Please select your nationality.');
+                    document.getElementById('nationalitySelect').classList.add('active');
+                    document.getElementById('nationalitySearch').focus();
+                    return;
+                }
+                
+                // Disable button and show loading
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+                
+                try {
+                    const formData = new FormData(betaForm);
+                    
+                    // Get user's IP address (using a public API)
+                    let ipAddress = null;
+                    try {
+                        const ipResponse = await fetch('https://api.ipify.org?format=json');
+                        const ipData = await ipResponse.json();
+                        ipAddress = ipData.ip;
+                    } catch (error) {
+                        console.log('Could not fetch IP address:', error);
+                    }
+                    
+                    const data = {
+                        email: formData.get('email'),
+                        occupation: formData.get('occupation'),
+                        purpose: formData.get('purpose'),
+                        nationality: formData.get('nationality'),
+                        privacy_agreed: privacyAgree.checked,
+                        privacy_agreed_at: new Date().toISOString(),
+                        ip_address: ipAddress,
+                        user_agent: navigator.userAgent,
+                        referrer_url: document.referrer || window.location.href
+                    };
+
+                    console.log('Submitting beta test application:', data);
+
+                    // Insert data into Supabase
+                    const { data: result, error } = await supabaseClient
+                        .from('beta_applications')
+                        .insert([data])
+                        .select();
+
+                    if (error) {
+                        console.error('Supabase error:', error);
+                        
+                        // Check if it's a duplicate email error
+                        if (error.code === '23505') {
+                            alert('⚠️ This email has already been registered for the beta test.\n\nPlease check your email for further instructions.');
+                        } else {
+                            alert('❌ An error occurred. Please try again later.\n\nError: ' + error.message);
+                        }
+                    } else {
+                        console.log('Successfully submitted:', result);
+                        
+                        // Call Edge Function to send welcome email
+                        try {
+                            const emailResponse = await fetch(`${SUPABASE_URL}/functions/v1/send-beta-welcome-email`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                                },
+                                body: JSON.stringify({
+                                    email: data.email,
+                                    occupation: data.occupation,
+                                    purpose: data.purpose
+                                })
+                            });
+
+                            if (emailResponse.ok) {
+                                console.log('Welcome email sent successfully');
+                            } else {
+                                console.error('Failed to send welcome email:', await emailResponse.text());
+                            }
+                        } catch (emailError) {
+                            console.error('Error sending welcome email:', emailError);
+                            // Don't block the user flow even if email fails
+                        }
+                        
+                        // Show success modal
+                        showSuccessModal();
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    alert('❌ An unexpected error occurred. Please try again later.');
+                } finally {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
             });
         });
 
