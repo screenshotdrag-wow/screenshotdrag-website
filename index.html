@@ -14,13 +14,59 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <div class="custom-select-wrapper-lang">
+            <div class="custom-select-lang" id="langSelect">
+                <div class="custom-select-trigger-lang">
+                    <span>🇺🇸 English</span>
+                    <span class="custom-select-arrow-lang">▼</span>
+                </div>
+                <div class="custom-select-options-lang">
+                    <input type="text" class="lang-search-input" id="langSearch" placeholder="Search languages...">
+                    <div class="custom-select-options-list-lang" id="langOptionsList">
+                        <div class="custom-select-option-lang" data-value="en">🇺🇸 English</div>
+                        <div class="custom-select-option-lang" data-value="ko">🇰🇷 한국어</div>
+                        <div class="custom-select-option-lang" data-value="ja">🇯🇵 日本語</div>
+                        <div class="custom-select-option-lang" data-value="zh">🇨🇳 中文</div>
+                        <div class="custom-select-option-lang" data-value="de">🇩🇪 Deutsch</div>
+                        <div class="custom-select-option-lang" data-value="fr">🇫🇷 Français</div>
+                        <div class="custom-select-option-lang" data-value="es">🇪🇸 Español</div>
+                        <div class="custom-select-option-lang" data-value="pt">🇵🇹 Português</div>
+                        <div class="custom-select-option-lang" data-value="it">🇮🇹 Italiano</div>
+                        <div class="custom-select-option-lang" data-value="ru">🇷🇺 Русский</div>
+                        <div class="custom-select-option-lang" data-value="ar">🇸🇦 العربية</div>
+                        <div class="custom-select-option-lang" data-value="hi">🇮🇳 हिन्दी</div>
+                        <div class="custom-select-option-lang" data-value="th">🇹🇭 ไทย</div>
+                        <div class="custom-select-option-lang" data-value="vi">🇻🇳 Tiếng Việt</div>
+                        <div class="custom-select-option-lang" data-value="id">🇮🇩 Bahasa Indonesia</div>
+                        <div class="custom-select-option-lang" data-value="ms">🇲🇾 Bahasa Melayu</div>
+                        <div class="custom-select-option-lang" data-value="tr">🇹🇷 Türkçe</div>
+                        <div class="custom-select-option-lang" data-value="pl">🇵🇱 Polski</div>
+                        <div class="custom-select-option-lang" data-value="nl">🇳🇱 Nederlands</div>
+                        <div class="custom-select-option-lang" data-value="sv">🇸🇪 Svenska</div>
+                        <div class="custom-select-option-lang" data-value="no">🇳🇴 Norsk</div>
+                        <div class="custom-select-option-lang" data-value="da">🇩🇰 Dansk</div>
+                        <div class="custom-select-option-lang" data-value="fi">🇫🇮 Suomi</div>
+                        <div class="custom-select-option-lang" data-value="cs">🇨🇿 Čeština</div>
+                        <div class="custom-select-option-lang" data-value="hu">🇭🇺 Magyar</div>
+                        <div class="custom-select-option-lang" data-value="ro">🇷🇴 Română</div>
+                        <div class="custom-select-option-lang" data-value="he">🇮🇱 עברית</div>
+                        <div class="custom-select-option-lang" data-value="el">🇬🇷 Ελληνικά</div>
+                        <div class="custom-select-option-lang" data-value="uk">🇺🇦 Українська</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="hero">
         <div class="container">
             <!-- Beta Test Banner - Moved to top and made larger -->
             <div class="beta-banner-top">
                 <button class="beta-test-btn-large" id="betaTestBtn">
-                    <span class="beta-icon">🚀</span>
+                    <span class="beta-icon"><img src="free-icon-beta-10435202.svg" alt="Beta" width="64" height="64"></span>
                     <span class="beta-text">
                         <span class="beta-title">Beta Testers Wanted!</span>
                         <span class="beta-subtitle">Get Pro Plan for FREE</span>
@@ -29,11 +75,12 @@
             </div>
 
             <div class="hero-content">
-                <img src="capturedrag logo.svg" alt="Capture Drag" class="hero-logo-small">
                 <h1 class="hero-title">
+                    <img src="app icon 2.svg" alt="Capture Drag" class="hero-logo-inline">
                     <span class="title-screenshot">Capture</span><span class="title-drag">Drag</span>
                 </h1>
-                <p class="tagline">Capture → Drag&Drop → Done!</p>
+                <p class="tagline">The AI Chat Workflow Revolution</p>
+                <p class="subtitle">The most innovative way to communicate with AI!</p>
                 
                 <div class="demo-video">
                     <p>Demo video coming soon</p>
@@ -47,392 +94,81 @@
                 
                 <div class="features-badges">
                     <span class="badge">⌨️ Alt+S (Single) / Alt+D (Multi)</span>
-                    <span class="badge">🖱️ Drag&Drop</span>
+                    <span class="badge">🖱️ Drag&Drop to AI Chats</span>
                     <span class="badge">🪟 Windows 10/11</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- How to Use -->
-    <section class="how-to-use">
+    <!-- Features Section -->
+    <section class="features-section">
         <div class="container">
-            <h2>How to Use?</h2>
-            
-            <div class="usage-sections">
-                <!-- Single and Multi Capture -->
-                <div class="usage-section single-column">
-                    <div class="usage-modes">
-                        <!-- Single Capture Mode -->
-                        <div class="usage-mode">
-                            <h4>📸 Single Capture</h4>
-                            
-                            <!-- GIF Demo Video Space -->
-                            <div class="demo-gif-container">
-                                <div class="demo-placeholder-box">
-                                    <div class="demo-placeholder-icon">📹</div>
+            <h2>✨ Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📸 Single & Multi Capture</h3>
+                    <p>Capture one image at a time or batch multiple captures for efficiency</p>
                                 </div>
+                <div class="feature-card">
+                    <h3>🖱️ Drag & Drop</h3>
+                    <p>Instantly drag your screenshots to any application - no Ctrl+C/V needed</p>
                         </div>
-                            
-                            <div class="usage-steps">
-                                <div class="usage-step">
-                                    <span class="step-num">1</span>
-                                    <p>Click Capture (or <strong>Alt+S</strong>)</p>
+                <div class="feature-card">
+                    <h3>🎨 Editing Tools</h3>
+                    <p>Annotate, draw, and highlight with professional editing tools</p>
                         </div>
-                                <div class="usage-step">
-                                    <span class="step-num">2</span>
-                                    <p>Capture in progress</p>
+                <div class="feature-card">
+                    <h3>⚡ Fast & Lightweight</h3>
+                    <p>Runs in the background with minimal CPU and memory usage</p>
                         </div>
-                                <div class="usage-step">
-                                    <span class="step-num">3</span>
-                                    <p>Capture complete → Thumbnail displayed</p>
-                                </div>
-                                <div class="usage-step">
-                                    <span class="step-num">4</span>
-                                    <p>Drag & drop to target app ✅<br><span class="sub-option">※ Ctrl+V paste available</span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Multi Capture Mode -->
-                        <div class="usage-mode multi-capture-mode">
-                            <div class="multi-badge">✨ Powerful</div>
-                            <h4>📸 Multi Capture</h4>
-                            
-                            <!-- GIF Demo Video Space -->
-                            <div class="demo-gif-container">
-                                <div class="demo-placeholder-box">
-                                    <div class="demo-placeholder-icon">📹</div>
-                                </div>
-                            </div>
-                            
-                            <div class="usage-steps">
-                                <div class="usage-step">
-                                    <span class="step-num">1</span>
-                                    <p>Click Multi Capture (or <strong>Alt+D</strong>)</p>
-                                </div>
-                                <div class="usage-step">
-                                    <span class="step-num">2</span>
-                                    <p><strong>Capture → Free activity → Click capture button on toolbar (or Space bar) → Free activity → Click capture button (or Space bar) → 🔄...</strong></p>
-                                </div>
-                                <div class="usage-step">
-                                    <span class="step-num">3</span>
-                                    <p><strong>ESC</strong> → Exit multi capture mode</p>
-                                </div>
-                                <div class="usage-step">
-                                    <span class="step-num">4</span>
-                                    <p><strong>Drag multiple images → Drop all at once ✅</strong><br><span class="sub-option">※ Ctrl+V paste available</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                        </div>
-                        
-            <!-- App Compatibility Table -->
-            <div class="app-compatibility-section">
-                <h3>📱 Compatibility</h3>
-                <p class="section-subtitle">Optimized for AI chat workflows (ChatGPT, Claude, Grok, Gemini, Cursor)</p>
-                
-                <div class="compatibility-table-container">
-                    <table class="compatibility-table">
-                        <thead>
-                            <tr>
-                                <th class="app-name-col">Name</th>
-                                <th class="single-drag-col">Single Drag</th>
-                                <th class="multi-drag-col">Multi Drag</th>
-                                <th class="notes-col">Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/openai/00A67D" class="app-icon-img" alt="ChatGPT" onerror="this.style.display='none'"> ChatGPT (web)
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Great for iterative prompts. Multi-drag boosts context (drop multiple refs). If drop blocked, use Ctrl+V.</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/anthropic/0A7AFF" class="app-icon-img" alt="Claude" onerror="this.style.display='none'"> Claude (web)
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Handles multiple screenshots well for long context. If site UI blocks drop, paste with Ctrl+V.</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/x/000000" class="app-icon-img" alt="Grok" onerror="this.style.display='none'"> Grok (xAI)
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Fast image understanding. Multi-drag recommended for dataset-style prompts.</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/google/4285F4" class="app-icon-img" alt="Gemini" onerror="this.style.display='none'"> Gemini (web)
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Works well with multiple images for reasoning. If drop fails, Ctrl+V paste always works.</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" class="app-icon-img" alt="Cursor" onerror="this.style.display='none'"> Cursor (IDE)
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Developer workflow: drag multiple screenshots into chats/notes to maximize multi-drag productivity.</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/microsoftword/0078D4" class="app-icon-img" alt="Microsoft Word" onerror="this.style.display='none'"> Microsoft Word
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 30 images)</span></td>
-                                <td class="notes">Images inserted into document</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/googledrive/4285F4" class="app-icon-img" alt="Google Drive" onerror="this.style.display='none'"> Google Drive
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
-                                <td class="notes">Upload to cloud storage</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/discord/5865F2" class="app-icon-img" alt="Discord" onerror="this.style.display='none'"> Discord
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
-                                <td class="notes">Upload to chat channel</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/slack/4A154B" class="app-icon-img" alt="Slack" onerror="this.style.display='none'"> Slack
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
-                                <td class="notes">Upload to workspace</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/microsoftteams/6264A7" class="app-icon-img" alt="Microsoft Teams" onerror="this.style.display='none'"> Microsoft Teams
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
-                                <td class="notes">Upload to team chat</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/notion/000000" class="app-icon-img" alt="Notion" onerror="this.style.display='none'"> Notion
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 20 images)</span></td>
-                                <td class="notes">Embed into pages</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/telegram/26A5E4" class="app-icon-img" alt="Telegram" onerror="this.style.display='none'"> Telegram
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
-                                <td class="notes">Fast upload</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/kakaotalk/FFCD00" class="app-icon-img" alt="KakaoTalk" onerror="this.style.display='none'"> KakaoTalk
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 10 images)</span></td>
-                                <td class="notes">In chat</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/whatsapp/25D366" class="app-icon-img" alt="WhatsApp" onerror="this.style.display='none'"> WhatsApp
-                                </td>
-                                <td class="single-drag">🚫</td>
-                                <td class="multi-drag">🚫</td>
-                                <td class="notes">⚠️ Drop denied due to app policy. (It is automatically copied immediately upon capture, so paste with Ctrl+V!)</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/microsoftpowerpoint/D83B01" class="app-icon-img" alt="Microsoft PowerPoint" onerror="this.style.display='none'"> Microsoft PowerPoint
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 30 images)</span></td>
-                                <td class="notes">Auto-arranged</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/microsoftexcel/217346" class="app-icon-img" alt="Microsoft Excel" onerror="this.style.display='none'"> Microsoft Excel
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 30 images)</span></td>
-                                <td class="notes">Inserted into cells</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/googledocs/4285F4" class="app-icon-img" alt="Google Docs" onerror="this.style.display='none'"> Google Docs
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 20 images)</span></td>
-                                <td class="notes">Inserted into documents</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/windows/0078D6" class="app-icon-img" alt="File Explorer" onerror="this.style.display='none'"> File Explorer
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
-                                <td class="notes">Copy files to folders</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/onedrive/0078D4" class="app-icon-img" alt="OneDrive" onerror="this.style.display='none'"> OneDrive
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
-                                <td class="notes">Upload to cloud</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/photoshop/31A8FF" class="app-icon-img" alt="Adobe Photoshop" onerror="this.src='https://cdn.simpleicons.org/adobe/FF0000';this.onerror=null"> Adobe Photoshop
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
-                                <td class="notes">Opens as layers in new document</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/figma/F24E1E" class="app-icon-img" alt="Figma" onerror="this.style.display='none'"> Figma
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(no limit)</span></td>
-                                <td class="notes">Import as frames</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/googlechrome/4285F4" class="app-icon-img" alt="Chrome" onerror="this.style.display='none'"> Chrome
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Depends on website drag & drop support</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/firefoxbrowser/FF7139" class="app-icon-img" alt="Firefox" onerror="this.style.display='none'"> Firefox
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Depends on website drag & drop support</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/gmail/EA4335" class="app-icon-img" alt="Gmail" onerror="this.style.display='none'"> Gmail
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Max 25MB per email attachment</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" class="app-icon-img" alt="Microsoft Outlook" onerror="this.style.display='none'"> Microsoft Outlook
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅<br><span class="multi-drag-detail">(up to 20 images)</span></td>
-                                <td class="notes">Attach to email</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">
-                                    <img src="https://cdn.simpleicons.org/microsoftedge/0078D4" class="app-icon-img" alt="Microsoft Edge" onerror="this.style.display='none'"> Microsoft Edge
-                                </td>
-                                <td class="single-drag">✅</td>
-                                <td class="multi-drag">✅</td>
-                                <td class="notes">Depends on website drag & drop support</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="toggle-apps-btn" id="toggleCompatBtn">
-                        <span class="btn-text">Show More</span>
-                        <span class="btn-icon">▼</span>
-                    </button>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing & Plan Comparison Section --><!-- Pricing & Plan Comparison Section -->
+    <!-- Pricing & Plan Comparison Section -->
     <section class="pricing-section">
         <div class="container">
             <div class="pricing-header">
-            <h2>💰 Plan Comparison (2025)</h2>
+                <h2>💰 Plans & Pricing</h2>
             <p class="section-subtitle">Choose the plan that's right for you</p>
             </div>
             
-            <div class="pricing-table-container">
-                <table class="pricing-table">
-                    <thead>
-                        <tr>
-                            <th class="feature-column">Feature</th>
-                            <th class="plan-column free">
-                                <div class="plan-header">
-                                    <div class="plan-icon">🆓</div>
-                                    <div class="plan-name">Free</div>
+            <div class="pricing-cards-comparison">
+                <!-- Free Plan -->
+                <div class="plan-comparison-card">
+                    <div class="plan-comparison-header">
+                        <div class="plan-comparison-icon">🆓</div>
+                        <div class="plan-comparison-title">Free</div>
                                 </div>
-                            </th>
-                            <th class="plan-column pro">
-                                <div class="plan-header">
-                                    <div class="plan-icon">🚀</div>
-                                    <div class="plan-name">Pro</div>
+                    <div class="plan-comparison-price">Free</div>
+                    <a href="#" class="plan-comparison-btn free-comparison-btn">Download</a>
+                    <ul class="plan-comparison-features">
+                        <li>3 captures</li>
+                        <li>With watermark</li>
+                        <li>All editing tools</li>
+                        <li>Drag & Drop</li>
+                        <li>All system features</li>
+                    </ul>
                                 </div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="pricing-row">
-                            <td class="feature-name">Price</td>
-                            <td class="plan-cell free">Free</td>
-                            <td class="plan-cell pro">
-                                <div class="price-info">
-                                    <div class="price-lifetime">Lifetime $49</div>
+
+                <!-- Pro Plan -->
+                <div class="plan-comparison-card featured-comparison">
+                    <div class="popular-comparison-badge">Most Popular</div>
+                    <div class="plan-comparison-header">
+                        <div class="plan-comparison-icon">🚀</div>
+                        <div class="plan-comparison-title">Pro</div>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">📸 Capture Limit</td>
-                            <td class="plan-cell">3</td>
-                            <td class="plan-cell">100 (33x more!)</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">🏷️ Watermark</td>
-                            <td class="plan-cell">❌ Yes</td>
-                            <td class="plan-cell">✅ No</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">🎨 Editing Tools</td>
-                            <td class="plan-cell">✅ All tools</td>
-                            <td class="plan-cell">✅ All tools</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">🖱️ Drag & Drop</td>
-                            <td class="plan-cell">✅ Supported</td>
-                            <td class="plan-cell">✅ Supported</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">⚙️ System Features</td>
-                            <td class="plan-cell">✅ All features</td>
-                            <td class="plan-cell">✅ All features</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <div class="plan-comparison-price-pro">$49<br><span>Lifetime</span></div>
+                    <a href="#" class="plan-comparison-btn pro-comparison-btn">Get Pro Now</a>
+                    <ul class="plan-comparison-features">
+                        <li><strong>100 captures</strong> (33x more!)</li>
+                        <li><strong>No watermark</strong></li>
+                        <li>All editing tools</li>
+                        <li>Drag & Drop</li>
+                        <li>All system features</li>
+                    </ul>
             </div>
-            
-            <div class="pricing-cta">
-                <a href="#" class="btn btn-primary btn-large microsoft-store-btn">🏪 Get it from Microsoft Store</a>
-                <p class="pricing-note">Free download (3 captures, with watermark)</p>
             </div>
         </div>
     </section>
@@ -463,8 +199,54 @@
         <div class="beta-modal-content">
             <button class="beta-modal-close" id="betaModalClose">&times;</button>
             
+            <!-- Language Selector in Modal -->
+            <div class="beta-modal-lang-selector">
+                <div class="custom-select-wrapper-lang">
+                    <div class="custom-select-lang" id="langSelectModal">
+                        <div class="custom-select-trigger-lang">
+                            <span>🇺🇸 English</span>
+                            <span class="custom-select-arrow-lang">▼</span>
+                        </div>
+                        <div class="custom-select-options-lang">
+                            <input type="text" class="lang-search-input" id="langSearchModal" placeholder="Search languages...">
+                            <div class="custom-select-options-list-lang" id="langOptionsListModal">
+                                <div class="custom-select-option-lang" data-value="en">🇺🇸 English</div>
+                                <div class="custom-select-option-lang" data-value="ko">🇰🇷 한국어</div>
+                                <div class="custom-select-option-lang" data-value="ja">🇯🇵 日本語</div>
+                                <div class="custom-select-option-lang" data-value="zh">🇨🇳 中文</div>
+                                <div class="custom-select-option-lang" data-value="de">🇩🇪 Deutsch</div>
+                                <div class="custom-select-option-lang" data-value="fr">🇫🇷 Français</div>
+                                <div class="custom-select-option-lang" data-value="es">🇪🇸 Español</div>
+                                <div class="custom-select-option-lang" data-value="pt">🇵🇹 Português</div>
+                                <div class="custom-select-option-lang" data-value="it">🇮🇹 Italiano</div>
+                                <div class="custom-select-option-lang" data-value="ru">🇷🇺 Русский</div>
+                                <div class="custom-select-option-lang" data-value="ar">🇸🇦 العربية</div>
+                                <div class="custom-select-option-lang" data-value="hi">🇮🇳 हिन्दी</div>
+                                <div class="custom-select-option-lang" data-value="th">🇹🇭 ไทย</div>
+                                <div class="custom-select-option-lang" data-value="vi">🇻🇳 Tiếng Việt</div>
+                                <div class="custom-select-option-lang" data-value="id">🇮🇩 Bahasa Indonesia</div>
+                                <div class="custom-select-option-lang" data-value="ms">🇲🇾 Bahasa Melayu</div>
+                                <div class="custom-select-option-lang" data-value="tr">🇹🇷 Türkçe</div>
+                                <div class="custom-select-option-lang" data-value="pl">🇵🇱 Polski</div>
+                                <div class="custom-select-option-lang" data-value="nl">🇳🇱 Nederlands</div>
+                                <div class="custom-select-option-lang" data-value="sv">🇸🇪 Svenska</div>
+                                <div class="custom-select-option-lang" data-value="no">🇳🇴 Norsk</div>
+                                <div class="custom-select-option-lang" data-value="da">🇩🇰 Dansk</div>
+                                <div class="custom-select-option-lang" data-value="fi">🇫🇮 Suomi</div>
+                                <div class="custom-select-option-lang" data-value="cs">🇨🇿 Čeština</div>
+                                <div class="custom-select-option-lang" data-value="hu">🇭🇺 Magyar</div>
+                                <div class="custom-select-option-lang" data-value="ro">🇷🇴 Română</div>
+                                <div class="custom-select-option-lang" data-value="he">🇮🇱 עברית</div>
+                                <div class="custom-select-option-lang" data-value="el">🇬🇷 Ελληνικά</div>
+                                <div class="custom-select-option-lang" data-value="uk">🇺🇦 Українська</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="beta-modal-header">
-                <h2>🚀 Capture Drag Beta Testers Wanted</h2>
+                <h2><span class="beta-icon-colored">🚀</span> Capture Drag Beta Testers Wanted</h2>
                 <p class="beta-subtitle">Join now and be the first to experience exclusive benefits.</p>
                 <p class="beta-period">Test Period: November 1 ~ November 15, 2025</p>
             </div>
@@ -472,16 +254,16 @@
             <div class="beta-modal-body">
                 <div class="beta-benefits">
                     <h3>🎁 Participation Benefits</h3>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">💎</div>
-                        <div class="benefit-text">
-                            <p><strong>All participants who provide feedback</strong> during the beta test will receive the Pro Plan (worth $49) <strong>for FREE</strong>.</p>
-                        </div>
-                    </div>
                     <div class="benefit-item special">
                         <div class="benefit-icon">⭐</div>
                         <div class="benefit-text">
-                            <p><strong>Top Contributors:</strong> Promoted to 'Partner' status (Lifetime FREE access to all services + more)</p>
+                            <p><strong>Top Contributors:</strong> Free $49 license</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💎</div>
+                        <div class="benefit-text">
+                            <p><strong>Participants:</strong> 50% off coupon</p>
                         </div>
                     </div>
                 </div>
@@ -506,22 +288,144 @@
                                         <input type="text" id="nationalitySearch" placeholder="Search nationality..." autocomplete="off">
                                     </div>
                                     <div class="custom-select-options-list" id="nationalityOptionsList">
-                                        <div class="custom-select-option" data-value="South Korea">South Korea</div>
-                                        <div class="custom-select-option" data-value="United States">United States</div>
-                                        <div class="custom-select-option" data-value="Japan">Japan</div>
-                                        <div class="custom-select-option" data-value="China">China</div>
-                                        <div class="custom-select-option" data-value="United Kingdom">United Kingdom</div>
-                                        <div class="custom-select-option" data-value="Germany">Germany</div>
-                                        <div class="custom-select-option" data-value="France">France</div>
-                                        <div class="custom-select-option" data-value="Canada">Canada</div>
-                                        <div class="custom-select-option" data-value="Australia">Australia</div>
-                                        <div class="custom-select-option" data-value="India">India</div>
-                                        <div class="custom-select-option" data-value="Brazil">Brazil</div>
-                                        <div class="custom-select-option" data-value="Mexico">Mexico</div>
-                                        <div class="custom-select-option" data-value="Italy">Italy</div>
-                                        <div class="custom-select-option" data-value="Spain">Spain</div>
-                                        <div class="custom-select-option" data-value="Russia">Russia</div>
-                                        <div class="custom-select-option" data-value="Other">Other</div>
+                                        <div class="custom-select-option" data-value="South Korea">🇰🇷 South Korea</div>
+                                        <div class="custom-select-option" data-value="United States">🇺🇸 United States</div>
+                                        <div class="custom-select-option" data-value="Japan">🇯🇵 Japan</div>
+                                        <div class="custom-select-option" data-value="China">🇨🇳 China</div>
+                                        <div class="custom-select-option" data-value="United Kingdom">🇬🇧 United Kingdom</div>
+                                        <div class="custom-select-option" data-value="Germany">🇩🇪 Germany</div>
+                                        <div class="custom-select-option" data-value="France">🇫🇷 France</div>
+                                        <div class="custom-select-option" data-value="Canada">🇨🇦 Canada</div>
+                                        <div class="custom-select-option" data-value="Australia">🇦🇺 Australia</div>
+                                        <div class="custom-select-option" data-value="India">🇮🇳 India</div>
+                                        <div class="custom-select-option" data-value="Brazil">🇧🇷 Brazil</div>
+                                        <div class="custom-select-option" data-value="Mexico">🇲🇽 Mexico</div>
+                                        <div class="custom-select-option" data-value="Italy">🇮🇹 Italy</div>
+                                        <div class="custom-select-option" data-value="Spain">🇪🇸 Spain</div>
+                                        <div class="custom-select-option" data-value="Russia">🇷🇺 Russia</div>
+                                        <div class="custom-select-option" data-value="Netherlands">🇳🇱 Netherlands</div>
+                                        <div class="custom-select-option" data-value="Belgium">🇧🇪 Belgium</div>
+                                        <div class="custom-select-option" data-value="Switzerland">🇨🇭 Switzerland</div>
+                                        <div class="custom-select-option" data-value="Austria">🇦🇹 Austria</div>
+                                        <div class="custom-select-option" data-value="Sweden">🇸🇪 Sweden</div>
+                                        <div class="custom-select-option" data-value="Norway">🇳🇴 Norway</div>
+                                        <div class="custom-select-option" data-value="Denmark">🇩🇰 Denmark</div>
+                                        <div class="custom-select-option" data-value="Finland">🇫🇮 Finland</div>
+                                        <div class="custom-select-option" data-value="Poland">🇵🇱 Poland</div>
+                                        <div class="custom-select-option" data-value="Czech Republic">🇨🇿 Czech Republic</div>
+                                        <div class="custom-select-option" data-value="Hungary">🇭🇺 Hungary</div>
+                                        <div class="custom-select-option" data-value="Romania">🇷🇴 Romania</div>
+                                        <div class="custom-select-option" data-value="Greece">🇬🇷 Greece</div>
+                                        <div class="custom-select-option" data-value="Portugal">🇵🇹 Portugal</div>
+                                        <div class="custom-select-option" data-value="Ireland">🇮🇪 Ireland</div>
+                                        <div class="custom-select-option" data-value="New Zealand">🇳🇿 New Zealand</div>
+                                        <div class="custom-select-option" data-value="Singapore">🇸🇬 Singapore</div>
+                                        <div class="custom-select-option" data-value="Malaysia">🇲🇾 Malaysia</div>
+                                        <div class="custom-select-option" data-value="Indonesia">🇮🇩 Indonesia</div>
+                                        <div class="custom-select-option" data-value="Thailand">🇹🇭 Thailand</div>
+                                        <div class="custom-select-option" data-value="Vietnam">🇻🇳 Vietnam</div>
+                                        <div class="custom-select-option" data-value="Philippines">🇵🇭 Philippines</div>
+                                        <div class="custom-select-option" data-value="Taiwan">🇹🇼 Taiwan</div>
+                                        <div class="custom-select-option" data-value="Hong Kong">🇭🇰 Hong Kong</div>
+                                        <div class="custom-select-option" data-value="Argentina">🇦🇷 Argentina</div>
+                                        <div class="custom-select-option" data-value="Chile">🇨🇱 Chile</div>
+                                        <div class="custom-select-option" data-value="Colombia">🇨🇴 Colombia</div>
+                                        <div class="custom-select-option" data-value="Peru">🇵🇪 Peru</div>
+                                        <div class="custom-select-option" data-value="South Africa">🇿🇦 South Africa</div>
+                                        <div class="custom-select-option" data-value="Egypt">🇪🇬 Egypt</div>
+                                        <div class="custom-select-option" data-value="United Arab Emirates">🇦🇪 United Arab Emirates</div>
+                                        <div class="custom-select-option" data-value="Saudi Arabia">🇸🇦 Saudi Arabia</div>
+                                        <div class="custom-select-option" data-value="Israel">🇮🇱 Israel</div>
+                                        <div class="custom-select-option" data-value="Turkey">🇹🇷 Turkey</div>
+                                        <div class="custom-select-option" data-value="Ukraine">🇺🇦 Ukraine</div>
+                                        <div class="custom-select-option" data-value="Bangladesh">🇧🇩 Bangladesh</div>
+                                        <div class="custom-select-option" data-value="Pakistan">🇵🇰 Pakistan</div>
+                                        <div class="custom-select-option" data-value="Afghanistan">🇦🇫 Afghanistan</div>
+                                        <div class="custom-select-option" data-value="Iran">🇮🇷 Iran</div>
+                                        <div class="custom-select-option" data-value="Iraq">🇮🇶 Iraq</div>
+                                        <div class="custom-select-option" data-value="Kuwait">🇰🇼 Kuwait</div>
+                                        <div class="custom-select-option" data-value="Qatar">🇶🇦 Qatar</div>
+                                        <div class="custom-select-option" data-value="Oman">🇴🇲 Oman</div>
+                                        <div class="custom-select-option" data-value="Jordan">🇯🇴 Jordan</div>
+                                        <div class="custom-select-option" data-value="Lebanon">🇱🇧 Lebanon</div>
+                                        <div class="custom-select-option" data-value="Syria">🇸🇾 Syria</div>
+                                        <div class="custom-select-option" data-value="Yemen">🇾🇪 Yemen</div>
+                                        <div class="custom-select-option" data-value="Kazakhstan">🇰🇿 Kazakhstan</div>
+                                        <div class="custom-select-option" data-value="Uzbekistan">🇺🇿 Uzbekistan</div>
+                                        <div class="custom-select-option" data-value="Mongolia">🇲🇳 Mongolia</div>
+                                        <div class="custom-select-option" data-value="Sri Lanka">🇱🇰 Sri Lanka</div>
+                                        <div class="custom-select-option" data-value="Nepal">🇳🇵 Nepal</div>
+                                        <div class="custom-select-option" data-value="Myanmar">🇲🇲 Myanmar</div>
+                                        <div class="custom-select-option" data-value="Cambodia">🇰🇭 Cambodia</div>
+                                        <div class="custom-select-option" data-value="Laos">🇱🇦 Laos</div>
+                                        <div class="custom-select-option" data-value="Brunei">🇧🇳 Brunei</div>
+                                        <div class="custom-select-option" data-value="Bhutan">🇧🇹 Bhutan</div>
+                                        <div class="custom-select-option" data-value="Maldives">🇲🇻 Maldives</div>
+                                        <div class="custom-select-option" data-value="Papua New Guinea">🇵🇬 Papua New Guinea</div>
+                                        <div class="custom-select-option" data-value="Fiji">🇫🇯 Fiji</div>
+                                        <div class="custom-select-option" data-value="Samoa">🇼🇸 Samoa</div>
+                                        <div class="custom-select-option" data-value="Tonga">🇹🇴 Tonga</div>
+                                        <div class="custom-select-option" data-value="Vanuatu">🇻🇺 Vanuatu</div>
+                                        <div class="custom-select-option" data-value="Solomon Islands">🇸🇧 Solomon Islands</div>
+                                        <div class="custom-select-option" data-value="North Korea">🇰🇵 North Korea</div>
+                                        <div class="custom-select-option" data-value="Venezuela">🇻🇪 Venezuela</div>
+                                        <div class="custom-select-option" data-value="Ecuador">🇪🇨 Ecuador</div>
+                                        <div class="custom-select-option" data-value="Uruguay">🇺🇾 Uruguay</div>
+                                        <div class="custom-select-option" data-value="Paraguay">🇵🇾 Paraguay</div>
+                                        <div class="custom-select-option" data-value="Bolivia">🇧🇴 Bolivia</div>
+                                        <div class="custom-select-option" data-value="Costa Rica">🇨🇷 Costa Rica</div>
+                                        <div class="custom-select-option" data-value="Panama">🇵🇦 Panama</div>
+                                        <div class="custom-select-option" data-value="Guatemala">🇬🇹 Guatemala</div>
+                                        <div class="custom-select-option" data-value="Honduras">🇭🇳 Honduras</div>
+                                        <div class="custom-select-option" data-value="El Salvador">🇸🇻 El Salvador</div>
+                                        <div class="custom-select-option" data-value="Nicaragua">🇳🇮 Nicaragua</div>
+                                        <div class="custom-select-option" data-value="Cuba">🇨🇺 Cuba</div>
+                                        <div class="custom-select-option" data-value="Jamaica">🇯🇲 Jamaica</div>
+                                        <div class="custom-select-option" data-value="Trinidad and Tobago">🇹🇹 Trinidad and Tobago</div>
+                                        <div class="custom-select-option" data-value="Dominican Republic">🇩🇴 Dominican Republic</div>
+                                        <div class="custom-select-option" data-value="Haiti">🇭🇹 Haiti</div>
+                                        <div class="custom-select-option" data-value="Morocco">🇲🇦 Morocco</div>
+                                        <div class="custom-select-option" data-value="Algeria">🇩🇿 Algeria</div>
+                                        <div class="custom-select-option" data-value="Tunisia">🇹🇳 Tunisia</div>
+                                        <div class="custom-select-option" data-value="Libya">🇱🇾 Libya</div>
+                                        <div class="custom-select-option" data-value="Sudan">🇸🇩 Sudan</div>
+                                        <div class="custom-select-option" data-value="Ethiopia">🇪🇹 Ethiopia</div>
+                                        <div class="custom-select-option" data-value="Kenya">🇰🇪 Kenya</div>
+                                        <div class="custom-select-option" data-value="Uganda">🇺🇬 Uganda</div>
+                                        <div class="custom-select-option" data-value="Tanzania">🇹🇿 Tanzania</div>
+                                        <div class="custom-select-option" data-value="Rwanda">🇷🇼 Rwanda</div>
+                                        <div class="custom-select-option" data-value="Ghana">🇬🇭 Ghana</div>
+                                        <div class="custom-select-option" data-value="Nigeria">🇳🇬 Nigeria</div>
+                                        <div class="custom-select-option" data-value="Senegal">🇸🇳 Senegal</div>
+                                        <div class="custom-select-option" data-value="Cameroon">🇨🇲 Cameroon</div>
+                                        <div class="custom-select-option" data-value="Ivory Coast">🇨🇮 Ivory Coast</div>
+                                        <div class="custom-select-option" data-value="Zimbabwe">🇿🇼 Zimbabwe</div>
+                                        <div class="custom-select-option" data-value="Botswana">🇧🇼 Botswana</div>
+                                        <div class="custom-select-option" data-value="Namibia">🇳🇦 Namibia</div>
+                                        <div class="custom-select-option" data-value="Mozambique">🇲🇿 Mozambique</div>
+                                        <div class="custom-select-option" data-value="Angola">🇦🇴 Angola</div>
+                                        <div class="custom-select-option" data-value="Madagascar">🇲🇬 Madagascar</div>
+                                        <div class="custom-select-option" data-value="Mauritius">🇲🇺 Mauritius</div>
+                                        <div class="custom-select-option" data-value="Iceland">🇮🇸 Iceland</div>
+                                        <div class="custom-select-option" data-value="Luxembourg">🇱🇺 Luxembourg</div>
+                                        <div class="custom-select-option" data-value="Slovenia">🇸🇮 Slovenia</div>
+                                        <div class="custom-select-option" data-value="Slovakia">🇸🇰 Slovakia</div>
+                                        <div class="custom-select-option" data-value="Croatia">🇭🇷 Croatia</div>
+                                        <div class="custom-select-option" data-value="Serbia">🇷🇸 Serbia</div>
+                                        <div class="custom-select-option" data-value="Bosnia and Herzegovina">🇧🇦 Bosnia and Herzegovina</div>
+                                        <div class="custom-select-option" data-value="Bulgaria">🇧🇬 Bulgaria</div>
+                                        <div class="custom-select-option" data-value="Albania">🇦🇱 Albania</div>
+                                        <div class="custom-select-option" data-value="Macedonia">🇲🇰 Macedonia</div>
+                                        <div class="custom-select-option" data-value="Montenegro">🇲🇪 Montenegro</div>
+                                        <div class="custom-select-option" data-value="Estonia">🇪🇪 Estonia</div>
+                                        <div class="custom-select-option" data-value="Latvia">🇱🇻 Latvia</div>
+                                        <div class="custom-select-option" data-value="Lithuania">🇱🇹 Lithuania</div>
+                                        <div class="custom-select-option" data-value="Belarus">🇧🇾 Belarus</div>
+                                        <div class="custom-select-option" data-value="Moldova">🇲🇩 Moldova</div>
+                                        <div class="custom-select-option" data-value="Georgia">🇬🇪 Georgia</div>
+                                        <div class="custom-select-option" data-value="Armenia">🇦🇲 Armenia</div>
+                                        <div class="custom-select-option" data-value="Azerbaijan">🇦🇿 Azerbaijan</div>
+                                        <div class="custom-select-option" data-value="Other">🌍 Other</div>
                                     </div>
                                 </div>
                             </div>
@@ -616,8 +520,8 @@
                             <input type="checkbox" id="privacyAgree" required>
                             <span class="privacy-checkmark"></span>
                             <span class="privacy-text">
-                                <strong>I agree to the collection and use of email information</strong><br>
-                                <small>Email information will be used solely for beta test purposes and will be disposed of after the beta test ends.</small>
+                                <strong>I agree to the collection and use of email information and nationality</strong><br>
+                                <small>Email information and nationality will be used solely for beta test purposes and will be disposed of after the beta test ends.</small>
                             </span>
                         </label>
                     </div>
@@ -798,6 +702,463 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4YXZqa2Rld3FmeGFjeGFieW9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAxNDMyNDgsImV4cCI6MjA3NTcxOTI0OH0.BWnSwP-602UZkHUarqlGeUKldCSlq1TWEx5I9mvGmF4';
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+        // Translations
+        const translations = {
+            en: {
+                tagline: 'The AI Chat Workflow Revolution',
+                subtitle: 'The most innovative way to communicate with AI!',
+                microsoftStore: 'Get it from Microsoft Store',
+                freeDownload: 'Free download (with watermark)',
+                featuresTitle: '✨ Key Features',
+                pricingTitle: 'Plans & Pricing',
+                choosePlan: 'Choose the plan that\'s right for you',
+                feature1Title: '📸 Single & Multi Capture',
+                feature1Desc: 'Capture one image at a time or batch multiple captures for efficiency',
+                feature2Title: '🖱️ Drag & Drop',
+                feature2Desc: 'Instantly drag your screenshots to any application - no Ctrl+C/V needed',
+                feature3Title: '🎨 Editing Tools',
+                feature3Desc: 'Annotate, draw, and highlight with professional editing tools',
+                feature4Title: '⚡ Fast & Lightweight',
+                feature4Desc: 'Runs in the background with minimal CPU and memory usage',
+                freePlan: 'Free',
+                proPlan: 'Pro',
+                download: 'Download',
+                getPro: 'Get Pro Now',
+                mostPopular: 'Most Popular',
+                capt3: '3 captures',
+                capt100: '100 captures (33x more!)',
+                withWatermark: 'With watermark',
+                noWatermark: 'No watermark',
+                allEditing: 'All editing tools',
+                dragDrop: 'Drag & Drop',
+                allSystem: 'All system features',
+                betaTitle: 'Capture Drag Beta Testers Wanted',
+                betaSubtitle: 'Join now and be the first to experience exclusive benefits.',
+                betaTestPeriod: 'Test Period: November 1 ~ November 15, 2025',
+                benefitsTitle: 'Participation Benefits',
+                benefitAll: 'Participants: 50% off coupon',
+                benefitTop: 'Top Contributors: Free $49 license',
+                emailLabel: 'Email Address',
+                emailPlaceholder: 'Enter your email address',
+                nationalityLabel: 'Nationality',
+                nationalityPlaceholder: 'Select your nationality',
+                nationalitySearch: 'Search nationality...',
+                occupationLabel: 'Occupation',
+                occupationSubtitle: '(Select the closest option)',
+                occupationDev: 'Developer',
+                occupationDesign: 'Designer',
+                occupationPlan: 'Planner/Marketer',
+                occupationStudent: 'Student',
+                occupationOffice: 'Office Worker',
+                occupationOther: 'Other',
+                purposeLabel: 'Primary Use Case',
+                purposeSubtitle: '(Select the closest option)',
+                purposeWork: 'Work/Collaboration',
+                purposeStudy: 'Learning/Research',
+                purposeHobby: 'Hobby',
+                purposeOther: 'Other',
+                privacyAgree: 'I agree to the collection and use of email information and nationality',
+                privacyDesc: 'Email information and nationality will be used solely for beta test purposes and will be disposed of after the beta test ends.',
+                submitBtn: 'Join Beta & Get Benefits 🚀'
+            },
+            ko: {
+                tagline: 'AI 채팅 워크플로우 혁명',
+                subtitle: 'AI와 소통하는 가장 혁신적인 방법!',
+                microsoftStore: 'Microsoft Store에서 다운로드',
+                freeDownload: '무료 다운로드 (워터마크 포함)',
+                featuresTitle: '✨ 주요 기능',
+                pricingTitle: '플랜 및 가격',
+                choosePlan: '당신에게 맞는 플랜을 선택하세요',
+                feature1Title: '📸 단일 및 다중 캡처',
+                feature1Desc: '한 번에 하나씩 캡처하거나 여러 개를 일괄 캡처하여 효율적으로 작업',
+                feature2Title: '🖱️ 드래그 & 드롭',
+                feature2Desc: '스크린샷을 즉시 모든 앱으로 드래그 - Ctrl+C/V 불필요',
+                feature3Title: '🎨 편집 도구',
+                feature3Desc: '전문 편집 도구로 주석, 그리기, 하이라이트 추가',
+                feature4Title: '⚡ 빠르고 가볍음',
+                feature4Desc: '최소한의 CPU 및 메모리 사용으로 백그라운드에서 실행',
+                freePlan: '무료',
+                proPlan: '프로',
+                download: '다운로드',
+                getPro: '지금 프로 받기',
+                mostPopular: '인기 베스트',
+                capt3: '3회 캡처',
+                capt100: '100회 캡처 (33배 더!)',
+                withWatermark: '워터마크 포함',
+                noWatermark: '워터마크 없음',
+                allEditing: '모든 편집 도구',
+                dragDrop: '드래그 & 드롭',
+                allSystem: '모든 시스템 기능',
+                betaTitle: 'Capture Drag 베타 테스터 모집',
+                betaSubtitle: '지금 참여하고 혜택을 먼저 경험하세요.',
+                betaTestPeriod: '테스트 기간: 2025년 11월 1일 ~ 11월 15일',
+                benefitsTitle: '참여 혜택',
+                benefitAll: '참여자: 50% 할인 쿠폰',
+                benefitTop: '최우수 기여자: $49 라이선스 무료 증정',
+                emailLabel: '이메일 주소',
+                emailPlaceholder: '이메일 주소를 입력하세요',
+                nationalityLabel: '국적',
+                nationalityPlaceholder: '국적을 선택하세요',
+                nationalitySearch: '국적 검색...',
+                occupationLabel: '직업',
+                occupationSubtitle: '(가장 가까운 항목을 선택하세요)',
+                occupationDev: '개발자',
+                occupationDesign: '디자이너',
+                occupationPlan: '기획자/마케터',
+                occupationStudent: '학생',
+                occupationOffice: '직장인',
+                occupationOther: '기타',
+                purposeLabel: '주요 사용 목적',
+                purposeSubtitle: '(가장 가까운 항목을 선택하세요)',
+                purposeWork: '업무/협업',
+                purposeStudy: '학습/연구',
+                purposeHobby: '취미',
+                purposeOther: '기타',
+                privacyAgree: '이메일 정보 및 국적 수집 및 이용에 동의합니다',
+                privacyDesc: '이메일 정보 및 국적은 베타 테스트 목적으로만 사용되며, 베타 테스트 종료 후 폐기됩니다.',
+                submitBtn: '베타 테스트 참여 & 혜택 받기 🚀'
+            },
+            ja: {
+                tagline: 'AIチャットワークフローの革命',
+                subtitle: 'AIとコミュニケーションする最も革新的な方法！',
+                microsoftStore: 'Microsoft Storeでダウンロード',
+                freeDownload: '無料ダウンロード（透かしあり）',
+                featuresTitle: '✨ 主な機能',
+                pricingTitle: 'プランと価格',
+                choosePlan: 'あなたに合ったプランを選択',
+                feature1Title: '📸 単一・複数キャプチャ',
+                feature1Desc: '一度に1枚をキャプチャ、または複数枚を一括キャプチャして効率的に作業',
+                feature2Title: '🖱️ ドラッグ＆ドロップ',
+                feature2Desc: 'スクリーンショットを即座に任意のアプリにドラッグ - Ctrl+C/V不要',
+                feature3Title: '🎨 編集ツール',
+                feature3Desc: '専門的な編集ツールで注釈、描画、ハイライトを追加',
+                feature4Title: '⚡ 高速・軽量',
+                feature4Desc: '最小限のCPUおよびメモリ使用でバックグラウンド実行',
+                freePlan: '無料',
+                proPlan: 'プロ',
+                download: 'ダウンロード',
+                getPro: '今すぐプロを入手',
+                mostPopular: '人気No.1',
+                capt3: '3回キャプチャ',
+                capt100: '100回キャプチャ（33倍！）',
+                withWatermark: '透かしあり',
+                noWatermark: '透かしなし',
+                allEditing: 'すべての編集ツール',
+                dragDrop: 'ドラッグ＆ドロップ',
+                allSystem: 'すべてのシステム機能',
+                betaTitle: 'Capture Drag ベータテスター募集中',
+                betaSubtitle: '今すぐ参加して特典を先に体験',
+                betaTestPeriod: 'テスト期間：2025年11月1日〜15日',
+                benefitsTitle: '参加特典',
+                benefitAll: '参加者：50%割引クーポン',
+                benefitTop: 'トップ貢献者：49ドルライセンス無料進呈',
+                emailLabel: 'メールアドレス',
+                emailPlaceholder: 'メールアドレスを入力',
+                nationalityLabel: '国籍',
+                nationalityPlaceholder: '国籍を選択',
+                nationalitySearch: '国籍を検索...',
+                occupationLabel: '職業',
+                occupationSubtitle: '（最も近い項目を選択）',
+                occupationDev: '開発者',
+                occupationDesign: 'デザイナー',
+                occupationPlan: 'プランナー/マーケター',
+                occupationStudent: '学生',
+                occupationOffice: 'オフィスワーカー',
+                occupationOther: 'その他',
+                purposeLabel: '主な使用目的',
+                purposeSubtitle: '（最も近い項目を選択）',
+                purposeWork: '仕事/コラボ',
+                purposeStudy: '学習/研究',
+                purposeHobby: '趣味',
+                purposeOther: 'その他',
+                privacyAgree: 'メール情報の収集と利用に同意します',
+                privacyDesc: 'メール情報はベータテスト目的でのみ使用され、ベータテスト終了後に廃棄されます',
+                submitBtn: 'ベータ参加 & 特典を受け取る 🚀'
+            },
+            zh: {
+                tagline: 'AI聊天工作流程的革命',
+                subtitle: '与AI沟通的最创新方式！',
+                microsoftStore: '从Microsoft Store下载',
+                freeDownload: '免费下载（带水印）',
+                featuresTitle: '✨ 主要功能',
+                pricingTitle: '方案和价格',
+                choosePlan: '选择适合您的方案',
+                feature1Title: '📸 单张和多张捕获',
+                feature1Desc: '一次捕获一张图像，或批量捕获多张以提高效率',
+                feature2Title: '🖱️ 拖放',
+                feature2Desc: '立即将截图拖到任何应用 - 无需Ctrl+C/V',
+                feature3Title: '🎨 编辑工具',
+                feature3Desc: '使用专业编辑工具添加注释、绘制和突出显示',
+                feature4Title: '⚡ 快速轻量',
+                feature4Desc: '以最少的CPU和内存使用在后台运行',
+                freePlan: '免费',
+                proPlan: '专业版',
+                download: '下载',
+                getPro: '立即获取专业版',
+                mostPopular: '最受欢迎',
+                capt3: '3次捕获',
+                capt100: '100次捕获（多33倍！）',
+                withWatermark: '带水印',
+                noWatermark: '无水印',
+                allEditing: '所有编辑工具',
+                dragDrop: '拖放',
+                allSystem: '所有系统功能',
+                betaTitle: 'Capture Drag 招募Beta测试员',
+                betaSubtitle: '立即加入，抢先体验独家福利',
+                betaTestPeriod: '测试期间：2025年11月1日〜15日',
+                benefitsTitle: '参与福利',
+                benefitAll: '参与者：50%折扣优惠券',
+                benefitTop: '顶级贡献者：49美元许可证免费赠送',
+                emailLabel: '邮箱地址',
+                emailPlaceholder: '请输入您的邮箱地址',
+                nationalityLabel: '国籍',
+                nationalityPlaceholder: '选择您的国籍',
+                nationalitySearch: '搜索国籍...',
+                occupationLabel: '职业',
+                occupationSubtitle: '（选择最接近的选项）',
+                occupationDev: '开发者',
+                occupationDesign: '设计师',
+                occupationPlan: '策划/市场营销',
+                occupationStudent: '学生',
+                occupationOffice: '办公人员',
+                occupationOther: '其他',
+                purposeLabel: '主要使用目的',
+                purposeSubtitle: '（选择最接近的选项）',
+                purposeWork: '工作/协作',
+                purposeStudy: '学习/研究',
+                purposeHobby: '兴趣爱好',
+                purposeOther: '其他',
+                privacyAgree: '我同意收集和使用邮箱信息',
+                privacyDesc: '邮箱信息仅用于Beta测试目的，测试结束后将被删除',
+                submitBtn: '加入Beta测试 & 获得福利 🚀'
+            },
+            de: {
+                tagline: 'Die AI-Chat-Workflow-Revolution',
+                subtitle: 'Überspringe Strg+C/V! Ziehe Screenshots per Drag & Drop in ChatGPT, Claude, Cursor & mehr!',
+                microsoftStore: 'Von Microsoft Store herunterladen',
+                freeDownload: 'Kostenloser Download (mit Wasserzeichen)',
+                featuresTitle: '✨ Hauptfunktionen',
+                pricingTitle: 'Pläne & Preise',
+                choosePlan: 'Wählen Sie den richtigen Plan für Sie'
+            },
+            fr: {
+                tagline: 'La Révolution du Workflow de Chat IA',
+                subtitle: 'Oubliez Ctrl+C/V ! Glissez les captures dans ChatGPT, Claude, Cursor & plus !',
+                microsoftStore: 'Obtenir sur Microsoft Store',
+                freeDownload: 'Téléchargement gratuit (avec filigrane)',
+                featuresTitle: '✨ Fonctionnalités Clés',
+                pricingTitle: 'Plans & Tarifs',
+                choosePlan: 'Choisissez le plan qui vous convient'
+            },
+            es: {
+                tagline: 'La Revolución del Flujo de Trabajo con IA',
+                subtitle: '¡Omite Ctrl+C/V! ¡Arrastra capturas a ChatGPT, Claude, Cursor y más!',
+                microsoftStore: 'Descárgalo en Microsoft Store',
+                freeDownload: 'Descarga gratis (con marca de agua)',
+                featuresTitle: '✨ Características Principales',
+                pricingTitle: 'Planes y Precios',
+                choosePlan: 'Elige el plan adecuado para ti'
+            },
+            pt: {
+                tagline: 'A Revolução do Fluxo de Trabalho de Chat IA',
+                subtitle: 'Pule Ctrl+C/V! Arraste capturas para ChatGPT, Claude, Cursor e mais!',
+                microsoftStore: 'Baixe na Microsoft Store',
+                freeDownload: 'Download gratuito (com marca d\'água)',
+                featuresTitle: '✨ Recursos Principais',
+                pricingTitle: 'Planos e Preços',
+                choosePlan: 'Escolha o plano certo para você'
+            },
+            it: {
+                tagline: 'La Rivoluzione del Workflow di Chat IA',
+                subtitle: 'Salta Ctrl+C/V! Trascina screenshot in ChatGPT, Claude, Cursor e altro!',
+                microsoftStore: 'Scarica da Microsoft Store',
+                freeDownload: 'Download gratuito (con filigrana)',
+                featuresTitle: '✨ Caratteristiche Principali',
+                pricingTitle: 'Piani e Prezzi',
+                choosePlan: 'Scegli il piano adatto a te'
+            },
+            ru: {
+                tagline: 'Революция в AI-чате',
+                subtitle: 'Пропустите Ctrl+C/V! Перетаскивайте скриншоты в ChatGPT, Claude, Cursor и другие!',
+                microsoftStore: 'Скачать из Microsoft Store',
+                freeDownload: 'Бесплатная загрузка (с водяным знаком)',
+                featuresTitle: '✨ Ключевые Возможности',
+                pricingTitle: 'Планы и Цены',
+                choosePlan: 'Выберите подходящий план'
+            },
+            ar: {
+                tagline: 'ثورة سير عمل الدردشة بالذكاء الاصطناعي',
+                subtitle: 'تخطى Ctrl+C/V! اسحب لقطات الشاشة إلى ChatGPT و Claude و Cursor والمزيد!',
+                microsoftStore: 'حمّله من Microsoft Store',
+                freeDownload: 'تحميل مجاني (مع علامة مائية)',
+                featuresTitle: '✨ الميزات الرئيسية',
+                pricingTitle: 'الخطط والأسعار',
+                choosePlan: 'اختر الخطة المناسبة لك'
+            },
+            hi: {
+                tagline: 'AI चैट वर्कफ़्लो क्रांति',
+                subtitle: 'Ctrl+C/V छोड़ें! स्क्रीनशॉट को ChatGPT, Claude, Cursor और अधिक में खींचें!',
+                microsoftStore: 'Microsoft Store से डाउनलोड करें',
+                freeDownload: 'मुफ्त डाउनलोड (वॉटरमार्क के साथ)',
+                featuresTitle: '✨ मुख्य सुविधाएं',
+                pricingTitle: 'योजनाएं और मूल्य',
+                choosePlan: 'अपने लिए सही योजना चुनें'
+            },
+            th: {
+                tagline: 'การปฏิวัติเวิร์กโฟลว์แชท AI',
+                subtitle: 'ข้าม Ctrl+C/V! ลากสกรีนช็อตไปยัง ChatGPT, Claude, Cursor และอื่นๆ!',
+                microsoftStore: 'ดาวน์โหลดจาก Microsoft Store',
+                freeDownload: 'ดาวน์โหลดฟรี (พร้อมลายน้ำ)',
+                featuresTitle: '✨ คุณสมบัติหลัก',
+                pricingTitle: 'แผนและราคา',
+                choosePlan: 'เลือกแผนที่เหมาะสมสำหรับคุณ'
+            },
+            vi: {
+                tagline: 'Cách Mạng Quy Trình Chat AI',
+                subtitle: 'Bỏ qua Ctrl+C/V! Kéo ảnh chụp màn hình vào ChatGPT, Claude, Cursor & hơn nữa!',
+                microsoftStore: 'Tải từ Microsoft Store',
+                freeDownload: 'Tải xuống miễn phí (có watermark)',
+                featuresTitle: '✨ Tính Năng Chính',
+                pricingTitle: 'Gói & Giá',
+                choosePlan: 'Chọn gói phù hợp với bạn'
+            },
+            id: {
+                tagline: 'Revolusi Alur Kerja Chat AI',
+                subtitle: 'Lewati Ctrl+C/V! Seret screenshot ke ChatGPT, Claude, Cursor & lainnya!',
+                microsoftStore: 'Unduh dari Microsoft Store',
+                freeDownload: 'Unduh gratis (dengan watermark)',
+                featuresTitle: '✨ Fitur Utama',
+                pricingTitle: 'Paket & Harga',
+                choosePlan: 'Pilih paket yang tepat untuk Anda'
+            },
+            ms: {
+                tagline: 'Revolusi Aliran Kerja Sembang AI',
+                subtitle: 'Langkau Ctrl+C/V! Seret tangkapan skrin ke ChatGPT, Claude, Cursor & banyak lagi!',
+                microsoftStore: 'Muat turun dari Microsoft Store',
+                freeDownload: 'Muat turun percuma (dengan tanda air)',
+                featuresTitle: '✨ Ciri Utama',
+                pricingTitle: 'Pelan & Harga',
+                choosePlan: 'Pilih pelan yang sesuai untuk anda'
+            },
+            tr: {
+                tagline: 'AI Sohbet İş Akışı Devrimi',
+                subtitle: 'Ctrl+C/V\'yi atla! Ekran görüntülerini ChatGPT, Claude, Cursor ve daha fazlasına sürükle!',
+                microsoftStore: 'Microsoft Store\'dan İndir',
+                freeDownload: 'Ücretsiz indirme (filigranlı)',
+                featuresTitle: '✨ Ana Özellikler',
+                pricingTitle: 'Planlar ve Fiyatlar',
+                choosePlan: 'Size uygun planı seçin'
+            },
+            pl: {
+                tagline: 'Rewolucja w Przepływie Czatu AI',
+                subtitle: 'Pomiń Ctrl+C/V! Przeciągnij zrzuty ekranu do ChatGPT, Claude, Cursor i innych!',
+                microsoftStore: 'Pobierz z Microsoft Store',
+                freeDownload: 'Darmowe pobieranie (z znakiem wodnym)',
+                featuresTitle: '✨ Główne Funkcje',
+                pricingTitle: 'Plany i Ceny',
+                choosePlan: 'Wybierz plan odpowiedni dla Ciebie'
+            },
+            nl: {
+                tagline: 'De AI Chat Workflow Revolutie',
+                subtitle: 'Sla Ctrl+C/V over! Sleep screenshots naar ChatGPT, Claude, Cursor & meer!',
+                microsoftStore: 'Download van Microsoft Store',
+                freeDownload: 'Gratis download (met watermerk)',
+                featuresTitle: '✨ Belangrijkste Functies',
+                pricingTitle: 'Plannen & Prijzen',
+                choosePlan: 'Kies het juiste plan voor jou'
+            },
+            sv: {
+                tagline: 'AI-chattens Arbetsflödesrevolution',
+                subtitle: 'Hoppa över Ctrl+C/V! Dra skärmdumpar till ChatGPT, Claude, Cursor & mer!',
+                microsoftStore: 'Ladda ned från Microsoft Store',
+                freeDownload: 'Gratis nedladdning (med vattenstämpel)',
+                featuresTitle: '✨ Huvudfunktioner',
+                pricingTitle: 'Planer & Priser',
+                choosePlan: 'Välj rätt plan för dig'
+            },
+            no: {
+                tagline: 'AI-Chat-Arbeidsflytens Revolusjon',
+                subtitle: 'Hopp over Ctrl+C/V! Dra skjermbilder til ChatGPT, Claude, Cursor & mer!',
+                microsoftStore: 'Last ned fra Microsoft Store',
+                freeDownload: 'Gratis nedlasting (med vannmerke)',
+                featuresTitle: '✨ Nøkkelfunksjoner',
+                pricingTitle: 'Planer & Priser',
+                choosePlan: 'Velg riktig plan for deg'
+            },
+            da: {
+                tagline: 'AI Chat Workflow-Revolutionen',
+                subtitle: 'Spring Ctrl+C/V over! Træk skærmbilleder til ChatGPT, Claude, Cursor & mere!',
+                microsoftStore: 'Download fra Microsoft Store',
+                freeDownload: 'Gratis download (med vandmærke)',
+                featuresTitle: '✨ Nøglefunktioner',
+                pricingTitle: 'Planer & Priser',
+                choosePlan: 'Vælg den rigtige plan til dig'
+            },
+            fi: {
+                tagline: 'AI-chatin Workflow-vallankumous',
+                subtitle: 'Ohita Ctrl+C/V! Vedä kuvakaappaukset ChatGPT-, Claude-, Cursor- ja muihin chäteihin!',
+                microsoftStore: 'Lataa Microsoft Storesta',
+                freeDownload: 'Ilmainen lataus (vesileimalla)',
+                featuresTitle: '✨ Keskeiset Ominaisuudet',
+                pricingTitle: 'Suunnitelmat & Hinnat',
+                choosePlan: 'Valitse sinulle sopiva suunnitelma'
+            },
+            cs: {
+                tagline: 'Revoluce AI Chat Workflow',
+                subtitle: 'Přeskoč Ctrl+C/V! Přetáhni screenshoty do ChatGPT, Claude, Cursor a dalších!',
+                microsoftStore: 'Stáhnout z Microsoft Store',
+                freeDownload: 'Bezplatné stažení (s vodoznakem)',
+                featuresTitle: '✨ Klíčové Funkce',
+                pricingTitle: 'Plány & Ceny',
+                choosePlan: 'Vyberte správný plán pro vás'
+            },
+            hu: {
+                tagline: 'Az AI Chat Munkafolyamat Forradalma',
+                subtitle: 'Ugord át a Ctrl+C/V-t! Húzd a képernyőképeket a ChatGPT, Claude, Cursor és más chatekbe!',
+                microsoftStore: 'Töltse le a Microsoft Store-ból',
+                freeDownload: 'Ingyenes letöltés (vizesjellel)',
+                featuresTitle: '✨ Főbb Funkciók',
+                pricingTitle: 'Csomagok & Árak',
+                choosePlan: 'Válassza ki az Ön számára megfelelő csomagot'
+            },
+            ro: {
+                tagline: 'Revoluția Fluxului de Lucru AI Chat',
+                subtitle: 'Săriți peste Ctrl+C/V! Trageți capturile de ecran în ChatGPT, Claude, Cursor și altele!',
+                microsoftStore: 'Descărcare de pe Microsoft Store',
+                freeDownload: 'Descărcare gratuită (cu filigran)',
+                featuresTitle: '✨ Funcții Principale',
+                pricingTitle: 'Planuri & Prețuri',
+                choosePlan: 'Alegeți planul potrivit pentru dvs.'
+            },
+            he: {
+                tagline: 'מהפכת זרימת העבודה בצ\'אט AI',
+                subtitle: 'דלג על Ctrl+C/V! גרור צילומי מסך ל-ChatGPT, Claude, Cursor ועוד!',
+                microsoftStore: 'הורד מ-Microsoft Store',
+                freeDownload: 'הורדה חינמית (עם סימן מים)',
+                featuresTitle: '✨ תכונות עיקריות',
+                pricingTitle: 'תוכניות ומחירים',
+                choosePlan: 'בחר את התוכנית המתאימה לך'
+            },
+            el: {
+                tagline: 'Η Επανάσταση της AI Συνομιλίας',
+                subtitle: 'Παράλειψε Ctrl+C/V! Σύρετε screenshots στο ChatGPT, Claude, Cursor και άλλα!',
+                microsoftStore: 'Λήψη από Microsoft Store',
+                freeDownload: 'Δωρεάν λήψη (με υδατόσημο)',
+                featuresTitle: '✨ Βασικά Χαρακτηριστικά',
+                pricingTitle: 'Σχέδια & Τιμές',
+                choosePlan: 'Επιλέξτε το σχέδιο που σας ταιριάζει'
+            },
+            uk: {
+                tagline: 'Революція в AI-чаті',
+                subtitle: 'Пропустіть Ctrl+C/V! Перетягніть скріншоти в ChatGPT, Claude, Cursor та інші!',
+                microsoftStore: 'Завантажити з Microsoft Store',
+                freeDownload: 'Безкоштовне завантаження (з водяним знаком)',
+                featuresTitle: '✨ Ключові Можливості',
+                pricingTitle: 'Плани & Ціни',
+                choosePlan: 'Виберіть план, який підходить вам'
+            }
+        };
+
         // Handle broken app icons
         function handleBrokenImages() {
             const images = document.querySelectorAll('.app-icon-img[src*="simpleicons.org"]');
@@ -813,32 +1174,291 @@
             // Handle broken images
             handleBrokenImages();
             
-            // Compatibility table: collapse after top 10
-            const compatTable = document.querySelector('.compatibility-table tbody');
-            const compatRows = compatTable ? Array.from(compatTable.querySelectorAll('tr')) : [];
-            const toggleCompatBtn = document.getElementById('toggleCompatBtn');
-            const MAX_VISIBLE = 10;
-            if (compatRows.length > MAX_VISIBLE) {
-                compatRows.slice(MAX_VISIBLE).forEach(r => r.classList.add('hidden-row'));
-                if (toggleCompatBtn) {
-                    toggleCompatBtn.style.display = 'flex';
-                    toggleCompatBtn.addEventListener('click', function() {
-                        const isCollapsed = compatRows.slice(MAX_VISIBLE).some(r => r.classList.contains('hidden-row'));
-                        const btnText = toggleCompatBtn.querySelector('.btn-text');
-                        const btnIcon = toggleCompatBtn.querySelector('.btn-icon');
-                        if (isCollapsed) {
-                            compatRows.slice(MAX_VISIBLE).forEach(r => r.classList.remove('hidden-row'));
-                            btnText.textContent = 'Show Less';
-                            btnIcon.textContent = '▲';
+            // Language Selector Dropdown
+            const langSelect = document.getElementById('langSelect');
+            const langTrigger = langSelect.querySelector('.custom-select-trigger-lang');
+            const langOptions = langSelect.querySelectorAll('.custom-select-option-lang');
+            const langSpan = langTrigger.querySelector('span:not(.custom-select-arrow-lang)');
+            const langSearch = document.getElementById('langSearch');
+
+            // Toggle dropdown
+            langTrigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langSelect.classList.toggle('active');
+                if (langSelect.classList.contains('active')) {
+                    langSearch.focus();
+                }
+            });
+
+            // Search functionality
+            langSearch.addEventListener('input', function(e) {
+                e.stopPropagation();
+                const searchTerm = this.value.toLowerCase();
+                langOptions.forEach(option => {
+                    const text = option.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        option.style.display = 'flex';
                         } else {
-                            compatRows.slice(MAX_VISIBLE).forEach(r => r.classList.add('hidden-row'));
-                            btnText.textContent = 'Show More';
-                            btnIcon.textContent = '▼';
+                        option.style.display = 'none';
+                    }
+                });
+            });
+
+            // Prevent search input from closing dropdown
+            langSearch.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+
+            // Select option
+            langOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const value = this.getAttribute('data-value');
+                    langSpan.textContent = this.textContent;
+                    
+                    // Clear search
+                    langSearch.value = '';
+                    langOptions.forEach(opt => opt.style.display = 'flex');
+                    
+                    // Close dropdown
+                    langSelect.classList.remove('active');
+                    
+                    // Apply translations
+                    applyTranslations(value);
+                });
+            });
+
+            // Apply translations function
+            function applyTranslations(lang) {
+                const t = translations[lang] || translations.en;
+                
+                // Update title attribute if element exists
+                const taglineEl = document.querySelector('.tagline');
+                if (taglineEl) taglineEl.textContent = t.tagline;
+                
+                const subtitleEl = document.querySelector('.subtitle');
+                if (subtitleEl) subtitleEl.textContent = t.subtitle;
+                
+                const storeBtn = document.querySelector('.microsoft-store-btn');
+                if (storeBtn && storeBtn.innerText) {
+                    const emoji = storeBtn.innerText.match(/[🏪]/)?.[0] || '';
+                    storeBtn.innerText = emoji + ' ' + t.microsoftStore;
+                }
+                
+                const freeNote = document.querySelector('.pricing-note');
+                if (freeNote) freeNote.textContent = t.freeDownload;
+                
+                const featuresTitle = document.querySelector('.features-section h2');
+                if (featuresTitle) featuresTitle.textContent = t.featuresTitle;
+                
+                const pricingTitle = document.querySelector('.pricing-header h2');
+                if (pricingTitle) pricingTitle.textContent = '💰 ' + t.pricingTitle;
+                
+                const choosePlan = document.querySelector('.pricing-header .section-subtitle');
+                if (choosePlan) choosePlan.textContent = t.choosePlan;
+                
+                // Feature cards
+                const featureCards = document.querySelectorAll('.feature-card');
+                if (featureCards.length >= 4) {
+                    featureCards[0].querySelector('h3').textContent = t.feature1Title;
+                    featureCards[0].querySelector('p').textContent = t.feature1Desc;
+                    featureCards[1].querySelector('h3').textContent = t.feature2Title;
+                    featureCards[1].querySelector('p').textContent = t.feature2Desc;
+                    featureCards[2].querySelector('h3').textContent = t.feature3Title;
+                    featureCards[2].querySelector('p').textContent = t.feature3Desc;
+                    featureCards[3].querySelector('h3').textContent = t.feature4Title;
+                    featureCards[3].querySelector('p').textContent = t.feature4Desc;
+                }
+                
+                // Plan cards
+                const planCards = document.querySelectorAll('.plan-comparison-card');
+                planCards.forEach((card, index) => {
+                    if (index === 0) { // Free plan
+                        const titleEl = card.querySelector('.plan-comparison-title');
+                        if (titleEl) titleEl.textContent = t.freePlan;
+                        
+                        const priceEl = card.querySelector('.plan-comparison-price');
+                        if (priceEl) priceEl.textContent = t.freePlan;
+                        
+                        const btnEl = card.querySelector('.free-comparison-btn');
+                        if (btnEl) btnEl.textContent = t.download;
+                        
+                        const featuresList = card.querySelectorAll('.plan-comparison-features li');
+                        if (featuresList.length >= 5) {
+                            featuresList[0].textContent = t.capt3;
+                            featuresList[1].textContent = t.withWatermark;
+                            featuresList[2].textContent = t.allEditing;
+                            featuresList[3].textContent = t.dragDrop;
+                            featuresList[4].textContent = t.allSystem;
+                        }
+                    } else if (index === 1) { // Pro plan
+                        const badgeEl = card.querySelector('.popular-comparison-badge');
+                        if (badgeEl) badgeEl.textContent = t.mostPopular;
+                        
+                        const titleEl = card.querySelector('.plan-comparison-title');
+                        if (titleEl) titleEl.textContent = t.proPlan;
+                        
+                        const btnEl = card.querySelector('.pro-comparison-btn');
+                        if (btnEl) btnEl.textContent = t.getPro;
+                        
+                        const featuresList = card.querySelectorAll('.plan-comparison-features li');
+                        if (featuresList.length >= 5) {
+                            featuresList[0].innerHTML = '<strong>' + t.capt100 + '</strong>';
+                            featuresList[1].innerHTML = '<strong>' + t.noWatermark + '</strong>';
+                            featuresList[2].textContent = t.allEditing;
+                            featuresList[3].textContent = t.dragDrop;
+                            featuresList[4].textContent = t.allSystem;
+                        }
+                    }
+                });
+                
+                // Beta tester modal
+                const betaModalTitle = document.querySelector('.beta-modal-header h2');
+                if (betaModalTitle) {
+                    const icon = betaModalTitle.querySelector('.beta-icon-colored') || document.createElement('span');
+                    icon.className = 'beta-icon-colored';
+                    icon.textContent = '🚀';
+                    betaModalTitle.innerHTML = '';
+                    betaModalTitle.appendChild(icon);
+                    betaModalTitle.appendChild(document.createTextNode(' ' + t.betaTitle));
+                }
+                
+                const betaSubtitle = document.querySelector('.beta-subtitle');
+                if (betaSubtitle) betaSubtitle.textContent = t.betaSubtitle;
+                
+                const betaPeriod = document.querySelector('.beta-period');
+                if (betaPeriod) betaPeriod.textContent = t.betaTestPeriod;
+                
+                const benefitsTitle = document.querySelector('.beta-benefits h3');
+                if (benefitsTitle) benefitsTitle.textContent = '🎁 ' + t.benefitsTitle;
+                
+                const benefitItems = document.querySelectorAll('.benefit-item');
+                if (benefitItems.length >= 2) {
+                    const benefitTopParts = t.benefitTop.split(':');
+                    benefitItems[0].querySelector('.benefit-text p').innerHTML = '<strong>' + benefitTopParts[0] + ':</strong> ' + benefitTopParts[1];
+                    const benefitAllParts = t.benefitAll.split(':');
+                    benefitItems[1].querySelector('.benefit-text p').innerHTML = '<strong>' + benefitAllParts[0] + ':</strong> ' + benefitAllParts[1];
+                }
+                
+                const emailLabel = document.querySelector('label[for="email"]');
+                if (emailLabel) emailLabel.innerHTML = '1. ' + t.emailLabel + ' <span class="required">(Required)</span>';
+                
+                const emailInput = document.getElementById('email');
+                if (emailInput) emailInput.placeholder = t.emailPlaceholder;
+                
+                const nationalityLabel = document.querySelector('label[for="nationality"]');
+                if (nationalityLabel) nationalityLabel.innerHTML = '2. ' + t.nationalityLabel + ' <span class="required">(Required)</span>';
+                
+                const nationalityPlaceholder = document.querySelector('.custom-select-placeholder');
+                if (nationalityPlaceholder) nationalityPlaceholder.textContent = t.nationalityPlaceholder;
+                
+                const nationalitySearch = document.getElementById('nationalitySearch');
+                if (nationalitySearch) nationalitySearch.placeholder = t.nationalitySearch;
+                
+                // Occupation and Purpose labels - use class-based approach
+                const allLabels = document.querySelectorAll('.beta-form label');
+                allLabels.forEach(label => {
+                    const text = label.textContent || '';
+                    if (text.includes('Occupation')) {
+                        label.innerHTML = '3. ' + t.occupationLabel + ' <span class="subtitle">' + t.occupationSubtitle + '</span>';
+                    } else if (text.includes('Primary Use Case')) {
+                        label.innerHTML = '4. ' + t.purposeLabel + ' <span class="subtitle">' + t.purposeSubtitle + '</span>';
+                    }
+                });
+                
+                const occupationCards = document.querySelectorAll('.beta-form .form-group')[2].querySelectorAll('.option-card');
+                if (occupationCards.length >= 6) {
+                    occupationCards[0].querySelector('.option-text').textContent = t.occupationDev;
+                    occupationCards[1].querySelector('.option-text').textContent = t.occupationDesign;
+                    occupationCards[2].querySelector('.option-text').textContent = t.occupationPlan;
+                    occupationCards[3].querySelector('.option-text').textContent = t.occupationStudent;
+                    occupationCards[4].querySelector('.option-text').textContent = t.occupationOffice;
+                    occupationCards[5].querySelector('.option-text').textContent = t.occupationOther;
+                }
+                
+                const purposeCards = document.querySelectorAll('.beta-form .form-group')[3].querySelectorAll('.option-card');
+                if (purposeCards.length >= 4) {
+                    purposeCards[0].querySelector('.option-text').textContent = t.purposeWork;
+                    purposeCards[1].querySelector('.option-text').textContent = t.purposeStudy;
+                    purposeCards[2].querySelector('.option-text').textContent = t.purposeHobby;
+                    purposeCards[3].querySelector('.option-text').textContent = t.purposeOther;
+                }
+                
+                const privacyText = document.querySelector('.privacy-text');
+                if (privacyText) {
+                    privacyText.innerHTML = '<strong>' + t.privacyAgree + '</strong><br><small>' + t.privacyDesc + '</small>';
+                }
+                
+                const submitBtn = document.querySelector('.beta-submit-btn');
+                if (submitBtn) submitBtn.textContent = t.submitBtn;
+            }
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!langSelect.contains(e.target)) {
+                    langSelect.classList.remove('active');
+                }
+            });
+
+            // Language Selector in Modal
+            const langSelectModal = document.getElementById('langSelectModal');
+            if (langSelectModal) {
+                const langTriggerModal = langSelectModal.querySelector('.custom-select-trigger-lang');
+                const langOptionsModal = langSelectModal.querySelectorAll('.custom-select-option-lang');
+                const langSpanModal = langTriggerModal.querySelector('span:not(.custom-select-arrow-lang)');
+                const langSearchModal = document.getElementById('langSearchModal');
+
+                // Toggle dropdown
+                langTriggerModal.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langSelectModal.classList.toggle('active');
+                    if (langSelectModal.classList.contains('active')) {
+                        langSearchModal.focus();
+                    }
+                });
+
+                // Search functionality
+                langSearchModal.addEventListener('input', function(e) {
+                    e.stopPropagation();
+                    const searchTerm = this.value.toLowerCase();
+                    langOptionsModal.forEach(option => {
+                        const text = option.textContent.toLowerCase();
+                        if (text.includes(searchTerm)) {
+                            option.style.display = 'flex';
+                        } else {
+                            option.style.display = 'none';
                         }
                     });
-                }
-            } else if (toggleCompatBtn) {
-                toggleCompatBtn.style.display = 'none';
+                });
+
+                // Prevent search input from closing dropdown
+                langSearchModal.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+
+                // Select option
+                langOptionsModal.forEach(option => {
+                    option.addEventListener('click', function() {
+                        const value = this.getAttribute('data-value');
+                        langSpanModal.textContent = this.textContent;
+                        
+                        // Clear search
+                        langSearchModal.value = '';
+                        langOptionsModal.forEach(opt => opt.style.display = 'flex');
+                        
+                        // Close dropdown
+                        langSelectModal.classList.remove('active');
+                        
+                        // Apply translations
+                        applyTranslations(value);
+                    });
+                });
+
+                // Close modal dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (langSelectModal && !langSelectModal.contains(e.target)) {
+                        langSelectModal.classList.remove('active');
+                    }
+                });
             }
 
             // Custom Select Dropdown for Nationality
@@ -864,7 +1484,8 @@
                 option.addEventListener('click', function() {
                     const value = this.getAttribute('data-value');
                     nationalityHidden.value = value;
-                    nationalityPlaceholder.textContent = value;
+                    // Display with flag when selected
+                    nationalityPlaceholder.textContent = this.textContent;
                     nationalityTrigger.classList.add('has-value');
                     
                     // Update selected state
