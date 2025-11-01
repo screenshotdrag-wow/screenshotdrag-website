@@ -14,54 +14,62 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-    <!-- Language Selector -->
-    <div class="language-selector">
-        <div class="custom-select-wrapper-lang">
-            <div class="custom-select-lang" id="langSelect">
-                <div class="custom-select-trigger-lang">
-                    <span>🇺🇸 English</span>
-                    <span class="custom-select-arrow-lang">▼</span>
-                </div>
-                <div class="custom-select-options-lang">
-                    <input type="text" class="lang-search-input" id="langSearch" placeholder="Search languages...">
-                    <div class="custom-select-options-list-lang" id="langOptionsList">
-                        <div class="custom-select-option-lang" data-value="en">🇺🇸 English</div>
-                        <div class="custom-select-option-lang" data-value="ko">🇰🇷 한국어</div>
-                        <div class="custom-select-option-lang" data-value="ja">🇯🇵 日本語</div>
-                        <div class="custom-select-option-lang" data-value="zh">🇨🇳 中文</div>
-                        <div class="custom-select-option-lang" data-value="de">🇩🇪 Deutsch</div>
-                        <div class="custom-select-option-lang" data-value="fr">🇫🇷 Français</div>
-                        <div class="custom-select-option-lang" data-value="es">🇪🇸 Español</div>
-                        <div class="custom-select-option-lang" data-value="pt">🇵🇹 Português</div>
-                        <div class="custom-select-option-lang" data-value="it">🇮🇹 Italiano</div>
-                        <div class="custom-select-option-lang" data-value="ru">🇷🇺 Русский</div>
-                        <div class="custom-select-option-lang" data-value="ar">🇸🇦 العربية</div>
-                        <div class="custom-select-option-lang" data-value="hi">🇮🇳 हिन्दी</div>
-                        <div class="custom-select-option-lang" data-value="th">🇹🇭 ไทย</div>
-                        <div class="custom-select-option-lang" data-value="vi">🇻🇳 Tiếng Việt</div>
-                        <div class="custom-select-option-lang" data-value="id">🇮🇩 Bahasa Indonesia</div>
-                        <div class="custom-select-option-lang" data-value="ms">🇲🇾 Bahasa Melayu</div>
-                        <div class="custom-select-option-lang" data-value="tr">🇹🇷 Türkçe</div>
-                        <div class="custom-select-option-lang" data-value="pl">🇵🇱 Polski</div>
-                        <div class="custom-select-option-lang" data-value="nl">🇳🇱 Nederlands</div>
-                        <div class="custom-select-option-lang" data-value="sv">🇸🇪 Svenska</div>
-                        <div class="custom-select-option-lang" data-value="no">🇳🇴 Norsk</div>
-                        <div class="custom-select-option-lang" data-value="da">🇩🇰 Dansk</div>
-                        <div class="custom-select-option-lang" data-value="fi">🇫🇮 Suomi</div>
-                        <div class="custom-select-option-lang" data-value="cs">🇨🇿 Čeština</div>
-                        <div class="custom-select-option-lang" data-value="hu">🇭🇺 Magyar</div>
-                        <div class="custom-select-option-lang" data-value="ro">🇷🇴 Română</div>
-                        <div class="custom-select-option-lang" data-value="he">🇮🇱 עברית</div>
-                        <div class="custom-select-option-lang" data-value="el">🇬🇷 Ελληνικά</div>
-                        <div class="custom-select-option-lang" data-value="uk">🇺🇦 Українська</div>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="container">
+            <div class="header-brand">
+                <img src="logo.svg" alt="Capture Drag" class="header-logo">
+                <span class="header-brand-name">Capture Drag</span>
+            </div>
+            <div class="language-selector">
+                <div class="custom-select-wrapper-lang">
+                    <div class="custom-select-lang" id="langSelect">
+                        <div class="custom-select-trigger-lang">
+                            <span>🇺🇸 English</span>
+                            <span class="custom-select-arrow-lang">▼</span>
+                        </div>
+                        <div class="custom-select-options-lang">
+                            <input type="text" class="lang-search-input" id="langSearch" placeholder="Search languages...">
+                            <div class="custom-select-options-list-lang" id="langOptionsList">
+                                <div class="custom-select-option-lang" data-value="en">🇺🇸 English</div>
+                                <div class="custom-select-option-lang" data-value="ko">🇰🇷 한국어</div>
+                                <div class="custom-select-option-lang" data-value="ja">🇯🇵 日本語</div>
+                                <div class="custom-select-option-lang" data-value="zh">🇨🇳 中文</div>
+                                <div class="custom-select-option-lang" data-value="de">🇩🇪 Deutsch</div>
+                                <div class="custom-select-option-lang" data-value="fr">🇫🇷 Français</div>
+                                <div class="custom-select-option-lang" data-value="es">🇪🇸 Español</div>
+                                <div class="custom-select-option-lang" data-value="pt">🇵🇹 Português</div>
+                                <div class="custom-select-option-lang" data-value="it">🇮🇹 Italiano</div>
+                                <div class="custom-select-option-lang" data-value="ru">🇷🇺 Русский</div>
+                                <div class="custom-select-option-lang" data-value="ar">🇸🇦 العربية</div>
+                                <div class="custom-select-option-lang" data-value="hi">🇮🇳 हिन्दी</div>
+                                <div class="custom-select-option-lang" data-value="th">🇹🇭 ไทย</div>
+                                <div class="custom-select-option-lang" data-value="vi">🇻🇳 Tiếng Việt</div>
+                                <div class="custom-select-option-lang" data-value="id">🇮🇩 Bahasa Indonesia</div>
+                                <div class="custom-select-option-lang" data-value="ms">🇲🇾 Bahasa Melayu</div>
+                                <div class="custom-select-option-lang" data-value="tr">🇹🇷 Türkçe</div>
+                                <div class="custom-select-option-lang" data-value="pl">🇵🇱 Polski</div>
+                                <div class="custom-select-option-lang" data-value="nl">🇳🇱 Nederlands</div>
+                                <div class="custom-select-option-lang" data-value="sv">🇸🇪 Svenska</div>
+                                <div class="custom-select-option-lang" data-value="no">🇳🇴 Norsk</div>
+                                <div class="custom-select-option-lang" data-value="da">🇩🇰 Dansk</div>
+                                <div class="custom-select-option-lang" data-value="fi">🇫🇮 Suomi</div>
+                                <div class="custom-select-option-lang" data-value="cs">🇨🇿 Čeština</div>
+                                <div class="custom-select-option-lang" data-value="hu">🇭🇺 Magyar</div>
+                                <div class="custom-select-option-lang" data-value="ro">🇷🇴 Română</div>
+                                <div class="custom-select-option-lang" data-value="he">🇮🇱 עברית</div>
+                                <div class="custom-select-option-lang" data-value="el">🇬🇷 Ελληνικά</div>
+                                <div class="custom-select-option-lang" data-value="uk">🇺🇦 Українська</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- Header -->
-    <header class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <!-- Beta Test Banner - Moved to top and made larger -->
             <div class="beta-banner-top">
@@ -99,30 +107,358 @@
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
             <h2>✨ Key Features</h2>
             <div class="features-grid">
-                <div class="feature-card">
-                    <h3>📸 Single & Multi Capture</h3>
-                    <p>Capture one image at a time or batch multiple captures for efficiency</p>
-                                </div>
+                <div class="feature-card feature-single">
+                    <span class="feature-badge speed-badge">⚡ FAST</span>
+                    <h3>📸 Single Capture</h3>
+                    <p>Quickly capture one image at a time with instant drag & drop. Perfect for quick screenshots and rapid sharing.</p>
+                </div>
+                <div class="feature-card feature-multi">
+                    <span class="feature-badge power-badge">💪 POWERFUL</span>
+                    <h3>📸 Multi Capture</h3>
+                    <p>Batch capture multiple images in one go for maximum efficiency. Ideal for documentation, tutorials, and bulk editing.</p>
+                </div>
                 <div class="feature-card">
                     <h3>🖱️ Drag & Drop</h3>
                     <p>Instantly drag your screenshots to any application - no Ctrl+C/V needed</p>
-                        </div>
+                </div>
                 <div class="feature-card">
                     <h3>🎨 Editing Tools</h3>
                     <p>Annotate, draw, and highlight with professional editing tools</p>
-                        </div>
+                </div>
                 <div class="feature-card">
                     <h3>⚡ Fast & Lightweight</h3>
                     <p>Runs in the background with minimal CPU and memory usage</p>
-                        </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- App Compatibility Section -->
+    <section class="app-compatibility-section">
+        <div class="container">
+            <h2>🔗 App Compatibility</h2>
+            
+            <!-- Compatibility Table -->
+            <div class="compat-table-wrapper">
+                <table class="compat-table">
+                    <thead>
+                        <tr>
+                            <th class="col-app">App</th>
+                            <th class="col-multi">Multi</th>
+                            <th class="col-notes">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- AI Tools -->
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/openai" class="app-icon-img" alt="ChatGPT">
+                                ChatGPT
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/anthropic" class="app-icon-img" alt="Claude">
+                                Claude
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/google" class="app-icon-img" alt="Gemini">
+                                Gemini
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/x" class="app-icon-img" alt="Grok">
+                                Grok
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <!-- AI Coding Tools -->
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/cursor" class="app-icon-img" alt="Cursor">
+                                Cursor
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/visualstudiocode" class="app-icon-img" alt="VS Code">
+                                VS Code
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/jetbrains" class="app-icon-img" alt="JetBrains IDEs">
+                                JetBrains IDEs
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/replit" class="app-icon-img" alt="Replit">
+                                Replit
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <!-- Collaboration Tools -->
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/jira" class="app-icon-img" alt="Jira">
+                                Jira
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr>
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/github" class="app-icon-img" alt="GitHub">
+                                GitHub
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <!-- More Apps (Hidden by default) -->
+                        <!-- Collaboration Tools (continued) -->
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/atlassian" class="app-icon-img" alt="Confluence">
+                                Confluence
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/trello" class="app-icon-img" alt="Trello">
+                                Trello
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/slack" class="app-icon-img" alt="Slack">
+                                Slack
+                            </td>
+                            <td><span class="status-icon status-yellow">🟡</span></td>
+                            <td>Drag & drop max 2 images at once</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/discord" class="app-icon-img" alt="Discord">
+                                Discord
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <!-- Design Tools -->
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/figma" class="app-icon-img" alt="Figma">
+                                Figma
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported, no limit</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/adobe" class="app-icon-img" alt="Adobe Photoshop">
+                                Photoshop
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported, opens as layers</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/adobe" class="app-icon-img" alt="Adobe Illustrator">
+                                Illustrator
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/adobe" class="app-icon-img" alt="Adobe Express">
+                                Adobe Express
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <!-- Office Tools -->
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Word">
+                                Microsoft Word
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 30 images</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft PowerPoint">
+                                PowerPoint
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 30 images, auto-arranged</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Excel">
+                                Excel
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 30 images, inserted into cells</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/google" class="app-icon-img" alt="Google Docs">
+                                Google Docs
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 20 images</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/googledrive" class="app-icon-img" alt="Google Drive">
+                                Google Drive
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag, no limit</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Teams">
+                                Microsoft Teams
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 10 images</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/notion" class="app-icon-img" alt="Notion">
+                                Notion
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 20 images</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="File Explorer">
+                                File Explorer
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported, no limit</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="OneDrive">
+                                OneDrive
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported, no limit</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/telegram" class="app-icon-img" alt="Telegram">
+                                Telegram
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 10 images, fast upload</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/kakaotalk" class="app-icon-img" alt="KakaoTalk">
+                                KakaoTalk
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 10 images in chat</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/googlechrome" class="app-icon-img" alt="Chrome">
+                                Chrome
+                            </td>
+                            <td><span class="status-icon status-yellow">🟡</span></td>
+                            <td>Depends on website drag & drop support</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/mozillafirefox" class="app-icon-img" alt="Firefox">
+                                Firefox
+                            </td>
+                            <td><span class="status-icon status-yellow">🟡</span></td>
+                            <td>Depends on website drag & drop support</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/gmail" class="app-icon-img" alt="Gmail">
+                                Gmail
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Max 25MB per email attachment</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Outlook">
+                                Outlook
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag: up to 20 images</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/whatsapp" class="app-icon-img" alt="WhatsApp">
+                                WhatsApp
+                            </td>
+                            <td><span class="status-icon status-green">🟢</span></td>
+                            <td>Multi drag supported</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/whatsapp" class="app-icon-img" alt="WhatsApp Web">
+                                WhatsApp Web
+                            </td>
+                            <td><span class="status-icon status-red">🔴</span></td>
+                            <td>Single Ctrl+V only, no multi drag</td>
+                        </tr>
+                        <tr class="app-more collapsed">
+                            <td class="app-name">
+                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Edge">
+                                Edge
+                            </td>
+                            <td><span class="status-icon status-red">🔴</span></td>
+                            <td>Drag & drop not supported</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <button class="toggle-apps-btn" onclick="toggleMoreApps(this)">
+                <span class="btn-text">Show More Apps</span>
+                <span class="btn-icon">▼</span>
+            </button>
         </div>
     </section>
 
@@ -180,6 +516,15 @@
             <div class="success-icon">🎉</div>
             <h2>Welcome to Beta Test!</h2>
             <p class="success-message">Your beta test application has been successfully submitted.</p>
+            
+            <!-- Email Preview Section -->
+            <div class="email-preview-section" id="emailPreviewSection">
+                <h3>📧 발송되는 이메일 내용</h3>
+                <div class="email-preview-box" id="emailPreviewBox">
+                    <!-- Email content will be inserted here -->
+                </div>
+            </div>
+            
             <div class="success-details">
                 <h3>What's Next?</h3>
                 <ul>
@@ -530,6 +875,13 @@
                         Join Beta & Get Benefits 🚀
                     </button>
                 </form>
+                
+                <!-- Development: Email Preview Button -->
+                <div class="dev-preview-section" style="margin-top: 20px;">
+                    <button type="button" class="beta-preview-btn" id="previewEmailBtn">
+                        📧 이메일 미리보기 (개발용)
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -673,22 +1025,15 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Capture Drag</h3>
-                    <p>Skip Ctrl C + V. Just drag it.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/screenshotdrag-wow/ScreenshotDrag">GitHub</a>
-                    <a href="https://github.com/screenshotdrag-wow/ScreenshotDrag/issues">Issues</a>
-                    <a href="#">Documentation</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                </div>
-                <div class="footer-contact">
-                    <p>Contact: contact@capturedrag.com</p>
+            <div class="footer-brand">
+                <img src="logo.svg" alt="Capture Drag" class="footer-logo">
+                <h3>Capture Drag</h3>
+                <div class="footer-copyright-inner">
+                    <p>Copyright © 2025 Capture Drag</p>
+                    <p>All rights reserved</p>
                 </div>
             </div>
+            <div class="footer-bg-letter">C</div>
             <div class="footer-copyright">
                 <p>�� 2025 Capture Drag. All rights reserved.</p>
             </div>
@@ -1612,9 +1957,121 @@
             betaModalClose.addEventListener('click', closeModal);
             betaModalOverlay.addEventListener('click', closeModal);
 
+            // Email preview button (development)
+            const previewEmailBtn = document.getElementById('previewEmailBtn');
+            if (previewEmailBtn) {
+                previewEmailBtn.addEventListener('click', function() {
+                    // Get form data
+                    const email = document.getElementById('email').value || 'test@example.com';
+                    const occupation = document.querySelector('.option-card.selected')?.querySelector('.option-text')?.textContent || 'Developer';
+                    const purpose = Array.from(document.querySelectorAll('.purpose-card.selected')).map(card => 
+                        card.querySelector('.option-text').textContent
+                    ).join(', ') || 'Work/Collaboration';
+                    
+                    const formData = { email, occupation, purpose };
+                    showSuccessModal(formData);
+                });
+            }
+
+            // Generate email preview HTML
+            function generateEmailPreview(data) {
+                const { email, occupation, purpose } = data;
+                return `
+<div class="email-header" style="text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+    <h1 style="margin: 0; font-size: 28px;">🎉 Welcome to Capture Drag Beta!</h1>
+</div>
+
+<div class="email-content" style="background: white; padding: 40px 30px;">
+    <div class="greeting" style="font-size: 24px; font-weight: bold; color: #667eea; margin-bottom: 25px;">Hello!</div>
+    
+    <p class="intro-text" style="font-size: 16px; margin-bottom: 30px; color: #555;">Thank you for joining the Capture Drag beta test.</p>
+    
+    <p class="intro-text" style="font-size: 16px; margin-bottom: 30px; color: #555;">
+        <strong>Capture Drag</strong> was built to make the flow "capture → instantly drag → immediately use" as fast as technically possible.
+    </p>
+    
+    <p class="intro-text" style="font-size: 16px; margin-bottom: 30px; color: #555;">
+        Our goal is to support multi-image drag across the majority of Windows apps.
+    </p>
+    
+    <div class="beta-info" style="background: #fff9e6; border-left: 4px solid #ffc107; padding: 20px; margin: 25px 0; border-radius: 5px;">
+        <strong>⏰ This beta runs for 15 days.</strong><br>
+        Below is your download link and temporary license key.
+    </div>
+    
+    <h2 style="margin-top: 40px; margin-bottom: 20px; font-size: 24px; color: #333;">1) Download the App</h2>
+    <div class="download-section" style="background: #f8f9fa; border: 2px solid #667eea; border-radius: 10px; padding: 25px; margin: 30px 0; text-align: center;">
+        <a href="#" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; margin: 15px 0;">📦 Download Capture Drag Beta</a>
+        <p style="margin: 15px 0 0; color: #666; font-size: 14px;">File size: ~XX MB | Windows 10/11</p>
+    </div>
+    
+    <h2 style="margin-top: 40px; margin-bottom: 20px; font-size: 24px; color: #333;">2) 15-day License Key</h2>
+    <div class="key-section" style="background: #f8f9fa; border: 2px solid #667eea; border-radius: 10px; padding: 25px; margin: 30px 0; text-align: center;">
+        <p style="margin: 0 0 15px;"><strong>Your 15-day key here:</strong></p>
+        <div class="license-key" style="font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; background: white; padding: 20px; border-radius: 8px; letter-spacing: 2px; color: #667eea; margin: 15px 0; word-break: break-all;">BETA-XXXXXXXX-XXXX-XXXX</div>
+        <p style="margin: 15px 0 0; color: #666; font-size: 14px;">
+            After running the app, click <strong>[Activate Beta]</strong> on the first screen<br>
+            and enter your key — it will switch to Pro mode immediately.
+        </p>
+    </div>
+    
+    <div class="warning-box" style="background: #ffe6e6; border-left: 4px solid #f44336; padding: 20px; margin: 30px 0; border-radius: 5px;">
+        <strong style="color: #f44336; font-size: 18px;">⚠️ IMPORTANT: Installation Notice</strong><br><br>
+        We have not purchased a code-signing certificate yet.<br><br>
+        Because of that, Windows SmartScreen may show a red warning the first time you install.<br>
+        <strong>(This is NOT a virus.)</strong><br><br>
+        Click <strong>[More Info]</strong> → <strong>[Run anyway]</strong>.
+    </div>
+    
+    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">Your Mission During the Beta</h3>
+    <div class="mission-section" style="background: #e8f4f8; border-left: 4px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 5px;">
+        <ul style="margin: 15px 0; padding-left: 25px;">
+            <li style="margin: 10px 0; line-height: 1.8;">Test multi-drag in various apps (Slack / Discord / Telegram / Chrome / PPT / Word / Explorer, etc.)</li>
+            <li style="margin: 10px 0; line-height: 1.8;">Find bugs / errors / crashes / UX discomforts</li>
+            <li style="margin: 10px 0; line-height: 1.8;">Give feedback on the built-in editor's basic features<br>(currently basic only: pen / text / crop / mosaic / blur)</li>
+        </ul>
+    </div>
+    
+    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">How to Submit Feedback</h3>
+    <div class="feedback-section" style="background: #e8f4f8; border-left: 4px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 5px;">
+        Click the <strong>💡lightbulb icon</strong> in the top-right corner of the app.<br>
+        That opens the internal feedback window.
+    </div>
+    
+    <div class="discord-box" style="background: #e3f2fd; border: 2px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 10px; text-align: center;">
+        <h3 style="margin: 0 0 15px; color: #2196F3; font-size: 18px;">💬 Discord Channel</h3>
+        <p style="margin: 0; color: #666;">Join our community for real-time updates and discussions</p>
+        <a href="https://discord.gg/xxxxxxxxx" style="display: inline-block; background: #5865F2; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px;">Join Discord</a>
+    </div>
+    
+    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">🎁 Reward</h3>
+    <div class="reward-box" style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 20px; margin: 30px 0; border-radius: 5px;">
+        <strong style="color: #4CAF50; font-size: 18px;">Anyone who provides meaningful bugs or product improvement feedback<br>
+        will receive a permanent license ($49 Windows Store coupon).</strong>
+    </div>
+    
+    <p style="margin-top: 40px; font-size: 16px;">
+        Thank you.<br>
+        <strong style="color: #667eea;">Capture Drag Team</strong>
+    </p>
+</div>
+
+<div class="email-footer" style="text-align: center; padding: 30px; background: #333; color: white;">
+    <p style="margin: 5px 0;"><strong>Capture Drag</strong></p>
+    <p style="margin: 5px 0;">© 2025 Capture Drag. All rights reserved.</p>
+</div>
+                `.trim();
+            }
+
             // Open success modal
-            function showSuccessModal() {
+            function showSuccessModal(formData) {
                 closeModal();
+                
+                // Generate and insert email preview
+                const emailPreviewBox = document.getElementById('emailPreviewBox');
+                const emailPreview = generateEmailPreview(formData);
+                emailPreviewBox.innerHTML = emailPreview;
+                
                 successModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
@@ -1738,8 +2195,8 @@
                             // Don't block the user flow even if email fails
                         }
                         
-                        // Show success modal
-                        showSuccessModal();
+                        // Show success modal with email preview
+                        showSuccessModal(data);
                     }
                 } catch (error) {
                     console.error('Form submission error:', error);
@@ -1781,6 +2238,25 @@
                 allAppMore.forEach(el => el.classList.add('collapsed'));
                 btnText.textContent = 'Show More';
                 btnIcon.textContent = '��';
+            }
+        }
+
+        // Toggle more apps visibility (single column)
+        function toggleMoreApps(btn) {
+            const btnText = btn.querySelector('.btn-text');
+            const btnIcon = btn.querySelector('.btn-icon');
+            const appMoreRows = document.querySelectorAll('.app-more');
+
+            if (appMoreRows[0].classList.contains('collapsed')) {
+                // Expand
+                appMoreRows.forEach(row => row.classList.remove('collapsed'));
+                btnText.textContent = 'Show Less Apps';
+                btnIcon.textContent = '▲';
+            } else {
+                // Collapse
+                appMoreRows.forEach(row => row.classList.add('collapsed'));
+                btnText.textContent = 'Show More Apps';
+                btnIcon.textContent = '▼';
             }
         }
 
