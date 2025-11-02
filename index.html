@@ -144,321 +144,334 @@
     <section class="app-compatibility-section">
         <div class="container">
             <h2>🔗 App Compatibility</h2>
-            
-            <!-- Compatibility Table -->
-            <div class="compat-table-wrapper">
-                <table class="compat-table">
+            <div class="compatibility-search-wrapper">
+                <div class="compatibility-search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="compatibilitySearch" class="compatibility-search-input" placeholder="Search apps... (e.g., Chrome, Slack, Photoshop)">
+                    <span class="search-clear" id="searchClear" style="display: none;">✕</span>
+                </div>
+                <div class="search-results-count" id="searchResultsCount"></div>
+            </div>
+            <div class="compatibility-table-wrapper">
+                <table class="compatibility-table">
                     <thead>
                         <tr>
-                            <th class="col-app">App</th>
-                            <th class="col-multi">Multi</th>
-                            <th class="col-notes">Notes</th>
+                            <th>App</th>
+                            <th>Multi</th>
+                            <th>Note</th>
+                            <th>Recommended Use</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!-- AI Tools -->
+                    <tbody id="compatibilityTableBody">
                         <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/openai" class="app-icon-img" alt="ChatGPT">
-                                ChatGPT
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                            <td><img src="https://cdn.simpleicons.org/openai/000000" alt="ChatGPT" class="app-logo"> ChatGPT</td>
+                            <td>✅</td>
+                            <td>Drop up to 10 files at once</td>
+                            <td>Code review, document analysis</td>
                         </tr>
                         <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/anthropic" class="app-icon-img" alt="Claude">
-                                Claude
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                            <td><img src="https://cdn.simpleicons.org/anthropic/000000" alt="Claude" class="app-logo"> Claude</td>
+                            <td>✅</td>
+                            <td>Perfect integration</td>
+                            <td>Long document processing</td>
                         </tr>
                         <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/google" class="app-icon-img" alt="Gemini">
-                                Gemini
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                            <td><img src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="Gemini" class="app-logo"> Gemini</td>
+                            <td>✅</td>
+                            <td>Drop up to 10 files at once</td>
+                            <td>Image & video analysis</td>
                         </tr>
                         <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/x" class="app-icon-img" alt="Grok">
-                                Grok
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
-                        </tr>
-                        <!-- AI Coding Tools -->
-                        <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/cursor" class="app-icon-img" alt="Cursor">
-                                Cursor
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                            <td><img src="https://cdn.simpleicons.org/googlechrome/4285F4" alt="Google Chrome" class="app-logo"> Google Chrome</td>
+                            <td>✅</td>
+                            <td>Full browser support</td>
+                            <td>Web forms, file uploads</td>
                         </tr>
                         <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/visualstudiocode" class="app-icon-img" alt="VS Code">
-                                VS Code
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                            <td><img src="https://cdn.simpleicons.org/firefox/FF7139" alt="Mozilla Firefox" class="app-logo"> Mozilla Firefox</td>
+                            <td>✅</td>
+                            <td>Full browser support</td>
+                            <td>Web development testing</td>
                         </tr>
                         <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/jetbrains" class="app-icon-img" alt="JetBrains IDEs">
-                                JetBrains IDEs
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                            <td><img src="https://cdn.simpleicons.org/microsoftedge/0078D7" alt="Microsoft Edge" class="app-logo"> Microsoft Edge</td>
+                            <td>✅</td>
+                            <td>Full browser support</td>
+                            <td>Microsoft 365 integration</td>
                         </tr>
                         <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/replit" class="app-icon-img" alt="Replit">
-                                Replit
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
-                        </tr>
-                        <!-- Collaboration Tools -->
-                        <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/jira" class="app-icon-img" alt="Jira">
-                                Jira
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                            <td><img src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="Adobe Photoshop" class="app-logo"> Adobe Photoshop</td>
+                            <td>✅</td>
+                            <td>Direct import</td>
+                            <td>Photo editing workflow</td>
                         </tr>
                         <tr>
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/github" class="app-icon-img" alt="GitHub">
-                                GitHub
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                            <td><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" class="app-logo"> Figma</td>
+                            <td>✅</td>
+                            <td>Drag & drop design</td>
+                            <td>UI/UX design mockups</td>
                         </tr>
-                        <!-- More Apps (Hidden by default) -->
-                        <!-- Collaboration Tools (continued) -->
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/atlassian" class="app-icon-img" alt="Confluence">
-                                Confluence
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                        <tr>
+                            <td><img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" class="app-logo"> Slack</td>
+                            <td>✅</td>
+                            <td>Drop up to 10 files at once</td>
+                            <td>Team collaboration, sharing</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/trello" class="app-icon-img" alt="Trello">
-                                Trello
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                        <tr>
+                            <td><img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" class="app-logo"> Discord</td>
+                            <td>✅</td>
+                            <td>Drop up to 10 files at once</td>
+                            <td>Community sharing, gaming</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/slack" class="app-icon-img" alt="Slack">
-                                Slack
-                            </td>
-                            <td><span class="status-icon status-yellow">🟡</span></td>
-                            <td>Drag & drop max 2 images at once</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="Microsoft Teams" class="app-logo"> Microsoft Teams</td>
+                            <td>✅</td>
+                            <td>Enterprise collaboration</td>
+                            <td>Business meetings, file sharing</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/discord" class="app-icon-img" alt="Discord">
-                                Discord
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/notion/000000" alt="Notion" class="app-logo"> Notion</td>
+                            <td>✅</td>
+                            <td>Workspace integration</td>
+                            <td>Documentation, wiki building</td>
                         </tr>
-                        <!-- Design Tools -->
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/figma" class="app-icon-img" alt="Figma">
-                                Figma
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported, no limit</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello" class="app-logo"> Trello</td>
+                            <td>✅</td>
+                            <td>Board management</td>
+                            <td>Project planning, task cards</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/adobe" class="app-icon-img" alt="Adobe Photoshop">
-                                Photoshop
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported, opens as layers</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/asana/F06A6A" alt="Asana" class="app-logo"> Asana</td>
+                            <td>✅</td>
+                            <td>Project tracking</td>
+                            <td>Team task management</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/adobe" class="app-icon-img" alt="Adobe Illustrator">
-                                Illustrator
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira" class="app-logo"> Jira</td>
+                            <td>✅</td>
+                            <td>Issue tracking</td>
+                            <td>Bug reports, sprint planning</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/adobe" class="app-icon-img" alt="Adobe Express">
-                                Adobe Express
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="Visual Studio Code" class="app-logo"> Visual Studio Code</td>
+                            <td>✅</td>
+                            <td>Code documentation</td>
+                            <td>Code snippets, debugging</td>
                         </tr>
-                        <!-- Office Tools -->
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Word">
-                                Microsoft Word
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 30 images</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/sublimetext/FF9800" alt="Sublime Text" class="app-logo"> Sublime Text</td>
+                            <td>✅</td>
+                            <td>Text editor support</td>
+                            <td>Quick text editing</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft PowerPoint">
-                                PowerPoint
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 30 images, auto-arranged</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/intellijidea/000000" alt="IntelliJ IDEA" class="app-logo"> IntelliJ IDEA</td>
+                            <td>✅</td>
+                            <td>IDE integration</td>
+                            <td>Java development, refactoring</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Excel">
-                                Excel
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 30 images, inserted into cells</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/adobeillustrator/FF9A00" alt="Adobe Illustrator" class="app-logo"> Adobe Illustrator</td>
+                            <td>✅</td>
+                            <td>Vector graphics</td>
+                            <td>Logo design, illustrations</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/google" class="app-icon-img" alt="Google Docs">
-                                Google Docs
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 20 images</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/sketch/F7B500" alt="Sketch" class="app-logo"> Sketch</td>
+                            <td>✅</td>
+                            <td>Design workflow</td>
+                            <td>Mac UI design, prototyping</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/googledrive" class="app-icon-img" alt="Google Drive">
-                                Google Drive
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag, no limit</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/adobexd/FF61F6" alt="Adobe XD" class="app-logo"> Adobe XD</td>
+                            <td>✅</td>
+                            <td>UI/UX design</td>
+                            <td>Wireframes, interactive prototypes</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Teams">
-                                Microsoft Teams
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 10 images</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva" class="app-logo"> Canva</td>
+                            <td>✅</td>
+                            <td>Quick design</td>
+                            <td>Social media graphics, posters</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/notion" class="app-icon-img" alt="Notion">
-                                Notion
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 20 images</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" class="app-logo"> Gmail</td>
+                            <td>✅</td>
+                            <td>Email attachment</td>
+                            <td>Email screenshots, reports</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="File Explorer">
-                                File Explorer
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported, no limit</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Microsoft Outlook" class="app-logo"> Microsoft Outlook</td>
+                            <td>✅</td>
+                            <td>Email integration</td>
+                            <td>Business emails, attachments</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="OneDrive">
-                                OneDrive
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported, no limit</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive" class="app-logo"> Google Drive</td>
+                            <td>✅</td>
+                            <td>Cloud storage</td>
+                            <td>File backup, team sharing</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/telegram" class="app-icon-img" alt="Telegram">
-                                Telegram
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 10 images, fast upload</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/dropbox/0061FF" alt="Dropbox" class="app-logo"> Dropbox</td>
+                            <td>✅</td>
+                            <td>File sync</td>
+                            <td>Cross-device file access</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/kakaotalk" class="app-icon-img" alt="KakaoTalk">
-                                KakaoTalk
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 10 images in chat</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/microsoftonedrive/0078D4" alt="Microsoft OneDrive" class="app-logo"> Microsoft OneDrive</td>
+                            <td>✅</td>
+                            <td>Microsoft cloud</td>
+                            <td>Office 365 file storage</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/googlechrome" class="app-icon-img" alt="Chrome">
-                                Chrome
-                            </td>
-                            <td><span class="status-icon status-yellow">🟡</span></td>
-                            <td>Depends on website drag & drop support</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/zoom/2D8CFF" alt="Zoom" class="app-logo"> Zoom</td>
+                            <td>✅</td>
+                            <td>Screen sharing</td>
+                            <td>Meeting presentations, demos</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/mozillafirefox" class="app-icon-img" alt="Firefox">
-                                Firefox
-                            </td>
-                            <td><span class="status-icon status-yellow">🟡</span></td>
-                            <td>Depends on website drag & drop support</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/googlemeet/00897B" alt="Google Meet" class="app-logo"> Google Meet</td>
+                            <td>✅</td>
+                            <td>Video conferencing</td>
+                            <td>Remote meetings, webinars</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/gmail" class="app-icon-img" alt="Gmail">
-                                Gmail
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Max 25MB per email attachment</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/webex/000000" alt="Webex" class="app-logo"> Webex</td>
+                            <td>✅</td>
+                            <td>Meeting collaboration</td>
+                            <td>Enterprise video calls</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Outlook">
-                                Outlook
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag: up to 20 images</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" class="app-logo"> WhatsApp</td>
+                            <td>✅</td>
+                            <td>Instant messaging</td>
+                            <td>Quick photo sharing, chats</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/whatsapp" class="app-icon-img" alt="WhatsApp">
-                                WhatsApp
-                            </td>
-                            <td><span class="status-icon status-green">🟢</span></td>
-                            <td>Multi drag supported</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/telegram/26A5E4" alt="Telegram" class="app-logo"> Telegram</td>
+                            <td>✅</td>
+                            <td>Secure chat</td>
+                            <td>Private messaging, groups</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/whatsapp" class="app-icon-img" alt="WhatsApp Web">
-                                WhatsApp Web
-                            </td>
-                            <td><span class="status-icon status-red">🔴</span></td>
-                            <td>Single Ctrl+V only, no multi drag</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/wechat/07C160" alt="WeChat" class="app-logo"> WeChat</td>
+                            <td>✅</td>
+                            <td>Social messaging</td>
+                            <td>Chinese market communication</td>
                         </tr>
-                        <tr class="app-more collapsed">
-                            <td class="app-name">
-                                <img src="https://cdn.simpleicons.org/microsoft" class="app-icon-img" alt="Microsoft Edge">
-                                Edge
-                            </td>
-                            <td><span class="status-icon status-red">🔴</span></td>
-                            <td>Drag & drop not supported</td>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/line/00C300" alt="Line" class="app-logo"> Line</td>
+                            <td>✅</td>
+                            <td>Asian market support</td>
+                            <td>Japan/Taiwan messaging</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/kakaotalk/FFCD00" alt="KakaoTalk" class="app-logo"> KakaoTalk</td>
+                            <td>✅</td>
+                            <td>Korean messenger</td>
+                            <td>Korea social networking</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/evernote/00A82D" alt="Evernote" class="app-logo"> Evernote</td>
+                            <td>✅</td>
+                            <td>Note taking</td>
+                            <td>Research notes, web clipping</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/microsoftonenote/7719AA" alt="Microsoft OneNote" class="app-logo"> Microsoft OneNote</td>
+                            <td>✅</td>
+                            <td>Digital notebook</td>
+                            <td>Meeting notes, brainstorming</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://logo.clearbit.com/bear.app" alt="Bear" class="app-logo"> Bear</td>
+                            <td>✅</td>
+                            <td>Markdown notes</td>
+                            <td>Writing, markdown editing</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/obsidian/7C3AED" alt="Obsidian" class="app-logo"> Obsidian</td>
+                            <td>✅</td>
+                            <td>Knowledge base</td>
+                            <td>Personal wiki, linked notes</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://logo.clearbit.com/roamresearch.com" alt="Roam Research" class="app-logo"> Roam Research</td>
+                            <td>✅</td>
+                            <td>Network thinking</td>
+                            <td>Research, networked thoughts</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/microsoftword/2B579A" alt="Microsoft Word" class="app-logo"> Microsoft Word</td>
+                            <td>✅</td>
+                            <td>Document editing</td>
+                            <td>Reports, formal documents</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/googledocs/4285F4" alt="Google Docs" class="app-logo"> Google Docs</td>
+                            <td>✅</td>
+                            <td>Collaborative writing</td>
+                            <td>Team documents, real-time editing</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel" class="app-logo"> Microsoft Excel</td>
+                            <td>✅</td>
+                            <td>Spreadsheet data</td>
+                            <td>Data analysis, financial reports</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets" class="app-logo"> Google Sheets</td>
+                            <td>✅</td>
+                            <td>Online spreadsheet</td>
+                            <td>Collaborative data tracking</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/microsoftpowerpoint/B7472A" alt="Microsoft PowerPoint" class="app-logo"> Microsoft PowerPoint</td>
+                            <td>✅</td>
+                            <td>Presentation slides</td>
+                            <td>Business presentations, pitches</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://logo.clearbit.com/apple.com" alt="Apple Keynote" class="app-logo"> Apple Keynote</td>
+                            <td>✅</td>
+                            <td>Apple presentations</td>
+                            <td>Mac presentations, demos</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://logo.clearbit.com/miro.com" alt="Miro" class="app-logo"> Miro</td>
+                            <td>✅</td>
+                            <td>Visual collaboration</td>
+                            <td>Whiteboarding, brainstorming</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://logo.clearbit.com/mural.co" alt="Mural" class="app-logo"> Mural</td>
+                            <td>✅</td>
+                            <td>Digital workspace</td>
+                            <td>Remote team workshops</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/monday/FF3D57" alt="Monday.com" class="app-logo"> Monday.com</td>
+                            <td>✅</td>
+                            <td>Work management</td>
+                            <td>Project workflows, tracking</td>
+                        </tr>
+                        <tr class="compatibility-hidden">
+                            <td><img src="https://cdn.simpleicons.org/clickup/7B68EE" alt="ClickUp" class="app-logo"> ClickUp</td>
+                            <td>✅</td>
+                            <td>Productivity platform</td>
+                            <td>All-in-one task management</td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="compatibility-more-wrapper">
+                    <button class="compatibility-more-btn" id="compatibilityMoreBtn">
+                        <span class="more-text">Show More Apps</span>
+                        <span class="more-arrow">▼</span>
+                    </button>
+                </div>
             </div>
-            
-            <button class="toggle-apps-btn" onclick="toggleMoreApps(this)">
-                <span class="btn-text">Show More Apps</span>
-                <span class="btn-icon">▼</span>
-            </button>
         </div>
     </section>
 
@@ -936,88 +949,320 @@
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2>❓ Frequently Asked Questions (FAQ)</h2>
+            <h2>🔥 Top 10 Most Frequently Asked Questions</h2>
+            <p class="faq-subtitle">The most common questions from Capture Drag users</p>
             
             <div class="faq-list">
+                <!-- Q1 -->
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>What are the main differences between the Free and Pro versions?</h3>
+                    <div class="faq-question">
+                        <h3>Q1. How do I take a screenshot? (Basic Usage)</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Key Differences:</strong><br>
-                        • 📸 Capture Limit: Free 3 → Pro 100 (33x more!)<br>
-                        • 🏷️ Watermark: Free version has a watermark at the bottom<br>
-                        • 🎨 Editing Tools: Both versions include all editing tools</p>
+                        <p><strong>🚀 Quick Capture (3 Steps):</strong></p>
+                        <p>1️⃣ Press Alt + S<br>
+                        2️⃣ Drag mouse over desired area<br>
+                        3️⃣ Press Enter to confirm</p>
+                        
+                        <p><strong>📸 Other Capture Modes:</strong><br>
+                        • Full Screen: Select area mode → Click full screen<br>
+                        • Window Capture: Select window mode → Hover over window → Click<br>
+                        • Continuous Capture: Alt + D → Capture multiple times</p>
+                        
+                        <p><strong>💡 Key Tips:</strong><br>
+                        • ESC key: Cancel anytime<br>
+                        • Drag & Drop: Drag thumbnail directly to other apps!</p>
                     </div>
                 </div>
-                
+
+                <!-- Q2 -->
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>Is the Free version sufficient?</h3>
+                    <div class="faq-question">
+                        <h3>Q2. Hotkeys (Alt+S, Alt+D) are not working!</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>The Free version is sufficient when:</strong><br>
-                        • Taking occasional screenshots<br>
-                        • Need editing occasionally<br>
-                        • Personal use<br>
-                        • Want to try the app features first</p>
+                        <p><strong>🔍 Checklist:</strong></p>
+                        <p>1. <strong>Check if program is running</strong><br>
+                        • Look for tray icon (📷 icon)<br>
+                        • If not found, launch the program</p>
+                        
+                        <p>2. <strong>Check for conflicts with other programs</strong><br>
+                        • Windows Snipping Tool may use same hotkey<br>
+                        • Close conflicting programs and retry</p>
+                        
+                        <p>3. <strong>Administrator permission issue</strong><br>
+                        • If target app has admin rights, run Capture Drag as admin<br>
+                        • Right-click program → "Run as administrator"</p>
+                        
+                        <p>4. <strong>Restart program</strong><br>
+                        • Right-click tray icon → Exit → Relaunch</p>
+                        
+                        <p><strong>✅ Normal Operation Check:</strong><br>
+                        • Alt+S → Full screen overlay appears<br>
+                        • Alt+D → Overlay + toolbar appears</p>
                     </div>
                 </div>
-                
+
+                <!-- Q3 -->
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>When should I consider the Pro version?</h3>
+                    <div class="faq-question">
+                        <h3>Q3. What's the difference between Free and Pro versions?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Pro version is needed when:</strong><br>
-                        • Creating business presentations and reports<br>
-                        • Need continuous captures for bulk work<br>
-                        • Need clean images without watermark<br>
-                        • 3 captures are not enough</p>
+                        <p><strong>📊 Key Differences:</strong></p>
+                        <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
+                            <tr style="background: #f5f5f5;">
+                                <th style="padding: 8px; border: 1px solid #ddd;">Feature</th>
+                                <th style="padding: 8px; border: 1px solid #ddd;">Free</th>
+                                <th style="padding: 8px; border: 1px solid #ddd;">Pro</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Capture Limit</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">3</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">100</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Watermark</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">❌ Yes</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">✅ No</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Price</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Free</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">$49</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">All Features</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">✅ Yes</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">✅ Yes</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                
+
+                <!-- Q4 -->
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>How do I purchase the Pro version?</h3>
+                    <div class="faq-question">
+                        <h3>Q4. How do I paste captured images into other apps?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>You can purchase from Microsoft Store:<br>
-                        • Lifetime License: $49 (one-time purchase for lifetime use)</p>
+                        <p><strong>🎯 Drag & Drop Method:</strong></p>
+                        <p>1. Thumbnail displayed at bottom of main window<br>
+                        2. Drag thumbnail with mouse<br>
+                        3. Drop onto desired app window<br>
+                        4. Image automatically inserted!</p>
+                        
+                        <p><strong>✅ Supported Apps:</strong><br>
+                        • Messengers: Telegram, KakaoTalk, Discord, Slack<br>
+                        • Browsers: Chrome, Edge, Firefox<br>
+                        • Office: PowerPoint, Word, Excel<br>
+                        • File System: File Explorer, Desktop, OneDrive<br>
+                        • Design: Photoshop, Figma, Notion</p>
+                        
+                        <p><strong>💡 Additional Features:</strong><br>
+                        • Auto clipboard copy: First image automatically copied to clipboard<br>
+                        • Multiple drag: Select multiple thumbnails and drag at once</p>
                     </div>
                 </div>
-                
+
+                <!-- Q5 -->
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>What are the system requirements?</h3>
+                    <div class="faq-question">
+                        <h3>Q5. Where are captured images saved?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Requirements:</strong><br>
-                        • OS: Windows 10/11<br>
-                        • .NET 8.0 Runtime<br>
-                        • Memory: Low usage (~200MB)<br>
-                        • CPU: Low usage (~3%)</p>
+                        <p><strong>💾 Default Save Location:</strong><br>
+                        <code>C:\Users\[Username]\Pictures\ScreenshotDrag\</code></p>
+                        
+                        <p><strong>📁 File Name Format:</strong><br>
+                        <code>Screenshot_YYYYMMDD_HHMMSS.png</code><br>
+                        Example: Screenshot_20250121_153042.png</p>
+                        
+                        <p><strong>⚙️ Change Save Settings:</strong><br>
+                        1. Open Settings window<br>
+                        2. Click "Browse" in "Save Folder" section<br>
+                        3. Select desired folder</p>
+                        
+                        <p><strong>💡 Tips:</strong><br>
+                        • Auto-save: Enabled by default<br>
+                        • Manual save: Can disable "Auto-save" in Settings<br>
+                        • After program exit: Saved files remain</p>
                     </div>
                 </div>
-                
+
+                <!-- Q6 -->
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>Can I use all editing tools in the Free version?</h3>
+                    <div class="faq-question">
+                        <h3>Q6. How do I edit images? (Text, Pen, Blur, etc.)</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! The Free version includes all editing features:<br>
-                        • Pen, brush, eraser tools<br>
-                        • Arrow, text, shape drawing<br>
-                        • Zoom in/out, pan (move)<br>
-                        • Undo/redo, save functionality</p>
+                        <p><strong>🎨 How to Use:</strong><br>
+                        1. Select thumbnail → Click "Edit" button<br>
+                        2. Edit window opens<br>
+                        3. Select tool from left toolbar</p>
+                        
+                        <p><strong>🛠️ Available Tools:</strong></p>
+                        <p><strong>1. Add Text</strong><br>
+                        • Select text tool → Click canvas → Type<br>
+                        • Double-click to edit<br>
+                        • Adjust font size, color, weight</p>
+                        
+                        <p><strong>2. Pen/Marker Drawing</strong><br>
+                        • Select pen tool → Draw freely with mouse<br>
+                        • Adjustable thickness<br>
+                        • Multiple colors supported</p>
+                        
+                        <p><strong>3. Blur/Mosaic</strong><br>
+                        • Select blur or mosaic tool<br>
+                        • Adjust intensity<br>
+                        • Drag to select area → Auto apply</p>
+                        
+                        <p><strong>4. Draw Shapes</strong><br>
+                        • Add rectangles, circles, etc.<br>
+                        • Adjust color and thickness</p>
+                        
+                        <p><strong>⌨️ Edit Shortcuts:</strong><br>
+                        • Ctrl + Z: Undo<br>
+                        • Ctrl + Y: Redo<br>
+                        • Delete: Delete selected element</p>
                     </div>
                 </div>
+
+                <!-- Q7 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q7. How do I take multiple screenshots continuously?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>🚀 Multi-Capture Usage:</strong><br>
+                        1. Press Alt + D<br>
+                        2. Capture first area → Press Enter<br>
+                        3. Click "Next Capture" button (or Alt+D again)<br>
+                        4. Capture second area → Press Enter<br>
+                        5. Continue repeating...<br>
+                        6. Click "End" button to finish</p>
+                        
+                        <p><strong>📸 Multi-Capture Mode Features:</strong><br>
+                        • Mode switching: Switch area/full/window modes in toolbar<br>
+                        • Continuous work: Capture quickly without gaps<br>
+                        • Toolbar display: Small toolbar floats at top for convenience</p>
+                        
+                        <p><strong>💡 Use Cases:</strong><br>
+                        • Presentation prep: Capture multiple slides<br>
+                        • Tutorial creation: Step-by-step screenshots<br>
+                        • Document work: Quickly capture multiple sections</p>
+                    </div>
+                </div>
+
+                <!-- Q8 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q8. Does the program slow down or use too much memory?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>📊 Memory Usage:</strong></p>
+                        <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
+                            <tr style="background: #f5f5f5;">
+                                <th style="padding: 8px; border: 1px solid #ddd;">Captures</th>
+                                <th style="padding: 8px; border: 1px solid #ddd;">Memory</th>
+                                <th style="padding: 8px; border: 1px solid #ddd;">Status</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">0-3</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">~80-120 MB</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">✅ Very light</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">50</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">~400 MB</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">✅ Good</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">100</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">~800 MB</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">⚠️ Normal</td>
+                            </tr>
+                        </table>
+                        
+                        <p><strong>⚡ Performance Tips:</strong><br>
+                        1. Delete old captures<br>
+                        2. Keep recommended limit (Free: 3, Pro: 50-70)<br>
+                        3. Restart program after long use</p>
+                        
+                        <p><strong>✅ Background Load:</strong><br>
+                        • Idle: CPU 0-1%<br>
+                        • Capturing: CPU 5-15%<br>
+                        • Editing: CPU 10-30%</p>
+                    </div>
+                </div>
+
+                <!-- Q9 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q9. Can I change the hotkeys to different keys?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>🔄 Current Hotkeys:</strong><br>
+                        • Alt + S: Single capture<br>
+                        • Alt + D: Multi-capture</p>
+                        
+                        <p><strong>💡 If you want different shortcuts:</strong><br>
+                        1. Use Windows shortcut change tool (external program)<br>
+                        2. Send feedback: Custom hotkeys planned for future update</p>
+                        
+                        <p><strong>⚠️ Conflict Prevention:</strong><br>
+                        • Selected combination doesn't conflict with default Windows hotkeys<br>
+                        • If conflicts with other programs: Recommend changing that program's hotkey</p>
+                    </div>
+                </div>
+
+                <!-- Q10 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q10. Do captures disappear when I close the program?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>✅ Auto-save Enabled (Default):</strong><br>
+                        • All captures saved as files<br>
+                        • Retained after program exit<br>
+                        • Can find in Pictures\ScreenshotDrag folder</p>
+                        
+                        <p><strong>⚠️ Auto-save Disabled:</strong><br>
+                        • Stored in memory only<br>
+                        • Disappears on program exit<br>
+                        • Important captures need manual save</p>
+                        
+                        <p><strong>🔄 Program State Behavior:</strong></p>
+                        <p><strong>Minimize to Tray:</strong><br>
+                        • Capture history retained in memory<br>
+                        • Can restore anytime</p>
+                        
+                        <p><strong>Complete Exit:</strong><br>
+                        • Memory captures deleted<br>
+                        • Saved files retained<br>
+                        • Next launch starts with empty state</p>
+                        
+                        <p><strong>💡 Recommended Setting:</strong><br>
+                        ✅ Keep auto-save enabled (default)<br>
+                        → Safely preserve all captures<br>
+                        → No worries even after program exit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-footer">
+                <p><strong>📞 Have more questions?</strong></p>
+                <p>📧 Use the "Send Feedback" button in the program to contact us!</p>
             </div>
         </div>
     </section>
@@ -1031,6 +1276,7 @@
                 <div class="footer-copyright-inner">
                     <p>Copyright © 2025 Capture Drag</p>
                     <p>All rights reserved</p>
+                    <p style="margin-top: 10px; color: #999; font-size: 0.9rem;">Version 2.0.0</p>
                 </div>
             </div>
             <div class="footer-bg-letter">C</div>
@@ -1916,6 +2162,106 @@
                     }
                 });
             });
+
+            // App Compatibility Search functionality
+            const compatibilitySearch = document.getElementById('compatibilitySearch');
+            const searchClear = document.getElementById('searchClear');
+            const searchResultsCount = document.getElementById('searchResultsCount');
+            const compatibilityTableBody = document.getElementById('compatibilityTableBody');
+            
+            if (compatibilitySearch && compatibilityTableBody) {
+                const allRows = Array.from(compatibilityTableBody.querySelectorAll('tr'));
+                const totalApps = allRows.length;
+                
+                // Search functionality
+                compatibilitySearch.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase().trim();
+                    
+                    // Show/hide clear button
+                    if (searchTerm) {
+                        searchClear.style.display = 'block';
+                    } else {
+                        searchClear.style.display = 'none';
+                    }
+                    
+                    let visibleCount = 0;
+                    
+                    allRows.forEach(row => {
+                        const appName = row.querySelector('td:first-child').textContent.toLowerCase();
+                        const note = row.querySelector('td:last-child').textContent.toLowerCase();
+                        
+                        if (searchTerm === '' || appName.includes(searchTerm) || note.includes(searchTerm)) {
+                            row.style.display = 'table-row';
+                            visibleCount++;
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update results count
+                    if (searchTerm) {
+                        if (visibleCount === 0) {
+                            searchResultsCount.textContent = '❌ No apps found';
+                            searchResultsCount.style.color = '#f44336';
+                        } else {
+                            searchResultsCount.textContent = `✅ Found ${visibleCount} app${visibleCount !== 1 ? 's' : ''}`;
+                            searchResultsCount.style.color = '#4CAF50';
+                        }
+                    } else {
+                        searchResultsCount.textContent = '';
+                    }
+                    
+                    // Hide "Show More" button when searching
+                    if (compatibilityMoreBtn) {
+                        if (searchTerm) {
+                            compatibilityMoreBtn.style.display = 'none';
+                        } else {
+                            compatibilityMoreBtn.style.display = 'inline-flex';
+                        }
+                    }
+                });
+                
+                // Clear button functionality
+                if (searchClear) {
+                    searchClear.addEventListener('click', function() {
+                        compatibilitySearch.value = '';
+                        compatibilitySearch.dispatchEvent(new Event('input'));
+                        compatibilitySearch.focus();
+                    });
+                }
+            }
+            
+            // App Compatibility "Show More" functionality
+            const compatibilityMoreBtn = document.getElementById('compatibilityMoreBtn');
+            const hiddenRows = document.querySelectorAll('.compatibility-hidden');
+            
+            if (compatibilityMoreBtn) {
+                compatibilityMoreBtn.addEventListener('click', function() {
+                    const isExpanded = this.classList.contains('expanded');
+                    
+                    if (isExpanded) {
+                        // Hide extra rows
+                        hiddenRows.forEach(row => {
+                            row.classList.remove('show');
+                        });
+                        this.classList.remove('expanded');
+                        this.querySelector('.more-text').textContent = 'Show More Apps';
+                        
+                        // Scroll to table top
+                        document.querySelector('.app-compatibility-section').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    } else {
+                        // Show all rows
+                        hiddenRows.forEach(row => {
+                            row.classList.add('show');
+                        });
+                        this.classList.add('expanded');
+                        this.querySelector('.more-text').textContent = 'Show Less';
+                    }
+                });
+            }
 
             // Beta Test Modal functionality
             const betaTestBtn = document.getElementById('betaTestBtn');
