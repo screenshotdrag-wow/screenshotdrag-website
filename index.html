@@ -13,7 +13,7 @@
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body>
+<body class="dark-theme">
     <!-- Top Header -->
     <header class="top-header">
         <div class="container">
@@ -21,13 +21,17 @@
                 <img src="logo.svg" alt="Capture Drag" class="header-logo">
                 <span class="header-brand-name">Capture Drag</span>
             </div>
-            <div class="language-selector">
-                <div class="custom-select-wrapper-lang">
-                    <div class="custom-select-lang" id="langSelect">
-                        <div class="custom-select-trigger-lang">
-                            <span>🇺🇸 English</span>
-                            <span class="custom-select-arrow-lang">▼</span>
-                        </div>
+            <div class="header-right">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="language-selector">
+                    <div class="custom-select-wrapper-lang">
+                        <div class="custom-select-lang" id="langSelect">
+                            <div class="custom-select-trigger-lang">
+                                <span>🇺🇸 English</span>
+                                <span class="custom-select-arrow-lang">▼</span>
+                            </div>
                         <div class="custom-select-options-lang">
                             <input type="text" class="lang-search-input" id="langSearch" placeholder="Search languages...">
                             <div class="custom-select-options-list-lang" id="langOptionsList">
@@ -95,7 +99,16 @@
                 </div>
                 
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary microsoft-store-btn">🏪 Get it from Microsoft Store</a>
+                    <a href="#" class="btn btn-primary microsoft-store-btn" id="microsoftStoreBtn">
+                        <svg width="20" height="20" viewBox="0 0 88 88" fill="none" style="margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="88" height="88" rx="18" fill="#0078D4"/>
+                            <rect x="12" y="12" width="32" height="32" fill="#F25022"/>
+                            <rect x="44" y="12" width="32" height="32" fill="#7FBA00"/>
+                            <rect x="12" y="44" width="32" height="32" fill="#00A4EF"/>
+                            <rect x="44" y="44" width="32" height="32" fill="#FFB900"/>
+                        </svg>
+                        Microsoft Store
+                    </a>
                 </div>
                 
                 <p class="pricing-note">Free download (with watermark)</p>
@@ -114,28 +127,158 @@
         <div class="container">
             <h2>✨ Key Features</h2>
             <div class="features-grid">
-                <div class="feature-card feature-single">
-                    <span class="feature-badge speed-badge">⚡ FAST</span>
-                    <h3>📸 Single Capture</h3>
-                    <p>Quickly capture one image at a time with instant drag & drop. Perfect for quick screenshots and rapid sharing.</p>
+                <div class="features-top-row">
+                    <div class="feature-card feature-single feature-large">
+                        <span class="feature-badge speed-badge">⚡ FAST</span>
+                        <h3>📸 Single Capture</h3>
+                        <p>Capture once. Drag or (Ctrl+V) instantly to any app.</p>
+                    </div>
+                    <div class="feature-card feature-multi feature-large">
+                        <span class="feature-badge power-badge">🟣 POWERFUL</span>
+                        <h3>📸 Multi Capture</h3>
+                        <p>Capture multiple images and drop them all simultaneously.</p>
+                    </div>
                 </div>
-                <div class="feature-card feature-multi">
-                    <span class="feature-badge power-badge">💪 POWERFUL</span>
-                    <h3>📸 Multi Capture</h3>
-                    <p>Batch capture multiple images in one go for maximum efficiency. Ideal for documentation, tutorials, and bulk editing.</p>
+                <div class="features-bottom-row">
+                    <div class="feature-card">
+                        <h3>🖱️ Drag & Drop</h3>
+                        <p>Drag captures seamlessly to any app, skipping all saving and finding.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🖋️ Editing Tools</h3>
+                        <p>Annotate clearly with essential pen, text, and blur tools.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Fast & Lightweight</h3>
+                        <p>Runs in the background with minimal resource usage.</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3>🖱️ Drag & Drop</h3>
-                    <p>Instantly drag your screenshots to any application - no Ctrl+C/V needed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Plan Comparison Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>💰 Plans & Pricing</h2>
+            <p class="section-subtitle">Choose the plan that's right for you</p>
+            </div>
+            
+            <div class="pricing-cards-comparison">
+                <!-- Free Plan -->
+                <div class="plan-comparison-card">
+                    <div class="plan-type-badge install-type">Desktop</div>
+                    <div class="plan-comparison-header">
+                        <h3 class="plan-comparison-title">Free</h3>
+                        <p class="plan-comparison-subtitle">Perfect for getting started</p>
+                    </div>
+                    <div class="plan-comparison-price-section">
+                        <div class="plan-comparison-price">Free</div>
+                        <p class="plan-billing-info">Forever free</p>
+                    </div>
+                    <a href="#" class="plan-comparison-btn microsoft-store-btn" id="freeDownloadBtn">
+                        <svg width="20" height="20" viewBox="0 0 88 88" fill="none" style="margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="88" height="88" rx="18" fill="#0078D4"/>
+                            <rect x="12" y="12" width="32" height="32" fill="#F25022"/>
+                            <rect x="44" y="12" width="32" height="32" fill="#7FBA00"/>
+                            <rect x="12" y="44" width="32" height="32" fill="#00A4EF"/>
+                            <rect x="44" y="44" width="32" height="32" fill="#FFB900"/>
+                        </svg>
+                        Download Now
+                    </a>
+                    <div class="plan-divider"></div>
+                    <div class="plan-features-section">
+                        <h4 class="plan-features-title">Key Features:</h4>
+                        <ul class="plan-comparison-features">
+                            <li>3 captures</li>
+                            <li>With watermark</li>
+                            <li>All editing tools</li>
+                            <li>Drag & Drop</li>
+                            <li>All system features</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3>🎨 Editing Tools</h3>
-                    <p>Annotate, draw, and highlight with professional editing tools</p>
+
+                <!-- Pro Plan -->
+                <div class="plan-comparison-card featured-comparison">
+                    <div class="plan-type-badge install-type">Desktop</div>
+                    <div class="popular-comparison-badge">Most Popular</div>
+                    <div class="plan-comparison-header">
+                        <h3 class="plan-comparison-title">Pro</h3>
+                        <p class="plan-comparison-subtitle">Best for power users</p>
+                    </div>
+                    <div class="plan-comparison-price-section">
+                        <div class="plan-comparison-price-pro">$49</div>
+                        <p class="plan-billing-info">One-time payment</p>
+                        <p class="plan-billing-note">Lifetime license</p>
+                    </div>
+                    <a href="#" class="plan-comparison-btn pro-comparison-btn">Get Pro Now</a>
+                    <div class="plan-divider"></div>
+                    <div class="plan-features-section">
+                        <h4 class="plan-features-title">All Free features, plus:</h4>
+                        <ul class="plan-comparison-features">
+                            <li><strong>100 captures</strong> (33x more)</li>
+                            <li><strong>No watermark</strong></li>
+                            <li>All editing tools</li>
+                            <li>Drag & Drop</li>
+                            <li>All system features</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3>⚡ Fast & Lightweight</h3>
-                    <p>Runs in the background with minimal CPU and memory usage</p>
+
+                <!-- AI Plan -->
+                <div class="plan-comparison-card">
+                    <div class="plan-type-badge cloud-type">Cloud</div>
+                    <div class="plan-comparison-header">
+                        <h3 class="plan-comparison-title">Capture Drag AI</h3>
+                        <p class="plan-comparison-subtitle">AI-powered cloud solution</p>
+                    </div>
+                    <div class="plan-comparison-price-section">
+                        <div class="plan-comparison-price-pro">$5</div>
+                        <p class="plan-billing-info">User/month, annual billing</p>
+                        <p class="plan-billing-note">or $39/year</p>
+                    </div>
+                    <a href="#" class="plan-comparison-btn cloud-comparison-btn coming-soon-btn">Coming Soon</a>
+                    <div class="plan-divider"></div>
+                    <div class="plan-features-section">
+                        <h4 class="plan-features-title">Key Features:</h4>
+                        <ul class="plan-comparison-features">
+                            <li>AI-powered features</li>
+                            <li>Cloud-based processing</li>
+                            <li>Advanced analytics</li>
+                            <li>API access</li>
+                            <li>Server-side rendering</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- Team Plan -->
+                <div class="plan-comparison-card">
+                    <div class="plan-type-badge cloud-type">Cloud</div>
+                    <div class="plan-comparison-header">
+                        <h3 class="plan-comparison-title">Team</h3>
+                        <p class="plan-comparison-subtitle">For teams and organizations</p>
+                    </div>
+                    <div class="plan-comparison-price-section">
+                        <div class="plan-comparison-price-pro">$7</div>
+                        <p class="plan-billing-info">Per user/month, annual billing</p>
+                        <p class="plan-billing-note">or $59/user/year</p>
+                    </div>
+                    <a href="#" class="plan-comparison-btn cloud-comparison-btn coming-soon-btn">Coming Soon</a>
+                    <div class="plan-divider"></div>
+                    <div class="plan-features-section">
+                        <h4 class="plan-features-title">All AI features, plus:</h4>
+                        <ul class="plan-comparison-features">
+                            <li>Team collaboration</li>
+                            <li>Shared workspace</li>
+                            <li>User management</li>
+                            <li>Cloud storage</li>
+                            <li>Enterprise features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -194,7 +337,7 @@
                             <td>Web development testing</td>
                         </tr>
                         <tr>
-                            <td><img src="https://cdn.simpleicons.org/microsoftedge/0078D7" alt="Microsoft Edge" class="app-logo"> Microsoft Edge</td>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="#0078D7" class="app-logo" style="vertical-align: middle; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"><path d="M12.035 17.976c-4.84-.636-8.527-4.633-8.527-9.618 0-5.458 4.424-9.885 9.882-9.885 5.458 0 9.884 4.427 9.884 9.885 0 4.839-3.49 8.85-8.066 9.599-.102.013-.204.013-.307.013-.409 0-.818-.026-1.226-.079-1.052-.133-2.006-.421-2.866-.841-.409-.201-.818-.421-1.189-.671-.127-.079-.255-.166-.374-.246-.04-.027-.08-.054-.112-.08-.053-.04-.093-.067-.127-.093l-.027-.027c-.027-.02-.04-.033-.054-.047-.027-.027-.067-.067-.08-.08l-.027-.027c-.04-.04-.067-.08-.107-.127-.027-.027-.054-.067-.08-.094-.053-.067-.12-.146-.173-.213-.067-.093-.12-.2-.187-.3-.027-.053-.067-.107-.093-.16-.08-.146-.16-.306-.227-.473-.027-.066-.04-.133-.067-.2-.107-.287-.187-.587-.24-.894-.027-.16-.04-.32-.047-.48-.013-.32 0-.64.027-.96.013-.16.04-.32.067-.474.093-.506.267-.993.507-1.453.066-.133.146-.266.226-.4.027-.04.067-.08.107-.12.08-.106.173-.213.266-.32.093-.106.2-.2.307-.293.107-.094.227-.187.347-.267.053-.04.107-.08.16-.12.32-.227.667-.427 1.04-.587.067-.027.133-.054.213-.08.107-.033.227-.067.347-.093.24-.054.494-.094.747-.107.253-.013.507 0 .754.027.093.013.187.027.28.047.373.08.727.213 1.067.373.053.027.107.054.16.08.267.146.507.32.72.507.213.187.4.4.56.627.08.113.147.24.213.367.066.127.12.267.16.4.04.133.067.267.08.4.027.267.027.534 0 .8-.013.133-.04.267-.067.4-.027.133-.067.267-.107.4-.08.267-.187.534-.307.787-.06.127-.133.253-.213.373-.04.06-.08.12-.12.18-.08.12-.173.24-.267.353-.094.114-.2.227-.307.334-.107.106-.227.213-.347.313-.06.05-.12.1-.18.147-.12.093-.253.187-.387.273-.067.043-.133.087-.2.127-.267.16-.547.307-.84.427-.146.06-.293.113-.44.16-.147.047-.307.087-.467.12-.08.017-.16.027-.24.033-.16.013-.32.02-.48.02-.16 0-.32-.007-.48-.02z"/></svg> Microsoft Edge</td>
                             <td>✅</td>
                             <td>Full browser support</td>
                             <td>Microsoft 365 integration</td>
@@ -224,7 +367,7 @@
                             <td>Community sharing, gaming</td>
                         </tr>
                         <tr class="compatibility-hidden">
-                            <td><img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="Microsoft Teams" class="app-logo"> Microsoft Teams</td>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="#6264A7" class="app-logo" style="vertical-align: middle; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 4.5h-15A1.5 1.5 0 0 0 3 6v12a1.5 1.5 0 0 0 1.5 1.5h15a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5zm-15 1.5h15v12h-15V6zm1.5 2.25v7.5h3v-7.5h-3zm6 0v3.75h3v-3.75h-3zm0 5.25v2.25h3v-2.25h-3z"/></svg> Microsoft Teams</td>
                             <td>✅</td>
                             <td>Enterprise collaboration</td>
                             <td>Business meetings, file sharing</td>
@@ -302,7 +445,7 @@
                             <td>Email screenshots, reports</td>
                         </tr>
                         <tr class="compatibility-hidden">
-                            <td><img src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="Microsoft Outlook" class="app-logo"> Microsoft Outlook</td>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="#0078D4" class="app-logo" style="vertical-align: middle; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 7.5h9v9h-9v-9zm1.5 1.5v6h6v-6h-6zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg> Microsoft Outlook</td>
                             <td>✅</td>
                             <td>Email integration</td>
                             <td>Business emails, attachments</td>
@@ -320,7 +463,7 @@
                             <td>Cross-device file access</td>
                         </tr>
                         <tr class="compatibility-hidden">
-                            <td><img src="https://cdn.simpleicons.org/microsoftonedrive/0078D4" alt="Microsoft OneDrive" class="app-logo"> Microsoft OneDrive</td>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="#0078D4" class="app-logo" style="vertical-align: middle; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Microsoft OneDrive</td>
                             <td>✅</td>
                             <td>Microsoft cloud</td>
                             <td>Office 365 file storage</td>
@@ -380,7 +523,7 @@
                             <td>Research notes, web clipping</td>
                         </tr>
                         <tr class="compatibility-hidden">
-                            <td><img src="https://cdn.simpleicons.org/microsoftonenote/7719AA" alt="Microsoft OneNote" class="app-logo"> Microsoft OneNote</td>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="#7719AA" class="app-logo" style="vertical-align: middle; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Microsoft OneNote</td>
                             <td>✅</td>
                             <td>Digital notebook</td>
                             <td>Meeting notes, brainstorming</td>
@@ -404,7 +547,7 @@
                             <td>Research, networked thoughts</td>
                         </tr>
                         <tr class="compatibility-hidden">
-                            <td><img src="https://cdn.simpleicons.org/microsoftword/2B579A" alt="Microsoft Word" class="app-logo"> Microsoft Word</td>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B579A" class="app-logo" style="vertical-align: middle; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Microsoft Word</td>
                             <td>✅</td>
                             <td>Document editing</td>
                             <td>Reports, formal documents</td>
@@ -416,7 +559,7 @@
                             <td>Team documents, real-time editing</td>
                         </tr>
                         <tr class="compatibility-hidden">
-                            <td><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel" class="app-logo"> Microsoft Excel</td>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="#217346" class="app-logo" style="vertical-align: middle; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Microsoft Excel</td>
                             <td>✅</td>
                             <td>Spreadsheet data</td>
                             <td>Data analysis, financial reports</td>
@@ -428,7 +571,7 @@
                             <td>Collaborative data tracking</td>
                         </tr>
                         <tr class="compatibility-hidden">
-                            <td><img src="https://cdn.simpleicons.org/microsoftpowerpoint/B7472A" alt="Microsoft PowerPoint" class="app-logo"> Microsoft PowerPoint</td>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="#B7472A" class="app-logo" style="vertical-align: middle; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Microsoft PowerPoint</td>
                             <td>✅</td>
                             <td>Presentation slides</td>
                             <td>Business presentations, pitches</td>
@@ -471,53 +614,6 @@
                         <span class="more-arrow">▼</span>
                     </button>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing & Plan Comparison Section -->
-    <section class="pricing-section">
-        <div class="container">
-            <div class="pricing-header">
-                <h2>💰 Plans & Pricing</h2>
-            <p class="section-subtitle">Choose the plan that's right for you</p>
-            </div>
-            
-            <div class="pricing-cards-comparison">
-                <!-- Free Plan -->
-                <div class="plan-comparison-card">
-                    <div class="plan-comparison-header">
-                        <div class="plan-comparison-icon">🆓</div>
-                        <div class="plan-comparison-title">Free</div>
-                                </div>
-                    <div class="plan-comparison-price">Free</div>
-                    <a href="#" class="plan-comparison-btn free-comparison-btn">Download</a>
-                    <ul class="plan-comparison-features">
-                        <li>3 captures</li>
-                        <li>With watermark</li>
-                        <li>All editing tools</li>
-                        <li>Drag & Drop</li>
-                        <li>All system features</li>
-                    </ul>
-                                </div>
-
-                <!-- Pro Plan -->
-                <div class="plan-comparison-card featured-comparison">
-                    <div class="popular-comparison-badge">Most Popular</div>
-                    <div class="plan-comparison-header">
-                        <div class="plan-comparison-icon">🚀</div>
-                        <div class="plan-comparison-title">Pro</div>
-                                </div>
-                    <div class="plan-comparison-price-pro">$49<br><span>Lifetime</span></div>
-                    <a href="#" class="plan-comparison-btn pro-comparison-btn">Get Pro Now</a>
-                    <ul class="plan-comparison-features">
-                        <li><strong>100 captures</strong> (33x more!)</li>
-                        <li><strong>No watermark</strong></li>
-                        <li>All editing tools</li>
-                        <li>Drag & Drop</li>
-                        <li>All system features</li>
-                    </ul>
-            </div>
             </div>
         </div>
     </section>
@@ -949,123 +1045,59 @@
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2>🔥 Top 10 Most Frequently Asked Questions</h2>
+            <h2>❓ FAQ</h2>
             <p class="faq-subtitle">The most common questions from Capture Drag users</p>
             
             <div class="faq-list">
                 <!-- Q1 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q1. How do I take a screenshot? (Basic Usage)</h3>
+                        <h3>Q1. How do I take a screenshot?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>🚀 Quick Capture (3 Steps):</strong></p>
-                        <p>1️⃣ Press Alt + S<br>
-                        2️⃣ Drag mouse over desired area<br>
-                        3️⃣ Press Enter to confirm</p>
-                        
-                        <p><strong>📸 Other Capture Modes:</strong><br>
-                        • Full Screen: Select area mode → Click full screen<br>
-                        • Window Capture: Select window mode → Hover over window → Click<br>
-                        • Continuous Capture: Alt + D → Capture multiple times</p>
-                        
-                        <p><strong>💡 Key Tips:</strong><br>
-                        • ESC key: Cancel anytime<br>
-                        • Drag & Drop: Drag thumbnail directly to other apps!</p>
+                        <p>간단해요! <strong>Alt + S</strong> 눌러서 원하는 영역 드래그한 다음 <strong>Enter</strong>만 누르시면 돼요.</p>
+                        <p style="margin-top: 10px;">여러 개 캡처하고 싶으시면 <strong>Alt + D</strong> 누르시면 멀티 캡처 모드가 열려요!</p>
                     </div>
                 </div>
 
                 <!-- Q2 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q2. Hotkeys (Alt+S, Alt+D) are not working!</h3>
+                        <h3>Q2. Hotkeys not working?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>🔍 Checklist:</strong></p>
-                        <p>1. <strong>Check if program is running</strong><br>
-                        • Look for tray icon (📷 icon)<br>
-                        • If not found, launch the program</p>
-                        
-                        <p>2. <strong>Check for conflicts with other programs</strong><br>
-                        • Windows Snipping Tool may use same hotkey<br>
-                        • Close conflicting programs and retry</p>
-                        
-                        <p>3. <strong>Administrator permission issue</strong><br>
-                        • If target app has admin rights, run Capture Drag as admin<br>
-                        • Right-click program → "Run as administrator"</p>
-                        
-                        <p>4. <strong>Restart program</strong><br>
-                        • Right-click tray icon → Exit → Relaunch</p>
-                        
-                        <p><strong>✅ Normal Operation Check:</strong><br>
-                        • Alt+S → Full screen overlay appears<br>
-                        • Alt+D → Overlay + toolbar appears</p>
+                        <p>먼저 핫키들 확인해볼게요:</p>
+                        <p>• <strong>Alt + S</strong> - 단일 캡처</p>
+                        <p>• <strong>Alt + D</strong> - 멀티 캡처</p>
+                        <p>• <strong>Enter</strong> - 확정하기</p>
+                        <p>• <strong>ESC</strong> - 취소하기</p>
+                        <p style="margin-top: 10px;">안 되시면요, Windows 스니핑 도구를 꺼보시고, 프로그램 재시작하시거나 관리자 권한으로 실행해보세요!</p>
                     </div>
                 </div>
 
                 <!-- Q3 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q3. What's the difference between Free and Pro versions?</h3>
+                        <h3>Q3. Free vs Pro?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>📊 Key Differences:</strong></p>
-                        <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
-                            <tr style="background: #f5f5f5;">
-                                <th style="padding: 8px; border: 1px solid #ddd;">Feature</th>
-                                <th style="padding: 8px; border: 1px solid #ddd;">Free</th>
-                                <th style="padding: 8px; border: 1px solid #ddd;">Pro</th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;">Capture Limit</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">3</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">100</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;">Watermark</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">❌ Yes</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">✅ No</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;">Price</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">Free</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">$49</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;">All Features</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">✅ Yes</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">✅ Yes</td>
-                            </tr>
-                        </table>
+                        <p><strong>Free 버전</strong>은 3개 캡처 가능하고 워터마크가 들어가요.</p>
+                        <p style="margin-top: 10px;"><strong>Pro 버전</strong>은 100개까지 캡처 가능하고 워터마크 없이 깨끗하게 사용하실 수 있어요! 한 번 구매하면 평생 사용 가능해요 - $49에요.</p>
                     </div>
                 </div>
 
                 <!-- Q4 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q4. How do I paste captured images into other apps?</h3>
+                        <h3>Q4. How to paste images to other apps?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>🎯 Drag & Drop Method:</strong></p>
-                        <p>1. Thumbnail displayed at bottom of main window<br>
-                        2. Drag thumbnail with mouse<br>
-                        3. Drop onto desired app window<br>
-                        4. Image automatically inserted!</p>
-                        
-                        <p><strong>✅ Supported Apps:</strong><br>
-                        • Messengers: Telegram, KakaoTalk, Discord, Slack<br>
-                        • Browsers: Chrome, Edge, Firefox<br>
-                        • Office: PowerPoint, Word, Excel<br>
-                        • File System: File Explorer, Desktop, OneDrive<br>
-                        • Design: Photoshop, Figma, Notion</p>
-                        
-                        <p><strong>💡 Additional Features:</strong><br>
-                        • Auto clipboard copy: First image automatically copied to clipboard<br>
-                        • Multiple drag: Select multiple thumbnails and drag at once</p>
+                        <p>아주 쉬워요! 썸네일을 그냥 드래그해서 원하는 앱 창에 떨어뜨리면 돼요.</p>
+                        <p style="margin-top: 10px;">텔레그램, 디스코드, 크롬, 파워포인트, 워드, 파일 탐색기, 포토샵, 피그마 등 거의 모든 앱에서 잘 작동해요!</p>
                     </div>
                 </div>
 
@@ -1076,193 +1108,79 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>💾 Default Save Location:</strong><br>
-                        <code>C:\Users\[Username]\Pictures\ScreenshotDrag\</code></p>
-                        
-                        <p><strong>📁 File Name Format:</strong><br>
-                        <code>Screenshot_YYYYMMDD_HHMMSS.png</code><br>
-                        Example: Screenshot_20250121_153042.png</p>
-                        
-                        <p><strong>⚙️ Change Save Settings:</strong><br>
-                        1. Open Settings window<br>
-                        2. Click "Browse" in "Save Folder" section<br>
-                        3. Select desired folder</p>
-                        
-                        <p><strong>💡 Tips:</strong><br>
-                        • Auto-save: Enabled by default<br>
-                        • Manual save: Can disable "Auto-save" in Settings<br>
-                        • After program exit: Saved files remain</p>
+                        <p>기본적으로 여기에 저장돼요: <code style="background: #f5f5f5; padding: 2px 6px; border-radius: 3px;">C:\Users\[사용자명]\Pictures\ScreenshotDrag\</code></p>
+                        <p style="margin-top: 10px;">저장 위치 바꾸고 싶으시면 폴더 매니저 창에서 변경하시면 돼요!</p>
                     </div>
                 </div>
 
                 <!-- Q6 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q6. How do I edit images? (Text, Pen, Blur, etc.)</h3>
+                        <h3>Q6. How to edit images?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>🎨 How to Use:</strong><br>
-                        1. Select thumbnail → Click "Edit" button<br>
-                        2. Edit window opens<br>
-                        3. Select tool from left toolbar</p>
-                        
-                        <p><strong>🛠️ Available Tools:</strong></p>
-                        <p><strong>1. Add Text</strong><br>
-                        • Select text tool → Click canvas → Type<br>
-                        • Double-click to edit<br>
-                        • Adjust font size, color, weight</p>
-                        
-                        <p><strong>2. Pen/Marker Drawing</strong><br>
-                        • Select pen tool → Draw freely with mouse<br>
-                        • Adjustable thickness<br>
-                        • Multiple colors supported</p>
-                        
-                        <p><strong>3. Blur/Mosaic</strong><br>
-                        • Select blur or mosaic tool<br>
-                        • Adjust intensity<br>
-                        • Drag to select area → Auto apply</p>
-                        
-                        <p><strong>4. Draw Shapes</strong><br>
-                        • Add rectangles, circles, etc.<br>
-                        • Adjust color and thickness</p>
-                        
-                        <p><strong>⌨️ Edit Shortcuts:</strong><br>
-                        • Ctrl + Z: Undo<br>
-                        • Ctrl + Y: Redo<br>
-                        • Delete: Delete selected element</p>
+                        <p>썸네일 선택하고 "Edit" 버튼 누르시면 편집할 수 있어요!</p>
+                        <p style="margin-top: 10px;"><strong>사용 가능한 도구:</strong> 텍스트, 펜, 블러/모자이크, 도형 등이 있어요.</p>
+                        <p style="margin-top: 10px;"><strong>단축키:</strong> Ctrl+Z (되돌리기), Ctrl+Y (다시하기), Delete 키로 삭제할 수 있어요.</p>
                     </div>
                 </div>
 
                 <!-- Q7 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q7. How do I take multiple screenshots continuously?</h3>
+                        <h3>Q7. How to capture multiple screenshots?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>🚀 Multi-Capture Usage:</strong><br>
-                        1. Press Alt + D<br>
-                        2. Capture first area → Press Enter<br>
-                        3. Click "Next Capture" button (or Alt+D again)<br>
-                        4. Capture second area → Press Enter<br>
-                        5. Continue repeating...<br>
-                        6. Click "End" button to finish</p>
-                        
-                        <p><strong>📸 Multi-Capture Mode Features:</strong><br>
-                        • Mode switching: Switch area/full/window modes in toolbar<br>
-                        • Continuous work: Capture quickly without gaps<br>
-                        • Toolbar display: Small toolbar floats at top for convenience</p>
-                        
-                        <p><strong>💡 Use Cases:</strong><br>
-                        • Presentation prep: Capture multiple slides<br>
-                        • Tutorial creation: Step-by-step screenshots<br>
-                        • Document work: Quickly capture multiple sections</p>
+                        <p>멀티 버튼 클릭하거나 <strong>Alt + D</strong> 누르시면 멀티 캡처 모드가 시작돼요. 원하는 영역 드래그하고 <strong>Enter</strong> 누르면 캡처되고, 계속 반복하면 돼요!</p>
+                        <p style="margin-top: 10px;">다 끝나시면 <strong>Done</strong> 버튼 누르거나 <strong>Enter</strong> 치시면 작업이 종료되고, 그때 모든 캡처를 한 번에 드래그해서 원하는 곳에 떨어뜨리시면 돼요!</p>
                     </div>
                 </div>
 
                 <!-- Q8 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q8. Does the program slow down or use too much memory?</h3>
+                        <h3>Q8. Memory usage?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>📊 Memory Usage:</strong></p>
-                        <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
-                            <tr style="background: #f5f5f5;">
-                                <th style="padding: 8px; border: 1px solid #ddd;">Captures</th>
-                                <th style="padding: 8px; border: 1px solid #ddd;">Memory</th>
-                                <th style="padding: 8px; border: 1px solid #ddd;">Status</th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;">0-3</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">~80-120 MB</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">✅ Very light</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;">50</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">~400 MB</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">✅ Good</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;">100</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">~800 MB</td>
-                                <td style="padding: 8px; border: 1px solid #ddd;">⚠️ Normal</td>
-                            </tr>
-                        </table>
-                        
-                        <p><strong>⚡ Performance Tips:</strong><br>
-                        1. Delete old captures<br>
-                        2. Keep recommended limit (Free: 3, Pro: 50-70)<br>
-                        3. Restart program after long use</p>
-                        
-                        <p><strong>✅ Background Load:</strong><br>
-                        • Idle: CPU 0-1%<br>
-                        • Capturing: CPU 5-15%<br>
-                        • Editing: CPU 10-30%</p>
+                        <p>메모리는 정말 가볍게 사용해요!</p>
+                        <p style="margin-top: 10px;"><strong>메모리:</strong> 0-3개 캡처 시 약 80-120MB, 50개 시 약 400MB, 100개 시 약 800MB 정도 사용해요.</p>
+                        <p style="margin-top: 10px;"><strong>CPU:</strong> 대기 시 0-1%, 캡처 시 5-15%, 편집 시 10-30% 정도예요.</p>
+                        <p style="margin-top: 10px;">오래된 캡처 삭제하시면 메모리 공간 확보할 수 있어요!</p>
                     </div>
                 </div>
 
                 <!-- Q9 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q9. Can I change the hotkeys to different keys?</h3>
+                        <h3>Q9. Can I change hotkeys?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>🔄 Current Hotkeys:</strong><br>
-                        • Alt + S: Single capture<br>
-                        • Alt + D: Multi-capture</p>
-                        
-                        <p><strong>💡 If you want different shortcuts:</strong><br>
-                        1. Use Windows shortcut change tool (external program)<br>
-                        2. Send feedback: Custom hotkeys planned for future update</p>
-                        
-                        <p><strong>⚠️ Conflict Prevention:</strong><br>
-                        • Selected combination doesn't conflict with default Windows hotkeys<br>
-                        • If conflicts with other programs: Recommend changing that program's hotkey</p>
+                        <p>현재는 <strong>Alt + S</strong>는 단일 캡처, <strong>Alt + D</strong>는 멀티 캡처로 고정되어 있어요.</p>
+                        <p style="margin-top: 10px;">커스텀 핫키를 원하시면 외부 도구를 사용하시거나 피드백을 보내주시면 고려해볼게요!</p>
                     </div>
                 </div>
 
                 <!-- Q10 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Q10. Do captures disappear when I close the program?</h3>
+                        <h3>Q10. Do captures disappear on exit?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>✅ Auto-save Enabled (Default):</strong><br>
-                        • All captures saved as files<br>
-                        • Retained after program exit<br>
-                        • Can find in Pictures\ScreenshotDrag folder</p>
-                        
-                        <p><strong>⚠️ Auto-save Disabled:</strong><br>
-                        • Stored in memory only<br>
-                        • Disappears on program exit<br>
-                        • Important captures need manual save</p>
-                        
-                        <p><strong>🔄 Program State Behavior:</strong></p>
-                        <p><strong>Minimize to Tray:</strong><br>
-                        • Capture history retained in memory<br>
-                        • Can restore anytime</p>
-                        
-                        <p><strong>Complete Exit:</strong><br>
-                        • Memory captures deleted<br>
-                        • Saved files retained<br>
-                        • Next launch starts with empty state</p>
-                        
-                        <p><strong>💡 Recommended Setting:</strong><br>
-                        ✅ Keep auto-save enabled (default)<br>
-                        → Safely preserve all captures<br>
-                        → No worries even after program exit</p>
+                        <p>아니요! 걱정 마세요.</p>
+                        <p style="margin-top: 10px;"><strong>자동 저장이 켜져 있으면</strong> (기본값) 모든 캡처가 <code style="background: #f5f5f5; padding: 2px 6px; border-radius: 3px;">Pictures\ScreenshotDrag</code> 폴더에 자동으로 저장되니까 프로그램을 꺼도 안전해요!</p>
+                        <p style="margin-top: 10px;"><strong>자동 저장이 꺼져 있으면</strong> 메모리에만 저장되어서 프로그램 종료 시 사라질 수 있어요. 그래서 안전하게 사용하려면 자동 저장 켜두시는 걸 추천해요!</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-footer">
                 <p><strong>📞 Have more questions?</strong></p>
-                <p>📧 Use the "Send Feedback" button in the program to contact us!</p>
+                <p>📧 Contact@capturedrag.com</p>
             </div>
         </div>
     </section>
@@ -1270,21 +1188,25 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-brand">
-                <img src="logo.svg" alt="Capture Drag" class="footer-logo">
-                <h3>Capture Drag</h3>
-                <div class="footer-copyright-inner">
-                    <p>Copyright © 2025 Capture Drag</p>
-                    <p>All rights reserved</p>
-                    <p style="margin-top: 10px; color: #999; font-size: 0.9rem;">Version 2.0.0</p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="logo.svg" alt="Capture Drag" class="footer-logo">
+                    <h3>Capture Drag</h3>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p>Copyright © 2025 Capture Drag, All rights reserved</p>
                 </div>
             </div>
             <div class="footer-bg-letter">C</div>
-            <div class="footer-copyright">
-                <p>�� 2025 Capture Drag. All rights reserved.</p>
+        </div>
+    </footer>
+�� 2025 Capture Drag. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
 
     <!-- JavaScript -->
     <script>
@@ -1298,7 +1220,7 @@
             en: {
                 tagline: 'The AI Chat Workflow Revolution',
                 subtitle: 'The most innovative way to communicate with AI!',
-                microsoftStore: 'Get it from Microsoft Store',
+                microsoftStore: 'Microsoft Store',
                 freeDownload: 'Free download (with watermark)',
                 featuresTitle: '✨ Key Features',
                 pricingTitle: 'Plans & Pricing',
@@ -2622,6 +2544,227 @@
                 faqItem.classList.add('active');
             }
         }
+
+        // Theme Toggle Functionality
+        (function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            const body = document.body;
+            
+            // Load saved theme from localStorage (default to dark)
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-theme');
+                body.classList.remove('light-theme');
+                themeIcon.textContent = '☀️';
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                themeIcon.textContent = '🌙';
+            }
+            
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-theme');
+                body.classList.toggle('light-theme');
+                
+                if (body.classList.contains('dark-theme')) {
+                    localStorage.setItem('theme', 'dark');
+                    themeIcon.textContent = '☀️';
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    themeIcon.textContent = '🌙';
+                }
+            });
+        })();
+
+        // Coming Soon Modal
+        function showComingSoonModal() {
+            const modal = document.createElement('div');
+            modal.className = 'coming-soon-modal';
+            modal.innerHTML = `
+                <div class="coming-soon-modal-overlay"></div>
+                <div class="coming-soon-modal-content">
+                    <button class="coming-soon-modal-close">&times;</button>
+                    <div class="coming-soon-modal-header">
+                        <h2>🚀 Coming Soon</h2>
+                    </div>
+                    <div class="coming-soon-modal-body">
+                        <p>This feature will be available soon. Stay tuned for updates!</p>
+                    </div>
+                    <button class="coming-soon-modal-btn">OK</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            // Show modal with animation
+            setTimeout(() => modal.classList.add('active'), 10);
+            
+            // Close handlers
+            const closeModal = () => {
+                modal.classList.remove('active');
+                setTimeout(() => modal.remove(), 300);
+            };
+            
+            modal.querySelector('.coming-soon-modal-close').addEventListener('click', closeModal);
+            modal.querySelector('.coming-soon-modal-btn').addEventListener('click', closeModal);
+            modal.querySelector('.coming-soon-modal-overlay').addEventListener('click', closeModal);
+        }
+
+        // Microsoft Store button click handlers
+        document.getElementById('microsoftStoreBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            showComingSoonModal();
+        });
+
+        document.getElementById('freeDownloadBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            showComingSoonModal();
+        });
+
+        // Coming Soon buttons click handlers
+        document.querySelectorAll('.coming-soon-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showComingSoonModal();
+            });
+        });
     </script>
+    <style>
+        .coming-soon-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .coming-soon-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .coming-soon-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .coming-soon-modal-content {
+            position: relative;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            z-index: 10001;
+        }
+
+        .coming-soon-modal.active .coming-soon-modal-content {
+            transform: scale(1);
+        }
+
+        body.dark-theme .coming-soon-modal-content {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            color: #e0e0e0;
+        }
+
+        .coming-soon-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .coming-soon-modal-close:hover {
+            color: #333;
+        }
+
+        body.dark-theme .coming-soon-modal-close {
+            color: #888;
+        }
+
+        body.dark-theme .coming-soon-modal-close:hover {
+            color: #fff;
+        }
+
+        .coming-soon-modal-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .coming-soon-modal-header h2 {
+            font-size: 2rem;
+            color: #333;
+            margin: 0;
+        }
+
+        body.dark-theme .coming-soon-modal-header h2 {
+            color: #ffffff;
+        }
+
+        .coming-soon-modal-body {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .coming-soon-modal-body p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        body.dark-theme .coming-soon-modal-body p {
+            color: #cccccc;
+        }
+
+        .coming-soon-modal-btn {
+            width: 100%;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .coming-soon-modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .store-icon {
+            display: inline-block;
+        }
+    </style>
 </body>
 </html>

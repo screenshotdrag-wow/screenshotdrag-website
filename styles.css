@@ -7,10 +7,15 @@
 body {
     font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: #ffffff;
+    color: #e0e0e0;
+    background: #1a1a1a;
     font-size: 18px;
     overflow-x: hidden;
+}
+
+body.light-theme {
+    color: #333;
+    background: #ffffff;
 }
 
 .container {
@@ -51,6 +56,48 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: #333;
+}
+
+/* Header Right Section */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: transparent;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.3rem;
+    padding: 0;
+}
+
+.theme-toggle-btn:hover {
+    background: #f5f5f5;
+    border-color: #667eea;
+    transform: scale(1.05);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.theme-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover .theme-icon {
+    transform: rotate(15deg);
 }
 
 /* Language Selector */
@@ -453,11 +500,23 @@ body {
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.features-top-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.features-bottom-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .feature-card {
@@ -482,10 +541,23 @@ body {
     font-weight: 700;
 }
 
+.feature-card.feature-large h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
 .feature-card p {
     font-size: 1.1rem;
     color: #666;
     line-height: 1.6;
+}
+
+.feature-card.feature-large p {
+    font-size: 1.3rem;
+}
+
+.feature-card.feature-large {
+    padding: 60px 40px;
 }
 
 .feature-badge {
@@ -1779,11 +1851,7 @@ body {
     color: #333;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
+/* This duplicate rule removed - using the main .features-grid rule above */
 
 .feature {
     background: #f8f9fa;
@@ -2827,10 +2895,217 @@ body {
 
 .pricing-cards-comparison {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
     margin: 0 auto;
+    align-items: stretch;
+}
+
+.plan-comparison-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    min-height: 580px;
+}
+
+body.dark-theme .plan-comparison-card {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+.plan-comparison-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.plan-comparison-header {
+    margin-bottom: 24px;
+}
+
+.plan-comparison-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+body.dark-theme .plan-comparison-title {
+    color: #ffffff;
+}
+
+.plan-comparison-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+body.dark-theme .plan-comparison-subtitle {
+    color: #cccccc;
+}
+
+.plan-comparison-price-section {
+    margin-bottom: 24px;
+}
+
+.plan-comparison-price {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+}
+
+body.dark-theme .plan-comparison-price {
+    color: #ffffff;
+}
+
+.plan-comparison-price-pro {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+}
+
+body.dark-theme .plan-comparison-price-pro {
+    color: #ffffff;
+}
+
+.plan-billing-info {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 8px 0 4px 0;
+}
+
+body.dark-theme .plan-billing-info {
+    color: #cccccc;
+}
+
+.plan-billing-note {
+    font-size: 0.8rem;
+    color: #999;
+    margin: 0;
+}
+
+body.dark-theme .plan-billing-note {
+    color: #888;
+}
+
+.plan-comparison-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.plan-comparison-btn.microsoft-store-btn {
+    background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+    border: 2px solid #0078d4;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.plan-comparison-btn.microsoft-store-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.plan-comparison-btn.microsoft-store-btn:hover {
+    background: linear-gradient(135deg, #106ebe 0%, #005a9e 100%);
+    border-color: #106ebe;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 120, 212, 0.4);
+}
+
+.plan-comparison-btn.microsoft-store-btn:hover::before {
+    left: 100%;
+}
+
+.plan-comparison-btn.microsoft-store-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
+}
+
+.plan-divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 0 0 24px 0;
+}
+
+body.dark-theme .plan-divider {
+    background: #444;
+}
+
+.plan-features-section {
+    flex-grow: 1;
+}
+
+.plan-features-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 16px 0;
+}
+
+body.dark-theme .plan-features-title {
+    color: #ffffff;
+}
+
+.plan-comparison-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.plan-comparison-features li {
+    padding: 8px 0;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+body.dark-theme .plan-comparison-features li {
+    color: #e0e0e0;
+}
+
+@media (max-width: 1200px) {
+    .pricing-cards-comparison {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-cards-comparison {
+        grid-template-columns: 1fr;
+    }
 }
 
 .plan-comparison-card {
@@ -2855,6 +3130,31 @@ body {
     box-shadow: 0 10px 40px rgba(66, 133, 244, 0.2);
 }
 
+.plan-type-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 10;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.plan-type-badge.install-type {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.plan-type-badge.cloud-type {
+    background: linear-gradient(135deg, #00d4ff, #0066cc);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+}
+
 .popular-comparison-badge {
     position: absolute;
     top: -15px;
@@ -2869,21 +3169,6 @@ body {
     box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
 }
 
-.plan-comparison-header {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.plan-comparison-icon {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-}
-
-.plan-comparison-title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #1a1a1a;
-}
 
 .plan-comparison-price {
     text-align: center;
@@ -2921,28 +3206,35 @@ body {
     margin-bottom: 30px;
 }
 
-.free-comparison-btn {
-    background: #e8f5e8;
-    color: #2e7d32;
-    border: 2px solid #4caf50;
-}
-
-.free-comparison-btn:hover {
-    background: #4caf50;
-    color: white;
-    transform: translateY(-2px);
-}
 
 .pro-comparison-btn {
-    background: linear-gradient(135deg, #4285F4, #1565C0);
+    background: #0067b8;
     color: white;
-    box-shadow: 0 5px 20px rgba(66, 133, 244, 0.3);
+    border: none;
 }
 
 .pro-comparison-btn:hover {
-    background: linear-gradient(135deg, #1565C0, #4285F4);
-    box-shadow: 0 8px 30px rgba(66, 133, 244, 0.5);
-    transform: translateY(-2px);
+    background: #005a9e;
+}
+
+.cloud-comparison-btn {
+    background: #0067b8;
+    color: white;
+    border: none;
+}
+
+.cloud-comparison-btn:hover {
+    background: #005a9e;
+}
+
+.coming-soon-btn {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.coming-soon-btn:hover {
+    transform: none;
+    cursor: not-allowed;
 }
 
 .plan-comparison-features {
@@ -4316,7 +4608,7 @@ body {
 footer {
     background: #000000;
     color: white;
-    padding: 80px 20px;
+    padding: 80px 20px 0 20px;
     position: relative;
     overflow: hidden;
 }
@@ -4324,6 +4616,15 @@ footer {
 footer .container {
     position: relative;
     z-index: 2;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer-brand {
@@ -4339,20 +4640,47 @@ footer .container {
 
 .footer-brand h3 {
     font-size: 1.8rem;
-    margin-bottom: 15px;
+    margin: 0;
     font-weight: 600;
 }
 
-.footer-copyright-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.footer-email-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.footer-copyright-inner p {
+.footer-email {
+    margin: 0;
+    display: inline-block;
+}
+
+.footer-email a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-email a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info p {
     font-size: 0.9rem;
     opacity: 0.9;
     margin: 0;
+    line-height: 1.6;
 }
 
 .footer-bg-letter {
@@ -4369,12 +4697,7 @@ footer .container {
     z-index: 1;
 }
 
-.footer-copyright {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    opacity: 0.7;
-}
+/* Footer copyright removed - integrated into footer-info */
 
 /* App Compatibility - Mobile Responsive */
 @media (max-width: 768px) {
@@ -4483,8 +4806,24 @@ footer .container {
         gap: 20px;
     }
     
-    .features-grid {
+    .features-top-row {
         grid-template-columns: 1fr;
+    }
+    
+    .features-bottom-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card.feature-large {
+        padding: 40px 30px;
+    }
+    
+    .feature-card.feature-large h3 {
+        font-size: 1.6rem;
+    }
+    
+    .feature-card.feature-large p {
+        font-size: 1.1rem;
     }
     
     .format-cards,
@@ -6290,6 +6629,17 @@ footer .container {
     font-size: 1.1rem;
 }
 
+.faq-footer a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.faq-footer a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
 .faq-item {
     background: white;
     border-radius: 12px;
@@ -6336,6 +6686,242 @@ footer .container {
     text-align: center;
 }
 
+/* Dark Theme Styles */
+body.dark-theme {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .top-header {
+    background: #1a1a1a;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .header-brand-name {
+    color: #e0e0e0;
+}
+
+body.dark-theme .theme-toggle-btn {
+    border-color: #444;
+    background: #2a2a2a;
+}
+
+body.dark-theme .theme-toggle-btn:hover {
+    background: #333;
+    border-color: #667eea;
+}
+
+body.dark-theme .custom-select-trigger-lang {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-theme .custom-select-options-lang {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-theme .custom-select-option-lang {
+    color: #e0e0e0;
+}
+
+body.dark-theme .custom-select-option-lang:hover {
+    background: #333;
+}
+
+body.dark-theme .lang-search-input {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-theme .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+body.dark-theme .hero h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .hero p {
+    color: #cccccc;
+}
+
+body.dark-theme .btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body.dark-theme section {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-theme h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .section-subtitle {
+    color: #cccccc;
+}
+
+body.dark-theme .feature-card,
+body.dark-theme .feature-card-new {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-theme .feature-card:hover,
+body.dark-theme .feature-card-new:hover {
+    border-color: #667eea;
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+body.dark-theme .feature-card h3,
+body.dark-theme .feature-card-new h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .step {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-theme .step h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .step p {
+    color: #cccccc;
+}
+
+body.dark-theme .faq-item {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-theme .faq-question {
+    color: #ffffff;
+}
+
+body.dark-theme .faq-answer {
+    color: #cccccc;
+}
+
+body.dark-theme .pricing-card,
+body.dark-theme .plan-comparison-card {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-theme .pricing-card h3,
+body.dark-theme .plan-comparison-card h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .pricing-card p,
+body.dark-theme .plan-comparison-card p {
+    color: #cccccc;
+}
+
+body.dark-theme .pricing-card ul,
+body.dark-theme .plan-comparison-card ul {
+    color: #cccccc;
+}
+
+body.dark-theme .price-main,
+body.dark-theme .price-annual,
+body.dark-theme .price-lifetime {
+    color: #ffffff;
+}
+
+body.dark-theme .pricing-cards,
+body.dark-theme .pricing-cards-comparison {
+    color: #e0e0e0;
+}
+
+body.dark-theme .plan-comparison-title,
+body.dark-theme .plan-comparison-price,
+body.dark-theme .plan-comparison-price-pro {
+    color: #ffffff;
+}
+
+body.dark-theme .plan-comparison-price span {
+    color: #cccccc;
+}
+
+body.dark-theme .plan-comparison-features li {
+    color: #cccccc;
+    border-bottom-color: #444;
+}
+
+body.dark-theme .plan-comparison-features li::before {
+    color: #667eea;
+}
+
+body.dark-theme .plan-type-badge.install-type {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+body.dark-theme .plan-type-badge.cloud-type {
+    background: linear-gradient(135deg, #00d4ff, #0066cc);
+}
+
+body.dark-theme .compatibility-table {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-theme .compatibility-table th {
+    background: #333;
+    color: #ffffff;
+}
+
+body.dark-theme .compatibility-table td {
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-theme .compatibility-table tbody tr:hover {
+    background: #333;
+}
+
+body.dark-theme .app-search {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-theme .app-search::placeholder {
+    color: #888;
+}
+
+body.dark-theme footer {
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+
+body.dark-theme .footer-brand h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .footer-info p {
+    color: #cccccc;
+}
+
+body.dark-theme .faq-footer {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-theme .faq-footer a {
+    color: #667eea;
+}
+
 .faq-item.active .faq-toggle {
     transform: rotate(180deg);
 }
@@ -6344,6 +6930,10 @@ footer .container {
     display: none;
     padding: 0 30px 25px 30px;
     background: white;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
 }
 
 .faq-answer p {
