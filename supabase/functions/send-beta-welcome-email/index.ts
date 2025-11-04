@@ -266,7 +266,7 @@ serve(async (req) => {
             <div class="discord-box">
                 <h3>💬 Discord Channel</h3>
                 <p style="margin: 0; color: #666;">Join our community for real-time updates and discussions</p>
-                <a href="https://discord.gg/xxxxxxxxx" class="discord-link">Join Discord</a>
+                <a href="https://discord.gg/arwEfUDQ" class="discord-link">Join Discord</a>
             </div>
             
             <h3>🎁 Reward</h3>
