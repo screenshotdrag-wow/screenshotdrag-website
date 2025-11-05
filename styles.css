@@ -6814,14 +6814,68 @@ body.dark-theme {
     color: #e0e0e0;
 }
 
+/* Light Theme Styles */
+body.light-theme .top-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .header-brand-name {
+    color: #000000;
+    text-shadow: none;
+}
+
+body.light-theme .theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: #000000;
+}
+
+body.light-theme .theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .custom-select-trigger-lang {
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: #000000;
+}
+
+body.light-theme .custom-select-trigger-lang:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .custom-select-arrow-lang {
+    color: #000000;
+}
+
+body.light-theme footer {
+    background: #ffffff;
+    color: #000000;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .footer-brand h3 {
+    color: #000000;
+}
+
+body.light-theme .footer-info p {
+    color: #333333;
+}
+
 body.dark-theme .top-header {
-    background: #1a1a1a;
-    border-bottom: 1px solid #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+    border-bottom: 1px solid rgba(29, 78, 216, 0.3);
+    box-shadow: 0 4px 15px rgba(29, 78, 216, 0.35);
 }
 
 body.dark-theme .header-brand-name {
-    color: #e0e0e0;
+    color: #ffffff;
+    text-shadow: 0 2px 15px rgba(29, 78, 216, 0.35);
 }
 
 body.dark-theme .theme-toggle-btn {
@@ -7022,8 +7076,9 @@ body.dark-theme .app-search::placeholder {
 }
 
 body.dark-theme footer {
-    background: #1a1a1a;
-    border-top: 1px solid #333;
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+    border-top: 1px solid rgba(29, 78, 216, 0.3);
+    box-shadow: 0 -4px 15px rgba(29, 78, 216, 0.35);
 }
 
 body.dark-theme .footer-brand h3 {
@@ -7031,7 +7086,7 @@ body.dark-theme .footer-brand h3 {
 }
 
 body.dark-theme .footer-info p {
-    color: #cccccc;
+    color: #ffffff;
 }
 
 body.dark-theme .faq-footer {
