@@ -233,7 +233,7 @@ serve(async (req) => {
             <h2>2) 15-day License Key</h2>
             <div class="key-section">
                 <p><strong>Your 15-day key here:</strong></p>
-                <div class="license-key">BETA-XXXXXXXX-XXXX-XXXX</div>
+                <div class="license-key">TRIAL-NR5K-ZZ78-0959</div>
                 <p style="margin: 15px 0 0; color: #666; font-size: 14px;">
                     After running the app, click <strong>[Activate Beta]</strong> on the first screen<br>
                     and enter your key — it will switch to Pro mode immediately.
