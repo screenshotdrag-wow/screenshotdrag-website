@@ -223,7 +223,7 @@ body.light-theme {
     background: #ffffff;
     color: #333;
     text-align: center;
-    padding: 180px 20px 200px 20px;
+    padding: 180px 20px 60px 20px;
     border-bottom: 1px solid #f0f0f0;
     min-height: 100vh;
     display: flex;
@@ -465,7 +465,8 @@ body.light-theme {
 .pricing-note {
     font-size: 1.2rem;
     color: #999;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .features-badges {
@@ -488,7 +489,7 @@ body.light-theme {
 
 /* Features 섹션 */
 .features-section {
-    padding: 100px 20px;
+    padding: 40px 20px 100px 20px;
     background: #f8f9fa;
 }
 
@@ -3779,6 +3780,110 @@ body.dark-theme .plan-comparison-features li {
     60% { transform: translateY(-5px); }
 }
 
+/* Coming Soon Modal */
+.coming-soon-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.coming-soon-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.coming-soon-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.coming-soon-modal-content {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 25px;
+    padding: 50px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.coming-soon-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coming-soon-modal-close:hover {
+    color: #333;
+    background: #f5f5f5;
+}
+
+.coming-soon-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.coming-soon-modal-content h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.coming-soon-message {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.coming-soon-close-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.coming-soon-close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
 /* Beta Test Modal */
 .beta-modal {
     position: fixed;
@@ -3860,14 +3965,14 @@ body.dark-theme .plan-comparison-features li {
 }
 
 .beta-modal-header h2 {
-    color: #333;
+    color: #1a1a1a !important;
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: 700;
 }
 
 .beta-subtitle {
-    color: #666;
+    color: #333 !important;
     font-size: 1.2rem;
     margin-bottom: 15px;
     font-weight: 500;
@@ -6013,7 +6118,7 @@ footer .container {
 
 .beta-modal-header {
     background: transparent;
-    color: #333;
+    color: #1a1a1a !important;
     padding: 40px 30px 30px;
     text-align: center;
 }
@@ -6021,7 +6126,7 @@ footer .container {
 .beta-modal-header h2 {
     margin: 0 0 15px 0;
     font-size: 1.8rem;
-    color: #333;
+    color: #1a1a1a !important;
     font-weight: 700;
 }
 
@@ -6044,7 +6149,7 @@ footer .container {
 .beta-subtitle {
     font-size: 1.1rem;
     margin: 10px 0;
-    color: #666;
+    color: #333 !important;
     font-weight: 500;
 }
 
@@ -6078,15 +6183,17 @@ footer .container {
     display: flex;
     gap: 20px;
     padding: 25px;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #4A90E2, #5BA3F5);
     border-radius: 12px;
     margin-bottom: 20px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #2E5C8A;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
 .benefit-item.special {
-    background: linear-gradient(135deg, #fff5e6, #ffe4b3);
-    border-left-color: #ffa500;
+    background: linear-gradient(135deg, #FF6B35, #FF8C42);
+    border-left-color: #E55A2B;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
 }
 
 .benefit-icon {
@@ -6096,8 +6203,14 @@ footer .container {
 
 .benefit-text p {
     margin: 0;
-    color: #333;
+    color: #ffffff;
     line-height: 1.6;
+    font-weight: 500;
+}
+
+.benefit-text p strong {
+    color: #ffffff;
+    font-weight: 700;
 }
 
 /* Beta Form */
