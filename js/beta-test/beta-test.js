@@ -236,15 +236,24 @@
                             console.warn('⚠️ Duplicate email detected. Attempting to delete and re-submit for beta testing...');
                             
                             try {
-                                // 기존 레코드 삭제 시도
-                                const { error: deleteError } = await supabaseClient
+                                // 기존 레코드 삭제 시도 (삭제된 행 수 확인)
+                                const { data: deleteData, error: deleteError } = await supabaseClient
                                     .from('beta_applications')
                                     .delete()
-                                    .eq('email', insertData.email);
+                                    .eq('email', insertData.email)
+                                    .select();
                                 
                                 if (deleteError) {
                                     console.error('Failed to delete duplicate:', deleteError);
-                                    alert('⚠️ This email has already been registered.\n\nTo test again, delete the record in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                    console.error('Delete error details:', JSON.stringify(deleteError, null, 2));
+                                    
+                                    // RLS 정책으로 삭제가 안 되는 경우, 직접 삭제 안내
+                                    if (deleteError.code === '42501' || deleteError.message?.includes('permission') || deleteError.message?.includes('policy')) {
+                                        alert('⚠️ Cannot delete duplicate record (RLS policy restriction).\n\nPlease delete manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';\n\nOr use the admin page to delete the record.');
+                                    } else {
+                                        alert('⚠️ This email has already been registered.\n\nTo test again, delete the record in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                    }
+                                    
                                     if (submitBtn) {
                                         submitBtn.textContent = 'Submit Application';
                                         submitBtn.disabled = false;
@@ -252,24 +261,68 @@
                                     return;
                                 }
                                 
+                                // 삭제 확인
+                                const deletedCount = deleteData ? deleteData.length : 0;
+                                console.log(`Deleted ${deletedCount} duplicate record(s)`);
+                                
+                                if (deletedCount === 0) {
+                                    console.warn('No records were deleted. The record may have been deleted already or RLS policy prevents deletion.');
+                                }
+                                
+                                // 삭제 후 약간의 지연 (데이터베이스 트랜잭션 완료 대기)
+                                await new Promise(resolve => setTimeout(resolve, 500));
+                                
                                 // 삭제 후 재시도
-                                console.log('Deleted duplicate, retrying insert...');
+                                console.log('Retrying insert after deletion...');
                                 const { data: retryResult, error: retryError } = await supabaseClient
                                     .from('beta_applications')
                                     .insert([insertData])
                                     .select();
                                 
                                 if (retryError) {
-                                    throw retryError;
+                                    // 여전히 중복 에러인 경우
+                                    if (retryError.code === '23505' || retryError.message?.includes('duplicate')) {
+                                        console.error('Still duplicate after deletion. This may be due to RLS policy or database transaction delay.');
+                                        console.error('Retry error:', JSON.stringify(retryError, null, 2));
+                                        
+                                        // 한 번 더 시도 (더 긴 지연)
+                                        console.log('Waiting longer and retrying one more time...');
+                                        await new Promise(resolve => setTimeout(resolve, 2000));
+                                        
+                                        const { data: finalRetryResult, error: finalRetryError } = await supabaseClient
+                                            .from('beta_applications')
+                                            .insert([insertData])
+                                            .select();
+                                        
+                                        if (finalRetryError) {
+                                            throw finalRetryError;
+                                        }
+                                        
+                                        result = finalRetryResult;
+                                        currentError = null;
+                                        console.log('✅ Successfully re-inserted after second retry');
+                                    } else {
+                                        throw retryError;
+                                    }
+                                } else {
+                                    result = retryResult;
+                                    currentError = null; // 에러 클리어
+                                    console.log('✅ Successfully re-inserted after deleting duplicate');
                                 }
                                 
-                                result = retryResult;
-                                currentError = null; // 에러 클리어
-                                console.log('✅ Successfully re-inserted after deleting duplicate');
                                 // 아래 성공 처리 로직으로 계속 진행
                             } catch (retryErr) {
                                 console.error('Retry failed:', retryErr);
-                                alert('⚠️ Failed to re-submit after deleting duplicate.\n\nPlease delete the record manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                console.error('Retry error details:', JSON.stringify(retryErr, null, 2));
+                                
+                                let errorMessage = '⚠️ Failed to re-submit after deleting duplicate.\n\n';
+                                if (retryErr.code === '23505' || retryErr.message?.includes('duplicate')) {
+                                    errorMessage += 'The record may still exist due to RLS policy restrictions or database transaction delay.\n\n';
+                                }
+                                errorMessage += 'Please delete the record manually in Supabase Dashboard:\n\n';
+                                errorMessage += 'SQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';';
+                                
+                                alert(errorMessage);
                                 if (submitBtn) {
                                     submitBtn.textContent = 'Submit Application';
                                     submitBtn.disabled = false;
