@@ -2362,20 +2362,26 @@
 
             // Close success modal
             function closeSuccessModal() {
-                successModal.classList.remove('active');
-                document.body.style.overflow = '';
+                if (successModal) {
+                    successModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             }
 
-            successCloseBtn.addEventListener('click', closeSuccessModal);
-            successModalOverlay.addEventListener('click', closeSuccessModal);
+            if (successCloseBtn) {
+                successCloseBtn.addEventListener('click', closeSuccessModal);
+            }
+            if (successModalOverlay) {
+                successModalOverlay.addEventListener('click', closeSuccessModal);
+            }
 
             // Close on ESC key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    if (betaModal.classList.contains('active')) {
+                    if (betaModal && betaModal.classList.contains('active')) {
                         closeModal();
                     }
-                    if (successModal.classList.contains('active')) {
+                    if (successModal && successModal.classList.contains('active')) {
                         closeSuccessModal();
                     }
                 }
