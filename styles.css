@@ -3636,6 +3636,8 @@ body.dark-theme .plan-comparison-features li {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    min-height: 48px;
+    touch-action: manipulation;
 }
 
 .pricing-cta .btn::before {
