@@ -17,6 +17,21 @@ serve(async (req) => {
       )
     }
 
+    // Check if RESEND_API_KEY is set
+    if (!RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set in environment variables')
+      return new Response(
+        JSON.stringify({ 
+          error: 'Email service not configured', 
+          message: 'RESEND_API_KEY environment variable is missing. Please set it in Supabase Dashboard -> Project Settings -> Edge Functions -> Secrets.'
+        }),
+        { 
+          status: 500,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      )
+    }
+
     // Initialize Resend client
     const resend = new Resend(RESEND_API_KEY)
 
