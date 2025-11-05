@@ -236,41 +236,95 @@
                             console.warn('⚠️ Duplicate email detected. Attempting to delete and re-submit for beta testing...');
                             
                             try {
-                                // 기존 레코드 삭제 시도 (삭제된 행 수 확인)
-                                const { data: deleteData, error: deleteError } = await supabaseClient
+                                // 먼저 기존 레코드가 있는지 확인
+                                const { data: existingData, error: checkError } = await supabaseClient
                                     .from('beta_applications')
-                                    .delete()
+                                    .select('id, email')
                                     .eq('email', insertData.email)
-                                    .select();
+                                    .limit(1);
                                 
-                                if (deleteError) {
-                                    console.error('Failed to delete duplicate:', deleteError);
-                                    console.error('Delete error details:', JSON.stringify(deleteError, null, 2));
+                                console.log('🔍 Existing records check:', existingData, checkError);
+                                
+                                if (existingData && existingData.length > 0) {
+                                    // 기존 레코드 삭제 시도 (삭제된 행 수 확인)
+                                    console.log('🗑️ Attempting to delete existing record...');
+                                    const { data: deleteData, error: deleteError } = await supabaseClient
+                                        .from('beta_applications')
+                                        .delete()
+                                        .eq('email', insertData.email)
+                                        .select();
                                     
-                                    // RLS 정책으로 삭제가 안 되는 경우, 직접 삭제 안내
-                                    if (deleteError.code === '42501' || deleteError.message?.includes('permission') || deleteError.message?.includes('policy')) {
-                                        alert('⚠️ Cannot delete duplicate record (RLS policy restriction).\n\nPlease delete manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';\n\nOr use the admin page to delete the record.');
-                                    } else {
-                                        alert('⚠️ This email has already been registered.\n\nTo test again, delete the record in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                    console.log('🗑️ Delete result:', deleteData, deleteError);
+                                    
+                                    if (deleteError) {
+                                        console.error('❌ Failed to delete duplicate:', deleteError);
+                                        console.error('Delete error details:', JSON.stringify(deleteError, null, 2));
+                                        
+                                        // RLS 정책으로 삭제가 안 되는 경우, 직접 삭제 안내
+                                        if (deleteError.code === '42501' || deleteError.message?.includes('permission') || deleteError.message?.includes('policy')) {
+                                            alert('⚠️ Cannot delete duplicate record (RLS policy restriction).\n\nPlease delete manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';\n\nOr use the admin page to delete the record.');
+                                        } else {
+                                            alert('⚠️ This email has already been registered.\n\nTo test again, delete the record in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                        }
+                                        
+                                        if (submitBtn) {
+                                            submitBtn.textContent = 'Submit Application';
+                                            submitBtn.disabled = false;
+                                        }
+                                        return;
                                     }
                                     
-                                    if (submitBtn) {
-                                        submitBtn.textContent = 'Submit Application';
-                                        submitBtn.disabled = false;
+                                    // 삭제 확인
+                                    const deletedCount = deleteData ? deleteData.length : 0;
+                                    console.log(`✅ Deleted ${deletedCount} duplicate record(s)`);
+                                    
+                                    if (deletedCount === 0) {
+                                        console.warn('⚠️ No records were deleted. RLS policy may prevent deletion.');
+                                        // RLS 정책으로 삭제가 안 되면, 사용자에게 수동 삭제 요청
+                                        alert('⚠️ Cannot automatically delete duplicate record (RLS policy restriction).\n\nPlease delete manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                        if (submitBtn) {
+                                            submitBtn.textContent = 'Submit Application';
+                                            submitBtn.disabled = false;
+                                        }
+                                        return;
                                     }
-                                    return;
+                                    
+                                    // 삭제 후 충분한 지연 (데이터베이스 트랜잭션 완료 대기)
+                                    console.log('⏳ Waiting for transaction to complete (1s)...');
+                                    await new Promise(resolve => setTimeout(resolve, 1000));
+                                    
+                                    // 삭제가 실제로 완료되었는지 다시 확인
+                                    const { data: verifyData } = await supabaseClient
+                                        .from('beta_applications')
+                                        .select('id')
+                                        .eq('email', insertData.email)
+                                        .limit(1);
+                                    
+                                    if (verifyData && verifyData.length > 0) {
+                                        console.warn('⚠️ Record still exists after deletion. Waiting longer (2s)...');
+                                        await new Promise(resolve => setTimeout(resolve, 2000));
+                                        
+                                        // 한 번 더 확인
+                                        const { data: verifyData2 } = await supabaseClient
+                                            .from('beta_applications')
+                                            .select('id')
+                                            .eq('email', insertData.email)
+                                            .limit(1);
+                                        
+                                        if (verifyData2 && verifyData2.length > 0) {
+                                            console.error('❌ Record still exists after multiple attempts. RLS policy may prevent deletion.');
+                                            alert('⚠️ Cannot delete duplicate record automatically.\n\nPlease delete manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                            if (submitBtn) {
+                                                submitBtn.textContent = 'Submit Application';
+                                                submitBtn.disabled = false;
+                                            }
+                                            return;
+                                        }
+                                    }
+                                } else {
+                                    console.log('✅ No existing records found, proceeding with insert...');
+                                    // 레코드가 없으면 바로 삽입 시도
                                 }
-                                
-                                // 삭제 확인
-                                const deletedCount = deleteData ? deleteData.length : 0;
-                                console.log(`Deleted ${deletedCount} duplicate record(s)`);
-                                
-                                if (deletedCount === 0) {
-                                    console.warn('No records were deleted. The record may have been deleted already or RLS policy prevents deletion.');
-                                }
-                                
-                                // 삭제 후 약간의 지연 (데이터베이스 트랜잭션 완료 대기)
-                                await new Promise(resolve => setTimeout(resolve, 500));
                                 
                                 // 삭제 후 재시도
                                 console.log('Retrying insert after deletion...');
