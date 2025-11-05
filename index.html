@@ -2214,7 +2214,10 @@
             
             if (!betaTestBtn) {
                 console.error('Beta Test Button not found!');
-                return;
+            }
+            
+            if (!betaModal) {
+                console.error('Beta Modal not found!');
             }
             
             // Success Modal
@@ -2223,23 +2226,37 @@
             const successCloseBtn = document.getElementById('successCloseBtn');
 
             // Open beta modal
-            betaTestBtn.addEventListener('click', function(e) {
-                console.log('Beta Test Button clicked!', e);
-                e.preventDefault();
-                e.stopPropagation();
-                betaModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-                console.log('Modal should be open now');
-            });
+            if (betaTestBtn && betaModal) {
+                betaTestBtn.addEventListener('click', function(e) {
+                    console.log('Beta Test Button clicked!', e);
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (betaModal) {
+                        betaModal.classList.add('active');
+                        betaModal.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling
+                        console.log('Modal should be open now', betaModal.classList);
+                    } else {
+                        console.error('Beta Modal is null!');
+                    }
+                });
+            }
 
             // Close beta modal
             function closeModal() {
-                betaModal.classList.remove('active');
-                document.body.style.overflow = ''; // Restore scrolling
+                if (betaModal) {
+                    betaModal.classList.remove('active');
+                    betaModal.style.display = 'none';
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
             }
 
-            betaModalClose.addEventListener('click', closeModal);
-            betaModalOverlay.addEventListener('click', closeModal);
+            if (betaModalClose) {
+                betaModalClose.addEventListener('click', closeModal);
+            }
+            if (betaModalOverlay) {
+                betaModalOverlay.addEventListener('click', closeModal);
+            }
 
             // Generate email preview HTML
             function generateEmailPreview(data) {
