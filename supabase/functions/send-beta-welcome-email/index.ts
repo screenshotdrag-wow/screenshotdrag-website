@@ -3,6 +3,11 @@ import { Resend } from "https://deno.land/x/resend@2.0.0/mod.ts"
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 
+// Download links
+const directDownloadLink = 'https://github.com/screenshotdrag-wow/ScreenshotDrag/releases/download/Beta_1.1/CaptureDrag-Beta-1.1-Setup.exe'
+const tempLicenseKey = 'TRIAL-NR5K-ZZ78-0959'
+const discordInviteLink = 'https://discord.gg/arwEfUDQ'
+
 serve(async (req) => {
   try {
     const { email, occupation, purpose } = await req.json()
@@ -40,10 +45,8 @@ serve(async (req) => {
     console.log('RESEND_API_KEY exists:', !!RESEND_API_KEY)
 
     // Send welcome email
-    // Note: If using custom domain, verify it in Resend Dashboard first
-    // For testing, use Resend's default domain: onboarding@resend.dev
     const { data, error } = await resend.emails.send({
-      from: 'Capture Drag <onboarding@resend.dev>', // Change to noreply@capturedrag.com after domain verification
+      from: 'Capture Drag <onboarding@resend.dev>',
       to: email,
       subject: '[Capture Drag] Welcome to the Beta! (Download + 15-day License Key)',
       html: `
@@ -100,123 +103,6 @@ serve(async (req) => {
             margin: 25px 0;
             border-radius: 5px;
         }
-        .download-section, .key-section {
-            background: #f8f9fa;
-            border: 2px solid #667eea;
-            border-radius: 10px;
-            padding: 25px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .download-section h2, .key-section h2 {
-            margin: 0 0 15px 0;
-            font-size: 20px;
-            color: #667eea;
-        }
-        .download-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 18px;
-            margin: 15px 0;
-        }
-        .license-key {
-            font-family: 'Courier New', monospace;
-            font-size: 18px;
-            font-weight: bold;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            letter-spacing: 2px;
-            color: #667eea;
-            margin: 15px 0;
-            word-break: break-all;
-        }
-        .warning-box {
-            background: #ffe6e6;
-            border-left: 4px solid #f44336;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 5px;
-        }
-        .warning-box strong {
-            color: #f44336;
-            font-size: 18px;
-        }
-        .mission-section, .feedback-section {
-            background: #e8f4f8;
-            border-left: 4px solid #2196F3;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 5px;
-        }
-        .mission-section h3, .feedback-section h3 {
-            margin: 0 0 15px 0;
-            color: #2196F3;
-            font-size: 18px;
-        }
-        .discord-box {
-            background: #e3f2fd;
-            border: 2px solid #2196F3;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .discord-link {
-            display: inline-block;
-            background: #5865F2;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .reward-box {
-            background: #e8f5e9;
-            border-left: 4px solid #4CAF50;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 5px;
-        }
-        .reward-box strong {
-            color: #4CAF50;
-            font-size: 18px;
-        }
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background: #333;
-            color: white;
-        }
-        .footer p {
-            margin: 5px 0;
-        }
-        ul {
-            margin: 15px 0;
-            padding-left: 25px;
-        }
-        ul li {
-            margin: 10px 0;
-            line-height: 1.8;
-        }
-        h2 {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
-        h3 {
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 20px;
-            color: #333;
-        }
     </style>
 </head>
 <body>
@@ -244,55 +130,75 @@ serve(async (req) => {
                 <strong>⏰ This beta runs for 15 days.</strong><br>
                 Below is your download link and temporary license key.
             </div>
-            
-            <h2>1) Download the App</h2>
-            <div class="download-section">
-                <a href="https://github.com/screenshotdrag-wow/ScreenshotDrag/releases/download/Beta_1.1/CaptureDrag-Beta-1.1-Setup.exe" class="download-link">📦 Download Capture Drag Beta</a>
-                <p style="margin: 15px 0 0; color: #666; font-size: 14px;">Windows 10/11</p>
-            </div>
-            
-            <h2>2) 15-day License Key</h2>
-            <div class="key-section">
-                <p><strong>Your 15-day key here:</strong></p>
-                <div class="license-key">TRIAL-NR5K-ZZ78-0959</div>
-                <p style="margin: 15px 0 0; color: #666; font-size: 14px;">
-                    After running the app, click <strong>[Activate Beta]</strong> on the first screen<br>
-                    and enter your key — it will switch to Pro mode immediately.
-                </p>
-            </div>
-            
-            <div class="warning-box">
-                <strong>⚠️ IMPORTANT: Installation Notice</strong><br><br>
+
+      <div style="background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%); border-left: 4px solid #667eea; padding: 20px; margin: 0 0 25px 0; border-radius: 8px;">
+
+        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">📦 Download Beta Version</h2>
+
+        <p style="color: #555555; margin: 0 0 15px 0; font-size: 15px;">Get the latest beta build:</p>
+
+        <div style="margin: 15px 0; text-align: center;">
+
+          <a href="${directDownloadLink}" style="display: inline-block; background: linear-gradient(135deg, #28a745, #20c997); color: #ffffff; text-decoration: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; font-size: 15px;">Direct Download</a>
+
+        </div>
+
+        <p style="color: #666666; margin: 15px 0 0 0; font-size: 13px; text-align: center;">💡 Direct Download 버튼을 클릭하면 바로 설치파일이 다운로드됩니다!</p>
+
+      </div>
+
+
+
+      <div style="background: #fffbf0; border-left: 4px solid #ffc107; padding: 20px; margin: 0 0 25px 0; border-radius: 8px;">
+
+        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">🔑 Your Temporary License Key</h2>
+
+        <p style="color: #555555; margin: 0 0 10px 0; font-size: 15px;">Use this key to activate Pro features during the beta:</p>
+
+        <div style="background: #ffffff; padding: 15px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 16px; color: #007bff; font-weight: bold; text-align: center; border: 2px dashed #ffc107;">${tempLicenseKey}</div>
+
+        <p style="color: #666666; margin: 15px 0 0 0; font-size: 13px;">💡 This key is valid throughout the beta testing period.</p>
+
+      </div>
+
+
+
+      <div style="background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%); border-left: 4px solid #5865F2; padding: 20px; margin: 0 0 25px 0; border-radius: 8px;">
+
+        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">💬 Join Our Discord Community</h2>
+
+        <p style="color: #555555; margin: 0 0 15px 0; font-size: 15px;">Connect with other beta testers and get support:</p>
+
+        <a href="${discordInviteLink}" style="display: inline-block; background: #5865F2; color: #ffffff; text-decoration: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; font-size: 15px;">Join Discord</a>
+
+      </div>
+
+            <div class="warning-box" style="background: #ffe6e6; border-left: 4px solid #f44336; padding: 20px; margin: 30px 0; border-radius: 5px;">
+                <strong style="color: #f44336; font-size: 18px;">⚠️ IMPORTANT: Installation Notice</strong><br><br>
                 We have not purchased a code-signing certificate yet.<br><br>
                 Because of that, Windows SmartScreen may show a red warning the first time you install.<br>
                 <strong>(This is NOT a virus.)</strong><br><br>
                 Click <strong>[More Info]</strong> → <strong>[Run anyway]</strong>.
             </div>
             
-            <h3>Your Mission During the Beta</h3>
-            <div class="mission-section">
-                <ul>
-                    <li>Test multi-drag in various apps (Slack / Discord / Telegram / Chrome / PPT / Word / Explorer, etc.)</li>
-                    <li>Find bugs / errors / crashes / UX discomforts</li>
-                    <li>Give feedback on the built-in editor's basic features<br>(currently basic only: pen / text / crop / mosaic / blur)</li>
+            <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">Your Mission During the Beta</h3>
+            <div class="mission-section" style="background: #e8f4f8; border-left: 4px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 5px;">
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li style="margin: 10px 0; line-height: 1.8;">Test multi-drag in various apps (Slack / Discord / Telegram / Chrome / PPT / Word / Explorer, etc.)</li>
+                    <li style="margin: 10px 0; line-height: 1.8;">Find bugs / errors / crashes / UX discomforts</li>
+                    <li style="margin: 10px 0; line-height: 1.8;">Give feedback on the built-in editor's basic features<br>(currently basic only: pen / text / crop / mosaic / blur)</li>
                 </ul>
             </div>
             
-            <h3>How to Submit Feedback</h3>
-            <div class="feedback-section">
+            <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">How to Submit Feedback</h3>
+            <div class="feedback-section" style="background: #e8f4f8; border-left: 4px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 5px;">
                 Click the <strong>💡lightbulb icon</strong> in the top-right corner of the app.<br>
                 That opens the internal feedback window.
             </div>
             
-            <div class="discord-box">
-                <h3>💬 Discord Channel</h3>
-                <p style="margin: 0; color: #666;">Join our community for real-time updates and discussions</p>
-                <a href="https://discord.gg/arwEfUDQ" class="discord-link">Join Discord</a>
-            </div>
-            
-            <h3>🎁 Reward</h3>
-            <div class="reward-box">
-                <strong>Anyone who provides meaningful bugs or product improvement feedback<br>
+            <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">🎁 Reward</h3>
+            <div class="reward-box" style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 20px; margin: 30px 0; border-radius: 5px;">
+                <strong style="color: #4CAF50; font-size: 18px;">Anyone who provides meaningful bugs or product improvement feedback<br>
                 will receive a permanent license ($49 Windows Store coupon).</strong>
             </div>
             
@@ -302,9 +208,9 @@ serve(async (req) => {
             </p>
         </div>
         
-        <div class="footer">
-            <p><strong>Capture Drag</strong></p>
-            <p>© 2025 Capture Drag. All rights reserved.</p>
+        <div class="footer" style="text-align: center; padding: 30px; background: #333; color: white;">
+            <p style="margin: 5px 0;"><strong>Capture Drag</strong></p>
+            <p style="margin: 5px 0;">© 2025 Capture Drag. All rights reserved.</p>
         </div>
     </div>
 </body>
@@ -364,4 +270,3 @@ serve(async (req) => {
     )
   }
 })
-
