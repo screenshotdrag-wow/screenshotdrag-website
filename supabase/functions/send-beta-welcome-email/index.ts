@@ -40,8 +40,10 @@ serve(async (req) => {
     console.log('RESEND_API_KEY exists:', !!RESEND_API_KEY)
 
     // Send welcome email
+    // Note: If using custom domain, verify it in Resend Dashboard first
+    // For testing, use Resend's default domain: onboarding@resend.dev
     const { data, error } = await resend.emails.send({
-      from: 'Capture Drag <noreply@capturedrag.com>',
+      from: 'Capture Drag <onboarding@resend.dev>', // Change to noreply@capturedrag.com after domain verification
       to: email,
       subject: '[Capture Drag] Welcome to the Beta! (Download + 15-day License Key)',
       html: `
@@ -313,11 +315,22 @@ serve(async (req) => {
     if (error) {
       console.error('Resend error:', error)
       console.error('Error details:', JSON.stringify(error, null, 2))
+      
+      // Provide helpful error messages
+      let errorMessage = 'Unknown Resend API error'
+      if (error.message) {
+        errorMessage = error.message
+      } else if (typeof error === 'object') {
+        errorMessage = JSON.stringify(error)
+      }
+      
       return new Response(
         JSON.stringify({ 
+          success: false,
           error: 'Failed to send email', 
           details: error,
-          message: error.message || 'Unknown Resend API error'
+          message: errorMessage,
+          hint: 'Check: 1) RESEND_API_KEY is set, 2) Domain is verified in Resend, 3) API key has correct permissions'
         }),
         { 
           status: 500,
