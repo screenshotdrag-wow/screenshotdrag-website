@@ -247,8 +247,8 @@ serve(async (req) => {
             
             <h2>1) Download the App</h2>
             <div class="download-section">
-                <a href="https://example.com/capture-drag-beta.exe" class="download-link">📦 Download Capture Drag Beta</a>
-                <p style="margin: 15px 0 0; color: #666; font-size: 14px;">File size: ~XX MB | Windows 10/11</p>
+                <a href="https://github.com/screenshotdrag-wow/ScreenshotDrag/releases/download/Beta_1.1/CaptureDrag-Beta-1.1-Setup.exe" class="download-link">📦 Download Capture Drag Beta</a>
+                <p style="margin: 15px 0 0; color: #666; font-size: 14px;">Windows 10/11</p>
             </div>
             
             <h2>2) 15-day License Key</h2>
