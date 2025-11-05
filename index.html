@@ -639,10 +639,27 @@
                 <h3>What's Next?</h3>
                 <ul>
                     <li>📧 Check your email for beta test instructions</li>
-                    <li>📱 Download the beta version when available</li>
                     <li>💬 Join our community for updates</li>
                     <li>📖 Getting started guide</li>
                 </ul>
+            </div>
+            
+            <!-- Download Beta Version Section -->
+            <div class="beta-download-section">
+                <h3>📦 Download Beta Version</h3>
+                <p style="margin-bottom: 15px; color: #666;">Get the latest beta build:</p>
+                <div style="text-align: center;">
+                    <a href="#" id="directDownloadBtn" class="direct-download-btn" style="display: inline-block; background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 10px 5px;">
+                        Direct Download
+                    </a>
+                    <!-- 
+                        설치 파일 다운로드 링크를 여기에 설정하세요.
+                        예: https://example.com/capture-drag-beta.exe
+                    -->
+                </div>
+                <p style="margin-top: 15px; font-size: 14px; color: #888; text-align: center;">
+                    💡 Direct Download 버튼을 클릭하면 바로 설치파일이 다운로드됩니다!
+                </p>
             </div>
             <button class="success-close-btn" id="successCloseBtn">Got it! 🚀</button>
         </div>
@@ -2385,6 +2402,21 @@
                 e.preventDefault();
                 showComingSoonModal();
             });
+        });
+
+        // Direct Download button - 설치 파일 URL을 여기에 설정하세요
+        // TODO: 실제 설치 파일 URL로 변경하세요
+        const BETA_DOWNLOAD_URL = '#'; // 예: 'https://example.com/capture-drag-beta.exe'
+        
+        document.getElementById('directDownloadBtn')?.addEventListener('click', (e) => {
+            if (BETA_DOWNLOAD_URL && BETA_DOWNLOAD_URL !== '#') {
+                // 실제 다운로드 링크가 설정되어 있으면 다운로드
+                window.open(BETA_DOWNLOAD_URL, '_blank');
+            } else {
+                // 아직 URL이 설정되지 않았으면 알림
+                e.preventDefault();
+                alert('다운로드 링크가 아직 설정되지 않았습니다. 곧 제공될 예정입니다.');
+            }
         });
     </script>
     <style>
