@@ -6816,55 +6816,56 @@ body.dark-theme {
 
 /* Light Theme Styles */
 body.light-theme .top-header {
-    background: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+    border-bottom: 1px solid rgba(29, 78, 216, 0.3);
+    box-shadow: 0 4px 15px rgba(29, 78, 216, 0.35);
 }
 
 body.light-theme .header-brand-name {
-    color: #000000;
-    text-shadow: none;
+    color: #3B82F6;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
 body.light-theme .theme-toggle-btn {
-    background: rgba(0, 0, 0, 0.05);
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    color: #000000;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
 }
 
 body.light-theme .theme-toggle-btn:hover {
-    background: rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 body.light-theme .custom-select-trigger-lang {
-    background: rgba(0, 0, 0, 0.05);
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    color: #000000;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
 }
 
 body.light-theme .custom-select-trigger-lang:hover {
-    background: rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 body.light-theme .custom-select-arrow-lang {
-    color: #000000;
+    color: #ffffff;
 }
 
 body.light-theme footer {
-    background: #ffffff;
-    color: #000000;
-    border-top: 1px solid #e0e0e0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+    color: white;
+    border-top: 1px solid rgba(29, 78, 216, 0.3);
+    box-shadow: 0 -4px 15px rgba(29, 78, 216, 0.35);
 }
 
 body.light-theme .footer-brand h3 {
-    color: #000000;
+    color: #3B82F6;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
 body.light-theme .footer-info p {
-    color: #333333;
+    color: #ffffff;
 }
 
 body.dark-theme .top-header {
@@ -6874,8 +6875,8 @@ body.dark-theme .top-header {
 }
 
 body.dark-theme .header-brand-name {
-    color: #ffffff;
-    text-shadow: 0 2px 15px rgba(29, 78, 216, 0.35);
+    color: #3B82F6;
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
 body.dark-theme .theme-toggle-btn {
@@ -7082,7 +7083,8 @@ body.dark-theme footer {
 }
 
 body.dark-theme .footer-brand h3 {
-    color: #ffffff;
+    color: #3B82F6;
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
 body.dark-theme .footer-info p {

@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capture Drag - Skip Ctrl+C+V. Just Drag It.</title>
+    <title>Capture Drag</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="icon" type="image/png" href="logo.svg">
+    <link rel="apple-touch-icon" href="logo.svg">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2354,16 +2360,6 @@
                 try {
                     const formData = new FormData(betaForm);
                     
-                    // Get user's IP address (using a public API)
-                    let ipAddress = null;
-                    try {
-                        const ipResponse = await fetch('https://api.ipify.org?format=json');
-                        const ipData = await ipResponse.json();
-                        ipAddress = ipData.ip;
-                    } catch (error) {
-                        console.log('Could not fetch IP address:', error);
-                    }
-                    
                     const data = {
                         email: formData.get('email'),
                         occupation: formData.get('occupation'),
@@ -2371,7 +2367,6 @@
                         nationality: formData.get('nationality'),
                         privacy_agreed: privacyAgree.checked,
                         privacy_agreed_at: new Date().toISOString(),
-                        ip_address: ipAddress,
                         user_agent: navigator.userAgent,
                         referrer_url: document.referrer || window.location.href
                     };
