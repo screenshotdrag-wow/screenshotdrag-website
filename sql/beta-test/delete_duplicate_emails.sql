@@ -1,7 +1,17 @@
--- Delete duplicate email entries from beta_applications table
+-- ============================================
+-- Beta Test: Delete Duplicate Email Entries
+-- ============================================
+-- Purpose: Remove duplicate email entries from beta_applications table
+-- Table: beta_applications
+-- 
+-- IMPORTANT: This is ONLY for beta test system.
+-- Do NOT mix with feedback system SQL.
+-- ============================================
 -- Run this in Supabase Dashboard -> SQL Editor
+-- Use a NEW query tab (separate from feedback system queries)
 
 -- Option 1: Delete all records (use with caution!)
+-- WARNING: This will delete ALL beta test applications!
 -- DELETE FROM beta_applications;
 
 -- Option 2: Delete specific email

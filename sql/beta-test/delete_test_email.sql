@@ -1,5 +1,14 @@
--- 안전하게 특정 이메일 삭제하기
--- Supabase Dashboard -> SQL Editor에서 실행
+-- ============================================
+-- Beta Test: Delete Specific Test Email
+-- ============================================
+-- Purpose: Safely delete a specific email from beta_applications table
+-- Table: beta_applications
+-- 
+-- IMPORTANT: This is ONLY for beta test system.
+-- Do NOT mix with feedback system SQL.
+-- ============================================
+-- Run this in Supabase Dashboard -> SQL Editor
+-- Use a NEW query tab (separate from feedback system queries)
 
 -- 1단계: 먼저 삭제할 레코드 확인 (반드시 실행해보세요!)
 SELECT id, email, occupation, purpose, created_at 
