@@ -232,56 +232,44 @@
                         
                         // Check if it's a duplicate email error (409 Conflict or 23505)
                         if (currentError.code === '23505' || currentError.code === 'PGRST116' || currentError.message?.includes('duplicate') || currentError.message?.includes('already exists')) {
-                            // 개발/테스트 환경: 중복 이메일이어도 기존 레코드 삭제 후 재시도
-                            const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname.includes('127.0.0.1') || window.location.hostname.includes('vercel.app');
+                            // 베타 테스트 중: 중복 이메일이어도 기존 레코드 삭제 후 재시도 (모든 환경에서 작동)
+                            console.warn('⚠️ Duplicate email detected. Attempting to delete and re-submit for beta testing...');
                             
-                            if (isDevelopment) {
-                                console.warn('⚠️ Duplicate email detected. Attempting to delete and re-submit for testing...');
+                            try {
+                                // 기존 레코드 삭제 시도
+                                const { error: deleteError } = await supabaseClient
+                                    .from('beta_applications')
+                                    .delete()
+                                    .eq('email', insertData.email);
                                 
-                                try {
-                                    // 기존 레코드 삭제 시도
-                                    const { error: deleteError } = await supabaseClient
-                                        .from('beta_applications')
-                                        .delete()
-                                        .eq('email', insertData.email);
-                                    
-                                    if (deleteError) {
-                                        console.error('Failed to delete duplicate:', deleteError);
-                                        alert('⚠️ This email has already been registered.\n\nTo test again, delete the record in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
-                                        if (submitBtn) {
-                                            submitBtn.textContent = 'Submit Application';
-                                            submitBtn.disabled = false;
-                                        }
-                                        return;
-                                    }
-                                    
-                                    // 삭제 후 재시도
-                                    console.log('Deleted duplicate, retrying insert...');
-                                    const { data: retryResult, error: retryError } = await supabaseClient
-                                        .from('beta_applications')
-                                        .insert([insertData])
-                                        .select();
-                                    
-                                    if (retryError) {
-                                        throw retryError;
-                                    }
-                                    
-                                    result = retryResult;
-                                    currentError = null; // 에러 클리어
-                                    console.log('Successfully re-inserted after deleting duplicate');
-                                    // 아래 성공 처리 로직으로 계속 진행
-                                } catch (retryErr) {
-                                    console.error('Retry failed:', retryErr);
-                                    alert('⚠️ Failed to re-submit after deleting duplicate.\n\nPlease delete the record manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                if (deleteError) {
+                                    console.error('Failed to delete duplicate:', deleteError);
+                                    alert('⚠️ This email has already been registered.\n\nTo test again, delete the record in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
                                     if (submitBtn) {
                                         submitBtn.textContent = 'Submit Application';
                                         submitBtn.disabled = false;
                                     }
                                     return;
                                 }
-                            } else {
-                                // 프로덕션 환경: 일반적인 중복 에러 메시지
-                                alert('⚠️ This email has already been registered for the beta test.\n\nPlease check your email for further instructions.');
+                                
+                                // 삭제 후 재시도
+                                console.log('Deleted duplicate, retrying insert...');
+                                const { data: retryResult, error: retryError } = await supabaseClient
+                                    .from('beta_applications')
+                                    .insert([insertData])
+                                    .select();
+                                
+                                if (retryError) {
+                                    throw retryError;
+                                }
+                                
+                                result = retryResult;
+                                currentError = null; // 에러 클리어
+                                console.log('✅ Successfully re-inserted after deleting duplicate');
+                                // 아래 성공 처리 로직으로 계속 진행
+                            } catch (retryErr) {
+                                console.error('Retry failed:', retryErr);
+                                alert('⚠️ Failed to re-submit after deleting duplicate.\n\nPlease delete the record manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
                                 if (submitBtn) {
                                     submitBtn.textContent = 'Submit Application';
                                     submitBtn.disabled = false;
