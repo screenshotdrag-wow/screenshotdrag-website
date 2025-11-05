@@ -189,10 +189,65 @@
         .nationality-flag {
             margin-right: 5px;
         }
+
+        .login-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+        }
+
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-box h2 {
+            color: #1E3A8A;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .login-box input:focus {
+            outline: none;
+            border-color: #1E3A8A;
+        }
+
+        .login-error {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <h2>🔒 Admin Access</h2>
+            <div class="login-error" id="loginError">Incorrect password. Please try again.</div>
+            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
+            <button class="btn btn-primary" style="width: 100%;" onclick="checkPassword()">Login</button>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard (hidden until login) -->
+    <div id="adminDashboard" class="container" style="display: none;">
         <h1>
             <span>📊</span>
             Beta Test Admin Dashboard
@@ -260,6 +315,39 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
+        // Admin password - Change this to your desired password
+        const ADMIN_PASSWORD = 'capturedrag2025';
+        
+        // Check if user is already authenticated
+        if (sessionStorage.getItem('adminAuthenticated') === 'true') {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('adminDashboard').style.display = 'block';
+        }
+
+        function checkPassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const loginError = document.getElementById('loginError');
+            const password = passwordInput.value;
+
+            if (password === ADMIN_PASSWORD) {
+                sessionStorage.setItem('adminAuthenticated', 'true');
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+                loadData();
+            } else {
+                loginError.style.display = 'block';
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        }
+
+        // Allow Enter key to submit password
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
         const SUPABASE_URL = 'https://gxavjkdewqfxacxabyoj.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4YXZqa2Rld3FmeGFjeGFieW9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAxNDMyNDgsImV4cCI6MjA3NTcxOTI0OH0.BWnSwP-602UZkHUarqlGeUKldCSlq1TWEx5I9mvGmF4';
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -420,13 +508,13 @@
             document.body.removeChild(link);
         }
 
-        // Event listeners
-        document.getElementById('searchInput').addEventListener('input', filterData);
-        document.getElementById('filterOccupation').addEventListener('change', filterData);
-        document.getElementById('filterNationality').addEventListener('change', filterData);
-
-        // Load data on page load
-        loadData();
+        // Event listeners (only if authenticated)
+        if (sessionStorage.getItem('adminAuthenticated') === 'true') {
+            document.getElementById('searchInput').addEventListener('input', filterData);
+            document.getElementById('filterOccupation').addEventListener('change', filterData);
+            document.getElementById('filterNationality').addEventListener('change', filterData);
+            loadData();
+        }
     </script>
 </body>
 </html>
