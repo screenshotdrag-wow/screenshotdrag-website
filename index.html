@@ -2476,16 +2476,16 @@
                     }
 
                     if (currentError) {
-                        console.error('Supabase error:', error);
+                        console.error('Supabase error:', currentError);
                         
-                        // Check if it's a duplicate email error
-                        if (error.code === '23505') {
+                        // Check if it's a duplicate email error (409 Conflict or 23505)
+                        if (currentError.code === '23505' || currentError.code === 'PGRST116' || currentError.message?.includes('duplicate') || currentError.message?.includes('already exists')) {
                             alert('⚠️ This email has already been registered for the beta test.\n\nPlease check your email for further instructions.');
                             submitBtn.textContent = 'Submit Application';
                             submitBtn.disabled = false;
                             return;
                         } else {
-                            alert('❌ An error occurred. Please try again later.\n\nError: ' + error.message);
+                            alert('❌ An error occurred. Please try again later.\n\nError: ' + currentError.message);
                             submitBtn.textContent = 'Submit Application';
                             submitBtn.disabled = false;
                             return;
