@@ -8,7 +8,19 @@ const directDownloadLink = 'https://github.com/screenshotdrag-wow/ScreenshotDrag
 const tempLicenseKey = 'TRIAL-NR5K-ZZ78-0959'
 const discordInviteLink = 'https://discord.gg/arwEfUDQ'
 
+// CORS headers
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+}
+
 serve(async (req) => {
+  // Handle CORS preflight requests
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
+  }
+
   try {
     const { email, occupation, purpose } = await req.json()
 
@@ -17,7 +29,10 @@ serve(async (req) => {
         JSON.stringify({ error: 'Email is required' }),
         { 
           status: 400,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 
+            'Content-Type': 'application/json',
+            ...corsHeaders
+          }
         }
       )
     }
@@ -32,7 +47,10 @@ serve(async (req) => {
         }),
         { 
           status: 500,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 
+            'Content-Type': 'application/json',
+            ...corsHeaders
+          }
         }
       )
     }
@@ -255,7 +273,10 @@ serve(async (req) => {
       }),
       { 
         status: 200,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          ...corsHeaders
+        }
       }
     )
 
@@ -265,7 +286,10 @@ serve(async (req) => {
       JSON.stringify({ error: 'Internal server error', details: error.message }),
       { 
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          ...corsHeaders
+        }
       }
     )
   }
