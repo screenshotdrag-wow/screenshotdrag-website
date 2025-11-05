@@ -63,6 +63,9 @@ serve(async (req) => {
     console.log('RESEND_API_KEY exists:', !!RESEND_API_KEY)
 
     // Send welcome email
+    // NOTE: Currently using onboarding@resend.dev (test mode - only sends to screenshotdrag@gmail.com)
+    // To send to all recipients, verify capturedrag.com domain at resend.com/domains
+    // Then change from address to: 'Capture Drag <noreply@capturedrag.com>'
     const { data, error } = await resend.emails.send({
       from: 'Capture Drag <onboarding@resend.dev>',
       to: email,
