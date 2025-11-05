@@ -4638,15 +4638,15 @@ body.dark-theme .plan-comparison-features li {
 }
 
 .success-modal-content {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
     border-radius: 20px;
     padding: 40px;
     max-width: 500px;
     width: 90%;
     text-align: center;
     position: relative;
-    border: 1px solid #444;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 .success-icon {
@@ -4656,14 +4656,14 @@ body.dark-theme .plan-comparison-features li {
 }
 
 .success-modal-content h2 {
-    color: #fff;
+    color: #1a1a1a;
     font-size: 2rem;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .success-message {
-    color: #ccc;
+    color: #333;
     font-size: 1.1rem;
     margin-bottom: 25px;
     line-height: 1.5;
@@ -4678,9 +4678,10 @@ body.dark-theme .plan-comparison-features li {
 }
 
 .success-details h3 {
-    color: #fff;
+    color: #1a1a1a;
     font-size: 1.3rem;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .success-details ul {
@@ -4690,9 +4691,10 @@ body.dark-theme .plan-comparison-features li {
 }
 
 .success-details li {
-    color: #ccc;
+    color: #333;
     margin-bottom: 10px;
     font-size: 1rem;
+    font-weight: 500;
 }
 
 .success-close-btn {
