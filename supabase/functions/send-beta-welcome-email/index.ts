@@ -35,6 +35,10 @@ serve(async (req) => {
     // Initialize Resend client
     const resend = new Resend(RESEND_API_KEY)
 
+    // Log email attempt
+    console.log('Attempting to send email to:', email)
+    console.log('RESEND_API_KEY exists:', !!RESEND_API_KEY)
+
     // Send welcome email
     const { data, error } = await resend.emails.send({
       from: 'Capture Drag <noreply@capturedrag.com>',
@@ -308,8 +312,13 @@ serve(async (req) => {
 
     if (error) {
       console.error('Resend error:', error)
+      console.error('Error details:', JSON.stringify(error, null, 2))
       return new Response(
-        JSON.stringify({ error: 'Failed to send email', details: error }),
+        JSON.stringify({ 
+          error: 'Failed to send email', 
+          details: error,
+          message: error.message || 'Unknown Resend API error'
+        }),
         { 
           status: 500,
           headers: { 'Content-Type': 'application/json' }
@@ -317,8 +326,14 @@ serve(async (req) => {
       )
     }
 
+    console.log('Email sent successfully. Resend data:', data)
     return new Response(
-      JSON.stringify({ success: true, data }),
+      JSON.stringify({ 
+        success: true, 
+        data,
+        message: 'Email sent successfully',
+        emailId: data?.id || 'unknown'
+      }),
       { 
         status: 200,
         headers: { 'Content-Type': 'application/json' }
