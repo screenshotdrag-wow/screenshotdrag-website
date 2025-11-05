@@ -6816,9 +6816,9 @@ body.dark-theme {
 
 /* Light Theme Styles */
 body.light-theme .top-header {
-    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
-    border-bottom: 1px solid rgba(29, 78, 216, 0.3);
-    box-shadow: 0 4px 15px rgba(29, 78, 216, 0.35);
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 body.light-theme .header-brand-name {
@@ -6827,36 +6827,36 @@ body.light-theme .header-brand-name {
 }
 
 body.light-theme .theme-toggle-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: #000000;
 }
 
 body.light-theme .theme-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
 }
 
 body.light-theme .custom-select-trigger-lang {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: #000000;
 }
 
 body.light-theme .custom-select-trigger-lang:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
 }
 
 body.light-theme .custom-select-arrow-lang {
-    color: #ffffff;
+    color: #000000;
 }
 
 body.light-theme footer {
-    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
-    color: white;
-    border-top: 1px solid rgba(29, 78, 216, 0.3);
-    box-shadow: 0 -4px 15px rgba(29, 78, 216, 0.35);
+    background: #ffffff;
+    color: #333333;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 body.light-theme .footer-brand h3 {
@@ -6865,13 +6865,13 @@ body.light-theme .footer-brand h3 {
 }
 
 body.light-theme .footer-info p {
-    color: #ffffff;
+    color: #333333;
 }
 
 body.dark-theme .top-header {
-    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
-    border-bottom: 1px solid rgba(29, 78, 216, 0.3);
-    box-shadow: 0 4px 15px rgba(29, 78, 216, 0.35);
+    background: #1a1a1a;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-theme .header-brand-name {
@@ -7077,9 +7077,9 @@ body.dark-theme .app-search::placeholder {
 }
 
 body.dark-theme footer {
-    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
-    border-top: 1px solid rgba(29, 78, 216, 0.3);
-    box-shadow: 0 -4px 15px rgba(29, 78, 216, 0.35);
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-theme .footer-brand h3 {
