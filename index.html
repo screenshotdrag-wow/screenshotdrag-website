@@ -2487,6 +2487,13 @@
                     } else {
                         console.log('Successfully submitted:', result);
                         
+                        // 데이터가 성공적으로 저장되었음을 확인
+                        const submittedData = {
+                            email: insertData.email,
+                            occupation: insertData.occupation,
+                            purpose: insertData.purpose
+                        };
+                        
                         // Call Edge Function to send welcome email
                         try {
                             const emailResponse = await fetch(`${SUPABASE_URL}/functions/v1/send-beta-welcome-email`, {
@@ -2495,17 +2502,15 @@
                                     'Content-Type': 'application/json',
                                     'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
                                 },
-                                body: JSON.stringify({
-                                    email: data.email,
-                                    occupation: data.occupation,
-                                    purpose: data.purpose
-                                })
+                                body: JSON.stringify(submittedData)
                             });
 
                             if (emailResponse.ok) {
                                 console.log('Welcome email sent successfully');
                             } else {
-                                console.error('Failed to send welcome email:', await emailResponse.text());
+                                const errorText = await emailResponse.text();
+                                console.error('Failed to send welcome email:', errorText);
+                                // 이메일 발송 실패는 치명적이지 않으므로 계속 진행
                             }
                         } catch (emailError) {
                             console.error('Error sending welcome email:', emailError);
@@ -2513,11 +2518,32 @@
                         }
                         
                         // Show success modal with email preview
-                        showSuccessModal(data);
+                        try {
+                            showSuccessModal(submittedData);
+                            // 성공적으로 모달 표시 후 폼 리셋 및 버튼 상태 복원
+                            betaForm.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText;
+                        } catch (modalError) {
+                            console.error('Error showing success modal:', modalError);
+                            // 모달 표시 실패 시 간단한 성공 메시지 표시
+                            alert('✅ Thank you for applying!\n\nWe will send you a welcome email with download instructions and your license key shortly.');
+                            betaForm.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText;
+                        }
+                        return; // 성공적으로 처리되었으므로 함수 종료
                     }
                 } catch (error) {
                     console.error('Form submission error:', error);
-                    alert('❌ An unexpected error occurred. Please try again later.');
+                    // 에러가 발생했지만 데이터가 저장되었을 수 있으므로 확인
+                    if (result && result.length > 0) {
+                        // 데이터가 저장되었으면 성공 메시지 표시
+                        alert('✅ Thank you for applying!\n\nWe will send you a welcome email with download instructions and your license key shortly.');
+                        betaForm.reset();
+                    } else {
+                        alert('❌ An unexpected error occurred. Please try again later.');
+                    }
                 } finally {
                     // Re-enable button
                     submitBtn.disabled = false;
