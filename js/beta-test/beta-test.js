@@ -280,8 +280,11 @@
                                     
                                     if (deletedCount === 0) {
                                         console.warn('⚠️ No records were deleted. RLS policy may prevent deletion.');
+                                        console.warn('⚠️ This means DELETE permission is not granted for anonymous users.');
+                                        console.warn('⚠️ Please run the RLS policy SQL: sql/beta-test/rls_policy_for_delete.sql');
+                                        
                                         // RLS 정책으로 삭제가 안 되면, 사용자에게 수동 삭제 요청
-                                        alert('⚠️ Cannot automatically delete duplicate record (RLS policy restriction).\n\nPlease delete manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
+                                        alert('⚠️ Cannot automatically delete duplicate record.\n\nThis is due to Row Level Security (RLS) policy restrictions.\n\nTo fix this:\n1. Run the SQL in: sql/beta-test/rls_policy_for_delete.sql\n2. Or delete manually in Supabase Dashboard:\n\nSQL: DELETE FROM beta_applications WHERE email = \'' + insertData.email + '\';');
                                         if (submitBtn) {
                                             submitBtn.textContent = 'Submit Application';
                                             submitBtn.disabled = false;
