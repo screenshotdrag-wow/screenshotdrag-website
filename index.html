@@ -991,13 +991,6 @@
                         Join Beta & Get Benefits 🚀
                     </button>
                 </form>
-                
-                <!-- Development: Email Preview Button -->
-                <div class="dev-preview-section" style="margin-top: 20px;">
-                    <button type="button" class="beta-preview-btn" id="previewEmailBtn">
-                        📧 이메일 미리보기 (개발용)
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -2170,22 +2163,6 @@
 
             betaModalClose.addEventListener('click', closeModal);
             betaModalOverlay.addEventListener('click', closeModal);
-
-            // Email preview button (development)
-            const previewEmailBtn = document.getElementById('previewEmailBtn');
-            if (previewEmailBtn) {
-                previewEmailBtn.addEventListener('click', function() {
-                    // Get form data
-                    const email = document.getElementById('email').value || 'test@example.com';
-                    const occupation = document.querySelector('.option-card.selected')?.querySelector('.option-text')?.textContent || 'Developer';
-                    const purpose = Array.from(document.querySelectorAll('.purpose-card.selected')).map(card => 
-                        card.querySelector('.option-text').textContent
-                    ).join(', ') || 'Work/Collaboration';
-                    
-                    const formData = { email, occupation, purpose };
-                    showSuccessModal(formData);
-                });
-            }
 
             // Generate email preview HTML
             function generateEmailPreview(data) {
