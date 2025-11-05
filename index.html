@@ -2397,30 +2397,42 @@
                     
                     const nationalityValue = formData.get('nationality');
                     
-                    // 기본 데이터 객체 (nationality 제외)
+                    // 기본 데이터 객체
                     const baseData = {
                         email: formData.get('email'),
                         occupation: formData.get('occupation'),
                         purpose: formData.get('purpose'),
-                        privacy_agreed: privacyAgree.checked,
-                        privacy_agreed_at: new Date().toISOString(),
                         user_agent: navigator.userAgent,
                         referrer_url: document.referrer || window.location.href
                     };
                     
-                    // nationality가 있으면 포함 (컬럼이 없으면 에러 발생하므로 제외하고 시도)
-                    let data = { ...baseData };
+                    // 선택적 필드들 (컬럼이 있을 경우에만 추가)
+                    const optionalFields = {};
+                    
+                    // privacy_agreed 필드
+                    if (privacyAgree) {
+                        optionalFields.privacy_agreed = privacyAgree.checked;
+                        if (privacyAgree.checked) {
+                            optionalFields.privacy_agreed_at = new Date().toISOString();
+                        }
+                    }
+                    
+                    // nationality 필드
+                    const nationalityValue = formData.get('nationality');
+                    if (nationalityValue) {
+                        optionalFields.nationality = nationalityValue;
+                    }
 
-                    // 먼저 nationality 없이 시도
-                    let insertData = { ...data };
+                    // 모든 필드를 포함하여 시도
+                    let insertData = { ...baseData, ...optionalFields };
                     let { data: result, error } = await supabaseClient
                         .from('beta_applications')
                         .insert([insertData])
                         .select();
 
-                    // nationality 관련 에러가 발생하면 nationality 제거 후 재시도
-                    if (error && (error.message?.includes('nationality') || error.message?.includes('column') || error.code === '42703')) {
-                        console.warn('nationality 컬럼이 없습니다. nationality 없이 재시도합니다.');
+                    // 컬럼 관련 에러가 발생하면 선택적 필드 제거 후 재시도
+                    if (error && (error.message?.includes('column') || error.code === '42703')) {
+                        console.warn('일부 컬럼이 없습니다. 필수 필드만으로 재시도합니다.');
                         insertData = { ...baseData };
                         const retryResult = await supabaseClient
                             .from('beta_applications')
