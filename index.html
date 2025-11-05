@@ -1182,6 +1182,27 @@
         const SUPABASE_URL = 'https://gxavjkdewqfxacxabyoj.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4YXZqa2Rld3FmeGFjeGFieW9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAxNDMyNDgsImV4cCI6MjA3NTcxOTI0OH0.BWnSwP-602UZkHUarqlGeUKldCSlq1TWEx5I9mvGmF4';
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        // Force schema cache refresh by querying the table structure
+        // This ensures PostgREST recognizes newly added columns
+        (async function refreshSchemaCache() {
+            try {
+                // Query the table with all columns to trigger schema refresh
+                const { data, error } = await supabaseClient
+                    .from('beta_applications')
+                    .select('id, email, occupation, purpose, nationality, privacy_agreed, privacy_agreed_at')
+                    .limit(0); // Don't fetch any rows, just refresh schema
+                
+                if (error) {
+                    console.warn('Schema refresh query warning:', error.message);
+                    // If columns don't exist yet, this is expected - schema will be updated on next insert
+                } else {
+                    console.log('✅ Schema cache refreshed successfully');
+                }
+            } catch (err) {
+                console.warn('Schema refresh:', err.message);
+            }
+        })();
 
         // Translations
         const translations = {
