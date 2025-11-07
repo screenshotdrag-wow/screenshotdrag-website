@@ -1,20 +1,30 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { Resend } from "https://esm.sh/resend@2.0.0?target=deno"
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { Resend } from "https://esm.sh/resend@2.0.0?target=deno";
 
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+};
 
 serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
   try {
-    const { email, occupation, purpose } = await req.json()
+    const { email, occupation, purpose } = await req.json();
 
     if (!email) {
       return new Response(
-        JSON.stringify({ error: 'Email is required' }),
+        JSON.stringify({ error: "Email is required" }),
         { 
           status: 400,
-          headers: { 'Content-Type': 'application/json' }
-        }
-      )
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        },
+      );
     }
 
     if (!RESEND_API_KEY) {
@@ -23,7 +33,7 @@ serve(async (req) => {
         JSON.stringify({ error: 'Email service not configured.' }),
         {
           status: 500,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json', ...corsHeaders }
         }
       )
     }
@@ -306,7 +316,7 @@ serve(async (req) => {
         JSON.stringify({ error: 'Failed to send email', details: error }),
         { 
           status: 500,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json', ...corsHeaders }
         }
       )
     }
@@ -315,7 +325,7 @@ serve(async (req) => {
       JSON.stringify({ success: true, data }),
       { 
         status: 200,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json', ...corsHeaders }
       }
     )
 
@@ -325,7 +335,7 @@ serve(async (req) => {
       JSON.stringify({ error: 'Internal server error', details: error.message }),
       { 
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json', ...corsHeaders }
       }
     )
   }

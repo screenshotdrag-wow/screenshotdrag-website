@@ -1564,20 +1564,28 @@
             }
         };
 
-        // Handle broken app icons
-        function handleBrokenImages() {
-            const images = document.querySelectorAll('.app-icon-img[src*="simpleicons.org"]');
+        // Normalize app icons (SimpleIcons -> Iconify) & handle errors
+        function normalizeAppIcons() {
+            const images = document.querySelectorAll('.app-logo[src*="cdn.simpleicons.org"]');
             images.forEach(img => {
-                img.addEventListener('error', function() {
-                    this.style.display = 'none';
-                });
+                const src = img.getAttribute('src');
+                const match = src.match(/cdn\.simpleicons\.org\/([^/]+)\/([A-F0-9]+)/i);
+                if (match) {
+                    const icon = match[1];
+                    const color = match[2];
+                    const iconifyUrl = `https://api.iconify.design/simple-icons:${icon}.svg?color=%23${color}`;
+                    img.src = iconifyUrl;
+                    img.addEventListener('error', () => {
+                        img.style.display = 'none';
+                    }, { once: true });
+                }
             });
         }
 
         // FAQ Accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Handle broken images
-            handleBrokenImages();
+            // Normalize app icons
+            normalizeAppIcons();
             
             // Language Selector Dropdown
             const langSelect = document.getElementById('langSelect');
