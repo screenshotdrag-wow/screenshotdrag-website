@@ -245,7 +245,7 @@ serve(async (req) => {
             
             <h2>1) Download the App</h2>
             <div class="download-section">
-                <a href="https://drive.google.com/uc?export=download&id=1t7LqJSLPOA8yDvvSsdeKtj-fpULsO10d" class="download-link">📦 Download Capture Drag Beta Installer</a>
+                <a href="https://drive.google.com/uc?export=download&id=1oxDrDSe5bpzXCkTHkvHsvg-N_tzEbn5f" class="download-link">📦 Download Capture Drag Beta Installer</a>
                 <p style="margin: 15px 0 0; color: #666; font-size: 14px;">File size: ~XX MB | Windows 10/11</p>
             </div>
             
