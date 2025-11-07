@@ -16,10 +16,21 @@ serve(async (req) => {
       )
     }
 
+    if (!RESEND_API_KEY) {
+      console.error('Missing RESEND_API_KEY environment variable')
+      return new Response(
+        JSON.stringify({ error: 'Email service not configured.' }),
+        {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      )
+    }
+
     // Send welcome email through Resend REST API
     const emailPayload = {
       from: 'Capture Drag <noreply@capturedrag.com>',
-      to: [email],
+      to: email,
       subject: '[Capture Drag] Welcome to the Beta! (Download + 15-day License Key)',
       html: `
 <!DOCTYPE html>
