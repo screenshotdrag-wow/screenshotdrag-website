@@ -4,7 +4,7 @@ import { Resend } from "npm:resend@2.0.0"
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 
 // Download links
-const directDownloadLink = 'https://github.com/screenshotdrag-wow/ScreenshotDrag/releases/download/Beta_1.1/CaptureDrag-Beta-1.1-Setup.exe'
+const directDownloadLink = 'https://github.com/screenshotdrag-wow/ScreenshotDrag/releases/download/v2.5.0/CaptureDrag_beta_2.5.exe'
 const tempLicenseKey = 'TRIAL-NR5K-ZZ78-0959'
 const discordInviteLink = 'https://discord.gg/arwEfUDQ'
 
