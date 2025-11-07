@@ -77,7 +77,7 @@ serve(async (req) => {
     <title>Welcome to Capture Drag Beta</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'Noto Color Emoji', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.8;
             color: #333;
             max-width: 600px;
