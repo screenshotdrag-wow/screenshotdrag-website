@@ -18,8 +18,6 @@
     
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <!-- Twemoji for consistent emoji rendering -->
-    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <!-- Beta Test JS (separated from main code) -->
     <script src="js/beta-test/beta-test.js" defer></script>
 </head>
@@ -1689,18 +1687,8 @@
 
         // FAQ Accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const parseEmojis = () => {
-                if (window.twemoji && typeof window.twemoji.parse === 'function') {
-                    window.twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
-                }
-            };
-            window.parseEmojis = parseEmojis;
-
             // Handle broken images
             handleBrokenImages();
-
-            // Initial emoji parse
-            parseEmojis();
 
             // Global download link for beta build
             const betaDownloadUrl = 'https://drive.google.com/uc?export=download&id=1t7LqJSLPOA8yDvvSsdeKtj-fpULsO10d';
@@ -1713,19 +1701,6 @@
                     window.open(betaDownloadUrl, '_blank');
                 });
             }
-
-            // Observe DOM changes to maintain emoji rendering on dynamic updates
-            let emojiMutationScheduled = false;
-            const emojiObserver = new MutationObserver(() => {
-                if (!emojiMutationScheduled) {
-                    emojiMutationScheduled = true;
-                    requestAnimationFrame(() => {
-                        parseEmojis();
-                        emojiMutationScheduled = false;
-                    });
-                }
-            });
-            emojiObserver.observe(document.body, { childList: true, subtree: true });
 
             // Normalize translations to match the English copy
             const baseTranslation = {
