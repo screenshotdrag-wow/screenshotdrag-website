@@ -627,14 +627,6 @@
             <h2>Welcome to Beta Test!</h2>
             <p class="success-message">Your beta test application has been successfully submitted.</p>
             
-            <!-- Email Preview Section -->
-            <div class="email-preview-section" id="emailPreviewSection">
-                <h3>📧 발송되는 이메일 내용</h3>
-                <div class="email-preview-box" id="emailPreviewBox">
-                    <!-- Email content will be inserted here -->
-                </div>
-            </div>
-
             <div class="beta-access-panel" style="margin: 24px 0; padding: 24px; border: 2px dashed #667eea; border-radius: 12px; text-align: center; background: #f5f7ff;">
                 <a href="https://drive.google.com/uc?export=download&id=1t7LqJSLPOA8yDvvSsdeKtj-fpULsO10d" class="beta-download-link" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; border-radius: 8px; font-weight: 700; text-decoration: none; margin-bottom: 16px;">📥 Download Beta Installer</a>
                 <div class="beta-license" style="font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; color: #333;">
@@ -2172,103 +2164,9 @@
             betaModalClose.addEventListener('click', closeModal);
             betaModalOverlay.addEventListener('click', closeModal);
 
-            // Generate email preview HTML
-            function generateEmailPreview(data) {
-                const { email, occupation, purpose } = data;
-                return `
-<div class="email-header" style="text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-    <h1 style="margin: 0; font-size: 28px;">🎉 Welcome to Capture Drag Beta!</h1>
-</div>
-
-<div class="email-content" style="background: white; padding: 40px 30px;">
-    <div class="greeting" style="font-size: 24px; font-weight: bold; color: #667eea; margin-bottom: 25px;">Hello!</div>
-    
-    <p class="intro-text" style="font-size: 16px; margin-bottom: 30px; color: #555;">Thank you for joining the Capture Drag beta test.</p>
-    
-    <p class="intro-text" style="font-size: 16px; margin-bottom: 30px; color: #555;">
-        <strong>Capture Drag</strong> was built to make the flow "capture → instantly drag → immediately use" as fast as technically possible.
-    </p>
-    
-    <p class="intro-text" style="font-size: 16px; margin-bottom: 30px; color: #555;">
-        Our goal is to support multi-image drag across the majority of Windows apps.
-    </p>
-    
-    <div class="beta-info" style="background: #fff9e6; border-left: 4px solid #ffc107; padding: 20px; margin: 25px 0; border-radius: 5px;">
-        <strong>⏰ This beta runs for 15 days.</strong><br>
-        Below is your download link and temporary license key.
-    </div>
-    
-    <h2 style="margin-top: 40px; margin-bottom: 20px; font-size: 24px; color: #333;">1) Download the App</h2>
-    <div class="download-section" style="background: #f8f9fa; border: 2px solid #667eea; border-radius: 10px; padding: 25px; margin: 30px 0; text-align: center;">
-        <a href="https://drive.google.com/uc?export=download&id=1t7LqJSLPOA8yDvvSsdeKtj-fpULsO10d" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; margin: 15px 0;">📦 Download Capture Drag Beta Installer</a>
-        <p style="margin: 15px 0 0; color: #666; font-size: 14px;">File size: ~XX MB | Windows 10/11</p>
-    </div>
-    
-    <h2 style="margin-top: 40px; margin-bottom: 20px; font-size: 24px; color: #333;">2) 15-day License Key</h2>
-    <div class="key-section" style="background: #f8f9fa; border: 2px solid #667eea; border-radius: 10px; padding: 25px; margin: 30px 0; text-align: center;">
-        <p style="margin: 0 0 15px;"><strong>Your 15-day trial key:</strong></p>
-        <div class="license-key" style="font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; background: white; padding: 20px; border-radius: 8px; letter-spacing: 2px; color: #667eea; margin: 15px 0; word-break: break-all;">TRIAL-NR5K-ZZ78-0959</div>
-        <p style="margin: 15px 0 0; color: #666; font-size: 14px;">
-            After running the app, click <strong>[Activate Beta]</strong> on the first screen<br>
-            and enter your key — it will switch to Pro mode immediately.
-        </p>
-    </div>
-    
-    <div class="warning-box" style="background: #ffe6e6; border-left: 4px solid #f44336; padding: 20px; margin: 30px 0; border-radius: 5px;">
-        <strong style="color: #f44336; font-size: 18px;">⚠️ IMPORTANT: Installation Notice</strong><br><br>
-        We have not purchased a code-signing certificate yet.<br><br>
-        Because of that, Windows SmartScreen may show a red warning the first time you install.<br>
-        <strong>(This is NOT a virus.)</strong><br><br>
-        Click <strong>[More Info]</strong> → <strong>[Run anyway]</strong>.
-    </div>
-    
-    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">Your Mission During the Beta</h3>
-    <div class="mission-section" style="background: #e8f4f8; border-left: 4px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 5px;">
-        <ul style="margin: 15px 0; padding-left: 25px;">
-            <li style="margin: 10px 0; line-height: 1.8;">Test multi-drag in various apps (Slack / Discord / Telegram / Chrome / PPT / Word / Explorer, etc.)</li>
-            <li style="margin: 10px 0; line-height: 1.8;">Find bugs / errors / crashes / UX discomforts</li>
-            <li style="margin: 10px 0; line-height: 1.8;">Give feedback on the built-in editor's basic features<br>(currently basic only: pen / text / crop / mosaic / blur)</li>
-        </ul>
-    </div>
-    
-    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">How to Submit Feedback</h3>
-    <div class="feedback-section" style="background: #e8f4f8; border-left: 4px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 5px;">
-        Click the <strong>💡lightbulb icon</strong> in the top-right corner of the app.<br>
-        That opens the internal feedback window.
-    </div>
-    
-    <div class="discord-box" style="background: #e3f2fd; border: 2px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 10px; text-align: center;">
-        <h3 style="margin: 0 0 15px; color: #2196F3; font-size: 18px;">💬 Discord Channel</h3>
-        <p style="margin: 0; color: #666;">Join our community for real-time updates and discussions</p>
-        <a href="https://discord.gg/xxxxxxxxx" style="display: inline-block; background: #5865F2; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px;">Join Discord</a>
-    </div>
-    
-    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">🎁 Reward</h3>
-    <div class="reward-box" style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 20px; margin: 30px 0; border-radius: 5px;">
-        <strong style="color: #4CAF50; font-size: 18px;">Anyone who provides meaningful bugs or product improvement feedback<br>
-        will receive a permanent license ($49 Windows Store coupon).</strong>
-    </div>
-    
-    <p style="margin-top: 40px; font-size: 16px;">
-        Thank you.<br>
-        <strong style="color: #667eea;">Capture Drag Team</strong>
-    </p>
-</div>
-
-<div class="email-footer" style="text-align: center; padding: 30px; background: #333; color: white;">
-    <p style="margin: 5px 0;"><strong>Capture Drag</strong></p>
-</div>
-                `.trim();
-            }
-
             // Open success modal
             function showSuccessModal(formData) {
                 closeModal();
-                
-                // Generate and insert email preview
-                const emailPreviewBox = document.getElementById('emailPreviewBox');
-                const emailPreview = generateEmailPreview(formData);
-                emailPreviewBox.innerHTML = emailPreview;
                 
                 successModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
