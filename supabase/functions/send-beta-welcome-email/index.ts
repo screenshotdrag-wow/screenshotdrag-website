@@ -4,7 +4,7 @@ import { Resend } from "npm:resend@2.0.0"
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 
 // Download links
-const directDownloadLink = 'https://github.com/screenshotdrag-wow/ScreenshotDrag/releases/download/v2.5.0/CaptureDrag_beta_2.5.exe'
+const directDownloadLink = 'https://drive.google.com/uc?export=download&id=1t7LqJSLPOA8yDvvSsdeKtj-fpULsO10d'
 const tempLicenseKey = 'TRIAL-NR5K-ZZ78-0959'
 const discordInviteLink = 'https://discord.gg/arwEfUDQ'
 
@@ -127,7 +127,7 @@ serve(async (req) => {
 <body>
     <div class="email-container">
         <div class="header">
-            <h1>🎉 Welcome to Capture Drag Beta!</h1>
+            <h1>Welcome to the Capture Drag Beta!</h1>
         </div>
         
         <div class="content">
@@ -138,7 +138,7 @@ serve(async (req) => {
             </p>
             
             <p class="intro-text">
-                <strong>Capture Drag</strong> was built to make the flow "capture → instantly drag → immediately use" as fast as technically possible.
+                <strong>Capture Drag</strong> was built to make the flow "capture &rarr; instantly drag &rarr; immediately use" as fast as technically possible.
             </p>
             
             <p class="intro-text">
@@ -146,13 +146,13 @@ serve(async (req) => {
             </p>
             
             <div class="beta-info">
-                <strong>⏰ This beta runs for 15 days.</strong><br>
+                <strong>This beta runs for 15 days.</strong><br>
                 Below is your download link and temporary license key.
             </div>
 
       <div style="background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%); border-left: 4px solid #667eea; padding: 20px; margin: 0 0 25px 0; border-radius: 8px;">
 
-        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">📦 Download Beta Version</h2>
+        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">Download the Beta</h2>
 
         <p style="color: #555555; margin: 0 0 15px 0; font-size: 15px;">Get the latest beta build:</p>
 
@@ -162,7 +162,7 @@ serve(async (req) => {
 
         </div>
 
-        <p style="color: #666666; margin: 15px 0 0 0; font-size: 13px; text-align: center;">💡 Direct Download 버튼을 클릭하면 바로 설치파일이 다운로드됩니다!</p>
+        <p style="color: #666666; margin: 15px 0 0 0; font-size: 13px; text-align: center;">Tip: Click "Direct Download" to grab the installer instantly.</p>
 
       </div>
 
@@ -170,13 +170,13 @@ serve(async (req) => {
 
       <div style="background: #fffbf0; border-left: 4px solid #ffc107; padding: 20px; margin: 0 0 25px 0; border-radius: 8px;">
 
-        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">🔑 Your Temporary License Key</h2>
+        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">Your Temporary License Key</h2>
 
         <p style="color: #555555; margin: 0 0 10px 0; font-size: 15px;">Use this key to activate Pro features during the beta:</p>
 
         <div style="background: #ffffff; padding: 15px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 16px; color: #007bff; font-weight: bold; text-align: center; border: 2px dashed #ffc107;">${tempLicenseKey}</div>
 
-        <p style="color: #666666; margin: 15px 0 0 0; font-size: 13px;">💡 This key is valid throughout the beta testing period.</p>
+        <p style="color: #666666; margin: 15px 0 0 0; font-size: 13px;">This key is valid throughout the beta testing period.</p>
 
       </div>
 
@@ -184,7 +184,7 @@ serve(async (req) => {
 
       <div style="background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%); border-left: 4px solid #5865F2; padding: 20px; margin: 0 0 25px 0; border-radius: 8px;">
 
-        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">💬 Join Our Discord Community</h2>
+        <h2 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 20px;">Join Our Discord Community</h2>
 
         <p style="color: #555555; margin: 0 0 15px 0; font-size: 15px;">Connect with other beta testers and get support:</p>
 
@@ -193,11 +193,11 @@ serve(async (req) => {
       </div>
 
             <div class="warning-box" style="background: #ffe6e6; border-left: 4px solid #f44336; padding: 20px; margin: 30px 0; border-radius: 5px;">
-                <strong style="color: #f44336; font-size: 18px;">⚠️ IMPORTANT: Installation Notice</strong><br><br>
+                <strong style="color: #f44336; font-size: 18px;">IMPORTANT: Installation Notice</strong><br><br>
                 We have not purchased a code-signing certificate yet.<br><br>
                 Because of that, Windows SmartScreen may show a red warning the first time you install.<br>
                 <strong>(This is NOT a virus.)</strong><br><br>
-                Click <strong>[More Info]</strong> → <strong>[Run anyway]</strong>.
+                Click <strong>[More Info]</strong> &rarr; <strong>[Run anyway]</strong>.
             </div>
             
             <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">Your Mission During the Beta</h3>
@@ -211,11 +211,11 @@ serve(async (req) => {
             
             <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">How to Submit Feedback</h3>
             <div class="feedback-section" style="background: #e8f4f8; border-left: 4px solid #2196F3; padding: 20px; margin: 25px 0; border-radius: 5px;">
-                Click the <strong>💡lightbulb icon</strong> in the top-right corner of the app.<br>
+                Click the <strong>lightbulb icon</strong> in the top-right corner of the app.<br>
                 That opens the internal feedback window.
             </div>
             
-            <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">🎁 Reward</h3>
+            <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #333;">Reward</h3>
             <div class="reward-box" style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 20px; margin: 30px 0; border-radius: 5px;">
                 <strong style="color: #4CAF50; font-size: 18px;">Anyone who provides meaningful bugs or product improvement feedback<br>
                 will receive a permanent license ($49 Windows Store coupon).</strong>
