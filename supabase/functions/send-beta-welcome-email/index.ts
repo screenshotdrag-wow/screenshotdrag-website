@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { Resend } from "https://deno.land/x/resend@2.0.0/mod.ts"
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 
@@ -17,13 +16,10 @@ serve(async (req) => {
       )
     }
 
-    // Initialize Resend client
-    const resend = new Resend(RESEND_API_KEY)
-
-    // Send welcome email
-    const { data, error } = await resend.emails.send({
+    // Send welcome email through Resend REST API
+    const emailPayload = {
       from: 'Capture Drag <noreply@capturedrag.com>',
-      to: email,
+      to: [email],
       subject: '[Capture Drag] Welcome to the Beta! (Download + 15-day License Key)',
       html: `
 <!DOCTYPE html>
@@ -288,19 +284,30 @@ serve(async (req) => {
     </div>
 </body>
 </html>
-      `,
+      `
+    }
+
+    const emailResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify(emailPayload),
     })
 
-    if (error) {
-      console.error('Resend error:', error)
+    if (!emailResponse.ok) {
+      const errorText = await emailResponse.text()
+      console.error('Resend error:', errorText)
       return new Response(
-        JSON.stringify({ error: 'Failed to send email', details: error }),
+        JSON.stringify({ error: 'Failed to send email', details: errorText }),
         { 
           status: 500,
           headers: { 'Content-Type': 'application/json' }
         }
       )
     }
+    const data = await emailResponse.json()
 
     return new Response(
       JSON.stringify({ success: true, data }),
