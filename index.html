@@ -1567,9 +1567,23 @@
 
         // FAQ Accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
+            function normalizeSortText(text) {
+                const trimmed = text.trim();
+                const withoutSymbols = trimmed.replace(/^[^\p{Letter}]+/u, '').trim();
+                return (withoutSymbols || trimmed).toLowerCase();
+            }
+
+            function sortOptionElements(container, optionSelector) {
+                if (!container) return;
+                const options = Array.from(container.querySelectorAll(optionSelector));
+                options.sort((a, b) => normalizeSortText(a.textContent).localeCompare(normalizeSortText(b.textContent)));
+                options.forEach(option => container.appendChild(option));
+            }
+
             // Normalize app icons
             normalizeAppIcons();
             
+            sortOptionElements(document.getElementById('langOptionsList'), '.custom-select-option-lang');
             // Language Selector Dropdown
             const langSelect = document.getElementById('langSelect');
             const langTrigger = langSelect.querySelector('.custom-select-trigger-lang');
@@ -1798,6 +1812,10 @@
             // Language Selector in Modal
             const langSelectModal = document.getElementById('langSelectModal');
             if (langSelectModal) {
+                sortOptionElements(
+                    langSelectModal.querySelector('#langOptionsListModal'),
+                    '.custom-select-option-lang'
+                );
                 const langTriggerModal = langSelectModal.querySelector('.custom-select-trigger-lang');
                 const langOptionsModal = langSelectModal.querySelectorAll('.custom-select-option-lang');
                 const langSpanModal = langTriggerModal.querySelector('span:not(.custom-select-arrow-lang)');
@@ -1859,12 +1877,13 @@
 
             // Custom Select Dropdown for Nationality
             const nationalitySelect = document.getElementById('nationalitySelect');
+            const nationalityOptionsList = document.getElementById('nationalityOptionsList');
+            sortOptionElements(nationalityOptionsList, '.custom-select-option');
             const nationalityTrigger = nationalitySelect.querySelector('.custom-select-trigger');
             const nationalityPlaceholder = nationalitySelect.querySelector('.custom-select-placeholder');
             const nationalityOptions = nationalitySelect.querySelectorAll('.custom-select-option');
             const nationalitySearch = document.getElementById('nationalitySearch');
             const nationalityHidden = document.getElementById('nationality');
-            const nationalityOptionsList = document.getElementById('nationalityOptionsList');
 
             // Set custom validation messages in English
             const emailInput = document.getElementById('email');
