@@ -3307,7 +3307,7 @@ body.dark-theme .plan-comparison-features li {
     font-size: 1rem;
     color: #333;
     position: relative;
-    padding-left: 30px;
+    padding-left: 34px;
 }
 
 .plan-comparison-features li:last-child {
@@ -3315,12 +3315,31 @@ body.dark-theme .plan-comparison-features li {
 }
 
 .plan-comparison-features li::before {
-    content: "✓";
+    content: "";
     position: absolute;
     left: 0;
-    color: #4285F4;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.2rem;
+    line-height: 1;
+}
+
+.plan-comparison-features li.feature-positive::before {
+    content: "✓";
+    color: #2e7d32;
+}
+
+.plan-comparison-features li.feature-negative {
+    color: #c62828;
+}
+
+.plan-comparison-features li.feature-negative::before {
+    content: "✕";
+    color: #c62828;
+}
+
+.plan-comparison-features li.feature-neutral::before {
+    content: "•";
+    color: #888;
 }
 
 .pricing-card {
@@ -7026,12 +7045,28 @@ body.dark-theme .plan-comparison-price span {
 }
 
 body.dark-theme .plan-comparison-features li {
-    color: #cccccc;
+    color: #dddddd;
     border-bottom-color: #444;
 }
 
 body.dark-theme .plan-comparison-features li::before {
-    color: #667eea;
+    color: inherit;
+}
+
+body.dark-theme .plan-comparison-features li.feature-positive::before {
+    color: #7ee787;
+}
+
+body.dark-theme .plan-comparison-features li.feature-negative {
+    color: #ff8a80;
+}
+
+body.dark-theme .plan-comparison-features li.feature-negative::before {
+    color: #ff8a80;
+}
+
+body.dark-theme .plan-comparison-features li.feature-neutral::before {
+    color: #bbbbbb;
 }
 
 body.dark-theme .plan-type-badge.install-type {
