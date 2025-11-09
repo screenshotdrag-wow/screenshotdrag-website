@@ -292,7 +292,7 @@ serve(async (req) => {
             <h3>🎁 Reward</h3>
             <div class="reward-box">
                 <strong>Anyone who provides meaningful bugs or product improvement feedback<br>
-                will receive a permanent license ($49 Windows Store coupon).</strong>
+                will receive a permanent license ($19 Windows Store coupon).</strong>
             </div>
             
             <p style="margin-top: 40px; font-size: 16px;">
