@@ -23,3 +23,7 @@ yarn-error.log*
 *.tmp
 *.temp
 
+# MCP Env Secrets
+supabase.mcp.env
+.cursor/
+

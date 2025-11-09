@@ -177,7 +177,6 @@
                     </div>
                     <div class="plan-comparison-price-section">
                         <div class="plan-comparison-price">Free</div>
-                        <p class="plan-billing-info">Forever free</p>
                     </div>
                     <a href="#" class="plan-comparison-btn microsoft-store-btn" id="freeDownloadBtn">
                         <svg width="20" height="20" viewBox="0 0 88 88" fill="none" style="margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg">
@@ -193,11 +192,11 @@
                     <div class="plan-features-section">
                         <h4 class="plan-features-title">Key Features:</h4>
                         <ul class="plan-comparison-features">
-                            <li>3 captures</li>
-                            <li>With watermark</li>
-                            <li>All editing tools</li>
-                            <li>Drag & Drop</li>
-                            <li>All system features</li>
+                            <li class="feature-single feature-free">✅ Single capture (3 captures)</li>
+                            <li class="feature-multi feature-free">❌ Multi capture</li>
+                            <li class="feature-watermark feature-free">❌ Watermark removal</li>
+                            <li class="feature-editing feature-free">✅ Editing tools</li>
+                            <li class="feature-drag feature-free">✅ Drag & Drop</li>
                         </ul>
                     </div>
                 </div>
@@ -208,12 +207,11 @@
                     <div class="popular-comparison-badge">Most Popular</div>
                     <div class="plan-comparison-header">
                         <h3 class="plan-comparison-title">Pro</h3>
-                        <p class="plan-comparison-subtitle">Best for power users</p>
+                        <p class="plan-comparison-subtitle">Personal · Solo creators · Freelancers</p>
                     </div>
                     <div class="plan-comparison-price-section">
                         <div class="plan-comparison-price-pro">$19</div>
-                        <p class="plan-billing-info">One-time payment</p>
-                        <p class="plan-billing-note">Lifetime license</p>
+                        <p class="plan-billing-info">One-time personal license</p>
                     </div>
                     <a href="#" class="plan-comparison-btn pro-comparison-btn">
                         <svg width="20" height="20" viewBox="0 0 88 88" fill="none" style="margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg">
@@ -229,63 +227,33 @@
                     <div class="plan-features-section">
                         <h4 class="plan-features-title">All Free features, plus:</h4>
                         <ul class="plan-comparison-features">
-                            <li><strong>100 captures (33x more)</strong></li>
-                            <li><strong>No watermark</strong></li>
-                            <li>All editing tools</li>
-                            <li>Drag & Drop</li>
-                            <li>All system features</li>
+                            <li class="feature-single feature-pro">✅ Single capture (100 captures)</li>
+                            <li class="feature-multi feature-pro">✅ Multi capture</li>
+                            <li class="feature-watermark feature-pro">✅ Watermark removal</li>
+                            <li class="feature-editing feature-pro">✅ Editing tools</li>
+                            <li class="feature-drag feature-pro">✅ Drag & Drop</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- AI Plan -->
-                <div class="plan-comparison-card" style="display: none;">
+                <!-- Team Plan -->
+                <div class="plan-comparison-card plan-comparison-card-disabled">
                     <div class="plan-type-badge cloud-type">Cloud</div>
                     <div class="plan-comparison-header">
-                        <h3 class="plan-comparison-title">Capture Drag AI</h3>
-                        <p class="plan-comparison-subtitle">AI-powered cloud solution</p>
+                        <h3 class="plan-comparison-title">Team</h3>
+                        <p class="plan-comparison-subtitle">Built for collaborative workflows</p>
                     </div>
                     <div class="plan-comparison-price-section">
                         <div class="plan-comparison-price-pro">$5</div>
-                        <p class="plan-billing-info">User/month, annual billing</p>
-                        <p class="plan-billing-note">or $39/year</p>
+                        <p class="plan-billing-info">Per user / month</p>
+                        <p class="plan-billing-note">or $39 per user / year</p>
                     </div>
                     <a href="#" class="plan-comparison-btn cloud-comparison-btn coming-soon-btn">Coming Soon</a>
                     <div class="plan-divider"></div>
                     <div class="plan-features-section">
                         <h4 class="plan-features-title">Key Features:</h4>
                         <ul class="plan-comparison-features">
-                            <li>AI-powered features</li>
-                            <li>Cloud-based processing</li>
-                            <li>Advanced analytics</li>
-                            <li>API access</li>
-                            <li>Server-side rendering</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Team Plan -->
-                <div class="plan-comparison-card" style="display: none;">
-                    <div class="plan-type-badge cloud-type">Cloud</div>
-                    <div class="plan-comparison-header">
-                        <h3 class="plan-comparison-title">Team</h3>
-                        <p class="plan-comparison-subtitle">For teams and organizations</p>
-                    </div>
-                    <div class="plan-comparison-price-section">
-                        <div class="plan-comparison-price-pro">$7</div>
-                        <p class="plan-billing-info">Per user/month, annual billing</p>
-                        <p class="plan-billing-note">or $59/user/year</p>
-                    </div>
-                    <a href="#" class="plan-comparison-btn cloud-comparison-btn coming-soon-btn">Coming Soon</a>
-                    <div class="plan-divider"></div>
-                    <div class="plan-features-section">
-                        <h4 class="plan-features-title">All AI features, plus:</h4>
-                        <ul class="plan-comparison-features">
-                            <li>Team collaboration</li>
-                            <li>Shared workspace</li>
-                            <li>User management</li>
-                            <li>Cloud storage</li>
-                            <li>Enterprise features</li>
+                            <li class="coming-soon-feature">Coming Soon</li>
                         </ul>
                     </div>
                 </div>
@@ -1127,13 +1095,16 @@
                 download: 'Download',
                 getPro: 'Get Pro Now',
                 mostPopular: 'Most Popular',
-                capt3: '3 captures',
-                capt100: '100 captures (33x more!)',
-                withWatermark: 'With watermark',
-                noWatermark: 'No watermark',
-                allEditing: 'All editing tools',
-                dragDrop: 'Drag & Drop',
-                allSystem: 'All system features',
+                freeSingleCapture: '✅ Single capture (3 captures)',
+                freeMultiCapture: '❌ Multi capture',
+                freeWatermarkRemoval: '❌ Watermark removal',
+                freeEditingTools: '✅ Editing tools',
+                freeDragDrop: '✅ Drag & Drop',
+                proSingleCapture: '✅ Single capture (100 captures)',
+                proMultiCapture: '✅ Multi capture',
+                proWatermarkRemoval: '✅ Watermark removal',
+                proEditingTools: '✅ Editing tools',
+                proDragDrop: '✅ Drag & Drop',
                 betaTitle: 'Capture Drag Beta Testers Wanted',
                 betaSubtitle: 'Join now and be the first to experience exclusive benefits.',
                 betaTestPeriod: 'Test Period: November 5 ~ November 20, 2025',
@@ -1183,13 +1154,16 @@
                 download: '다운로드',
                 getPro: '지금 프로 받기',
                 mostPopular: '인기 베스트',
-                capt3: '3회 캡처',
-                capt100: '100회 캡처 (33배 더!)',
-                withWatermark: '워터마크 포함',
-                noWatermark: '워터마크 없음',
-                allEditing: '모든 편집 도구',
-                dragDrop: '드래그 & 드롭',
-                allSystem: '모든 시스템 기능',
+                freeSingleCapture: '✅ 단일 캡처 (3회)',
+                freeMultiCapture: '❌ 다중 캡처',
+                freeWatermarkRemoval: '❌ 워터마크 제거',
+                freeEditingTools: '✅ 편집 도구',
+                freeDragDrop: '✅ 드래그 & 드롭',
+                proSingleCapture: '✅ 단일 캡처 (100회)',
+                proMultiCapture: '✅ 다중 캡처',
+                proWatermarkRemoval: '✅ 워터마크 제거',
+                proEditingTools: '✅ 편집 도구',
+                proDragDrop: '✅ 드래그 & 드롭',
                 betaTitle: 'Capture Drag 베타 테스터 모집',
                 betaSubtitle: '지금 참여하고 혜택을 먼저 경험하세요.',
                 betaTestPeriod: '테스트 기간: 2025년 11월 5일 ~ 11월 20일',
@@ -1239,13 +1213,16 @@
                 download: 'ダウンロード',
                 getPro: '今すぐプロを入手',
                 mostPopular: '人気No.1',
-                capt3: '3回キャプチャ',
-                capt100: '100回キャプチャ（33倍！）',
-                withWatermark: '透かしあり',
-                noWatermark: '透かしなし',
-                allEditing: 'すべての編集ツール',
-                dragDrop: 'ドラッグ＆ドロップ',
-                allSystem: 'すべてのシステム機能',
+                freeSingleCapture: '✅ シングルキャプチャ（3回）',
+                freeMultiCapture: '❌ マルチキャプチャ',
+                freeWatermarkRemoval: '❌ 透かし除去',
+                freeEditingTools: '✅ 編集ツール',
+                freeDragDrop: '✅ ドラッグ＆ドロップ',
+                proSingleCapture: '✅ シングルキャプチャ（100回）',
+                proMultiCapture: '✅ マルチキャプチャ',
+                proWatermarkRemoval: '✅ 透かし除去',
+                proEditingTools: '✅ 編集ツール',
+                proDragDrop: '✅ ドラッグ＆ドロップ',
                 betaTitle: 'Capture Drag ベータテスター募集中',
                 betaSubtitle: '今すぐ参加して特典を先に体験',
                 betaTestPeriod: 'テスト期間：2025年11月5日〜20日',
@@ -1295,13 +1272,16 @@
                 download: '下载',
                 getPro: '立即获取专业版',
                 mostPopular: '最受欢迎',
-                capt3: '3次捕获',
-                capt100: '100次捕获（多33倍！）',
-                withWatermark: '带水印',
-                noWatermark: '无水印',
-                allEditing: '所有编辑工具',
-                dragDrop: '拖放',
-                allSystem: '所有系统功能',
+                freeSingleCapture: '✅ 单次捕获（3次）',
+                freeMultiCapture: '❌ 多重捕获',
+                freeWatermarkRemoval: '❌ 去除水印',
+                freeEditingTools: '✅ 编辑工具',
+                freeDragDrop: '✅ 拖放',
+                proSingleCapture: '✅ 单次捕获（100次）',
+                proMultiCapture: '✅ 多重捕获',
+                proWatermarkRemoval: '✅ 去除水印',
+                proEditingTools: '✅ 编辑工具',
+                proDragDrop: '✅ 拖放',
                 betaTitle: 'Capture Drag 招募Beta测试员',
                 betaSubtitle: '立即加入，抢先体验独家福利',
                 betaTestPeriod: '测试期间：2025年11月5日〜20日',
@@ -1691,6 +1671,10 @@
                 
                 // Plan cards
                 const planCards = document.querySelectorAll('.plan-comparison-card');
+                const getText = (key) => {
+                    if (!key) return '';
+                    return (t && t[key]) || (translations.en && translations.en[key]) || '';
+                };
                 planCards.forEach((card, index) => {
                     if (index === 0) { // Free plan
                         const titleEl = card.querySelector('.plan-comparison-title');
@@ -1702,14 +1686,17 @@
                         const btnEl = card.querySelector('.free-comparison-btn');
                         if (btnEl) btnEl.textContent = t.download;
                         
-                        const featuresList = card.querySelectorAll('.plan-comparison-features li');
-                        if (featuresList.length >= 5) {
-                            featuresList[0].textContent = t.capt3;
-                            featuresList[1].textContent = t.withWatermark;
-                            featuresList[2].textContent = t.allEditing;
-                            featuresList[3].textContent = t.dragDrop;
-                            featuresList[4].textContent = t.allSystem;
-                        }
+                        const freeFeatureMap = {
+                            '.feature-single': 'freeSingleCapture',
+                            '.feature-multi': 'freeMultiCapture',
+                            '.feature-watermark': 'freeWatermarkRemoval',
+                            '.feature-editing': 'freeEditingTools',
+                            '.feature-drag': 'freeDragDrop',
+                        };
+                        Object.entries(freeFeatureMap).forEach(([selector, key]) => {
+                            const featureEl = card.querySelector(selector);
+                            if (featureEl) featureEl.textContent = getText(key);
+                        });
                     } else if (index === 1) { // Pro plan
                         const badgeEl = card.querySelector('.popular-comparison-badge');
                         if (badgeEl) badgeEl.textContent = t.mostPopular;
@@ -1720,14 +1707,17 @@
                         const btnEl = card.querySelector('.pro-comparison-btn');
                         if (btnEl) btnEl.textContent = t.getPro;
                         
-                        const featuresList = card.querySelectorAll('.plan-comparison-features li');
-                        if (featuresList.length >= 5) {
-                            featuresList[0].innerHTML = '<strong>' + t.capt100 + '</strong>';
-                            featuresList[1].innerHTML = '<strong>' + t.noWatermark + '</strong>';
-                            featuresList[2].textContent = t.allEditing;
-                            featuresList[3].textContent = t.dragDrop;
-                            featuresList[4].textContent = t.allSystem;
-                        }
+                        const proFeatureMap = {
+                            '.feature-single': 'proSingleCapture',
+                            '.feature-multi': 'proMultiCapture',
+                            '.feature-watermark': 'proWatermarkRemoval',
+                            '.feature-editing': 'proEditingTools',
+                            '.feature-drag': 'proDragDrop',
+                        };
+                        Object.entries(proFeatureMap).forEach(([selector, key]) => {
+                            const featureEl = card.querySelector(selector);
+                            if (featureEl) featureEl.textContent = getText(key);
+                        });
                     }
                 });
                 

@@ -1,3 +1,14 @@
+.plan-comparison-features .coming-soon-feature {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+body.dark-theme .plan-comparison-features .coming-soon-feature {
+    color: #cccccc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -2922,7 +2933,7 @@ body.dark-theme .demo-video video {
 
 .pricing-cards-comparison {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -3011,6 +3022,8 @@ body.dark-theme .plan-comparison-price-pro {
     font-size: 0.85rem;
     color: #666;
     margin: 8px 0 4px 0;
+    text-align: center;
+    white-space: nowrap;
 }
 
 body.dark-theme .plan-billing-info {
@@ -3021,6 +3034,8 @@ body.dark-theme .plan-billing-info {
     font-size: 0.8rem;
     color: #999;
     margin: 0;
+    text-align: center;
+    white-space: nowrap;
 }
 
 body.dark-theme .plan-billing-note {
@@ -3151,6 +3166,20 @@ body.dark-theme .plan-comparison-features li {
 .plan-comparison-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.plan-comparison-card.plan-comparison-card-disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.plan-comparison-card.plan-comparison-card-disabled .plan-comparison-btn {
+    pointer-events: none;
+}
+
+.plan-comparison-card.plan-comparison-card-disabled:hover {
+    transform: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .plan-comparison-card.featured-comparison {
