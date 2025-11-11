@@ -246,7 +246,7 @@ serve(async (req) => {
             
             <h2>1) Download the App</h2>
             <div class="download-section">
-                <a href="https://github.com/screenshotdrag-wow/ScreenshotDrag/releases/download/beta3.4/CaptureDrag_beta_3.4_installer.exe" class="download-link">📦 Download Capture Drag Beta Installer</a>
+                <a href="https://github.com/screenshotdrag-wow/capturedrag-beta-release/releases/download/beta3.4/CaptureDrag_beta_3.4_installer.exe" class="download-link">📦 Download Capture Drag Beta Installer</a>
                 <p style="margin: 15px 0 0; color: #666; font-size: 14px;">File size: ~XX MB | Windows 10/11</p>
             </div>
             
@@ -292,7 +292,7 @@ serve(async (req) => {
             <h3>🎁 Reward</h3>
             <div class="reward-box">
                 <strong>Anyone who provides meaningful bugs or product improvement feedback<br>
-                will receive a permanent license ($49 Windows Store coupon).</strong>
+                will receive a permanent license ($19 Windows Store coupon).</strong>
             </div>
             
             <p style="margin-top: 40px; font-size: 16px;">
