@@ -56,6 +56,13 @@ body.light-theme {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.header-brand:hover {
+    opacity: 0.85;
 }
 
 .header-logo {
@@ -4837,6 +4844,13 @@ footer .container {
     display: flex;
     align-items: flex-start;
     gap: 15px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.footer-brand:hover {
+    opacity: 0.85;
 }
 
 .footer-logo {
