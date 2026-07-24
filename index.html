@@ -21,7 +21,7 @@
     </script>
     <script defer src="https://vercel.com/analytics/script.js"></script>
 </head>
-<body id="top" class="dark-theme">
+<body id="top">
     <!-- Top Header -->
     <header class="top-header">
         <div class="container">
@@ -2001,8 +2001,8 @@
             const themeIcon = themeToggle.querySelector('.theme-icon');
             const body = document.body;
             
-            // Load saved theme from localStorage (default to dark)
-            const savedTheme = localStorage.getItem('theme') || 'dark';
+            // Load saved theme from localStorage (default to light)
+            const savedTheme = localStorage.getItem('theme') || 'light';
             if (savedTheme === 'dark') {
                 body.classList.add('dark-theme');
                 body.classList.remove('light-theme');
