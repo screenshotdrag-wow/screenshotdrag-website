@@ -572,6 +572,39 @@ body.dark-theme .demo-video .video-wrapper {
     position: relative;
 }
 
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(102, 126, 234, 0.12);
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.feature-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.feature-card.feature-multi .feature-icon {
+    background: rgba(171, 71, 188, 0.14);
+    color: #AB47BC;
+}
+
+.feature-card.feature-large .feature-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+}
+
+.feature-card.feature-large .feature-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -4964,6 +4997,11 @@ footer .container {
         letter-spacing: -1px;
         gap: 10px;
     }
+
+    .hero-logo-inline {
+        width: 44px;
+        height: 44px;
+    }
     
     .hero .tagline {
         font-size: 1.4rem;
@@ -5139,6 +5177,11 @@ footer .container {
         font-size: 2.5rem;
         letter-spacing: -0.5px;
         gap: 8px;
+    }
+
+    .hero-logo-inline {
+        width: 36px;
+        height: 36px;
     }
     
     .title-drag {
@@ -7365,6 +7408,11 @@ body.dark-theme .performance-table tbody td:first-child {
         gap: 8px;
         margin-bottom: 20px;
     }
+
+    .hero-logo-inline {
+        width: 36px;
+        height: 36px;
+    }
     
     .title-screenshot,
     .title-drag {
@@ -7631,6 +7679,11 @@ body.dark-theme .performance-table tbody td:first-child {
     
     .hero-title {
         font-size: 2rem;
+    }
+
+    .hero-logo-inline {
+        width: 30px;
+        height: 30px;
     }
     
     .title-screenshot,
