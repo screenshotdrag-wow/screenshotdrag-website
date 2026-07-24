@@ -1651,7 +1651,7 @@ body.dark-theme .demo-video .video-wrapper {
     font-size: 1.3rem;
 }
 
-.feature-icon {
+.feature-card-new .feature-icon {
     font-size: 3.5rem;
     margin-bottom: 25px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
@@ -3522,7 +3522,7 @@ body.dark-theme .plan-comparison-features li {
     font-size: 1rem;
 }
 
-.feature-icon {
+.feature-item .feature-icon {
     font-size: 1.3rem;
 }
 
