@@ -137,6 +137,13 @@
   }
   .stack-stage.dragged .target-app{box-shadow:0 0 0 10px rgba(44,62,107,0.10);}
 
+  .demo-frame{
+    margin-top:64px;border-radius:16px;overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 30px 60px rgba(27,42,74,0.14);
+  }
+  .demo-gif{display:block;width:100%;height:auto;}
+
   /* SECTION SHARED */
   section{padding:88px 0;border-top:1px solid var(--line);}
   .section-head{max-width:600px;margin-bottom:52px;}
@@ -214,14 +221,8 @@
     </div>
     <div class="price-note" style="margin-top:14px;">Free during beta · Microsoft Store</div>
 
-    <div class="stack-stage" id="stage">
-      <div class="target-app">📥</div>
-      <div class="card" id="c1"><div class="bar"><span></span><span></span></div><div class="body"><div class="line w60"></div><div class="line w80"></div></div></div>
-      <div class="card" id="c2"><div class="bar"><span></span><span></span></div><div class="body"><div class="line w80"></div><div class="line w40"></div></div></div>
-      <div class="card" id="c3"><div class="bar"><span></span><span></span></div><div class="body"><div class="line w40"></div><div class="line w60"></div></div></div>
-      <div class="card" id="c4"><div class="bar"><span></span><span></span></div><div class="body"><div class="line w60"></div><div class="line w40"></div></div></div>
-      <div class="card" id="c5"><div class="bar"><span></span><span></span></div><div class="body"><div class="line w80"></div><div class="line w60"></div></div></div>
-      <div class="cursor-icon">🖱️</div>
+    <div class="demo-frame">
+      <img src="assets/capturedrag_demo.gif" alt="CaptureDrag demo — capturing and dragging multiple screenshots" class="demo-gif">
     </div>
   </div>
 </header>
@@ -339,10 +340,6 @@
 </footer>
 
 <script>
-  const stage = document.getElementById('stage');
-  setTimeout(()=> stage.classList.add('dragged'), 900);
-  setInterval(()=> stage.classList.toggle('dragged'), 3200);
-</script>
 
 </body>
 </html>
